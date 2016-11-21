@@ -1,0 +1,30 @@
+html {
+
+	background-color: #223344;
+	
+	
+	
+
+
+}
+
+body {
+	background-color: #8899aa;
+
+	
+
+}
+
+.jumbotron {
+border-radius: 10px;
+background-color: #aabbcc;
+
+}
+
+.jumbotron h1, p{
+	
+}
+
+.col-md-6 {
+	text-align: center;
+}
