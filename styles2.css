@@ -1,0 +1,26 @@
+html {
+
+background-color: #223344;
+
+
+}
+
+
+body {
+
+opacity: 0.85;
+
+
+}
+
+
+.jumbotron {
+
+margin: 5px;
+border-radius: 10px;
+background-color: #aabbcc;
+border: 2px solid #223344;
+box-shadow: 1px 1px 15px 5px #223344;
+
+
+}

@@ -1,0 +1,115 @@
+Two modes for the app: 14 day intervention- Coach Z’s bootcamp (organized logic) and refresher mode (random tips).
+
+For Coach Z’s boot camp, users fill out their sleep diary (the same questions every day) twice a day- in the morning and evening.  Users are also provided two tips every day (one after their morning entry, and one after their evening entry).   The logic identifying the diary question that dictates the tip for the day and what tip(s) should be pulled based on the user’s answer for that diary question is written out below.  If the tip is not being pulled from a specific diary question then a reference to a standard tip is noted (“S_”).
+
+
+Coach Z’s Bootcamp: 14-day Intervention
+
+Day 1 Tip 1: S1
+Day 1 Tip 2: S2
+
+Day 2 Tip 1:
+If “no” on morning question 2 then: M8 or M9
+If “yes” on morning question 2 then: M10 or M11
+If no response on morning question 2 then: M14
+Day 2 Tip 2:
+If “phone” on evening question 6 then: E32 or E33
+If “read/homework” on evening question 6 then: E34
+If “tv” on evening question 6 then: E35
+If “videogames” on evening question 6 then: E36
+If “none” on evening question 6 then: E37 or E38
+If no response on evening question 6 then: E37 or E38
+*evening question 6 is check all that apply question, so I was thinking for every box the user checks that get a tip.  So if they check phone and tv they get a tip for each.
+
+Day 3 Tip 1:
+If “no” on morning question 3 then: M15
+If “yes” and <15 mins awake on morning question 3 then: M16
+If “yes” and >16 mins awake on morning question 3 then: M17 or M18
+If no response on morning question 3 then: M19
+Day 3 Tip 2: E28 or E30 
+
+Day 4 Tip 1: S4
+Day 4 Tip 2: 
+Add up the past 4 responses for evening question 2, if “yes” has been answered two or more times then: E8
+Add up the past 4 responses for evening question 2, if “yes” has been answered less then two times then: E11
+If no response on evening question 2 then: E14
+
+Day 5 Tip 1:
+If “morning” in evening question 1 then: E1 or E2
+If “afternoon” in evening question 1 then: E3
+If “evening” in evening question 1 then: E4 or E5
+If “no caffeine” in evening question 1 then: E6
+If no response in evening question 1 then: E7
+*If more than box is checked (morning and afternoon, or all three)- provide a tip for each time of day where caffeine use was reported
+Day 5 Tip 2:
+If “no” on evening question 4 then: E23
+If “yes” on evening question 4 then: E25
+If no response on evening question 4 then: E27
+
+Day 6 Tip 1:
+If “noise” on morning question 5 then: M26
+If “light” on morning question 5 then: M27 
+If “stress/worry” on morning question 5 then: M29 
+If “room temperature” on morning question 5 then: M32 
+If “none of the above” or no response on morning question 5 then: M34 or M35
+*morning question 5 is check all that apply question, so I was thinking for every box the user checks they get a tip.  So if they check noise and light they get a tip for each.
+Day 6 Tip 2:
+If “yes” on evening question 3 then: E15 or E16 or E17 or E18 or E19
+If “no” on evening question 3 then: E20 or E21
+If no response on evening question 3 then: E22
+
+Day 7 Tip 1: S3
+Day 7 Tip 2:
+If “morning” on evening question 7 then: E39
+If “afternoon” on evening question 7 then: E40
+If “evening” on evening question 7 then: E41 or E42
+If no response on evening question 7 then: E43
+
+Day 8 Tip 1:
+If “sleepy” on morning question 4 then: M20 or M21 or M22
+If “somewhat sleepy” on morning question 4 then: M23
+If “alert” on morning question 4 then: M24
+If no response on morning question 4 then: M25
+Day 8 Tip 2: S10
+
+Day 9 Tip 1: S5
+Day 9 Tip 2:
+If “noise” on morning question 5 then: M26
+If “light” on morning question 5 then: M28
+If “stress/worry” on morning question 5 then: M30 or M31
+If “room temperature” on morning question 5 then: M33
+If “none of the above” or no response on morning question 5 then: M34 or M35
+*morning question 5 is check all that apply question, so I was thinking for every box the user checks they get a tip.  So if they check noise and light they get a tip for each.
+
+Day 10 Tip 1:
+If “no” on morning question 2 then: M7
+If “yes” on morning question 2 then: M12 or M13
+If no response on morning question 2 then: M14
+Day 10 Tip 2: S7
+
+Day 11 Tip 1:
+If sleep time calculated from morning question 1 is less than 7 hours then: M1 or M2
+If sleep time calculated from morning question 1 is between 7-9 hours then: M5
+If sleep time calculated from morning question 1 is greater than 9 hours then: M3 or M4
+If no response on morning question 1 then: M6
+Day 11 Tip 2:
+Add up the past 11 responses for evening question 2, if “yes” has been answered four or more times then: E9 or E10
+Add up the past 11 responses for evening question 2, if “yes” has been answered less then four times then: E12 or E13
+If no response on evening question 2 then: E14
+
+Day 12 Tip 1:
+If “phone” on evening question 6 then: E32 or E33
+If “read/homework” on evening question 6 then: E34
+If “tv” on evening question 6 then: E35
+If “videogames” on evening question 6 then: E36
+If “none” or no response on evening question 6 then: E37 or E38
+*evening question 6 is check all that apply question, so I was thinking for every box the user checks that get a tip.  So if they check phone and tv they get a tip for each.
+Day 12 Tip 2: S8
+
+Day 13 Tip 1: S9
+Day 13 Tip 2: E29 or E31
+
+Day 14 Tip 1:
+If at least 15 out of 28 diary entries were completed then: S11
+If less than 15 diary entries were completed then: S12
+Day 14 Tip 2: S13
