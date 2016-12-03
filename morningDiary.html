@@ -3,16 +3,7 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-<script>
-$(document).ready(function(){
-    $("#hide").click(function(){
-        $("form").hide();
-    });
-    $("#show").click(function(){
-        $("p").show();
-    });
-});
-</script>  
+
 
 
 
@@ -99,7 +90,7 @@ $(document).ready(function(){
 
 
 
-  <form  name="question1">
+  <form  id="question1">
   <div class="form-group">
     <label for="bedtime">Bed Time:</label>
     <input type="text" class="form-control" id="bedtime">
@@ -110,19 +101,27 @@ $(document).ready(function(){
   </div>
   <div class="checkbox">
   </div>
-  <label id="hide" name="q1" class="btn btn-default">Next</label>
-  <label id="hide" name="q2" class="btn btn-default">Next</label>
+
 </form>
 
+  <label id="q1" class="btn btn-default">Next</label>
+  <label id="q2" class="btn btn-default">Next</label>
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <script>
 
 $(document).ready(function(){
-    $("q1").click(function(){
-        $("question1").hide();
-    });
+    
+    $("#q1").click(function() {$("#question1").hide(); })
+
+    $("#q2").click(function() {$("question1").show(); });
+
 });
+
+</script>
 
 
 
