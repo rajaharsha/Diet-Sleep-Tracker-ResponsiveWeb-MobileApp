@@ -88,6 +88,39 @@
         <hr>
 
 
+<!-- This the the small code to add a Time DatePicker --> 
+<!-- I need admin rights to my system to install the required -->
+<!-- packages to use this in full. --> 
+<!-- Website Reference: https://eonasdan.github.io/bootstrap-datetimepicker/#minimum-setup --> 
+
+
+
+
+        <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker3'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+    </div>
+</div>
+
+<!-- End of BootStrap DatePicker Code --> 
+
+
 
 
   <form  id="question1">
