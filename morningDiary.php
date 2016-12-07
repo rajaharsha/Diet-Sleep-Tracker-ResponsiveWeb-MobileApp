@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 
 
@@ -95,7 +96,7 @@
 
 
 
-
+<!-- 
         <div class="container">
     <div class="row">
         <div class='col-sm-6'>
@@ -116,43 +117,101 @@
             });
         </script>
     </div>
-</div>
+</div> -->
 
 <!-- End of BootStrap DatePicker Code --> 
 
 
 
 
-  <form  id="question1">
-  <div class="form-group">
-    <label for="bedtime">Bed Time:</label>
-    <input type="text" class="form-control" id="bedtime">
+<form  id="questions">
+
+
+  <div class="form-group" id="question1">
+  <h3>Bed Wake Question</h3>
   </div>
-  <div class="form-group">
-    <label for="waketime">Wake Time:</label>
-    <input type="text" class="form-control" id="waketime">
+ 
+  <div class="form-group" id="question2">
+  <h3>Any problems falling asleep?</h3>
   </div>
-  <div class="checkbox">
+
+  <div class="form-group" id="question3">
+  <h3>Did you wake up at all? </h3>
   </div>
+
+  <div class="form-group" id="question4">
+  <h3>How did you feel?</h3>
+  </div>
+ 
+  <div class="form-group" id="question5">
+  <h3>Anything bother you?</h3>
+  </div>
+
+<label id="q1" class="btn btn-default">Next</label>
+<label id="q2" class="btn btn-default">Back</label>
+
 
 </form>
 
-  <label id="q1" class="btn btn-default">Next</label>
-  <label id="q2" class="btn btn-default">Next</label>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
 <script>
+       var x1 = document.getElementById('question1');
+       var x2 = document.getElementById('question2');
+       var x3 = document.getElementById('question3');
+       var x4 = document.getElementById('question4');
+       var x5 = document.getElementById('question5');
+       var questionBank = [x1, x2, x3, x4, x5];
+       var ctr = 0;
+       for (i = 0; i < questionBank.length; i++ )
+       {
+           questionBank[i].style.display = 'none';
+
+        }
 
 $(document).ready(function(){
-    
-    $("#q1").click(function() {$("#question1").hide(); })
 
-    $("#q2").click(function() {$("question1").show(); });
+$("#q1").click(function() {
+
+if (ctr <= 5) {
+
+
+if (ctr == 0) {
+questionBank[ctr].style.display = 'block';
+
+}   
+
+if (ctr > 0){
+    questionBank[ctr-1].style.display = 'none';
+    questionBank[ctr].style.display = 'block';
+  }  
+ctr++; //3
+}
+
+
+
+})
+
+
+
+$("#q2").click(function() {
+
+if (ctr >= 4) {
+questionBank[ctr-1].style.display = 'none';  
+questionBank[ctr-2].style.display = 'block';
+} else { 
+questionBank[ctr-2].style.display = 'block';
+questionBank[ctr-1].style.display = 'none';
+ctr--;
+}
+
+})
+
+
+
+
 
 });
+
+
 
 </script>
 
