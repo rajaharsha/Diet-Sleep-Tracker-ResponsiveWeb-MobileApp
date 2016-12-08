@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 
+<script type="text/javascript">
+    
+  var qs1 = '\
+  <div class="form-group" id="question1">\
+  <h3>Bed Time:  </h3><input type="Number" name="BedTime">\
+  <h3>Wake Time: </h3><input type="Number" name="WakeTime">\
+  </div>';
+
+  var qs2 = '\
+  <div class="form-group" id="question2">\
+  <h3>Did you have any problems falling asleep last night?</h3>\
+  <h3> Yes or no?</h3>\
+  <h3>How many minutes did it take you?</h3>\
+  </div>';
+
+  var qs3 = '\
+  <div class="form-group" id="question3">\
+  <h3>Last night did you wake up at all during the night?</h3>\
+  <h3> Yes or no?</h3>\
+  <h3>Number of minutes awake?</h3>\
+  </div>';
+
+  var qs4 = '\
+  <div class="form-group" id="question4">\
+  <h3>When you woke up this morning, how did you feel?</h3>\
+  <h3>Sleepy - Somewhat Sleepy - Alert</h3>\
+  </div>';
+
+  var qs5 = '\
+  <div class="form-group" id="question5">\
+  <h3>Did anything bother your sleep last night?</h3>\
+  <h2>Check all that apply</h2>\
+  <p><input type="Checkbox" name="Noise"> Noise</p>\
+  <p><input type="Checkbox" name="Light"> Light</p>\
+  <p><input type="Checkbox" name="Stress/Worry"> Stress/Worry</p>\
+  <p><input type="Checkbox" name="Room Temperature"> Room Temperature</p>\
+  <p><input type="Checkbox" name="None of the above"> None of the above</p>\
+  </div>';
+
+
+
+</script>
 
 
 
@@ -51,7 +93,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Coach Z</a>
+            <a class="navbar-brand" href="index.php">Coach Z</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right">
@@ -89,10 +131,10 @@
         <hr>
 
 
-<!-- This the the small code to add a Time DatePicker --> 
-<!-- I need admin rights to my system to install the required -->
-<!-- packages to use this in full. --> 
-<!-- Website Reference: https://eonasdan.github.io/bootstrap-datetimepicker/#minimum-setup --> 
+        <!-- This the the small code to add a Time DatePicker --> 
+        <!-- I need admin rights to my system to install the required -->
+        <!-- packages to use this in full. --> 
+        <!-- Website Reference: https://eonasdan.github.io/bootstrap-datetimepicker/#minimum-setup --> 
 
 
 
@@ -117,118 +159,111 @@
             });
         </script>
     </div>
-</div> -->
+  </div> -->
 
-<!-- End of BootStrap DatePicker Code --> 
-
-
+  <!-- End of BootStrap DatePicker Code --> 
 
 
-<form  id="questions">
 
 
-  <div class="form-group" id="question1">
-  <h3>Bed Wake Question</h3>
-  </div>
- 
-  <div class="form-group" id="question2">
-  <h3>Any problems falling asleep?</h3>
-  </div>
-
-  <div class="form-group" id="question3">
-  <h3>Did you wake up at all? </h3>
-  </div>
-
-  <div class="form-group" id="question4">
-  <h3>How did you feel?</h3>
-  </div>
- 
-  <div class="form-group" id="question5">
-  <h3>Anything bother you?</h3>
-  </div>
-
-<label id="q1" class="btn btn-default">Next</label>
-<label id="q2" class="btn btn-default">Back</label>
+  <form  id="questions">
 
 
-</form>
-
-<script>
-       var x1 = document.getElementById('question1');
-       var x2 = document.getElementById('question2');
-       var x3 = document.getElementById('question3');
-       var x4 = document.getElementById('question4');
-       var x5 = document.getElementById('question5');
-       var questionBank = [x1, x2, x3, x4, x5];
-       var ctr = 0;
-       for (i = 0; i < questionBank.length; i++ )
-       {
-           questionBank[i].style.display = 'none';
-
-        }
-
-$(document).ready(function(){
-
-$("#q1").click(function() {
-
-if (ctr <= 5) {
 
 
-if (ctr == 0) {
-questionBank[ctr].style.display = 'block';
 
-}   
 
-if (ctr > 0){
-    questionBank[ctr-1].style.display = 'none';
-    questionBank[ctr].style.display = 'block';
-  }  
+
+
+
+
+
+    <label id="q1" class="btn btn-default">Next</label>
+    <label id="q2" class="btn btn-default">Back</label>
+
+
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+   var x1 = document.getElementById('question1');
+   var x2 = document.getElementById('question2');
+   var x3 = document.getElementById('question3');
+   var x4 = document.getElementById('question4');
+   var x5 = document.getElementById('question5');
+   var questionBank = [x1, x2, x3, x4, x5];
+   var ctr = 0;
+   for (i = 0; i < questionBank.length; i++ )
+   {
+     questionBank[i].style.display = 'none';
+
+   }
+
+   $(document).ready(function(){
+
+
+
+    $("#q1").click(function() {
+
+
+      if (ctr <= 5) {
+
+
+        if (ctr == 0) {
+          questionBank[ctr].style.display = 'block';
+
+        }   
+
+        if (ctr > 0){
+          questionBank[ctr-1].style.display = 'none';
+          questionBank[ctr].style.display = 'block';
+        }  
 ctr++; //3
 }
-
-
-
 })
 
 
 
-$("#q2").click(function() {
+    $("#q2").click(function() {
 
-if (ctr >= 4) {
-questionBank[ctr-1].style.display = 'none';  
-questionBank[ctr-2].style.display = 'block';
-} else { 
-questionBank[ctr-2].style.display = 'block';
-questionBank[ctr-1].style.display = 'none';
-ctr--;
-}
+      if (ctr >= 4) {
+        questionBank[ctr-1].style.display = 'none';  
+        questionBank[ctr-2].style.display = 'block';
+      } else { 
+        questionBank[ctr-2].style.display = 'block';
+        questionBank[ctr-1].style.display = 'none';
+        ctr--;
+      }
 
-})
+    })
+  });
 
+</script>
+<hr>
 
+<p id="demo"> demo</p>
 
+<script type="text/javascript">
 
-
-});
-
-
+  document.getElementById("demo").innerHTML = qs1;
 
 </script>
 
 
-
-
-
-
-
-
-
-
-        <hr>
-        <footer>
-          <p>&copy; 2016 Coach Z, Inc.</p>
-        </footer>
-      </div> <!-- /container -->
+<footer>
+  <p>&copy; 2016 Coach Z, Inc. Old Dominion University </p>
+</footer>
+</div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript

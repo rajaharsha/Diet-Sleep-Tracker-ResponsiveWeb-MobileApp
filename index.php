@@ -91,20 +91,21 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h2>Bootcamp</h2>
-          <p>Users fill out their sleep diary form twice a day, morning and evening. Users are also provided two tips every day, one tip after each entry. The tips will be issued based on the users' diary entries.  </p>
-          
+       
+       <h2>About</h2>
+          <p>Coach Z is a website aimed to help college students improve their sleep. Sleep disturbances are common among young adults, and can impact academic performance, physical health, and mental health. Sleep is a vital aspect of health and Coach Z offers sleep tips to help users work towards and maintain healthy sleep hapbits. The website has two modes, bootcamp mode and refresher mode.</p>
         </div>
+        
         <div class="col-md-4">
           <h2>Refresher</h2>
-          <p>Work on your own. You'll be less involved with notifications and reminders.  </p>
-          
-       </div>
+          <p>Refresher mode allows users to keep a sleep diary at their own pace. In refresher mode users do not receive diary completion reminders, but can complete entries as they determine to be helpful. Users will receive a random sleep tip after every completed diary entry.</p>
+          </div>
+        
         <div class="col-md-4">
-          <h2>About</h2>
-          <p>Mission statement of the program and outlines website purpose. </p>
-          
+          <h2>Bootcamp</h2>
+          <p>Bootcamp mode is a two-week experience where users are provided with daily reminders to complete a morning and evening sleep diary. Upon completion of diary entries, two customized sleep tips are provided to users each day. In addition to sleep tips, students can utilize graphs calculated from their daily diary entries to track their total sleep time and sleep efficiciency scores throughout bootcamp.</p>
         </div>
+        
       </div>
 
       <hr>
