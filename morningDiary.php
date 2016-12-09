@@ -6,45 +6,51 @@
 
 
 <script type="text/javascript">
+// Variables that hold the html for each question
     
   var qs1 = '\
-  <div class="form-group" id="question1">\
-  <h3>Bed Time:  </h3><input type="Number" name="BedTime">\
-  <h3>Wake Time: </h3><input type="Number" name="WakeTime">\
+  <div class="form-group" id="question1"> \
+  <h1>1.</h1>\
+  <h3>Bed Time:  </h3><input type="Number" name="BedTime"> \
+  <h3>Wake Time: </h3><input type="Number" name="WakeTime"> \
   </div>';
 
-  var qs2 = '\
-  <div class="form-group" id="question2">\
-  <h3>Did you have any problems falling asleep last night?</h3>\
-  <h3> Yes or no?</h3>\
-  <h3>How many minutes did it take you?</h3>\
+  var qs2 = ' \
+  <h1>2.</h1> \
+  <div class="form-group" id="question2"> \
+  <h3>Did you have any problems falling asleep last night?</h3> \
+  <h3> Yes or no?</h3> \
+  <h3>How many minutes did it take you?</h3> \
   </div>';
 
-  var qs3 = '\
-  <div class="form-group" id="question3">\
-  <h3>Last night did you wake up at all during the night?</h3>\
-  <h3> Yes or no?</h3>\
-  <h3>Number of minutes awake?</h3>\
+  var qs3 = ' \
+  <h1>3.</h1> \
+  <div class="form-group" id="question3"> \
+  <h3>Last night did you wake up at all during the night?</h3> \
+  <h3> Yes or no?</h3> \
+  <h3>Number of minutes awake?</h3> \
   </div>';
 
-  var qs4 = '\
-  <div class="form-group" id="question4">\
-  <h3>When you woke up this morning, how did you feel?</h3>\
-  <h3>Sleepy - Somewhat Sleepy - Alert</h3>\
+  var qs4 = ' \
+  <h1>4.</h1> \
+  <div class="form-group" id="question4"> \
+  <h3>When you woke up this morning, how did you feel?</h3> \
+  <h3>Sleepy - Somewhat Sleepy - Alert</h3> \
   </div>';
 
-  var qs5 = '\
-  <div class="form-group" id="question5">\
-  <h3>Did anything bother your sleep last night?</h3>\
-  <h2>Check all that apply</h2>\
-  <p><input type="Checkbox" name="Noise"> Noise</p>\
-  <p><input type="Checkbox" name="Light"> Light</p>\
-  <p><input type="Checkbox" name="Stress/Worry"> Stress/Worry</p>\
-  <p><input type="Checkbox" name="Room Temperature"> Room Temperature</p>\
-  <p><input type="Checkbox" name="None of the above"> None of the above</p>\
+  var qs5 = ' \
+  <h1>5.</h1> \
+  <div class="form-group" id="question5"> \
+  <h3>Did anything bother your sleep last night?</h3> \
+  <h2>Check all that apply</h2> \
+  <p><input type="Checkbox" name="Noise"> Noise</p> \
+  <p><input type="Checkbox" name="Light"> Light</p> \
+  <p><input type="Checkbox" name="Stress/Worry"> Stress/Worry</p> \
+  <p><input type="Checkbox" name="Room Temperature"> Room Temperature</p> \
+  <p><input type="Checkbox" name="None of the above"> None of the above</p> \
   </div>';
 
-
+ var questionBank = [qs1, qs2, qs3, qs4, qs5];
 
 </script>
 
@@ -134,10 +140,7 @@
         <!-- This the the small code to add a Time DatePicker --> 
         <!-- I need admin rights to my system to install the required -->
         <!-- packages to use this in full. --> 
-        <!-- Website Reference: https://eonasdan.github.io/bootstrap-datetimepicker/#minimum-setup --> 
-
-
-
+        <!-- Website Reference: https://eonasdan.github.io/bootstrap-datetimepicker/#minimum-setup -->
 <!-- 
         <div class="container">
     <div class="row">
@@ -166,98 +169,41 @@
 
 
 
-  <form  id="questions">
+<form  id="questions">
+    <p id="questionDisplay"> </p>
+</form>
 
+<div>
+<label id="q1" class="btn btn-default">Next</label>
+<label id="q2" class="btn btn-default">Back</label>
+</div>
 
+  
+  <script> // pages through the questions
 
-
-
-
-
-
-
-
-
-    <label id="q1" class="btn btn-default">Next</label>
-    <label id="q2" class="btn btn-default">Back</label>
-
-
-  </form>
-
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-   var x1 = document.getElementById('question1');
-   var x2 = document.getElementById('question2');
-   var x3 = document.getElementById('question3');
-   var x4 = document.getElementById('question4');
-   var x5 = document.getElementById('question5');
-   var questionBank = [x1, x2, x3, x4, x5];
-   var ctr = 0;
-   for (i = 0; i < questionBank.length; i++ )
-   {
-     questionBank[i].style.display = 'none';
-
-   }
+   document.getElementById("questionDisplay").innerHTML = questionBank[0];
+   var ctr = 0; // start at first question
 
    $(document).ready(function(){
-
-
-
-    $("#q1").click(function() {
-
-
-      if (ctr <= 5) {
-
-
-        if (ctr == 0) {
-          questionBank[ctr].style.display = 'block';
-
-        }   
-
-        if (ctr > 0){
-          questionBank[ctr-1].style.display = 'none';
-          questionBank[ctr].style.display = 'block';
-        }  
-ctr++; //3
-}
-})
-
-
+    $("#q1").click(function() {  // NEXT Button
+      if(ctr < 4) {
+           ctr++;
+           document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+           if (ctr >= 4) {ctr = 4;}
+         }
+      })
 
     $("#q2").click(function() {
-
-      if (ctr >= 4) {
-        questionBank[ctr-1].style.display = 'none';  
-        questionBank[ctr-2].style.display = 'block';
-      } else { 
-        questionBank[ctr-2].style.display = 'block';
-        questionBank[ctr-1].style.display = 'none';
-        ctr--;
-      }
-
-    })
+      if( ctr >= 1){
+           ctr--;
+           document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+           if (ctr == 0) {ctr = 0;}
+         }
+      })
   });
-
 </script>
 <hr>
 
-<p id="demo"> demo</p>
-
-<script type="text/javascript">
-
-  document.getElementById("demo").innerHTML = qs1;
-
-</script>
 
 
 <footer>
