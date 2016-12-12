@@ -87,7 +87,7 @@
 
 <form method="get">
         <div class="col-md-4">
-          <button type="submit"  style="background: #f0e6ff; color: black;" class="btn btn-primary btn-lg" formaction="morningDiary.html" >Morning Diary</button>
+          <button type="submit"  style="background: #f0e6ff; color: black;" class="btn btn-primary btn-lg" formaction="morningDiary.php" >Morning Diary</button>
         </div>
         <div class="col-md-4">
           <button type="submit" style="background: #330080; " class="btn btn-primary btn-lg">Evening Diary</button>

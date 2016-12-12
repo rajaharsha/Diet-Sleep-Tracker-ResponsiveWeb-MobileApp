@@ -100,16 +100,16 @@
 
         <div class="col-md-4">
 
-          <button type="submit" formaction="sleepDiary.html" class="btn btn-primary btn-lg">Sleep Diary</button>
+          <button type="submit" formaction="sleepDiary.php" class="btn btn-primary btn-lg">Sleep Diary</button>
 
        </div>
 
         <div class="col-md-4">
-          <button type="submit" formaction="page4.html" class="btn btn-primary btn-lg">Archives</button>
+          <button type="submit" formaction="page4.php" class="btn btn-primary btn-lg">Archives</button>
        </div>
 
         <div class="col-md-4">
-          <button type="button" formaction="page5.html" class="btn btn-primary btn-lg">Sleep Tracker</button>
+          <button type="button" formaction="page5.php" class="btn btn-primary btn-lg">Sleep Tracker</button>
         </div>
 
         </form>

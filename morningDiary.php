@@ -1,49 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- for the Apple-like switch -->
+<link rel="stylesheet" href="assets/switchery-master/switchery.css" />
+<script src="assets/switchery-master/switchery.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles2.css">
+
+<script type="text/javascript">
+var elem = document.querySelector('.js-switch');
+var init = new Switchery(elem);
+</script>
+
+
 
 
 <script type="text/javascript">
 // Variables that hold the html for each question
+
+
+function toFallAsleep() {
+var person = prompt("How many minutes did it take you to fall asleep?", "Minutes to fall asleep....");
+if (person != null) {
+  document.getElementsByID("minutesTryingToFallAsleep".innerHTML = person);
+}
+}
+
+
     
   var qs1 = '\
   <div class="form-group" id="question1"> \
-  <h1>1.</h1>\
   <h3>Bed Time:  </h3><input type="Number" name="BedTime"> \
   <h3>Wake Time: </h3><input type="Number" name="WakeTime"> \
-  </div>';
+  </div>'; 
 
   var qs2 = ' \
-  <h1>2.</h1> \
   <div class="form-group" id="question2"> \
+  \
+  \
   <h3>Did you have any problems falling asleep last night?</h3> \
-  <h3> Yes or no?</h3> \
-  <h3>How many minutes did it take you?</h3> \
+  \
+  \
+  <h4 styles="display: inline-block">No</h4>\
+  <label class="switch" >\
+  <input type="checkbox">\
+  <div class="slider round"></div>\
+  </label>\
+  <h4>Yes</h4> \
+  \
+  \
+  <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
+  <h3>How many minutes did it take you to fall asleep? </h3><input type="Number" name="WakeTime">\
   </div>';
 
   var qs3 = ' \
-  <h1>3.</h1> \
   <div class="form-group" id="question3"> \
   <h3>Last night did you wake up at all during the night?</h3> \
-  <h3> Yes or no?</h3> \
-  <h3>Number of minutes awake?</h3> \
+  <h4 styles="display: inline-block">No</h4>\
+  <label class="switch" >\
+  <input type="checkbox">\
+  <div class="slider round"></div>\
+  </label>\
+  <h4>Yes</h4> \
+  \
+  \
+  <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
+    <h3>How many minutes did it take you to fall asleep? </h3><input type="Number" name="WakeTime">\
   </div>';
 
+
+
+
+
+
   var qs4 = ' \
-  <h1>4.</h1> \
   <div class="form-group" id="question4"> \
   <h3>When you woke up this morning, how did you feel?</h3> \
   <h3>Sleepy - Somewhat Sleepy - Alert</h3> \
+  \
+  <label class="switch" >\
+  <input type="checkbox">\
+  <div class="slider round"></div>\
+  </label>\
+  \
+  <label class="switch" >\
+  <input type="checkbox">\
+  <div class="slider round"></div>\
+  </label>\
+  \
+  <label class="switch" >\
+  <input type="checkbox">\
+  <div class="slider round"></div>\
+  </label>\
   </div>';
 
+
+
+
+
+
+
+
   var qs5 = ' \
-  <h1>5.</h1> \
   <div class="form-group" id="question5"> \
   <h3>Did anything bother your sleep last night?</h3> \
   <h2>Check all that apply</h2> \
-  <p><input type="Checkbox" name="Noise"> Noise</p> \
+  <p><input class="largerCheckbox" type="Checkbox" name="Noise"> Noise</p> \
   <p><input type="Checkbox" name="Light"> Light</p> \
   <p><input type="Checkbox" name="Stress/Worry"> Stress/Worry</p> \
   <p><input type="Checkbox" name="Room Temperature"> Room Temperature</p> \
@@ -90,6 +155,7 @@
 
     <body>
 
+
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -128,7 +194,7 @@
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4" style="text-align: center;">
             <h1>Welcome to your Morning Diary</h1>
           </div>
 
@@ -165,18 +231,25 @@
   </div> -->
 
   <!-- End of BootStrap DatePicker Code --> 
+<script type="text/javascript">
+  var elem = document.querySelector('.js-switch');
+var init = new Switchery(elem);
+</script>
+
+<div class="questionButtonDiv">
+<label id="q2" class="btn btn-default">Back</label>
+<label id="q1" class="btn btn-default">Next</label>
+</div>
 
 
+</div>
 
 
 <form  id="questions">
     <p id="questionDisplay"> </p>
 </form>
 
-<div>
-<label id="q1" class="btn btn-default">Next</label>
-<label id="q2" class="btn btn-default">Back</label>
-</div>
+
 
   
   <script> // pages through the questions
@@ -202,6 +275,7 @@
       })
   });
 </script>
+
 <hr>
 
 
