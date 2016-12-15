@@ -105,6 +105,18 @@ if (person != null) {
   <p><input type="Checkbox" name="None of the above"> None of the above</p> \
   </div>';
 
+  var qs7 = ' \
+  <div class="form-group" id="question5"> \
+  <h3>During what time of day do you have the most energy and motivation?</h3> \
+  <form>\
+    <div class="radio">\
+      <label><input type="radio" name="optradio"> Early Morning</label>\
+      <label><input type="radio" name="optradio"> Afternoon</label>\
+      <label><input type="radio" name="optradio"> Evening</label>\
+    </div>\
+  </form>\
+  </div>';
+
  var questionBank = [qs1, qs2, qs3, qs4, qs5, qs6, qs7];
 
 </script>
@@ -174,7 +186,7 @@ if (person != null) {
       <div class="jumbotron">
         <div class="container">
           <h1>Coach Z</h1>
-          <p>Welcome to your Morning Diary Questionnaire.</p>
+          <p>Welcome to your Evening Diary Questionnaire.</p>
         </div>
       </div>
 
@@ -246,10 +258,10 @@ var init = new Switchery(elem);
 
    $(document).ready(function(){
     $("#q1").click(function() {  // NEXT Button
-      if(ctr < 4) {
+      if(ctr < 6) {
            ctr++;
            document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
-           if (ctr >= 4) {ctr = 4;}
+           if (ctr >= 6) {ctr = 6;}
          }
       })
 
