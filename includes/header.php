@@ -8,9 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="assets/favicon.ico">
-    
-    <title>Sleep Diary</title>
 
+
+    <title>Coach Z</title>
+    
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -29,7 +30,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="css/styles2.css">
+        <link rel="stylesheet" type="text/css" href="css/styles2.css">
   </head>
 
   <body>
@@ -67,54 +68,3 @@
 
 
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Coach Z</h1>
-        <p>Your sleep journal Questionairre.  </p>
-      </div>
-    </div>
-
-
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-
-        
-
-
-
-<form method="get">
-        <div class="col-md-4">
-          <button type="submit"  style="background: #f0e6ff; color: black;" class="btn btn-primary btn-lg" formaction="morningDiary.php" >Morning Diary</button>
-        </div>
-        <div class="col-md-4">
-          <button type="submit" style="background: #330080; " class="btn btn-primary btn-lg">Evening Diary</button>
-        </div>
-</form>
-
-
-       
-
-
-      </div>
-
-      <hr>
-
-
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-
-
-<?php
-  require_once("./includes/footer.php");
-?>
