@@ -9,6 +9,9 @@ function morningQuestion(
 	anythingBotherYourSleep // String to Hex ??? */
 	) {
 
+			// May not need these, nor the paramters in the object constructor.
+			// I placed this here, until I set the validation methods. 
+
 			this.bedTime = bedTime;
 			this.wakeTime = wakeTime;
 			this.problemsFallingAsleep = problemsFallingAsleep;
