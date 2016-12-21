@@ -10,8 +10,8 @@ include("./includes/header.php");
 <script src="assets/switchery-master/switchery.js"></script>
 
   <script src="js/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="stylesheet" type="text/css" href="css/styles2.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles2.css">
 
 <script type="text/javascript">
 var elem = document.querySelector('.js-switch');
@@ -52,8 +52,8 @@ if (person != null) {
   \
   \
   <h4 styles="display: inline-block">No - Yes</h4>\
-  <label class="switch">\
-  <input type="checkbox" id="eq2">\
+  <label class="switch" >\
+  <input type="checkbox">\
   <div class="slider round"></div>\
   </label>\
   \
@@ -66,7 +66,7 @@ if (person != null) {
   <h3>Did you drink Alcohol?</h3> \
   <h4 styles="display: inline-block">No - Yes</h4>\
   <label class="switch" >\
-  <input type="checkbox" id="eq3">\
+  <input type="checkbox">\
   <div class="slider round"></div>\
   </label>\
   </div>';
@@ -76,7 +76,7 @@ if (person != null) {
   <h3>Did you take a nap today?</h3> \
   <h4 styles="display: inline-block">No - Yes</h4>\
   <label class="switch" >\
-  <input type="checkbox" id="eq4">\
+  <input type="checkbox">\
   <div class="slider round"></div>\
   </label>\
   </div>';
@@ -86,10 +86,10 @@ if (person != null) {
   <h3>How is your mood today?</h3> \
   <form>\
     <div class="radio">\
-      <label><input type="radio" name="optradio" value="Happy" id="eqs5op1"> Happy</label>\
-      <label><input type="radio" name="optradio" value="Neutral" id="eqs5op2"> Neutral</label>\
-      <label><input type="radio" name="optradio" value="Mad" id="eqs5op3"> Mad</label>\
-      <label><input type="radio" name="optradio" value="Sad" id="eqs5op4"> Sad</label>\
+      <label><input type="radio" name="optradio"> Happy</label>\
+      <label><input type="radio" name="optradio"> Neutral</label>\
+      <label><input type="radio" name="optradio"> Mad</label>\
+      <label><input type="radio" name="optradio"> Sad</label>\
     </div>\
   </form>\
   </div>';
@@ -98,11 +98,11 @@ if (person != null) {
   <div class="form-group" id="question6"> \
   <h3>Do you do any of the followin in your bed?</h3> \
   <h2>Check all that apply</h2> \
-  <p><input class="largerCheckbox" type="Checkbox" name="Use your phone" id="eqs6op1"> Use your phone</p> \
-  <p><input type="Checkbox" name="Read or do homework" id="eqs6op2"> Read or do homework</p> \
-  <p><input type="Checkbox" name="Watch TV" id="eqs6op3"> Watch TV</p> \
-  <p><input type="Checkbox" name="Play video games" id="eqs6op4"> Play video games</p> \
-  <p><input type="Checkbox" name="None of the above" id="eqs6op5"> None of the above</p> \
+  <p><input class="largerCheckbox" type="Checkbox" name="Use your phone"> Use your phone</p> \
+  <p><input type="Checkbox" name="Read or do homework"> Read or do homework</p> \
+  <p><input type="Checkbox" name="Watch TV"> Watch TV</p> \
+  <p><input type="Checkbox" name="Play video games"> Play video games</p> \
+  <p><input type="Checkbox" name="None of the above"> None of the above</p> \
   </div>';
 
   var qs7 = ' \
@@ -110,47 +110,14 @@ if (person != null) {
   <h3>During what time of day do you have the most energy and motivation?</h3> \
   <form>\
     <div class="radio">\
-      <label><input type="radio" name="optradio" value="Early Morning" id="eqs7op1"> Early Morning</label>\
-      <label><input type="radio" name="optradio" value="Afternoon" id="eqs7op2"> Afternoon</label>\
-      <label><input type="radio" name="optradio" value="Evening" id="eqs7op3"> Evening</label>\
+      <label><input type="radio" name="optradio"> Early Morning</label>\
+      <label><input type="radio" name="optradio"> Afternoon</label>\
+      <label><input type="radio" name="optradio"> Evening</label>\
     </div>\
   </form>\
   </div>';
 
-
-  var qs8 = '\
-  <div class="questionButtonDiv">\
-  <button id="eqs_submit" class="btn btn-default" onclick="evg_ans_submit()">Submit Your Response</button>\
-  </div>\
-  ';
-
-function evg_ans_submit() {
-           var eqs_answers = {};
-           eqs_answers['eq1_Morning'] = user_rec.eq1_Morning;
-           eqs_answers['eq1_Afternoon'] = user_rec.eq1_Afternoon;
-           eqs_answers['eq1_Evening'] = user_rec.eq1_Evening;
-           console.log(eqs_answers);
-
-           alert(eqs_answers.eq1_Morning);
-
-        $.ajax({
-        url: 'post_evg_answers.php',
-        type: 'post',
-        data: {post_evg_answers:eqs_answers},
-        success: function(data) {
-                                  alert ('Posted Successfully')
-                                },
-        error: function(xhr, desc, err) {
-                                          console.log(xhr);
-                                          console.log("Details: " + desc + "\nError:" + err);
-                                        }
-              }); 
-
-      };
-
-
-
- var questionBank = [qs1, qs2, qs3, qs4, qs5, qs6, qs7, qs8];
+ var questionBank = [qs1, qs2, qs3, qs4, qs5, qs6, qs7];
 
 </script>
 
@@ -175,10 +142,14 @@ function evg_ans_submit() {
   <link href="css/jumbotron.css" rel="stylesheet">
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
       <link rel="stylesheet" type="text/css" href="css/styles2.css">
     </head>
 
@@ -212,14 +183,51 @@ function evg_ans_submit() {
 
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-<!--
       <div class="jumbotron">
         <div class="container">
           <h1>Coach Z</h1>
           <p>Welcome to your Evening Diary Questionnaire.</p>
         </div>
       </div>
+
+<!--
+      <div class="container">
+       
+        <div class="row">
+          <div class="col-md-4" style="text-align: center;">
+            <h1>Welcome to your Morning Diary question</h1>
+          </div>
+
+        </div>
+        <hr>
 -->
+
+        <!-- This the the small code to add a Time DatePicker --> 
+        <!-- I need admin rights to my system to install the required -->
+        <!-- packages to use this in full. --> 
+        <!-- Website Reference: https://eonasdan.github.io/bootstrap-datetimepicker/#minimum-setup -->
+<!-- 
+        <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker3'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+    </div>
+  </div> -->
 
   <!-- End of BootStrap DatePicker Code --> 
 <script type="text/javascript">
@@ -227,17 +235,68 @@ function evg_ans_submit() {
 var init = new Switchery(elem);
 </script>
 
+<div class="questionButtonDiv">
+<label id="q2" class="btn btn-default">Back</label>
+<label id="q1" class="btn btn-default">Next</label>
+</div>
+
+
+</div>
+
+
 <form  id="questions">
     <p id="questionDisplay"> </p>
 </form>
 
-<script src="includes/evening_questions_scripts.js"></script>
 
-<div class="questionButtonDiv">
-<label id="q2" class="btn btn-default">Back</label>
-<label id="q1" class="btn btn-default">Next</label>
+<form id="main_form">
+  Enter name: <input type="text" name="fname">
+  Enter last_name: <input type="text" name="lname">
+  <input type="submit" value="Submit">
+</form>
 
-</div>
+<script>
+var user_rec = {};
+user_rec['dummy'] = 'Dummydata';
+document.getElementById("main_form").onsubmit = function() {fuf()};
+function fuf() {
+    event.preventDefault();
+    var form_value_1 = document.getElementById("main_form");
+    user_rec['first_name'] = form_value_1[0].value;
+    user_rec['last_name'] = form_value_1[1].value;       
+    console.log(user_rec);
+}
+
+
+//    alert(form_value_1[0].value);
+//    alert(form_value_1[1].value);
+</script>
+
+
+  
+  <script> // pages through the questions
+
+   document.getElementById("questionDisplay").innerHTML = questionBank[0];
+   var ctr = 0; // start at first question
+
+   $(document).ready(function(){
+    $("#q1").click(function() {  // NEXT Button
+      if(ctr < 6) {
+           ctr++;
+           document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+           if (ctr >= 6) {ctr = 6;}
+         }
+      })
+
+    $("#q2").click(function() {
+      if( ctr >= 1){
+           ctr--;
+           document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+           if (ctr == 0) {ctr = 0;}
+         }
+      })
+  });
+</script>
 
 <hr>
 
