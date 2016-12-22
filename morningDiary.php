@@ -124,11 +124,11 @@ var qs5 = ' \
 <div class="form-group" id="question5"> \
   <h3>Did anything bother your sleep last night?</h3> \
   <h2>Check all that apply</h2> \
-  <p><input type="Checkbox" id="noiseId" name="Noise"> Noise</p> \
-  <p><input type="Checkbox" id="lightId" name="Light"> Light</p> \
-  <p><input type="Checkbox" id="worryId" name="Stress/Worry"> Stress/Worry</p> \
-  <p><input type="Checkbox" id="tempId" name="Room Temperature"> Room Temperature</p> \
-  <p><input type="Checkbox" id="noneId" name="None of the above"> None of the above</p> \
+  <p><input type="Checkbox" id="noiseId" onclick="checkQuestion5(0)" name="Noise"> Noise</p> \
+  <p><input type="Checkbox" id="lightId" onclick="checkQuestion5(0)" name="Light"> Light</p> \
+  <p><input type="Checkbox" id="worryId" onclick="checkQuestion5(0)" name="Stress/Worry"> Stress/Worry</p> \
+  <p><input type="Checkbox" id="tempId" onclick="checkQuestion5(0)" name="Room Temperature"> Room Temperature</p> \
+  <p><input type="Checkbox" id="noneId" onclick="checkQuestion5(1)" name="None of the above"> None of the above</p> \
 </div>';
 
 
@@ -264,7 +264,7 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
 </form>
 
 
-
+<button onclick="viewAll()">button</button>
 
   <script> // pages through the questions
 
@@ -291,6 +291,13 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
 </script>
 
 <hr>
+
+
+
+
+
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

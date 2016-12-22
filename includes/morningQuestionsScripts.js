@@ -62,11 +62,12 @@ function morningQuestion(
 
 
 
-			this.setAnythingBotherYourSleep = function setAnythingBotherYourSleep() {
-				var setAnythingBotherYourSleep = document.getElementById('inputAnythingBotherYourSleepId').value; // get data
-				this.anythingBotherYourSleep = setAnythingBotherYourSleep;
+			this.setAnythingBotherYourSleep = function setAnythingBotherYourSleep(valueString) {
+				
+				this.anythingBotherYourSleep = valueString;
 			}
 		}
+
 
 
 
@@ -104,22 +105,55 @@ function morningQuestion(
 				break;
 			}
 		}
-		function checkQuestion5() { // anything bother the sleeper last night
+		function checkQuestion5(choice) { // anything bother the sleeper last night
 
-			document.getElementById('noiseId').checked
-			document.getElementById('lightId').checked
-			document.getElementById('worryId').checked
-			document.getElementById('tempId').checked
-			document.getElementById('noneId').checked
+			if (choice == 1) {
+				document.getElementById("noiseId").checked = false;
+				document.getElementById("lightId").checked = false;
+				document.getElementById("worryId").checked = false;
+				document.getElementById("tempId").checked = false;
+			} else {
 
-  			var x = x ? 1 : 0; // Ternary (conditional ) operator
-  			var y = y ? 1 : 0; // variableName = (conditiona) ? value1:value2
-  			var z = z ? 1 : 0; // value1 if true, value2 if false
+				document.getElementById("noneId").checked = false;
+			var a = document.getElementById('noiseId').checked // true/false
+			var b = document.getElementById('lightId').checked // true/false
+			var c = document.getElementById('worryId').checked // true/false
+			var d = document.getElementById('tempId').checked  // true/false
+			var e = document.getElementById('noneId').checked  // true/false
+		}
 
-  			var result = "" + x + y + z ;
-  			return result ; 
+
+  			var a = a ? 1 : 0; // Ternary (conditional ) operator
+  			var b = b ? 1 : 0; // variableName = (conditiona) ? value1:value2
+  			var c = c ? 1 : 0; // value1 if true, value2 if false
+  			var d = d ? 1 : 0;
+  			var e = e ? 1 : 0;
+
+
+
+  			var result = "" + a + b + c + d + e;
+
+  			questions.setAnythingBotherYourSleep(result);
+
+
+
+  			
+
   		}
-  	}
+
+  		function viewAll(){
+  			window.alert(
+  				      questions.bedTime + 
+  				" " + questions.wakeTime + 
+  				" " + questions.problemsFallingAsleep +
+  				" " + questions.minutesToFallAsleep + 
+  				" " + questions.didWakeDuringTheNight +
+  				" " + questions.minutesToFallBackToSleep + 
+  				" " + questions.howDidYouFeel + 
+  				" " + questions.anythingBotherYourSleep
+  				);
+  		}
+
 
 
   var questions = new morningQuestion(); // create questions instance
