@@ -148,8 +148,6 @@ function evg_ans_submit() {
 
       };
 
-
-
  var questionBank = [qs1, qs2, qs3, qs4, qs5, qs6, qs7, qs8];
 
 </script>
