@@ -112,9 +112,10 @@ function morningQuestion(
 				document.getElementById("lightId").checked = false;
 				document.getElementById("worryId").checked = false;
 				document.getElementById("tempId").checked = false;
+				var e = document.getElementById('noneId').checked = true;
 			} else {
 
-				document.getElementById("noneId").checked = false;
+			document.getElementById("noneId").checked = false;
 			var a = document.getElementById('noiseId').checked // true/false
 			var b = document.getElementById('lightId').checked // true/false
 			var c = document.getElementById('worryId').checked // true/false
@@ -156,7 +157,7 @@ function morningQuestion(
 
 
 
-  var questions = new morningQuestion(); // create questions instance
+  var questions = new morningQuestion("0:00", "0:00", false, "0", "false", "0", "0", "00000"); // create questions instance
 
 
 
