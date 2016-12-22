@@ -9,15 +9,18 @@ include("./includes/header.php");
 <link rel="stylesheet" href="assets/switchery-master/switchery.css" />
 <script src="assets/switchery-master/switchery.js"></script>
 
-  <script src="js/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" type="text/css" href="styles2.css">
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
 
 <script type="text/javascript">
-var elem = document.querySelector('.js-switch');
-var init = new Switchery(elem);
+  var elem = document.querySelector('.js-switch');
+  var init = new Switchery(elem);
 </script>
 
+
+
+<script src="includes/morningQuestionsScripts.js"></script> <!-- Grab script file -->
 
 
 
@@ -25,80 +28,89 @@ var init = new Switchery(elem);
 // Variables that hold the html for each question
 
 
+
+
 function toFallAsleep() {
-var person = prompt("How many minutes did it take you to fall asleep?", "Minutes to fall asleep....");
-if (person != null) {
-  document.getElementsByID("minutesTryingToFallAsleep".innerHTML = person);
+  var person = prompt("How many minutes did it take you to fall asleep?", "Minutes to fall asleep....");
+  if (person != null) {
+    document.getElementsByID("minutesTryingToFallAsleep".innerHTML = person);
+  }
 }
-}
 
 
-    
-  var qs1 = '\
-  <div class="form-group" id="question1"> \
-  <h3>Bed Time:  </h3><input type="Number" name="BedTime"> \
-  <h3>Wake Time: </h3><input type="Number" name="WakeTime"> \
-  </div>'; 
 
-  var qs2 = ' \
-  <div class="form-group" id="question2"> \
+
+var qs1 = '\
+<div class="form-group" id="question1"> \
+  <h3>Bed Time:  </h3><input id="inputBedTimeId" onchange="checkQuestion1()" type="Number" name="BedTime"> \
+  <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="checkQuestion1()" type="Number" name="WakeTime"> \
+</div>'; 
+
+
+
+
+
+var qs2 = ' \
+<div class="form-group" id="question2"> \
   \
   \
   <h3>Did you have any problems falling asleep last night?</h3> \
   \
   \
-  <h4 styles="display: inline-block">No</h4>\
-  <label class="switch" >\
-  <input type="checkbox">\
-  <div class="slider round"></div>\
-  </label>\
-  <h4>Yes</h4> \
-  \
-  \
+  <h4 styles="display: inline-block">No</h4><label class="switch" >\
+    <input id="inputProblemsFallingAsleepId" onchange="checkQuestion2()" type="checkbox">\
+    <div class="slider round"></div>\
+    \
+  </label><h4>Yes</h4> \
   <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
-  <h3>How many minutes did it take you to fall asleep? </h3><input type="Number" name="WakeTime">\
-  </div>';
+  <h3>How many minutes did it take you to fall asleep? </h3> \
+  \
+  <input id="inputMinutesToFallAsleepId" onchange="checkQuestion2()" type="Number" name="WakeTime">\
+</div>';
 
-  var qs3 = ' \
-  <div class="form-group" id="question3"> \
+
+
+var qs3 = ' \
+<div class="form-group" id="question3"> \
   <h3>Last night did you wake up at all during the night?</h3> \
   <h4 styles="display: inline-block">No</h4>\
   <label class="switch" >\
-  <input type="checkbox">\
-  <div class="slider round"></div>\
+    <input id="inputDidWakeDuringTheNightId" onchange="checkQuestion3()" type="checkbox">\
+    <div class="slider round"></div>\
   </label>\
   <h4>Yes</h4> \
   \
   \
   <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
-    <h3>How many minutes did it take you to fall asleep? </h3><input type="Number" name="WakeTime">\
-  </div>';
+  <h3>How many minutes did it take you to fall asleep? </h3> \
+  <input id="inputMinutesToFallBackToSleepId" onchange="checkQuestion3()" type="Number" name="WakeTime">\
+</div>';
 
 
 
 
 
-
-  var qs4 = ' \
-  <div class="form-group" id="question4"> \
+var qs4 = ' \
+<div class="form-group" id="question4"> \
   <h3>When you woke up this morning, how did you feel?</h3> \
   <h3>Sleepy - Somewhat Sleepy - Alert</h3> \
   \
   <label class="switch" >\
-  <input type="checkbox">\
-  <div class="slider round"></div>\
+    <input id="sleepyId" onchange="checkQuestion4(1)" type="checkbox">\
+    <div class="slider round"></div>\
   </label>\
   \
   <label class="switch" >\
-  <input type="checkbox">\
-  <div class="slider round"></div>\
+    <input id="somewhatSleepyId" onchange="checkQuestion4(2)" type="checkbox">\
+    <div class="slider round"></div>\
   </label>\
   \
   <label class="switch" >\
-  <input type="checkbox">\
-  <div class="slider round"></div>\
+    <input id="alertId" onchange="checkQuestion4(3)" type="checkbox">\
+    <div class="slider round"></div>\
   </label>\
-  </div>';
+  \
+</div>';
 
 
 
@@ -107,46 +119,48 @@ if (person != null) {
 
 
 
-  var qs5 = ' \
-  <div class="form-group" id="question5"> \
+
+var qs5 = ' \
+<div class="form-group" id="question5"> \
   <h3>Did anything bother your sleep last night?</h3> \
   <h2>Check all that apply</h2> \
-  <p><input class="largerCheckbox" type="Checkbox" name="Noise"> Noise</p> \
-  <p><input type="Checkbox" name="Light"> Light</p> \
-  <p><input type="Checkbox" name="Stress/Worry"> Stress/Worry</p> \
-  <p><input type="Checkbox" name="Room Temperature"> Room Temperature</p> \
-  <p><input type="Checkbox" name="None of the above"> None of the above</p> \
-  </div>';
+  <p><input type="Checkbox" id="noiseId" onclick="checkQuestion5(0)" name="Noise"> Noise</p> \
+  <p><input type="Checkbox" id="lightId" onclick="checkQuestion5(0)" name="Light"> Light</p> \
+  <p><input type="Checkbox" id="worryId" onclick="checkQuestion5(0)" name="Stress/Worry"> Stress/Worry</p> \
+  <p><input type="Checkbox" id="tempId" onclick="checkQuestion5(0)" name="Room Temperature"> Room Temperature</p> \
+  <p><input type="Checkbox" id="noneId" onclick="checkQuestion5(1)" name="None of the above"> None of the above</p> \
+</div>';
 
- var questionBank = [qs1, qs2, qs3, qs4, qs5];
+
+var questionBank = [qs1, qs2, qs3, qs4, qs5];
 
 </script>
 
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="assets/favicon.ico">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="assets/favicon.ico">
 
-  <title>Sleep Diary</title>
+<title>Sleep Diary</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="css/jumbotron.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/jumbotron.css" rel="stylesheet">
 
-  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-  <script src="assets/js/ie-emulation-modes-warning.js"></script>
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="assets/js/ie-emulation-modes-warning.js"></script>
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -201,12 +215,12 @@ if (person != null) {
 
         </div>
         <hr>
--->
+      -->
 
-        <!-- This the the small code to add a Time DatePicker --> 
-        <!-- I need admin rights to my system to install the required -->
-        <!-- packages to use this in full. --> 
-        <!-- Website Reference: https://eonasdan.github.io/bootstrap-datetimepicker/#minimum-setup -->
+      <!-- This the the small code to add a Time DatePicker --> 
+      <!-- I need admin rights to my system to install the required -->
+      <!-- packages to use this in full. --> 
+      <!-- Website Reference: https://eonasdan.github.io/bootstrap-datetimepicker/#minimum-setup -->
 <!-- 
         <div class="container">
     <div class="row">
@@ -231,27 +245,27 @@ if (person != null) {
   </div> -->
 
   <!-- End of BootStrap DatePicker Code --> 
-<script type="text/javascript">
-  var elem = document.querySelector('.js-switch');
-var init = new Switchery(elem);
-</script>
+  <script type="text/javascript">
+    var elem = document.querySelector('.js-switch');
+    var init = new Switchery(elem);
+  </script>
 
-<div class="questionButtonDiv">
-<label id="q2" class="btn btn-default">Back</label>
-<label id="q1" class="btn btn-default">Next</label>
-</div>
+  <div class="questionButtonDiv">
+    <label id="q2" class="btn btn-default">Back</label>
+    <label id="q1" class="btn btn-default">Next</label>
+  </div>
 
 
 </div>
 
 
 <form  id="questions">
-    <p id="questionDisplay"> </p>
+  <p id="questionDisplay"> </p>
 </form>
 
 
+<button onclick="viewAll()">button</button>
 
-  
   <script> // pages through the questions
 
    document.getElementById("questionDisplay").innerHTML = questionBank[0];
@@ -260,23 +274,30 @@ var init = new Switchery(elem);
    $(document).ready(function(){
     $("#q1").click(function() {  // NEXT Button
       if(ctr < 4) {
-           ctr++;
-           document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
-           if (ctr >= 4) {ctr = 4;}
-         }
-      })
+       ctr++;
+       document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+       if (ctr >= 4) {ctr = 4;}
+     }
+   })
 
     $("#q2").click(function() {
       if( ctr >= 1){
-           ctr--;
-           document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
-           if (ctr == 0) {ctr = 0;}
-         }
-      })
+       ctr--;
+       document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+       if (ctr == 0) {ctr = 0;}
+     }
+   })
   });
 </script>
 
 <hr>
+
+
+
+
+
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -287,6 +308,6 @@ var init = new Switchery(elem);
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 
-<?php
-  require_once("./includes/footer.php");
-?>
+    <?php
+    require_once("./includes/footer.php");
+    ?>
