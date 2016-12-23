@@ -164,9 +164,10 @@ function morningQuestion(
 
 
 
-  function validateQ1() {
-
-
+  function loadFormWithValues() {
+  	
+  	document.getElementById('inputBedTimeId').innerHTML = questions.bedTime;
+  	
   }
 
 
