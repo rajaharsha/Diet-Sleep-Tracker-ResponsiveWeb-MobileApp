@@ -146,20 +146,20 @@ function morningQuestion(
 
   		function viewAll(){
   			window.alert(
-  				questions.bedTime + 
-  				" " + questions.wakeTime + 
-  				" " + questions.problemsFallingAsleep +
-  				" " + questions.minutesToFallAsleep + 
-  				" " + questions.didWakeDuringTheNight +
-  				" " + questions.minutesToFallBackToSleep + 
-  				" " + questions.howDidYouFeel + 
-  				" " + questions.anythingBotherYourSleep
+  				" " + questions.bedTime + "\n" +
+  				" " + questions.wakeTime + "\n" + 
+  				" " + questions.problemsFallingAsleep + "\n" + 
+  				" " + questions.minutesToFallAsleep + "\n" + 
+  				" " + questions.didWakeDuringTheNight + "\n" + 
+  				" " + questions.minutesToFallBackToSleep + "\n" + 
+  				" " + questions.howDidYouFeel + "\n" + 
+  				" " + questions.anythingBotherYourSleep + "\n"
   				);
   		}
 
 
 
-  var questions = new morningQuestion("0:00", "0:00", false, "", false, "", "", "00000"); // create questions instance
+  var questions = new morningQuestion("0:00", "0:00", false, "0", false, "0", "0", "00000"); // create questions instance
 
 
 
