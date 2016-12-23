@@ -72,40 +72,49 @@ function morningQuestion(
 
 
 
-		function checkQuestion1() { // Bed time and wake time
-			questions.setBedTime(document.getElementById('inputBedTimeId').value);
-			questions.setWakeTime(document.getElementById('inputWakeTimeId').value);
+		function setQuestion1() { // Bed time and wake time
+			var x = document.getElementById('inputBedTimeId').value
+			var y = document.getElementById('inputWakeTimeId').value
+			questions.setBedTime(x);
+			questions.setWakeTime(y);
 		}
 
-		function checkQuestion2() { // problems fall asleep, how many minutes
-			questions.setProblemsFallingAsleep(document.getElementById('inputProblemsFallingAsleepId').checked);
-			questions.setMinutesToFallAsleep(document.getElementById('inputMinutesToFallAsleepId').value);
-		}
-		function checkQuestion3() { // wake up at night, how many minutes to fall asleep
-			questions.setDidWakeDuringTheNight(document.getElementById('inputDidWakeDuringTheNightId').checked);
-			questions.setMinutesToFallBackToSleep(document.getElementById('inputMinutesToFallBackToSleepId').value);
+		function setQuestion2() { // problems fall asleep, how many minutes
+			var x = document.getElementById('inputProblemsFallingAsleepId').checked
+			var y = document.getElementById('inputMinutesToFallAsleepId').value
+			questions.setProblemsFallingAsleep(x);
+			questions.setMinutesToFallAsleep(y);
 		}
 
-		function checkQuestion4(choice) { // how did you feel
+		function setQuestion3() { // wake up at night, how many minutes to fall asleep
+			var x = document.getElementById('inputDidWakeDuringTheNightId').checked
+			var y = document.getElementById('inputMinutesToFallBackToSleepId').value
+			questions.setDidWakeDuringTheNight(x);
+			questions.setMinutesToFallBackToSleep(y);
+		}
+
+		function setQuestion4(choice) { // how did you feel
 			var x = choice;
-			questions.setHowDidYouFeel(choice);
-
+			
 			switch (x){
 				case 1:
 				document.getElementById('somewhatSleepyId').checked = false;
 				document.getElementById('alertId').checked = false;
+				questions.setHowDidYouFeel("Sleepy");
 				break;
 				case 2:
 				document.getElementById('sleepyId').checked = false;
 				document.getElementById('alert').checked = false;
+				questions.setHowDidYouFeel("Somewhat_Sleepy");
 				break;
 				case 3:
 				document.getElementById('somewhatSleepyId').checked = false;
 				document.getElementById('sleepyId').checked = false;
+				questions.setHowDidYouFeel("Alert");
 				break;
 			}
 		}
-		function checkQuestion5(choice) { // anything bother the sleeper last night
+		function setQuestion5(choice) { // anything bother the sleeper last night
 
 			if (choice == 1) {
 				document.getElementById("noiseId").checked = false;
@@ -122,23 +131,16 @@ function morningQuestion(
 			var d = document.getElementById('tempId').checked  // true/false
 			var e = document.getElementById('noneId').checked  // true/false
 		}
-
-
   			var a = a ? 1 : 0; // Ternary (conditional ) operator
   			var b = b ? 1 : 0; // variableName = (conditiona) ? value1:value2
   			var c = c ? 1 : 0; // value1 if true, value2 if false
   			var d = d ? 1 : 0;
   			var e = e ? 1 : 0;
 
-
-
   			var result = "" + a + b + c + d + e;
 
   			questions.setAnythingBotherYourSleep(result);
 
-
-
-  			
 
   		}
 
@@ -157,9 +159,15 @@ function morningQuestion(
 
 
 
-  var questions = new morningQuestion("0:00", "0:00", false, "0", "false", "0", "0", "00000"); // create questions instance
+  var questions = new morningQuestion("0:00", "0:00", false, "", false, "", "", "00000"); // create questions instance
 
 
+
+
+function validateQ1() {
+
+
+}
 
 
 

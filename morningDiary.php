@@ -38,34 +38,55 @@ function toFallAsleep() {
 }
 
 
+var qs11 = ' \
+    <div class="container"> \
+    <div class="row"> \
+    <div class="col-sm-6"> \
+    <div class="form-group"> \
+    <div class="input-group date" id="datetimepicker3"> \
+    \
+    <input type="text" onchange="setQuestion1()" class="form-control" /> \
+    <span class="input-group-addon"> \
+    <span class="glyphicon glyphicon-time"></span> \
+    </span>\
+    </div>\
+    </br>\
+     <div class="input-group date" id="datetimepicker3"> \
+    \
+    <input type="text" onchange="setQuestion1()" class="form-control" /> \
+    <span class="input-group-addon"> \
+    <span class="glyphicon glyphicon-time"></span> \
+    </span>\
+    </div>\
+    </div>\
+    </div>\
+    <script type="text/javascript">\
+    $(function () { \
+    $("#datetimepicker3").datetimepicker({ \
+    format: "LT" }); }); \
+     ';
+    
+
 
 
 var qs1 = '\
 <div class="form-group" id="question1"> \
-  <h3>Bed Time:  </h3><input id="inputBedTimeId" onchange="checkQuestion1()" type="Number" name="BedTime"> \
-  <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="checkQuestion1()" type="Number" name="WakeTime"> \
+  <h3>Bed Time:  </h3><input id="inputBedTimeId" onchange="setQuestion1()" type="Number" name="BedTime"> \
+  <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="setQuestion1()" type="Number" name="WakeTime"> \
 </div>'; 
-
-
-
-
 
 var qs2 = ' \
 <div class="form-group" id="question2"> \
-  \
-  \
   <h3>Did you have any problems falling asleep last night?</h3> \
-  \
-  \
   <h4 styles="display: inline-block">No</h4><label class="switch" >\
-    <input id="inputProblemsFallingAsleepId" onchange="checkQuestion2()" type="checkbox">\
+    <input id="inputProblemsFallingAsleepId" onchange="setQuestion2()" type="checkbox">\
     <div class="slider round"></div>\
     \
   </label><h4>Yes</h4> \
   <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
   <h3>How many minutes did it take you to fall asleep? </h3> \
   \
-  <input id="inputMinutesToFallAsleepId" onchange="checkQuestion2()" type="Number" name="WakeTime">\
+  <input id="inputMinutesToFallAsleepId" onchange="setQuestion2()" type="Number" name="WakeTime">\
 </div>';
 
 
@@ -75,7 +96,7 @@ var qs3 = ' \
   <h3>Last night did you wake up at all during the night?</h3> \
   <h4 styles="display: inline-block">No</h4>\
   <label class="switch" >\
-    <input id="inputDidWakeDuringTheNightId" onchange="checkQuestion3()" type="checkbox">\
+    <input id="inputDidWakeDuringTheNightId" onchange="setQuestion3()" type="checkbox">\
     <div class="slider round"></div>\
   </label>\
   <h4>Yes</h4> \
@@ -83,7 +104,7 @@ var qs3 = ' \
   \
   <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
   <h3>How many minutes did it take you to fall asleep? </h3> \
-  <input id="inputMinutesToFallBackToSleepId" onchange="checkQuestion3()" type="Number" name="WakeTime">\
+  <input id="inputMinutesToFallBackToSleepId" onchange="setQuestion3()" type="Number" name="WakeTime">\
 </div>';
 
 
@@ -96,17 +117,17 @@ var qs4 = ' \
   <h3>Sleepy - Somewhat Sleepy - Alert</h3> \
   \
   <label class="switch" >\
-    <input id="sleepyId" onchange="checkQuestion4(1)" type="checkbox">\
+    <input id="sleepyId" onchange="setQuestion4(1)" type="checkbox">\
     <div class="slider round"></div>\
   </label>\
   \
   <label class="switch" >\
-    <input id="somewhatSleepyId" onchange="checkQuestion4(2)" type="checkbox">\
+    <input id="somewhatSleepyId" onchange="setQuestion4(2)" type="checkbox">\
     <div class="slider round"></div>\
   </label>\
   \
   <label class="switch" >\
-    <input id="alertId" onchange="checkQuestion4(3)" type="checkbox">\
+    <input id="alertId" onchange="setQuestion4(3)" type="checkbox">\
     <div class="slider round"></div>\
   </label>\
   \
@@ -124,11 +145,11 @@ var qs5 = ' \
 <div class="form-group" id="question5"> \
   <h3>Did anything bother your sleep last night?</h3> \
   <h2>Check all that apply</h2> \
-  <p><input type="Checkbox" id="noiseId" onclick="checkQuestion5(0)" name="Noise"> Noise</p> \
-  <p><input type="Checkbox" id="lightId" onclick="checkQuestion5(0)" name="Light"> Light</p> \
-  <p><input type="Checkbox" id="worryId" onclick="checkQuestion5(0)" name="Stress/Worry"> Stress/Worry</p> \
-  <p><input type="Checkbox" id="tempId" onclick="checkQuestion5(0)" name="Room Temperature"> Room Temperature</p> \
-  <p><input type="Checkbox" id="noneId" onclick="checkQuestion5(1)" name="None of the above"> None of the above</p> \
+  <p><input type="Checkbox" id="noiseId" onclick="setQuestion5(0)" name="Noise"> Noise</p> \
+  <p><input type="Checkbox" id="lightId" onclick="setQuestion5(0)" name="Light"> Light</p> \
+  <p><input type="Checkbox" id="worryId" onclick="setQuestion5(0)" name="Stress/Worry"> Stress/Worry</p> \
+  <p><input type="Checkbox" id="tempId" onclick="setQuestion5(0)" name="Room Temperature"> Room Temperature</p> \
+  <p><input type="Checkbox" id="noneId" onclick="setQuestion5(1)" name="None of the above"> None of the above</p> \
 </div>';
 
 
@@ -205,44 +226,8 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
         </div>
       </div>
 
-<!--
-      <div class="container">
-       
-        <div class="row">
-          <div class="col-md-4" style="text-align: center;">
-            <h1>Welcome to your Morning Diary question</h1>
-          </div>
 
-        </div>
-        <hr>
-      -->
 
-      <!-- This the the small code to add a Time DatePicker --> 
-      <!-- I need admin rights to my system to install the required -->
-      <!-- packages to use this in full. --> 
-      <!-- Website Reference: https://eonasdan.github.io/bootstrap-datetimepicker/#minimum-setup -->
-<!-- 
-        <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker3'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker3').datetimepicker({
-                    format: 'LT'
-                });
-            });
-        </script>
-    </div>
-  </div> -->
 
   <!-- End of BootStrap DatePicker Code --> 
   <script type="text/javascript">
