@@ -39,149 +39,149 @@ function toFallAsleep() {
 
 
 var qs11 = ' \
-    <div class="container"> \
-    <div class="row"> \
+<div class="container"> \
+  <div class="row"> \
     <div class="col-sm-6"> \
-    <div class="form-group"> \
-    <div class="input-group date" id="datetimepicker3"> \
-    \
-    <input type="text" onchange="setQuestion1()" class="form-control" /> \
-    <span class="input-group-addon"> \
-    <span class="glyphicon glyphicon-time"></span> \
-    </span>\
+      <div class="form-group"> \
+        <div class="input-group date" id="datetimepicker3"> \
+          \
+          <input type="text" onchange="setQuestion1()" class="form-control" /> \
+          <span class="input-group-addon"> \
+            <span class="glyphicon glyphicon-time"></span> \
+          </span>\
+        </div>\
+      </br>\
+      <div class="input-group date" id="datetimepicker3"> \
+        \
+        <input type="text" onchange="setQuestion1()" class="form-control" /> \
+        <span class="input-group-addon"> \
+          <span class="glyphicon glyphicon-time"></span> \
+        </span>\
+      </div>\
     </div>\
-    </br>\
-     <div class="input-group date" id="datetimepicker3"> \
-    \
-    <input type="text" onchange="setQuestion1()" class="form-control" /> \
-    <span class="input-group-addon"> \
-    <span class="glyphicon glyphicon-time"></span> \
-    </span>\
-    </div>\
-    </div>\
-    </div>\
-    <script type="text/javascript">\
+  </div>\
+  <script type="text/javascript">\
     $(function () { \
-    $("#datetimepicker3").datetimepicker({ \
-    format: "LT" }); }); \
-     ';
-    
+      $("#datetimepicker3").datetimepicker({ \
+        format: "LT" }); }); \
+        ';
+        
 
 
 
-var qs1 = '\
-<div class="form-group" id="question1"> \
-  <h3>Bed Time:  </h3><input id="inputBedTimeId" onchange="setQuestion1()" type="Number" name="BedTime"> \
-  <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="setQuestion1()" type="Number" name="WakeTime"> \
-</div>'; 
+        var qs1 = '\
+        <div class="form-group" id="question1"> \
+          <h3>Bed Time:  </h3><input id="inputBedTimeId" onchange="setQuestion1()" type="Number" name="BedTime"> \
+          <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="setQuestion1()" type="Number" name="WakeTime"> \
+        </div>'; 
 
-var qs2 = ' \
-<div class="form-group" id="question2"> \
-  <h3>Did you have any problems falling asleep last night?</h3> \
-  <h4 styles="display: inline-block">No</h4><label class="switch" >\
-    <input id="inputProblemsFallingAsleepId" onchange="setQuestion2()" type="checkbox">\
-    <div class="slider round"></div>\
-    \
-  </label><h4>Yes</h4> \
-  <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
-  <h3>How many minutes did it take you to fall asleep? </h3> \
-  \
-  <input id="inputMinutesToFallAsleepId" onchange="setQuestion2()" type="Number" name="WakeTime">\
-</div>';
-
-
-
-var qs3 = ' \
-<div class="form-group" id="question3"> \
-  <h3>Last night did you wake up at all during the night?</h3> \
-  <h4 styles="display: inline-block">No</h4>\
-  <label class="switch" >\
-    <input id="inputDidWakeDuringTheNightId" onchange="setQuestion3()" type="checkbox">\
-    <div class="slider round"></div>\
-  </label>\
-  <h4>Yes</h4> \
-  \
-  \
-  <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
-  <h3>How many minutes did it take you to fall asleep? </h3> \
-  <input id="inputMinutesToFallBackToSleepId" onchange="setQuestion3()" type="Number" name="WakeTime">\
-</div>';
+        var qs2 = ' \
+        <div class="form-group" id="question2"> \
+          <h3>Did you have any problems falling asleep last night?</h3> \
+          <h4 styles="display: inline-block">No</h4><label class="switch" >\
+          <input id="inputProblemsFallingAsleepId" onchange="setQuestion2()" type="checkbox">\
+          <div class="slider round"></div>\
+          \
+        </label><h4>Yes</h4> \
+        <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
+        <h3>How many minutes did it take you to fall asleep? </h3> \
+        \
+        <input id="inputMinutesToFallAsleepId" onchange="setQuestion2()" type="Number" name="WakeTime">\
+      </div>';
 
 
 
-
-
-var qs4 = ' \
-<div class="form-group" id="question4"> \
-  <h3>When you woke up this morning, how did you feel?</h3> \
-  <h3>Sleepy - Somewhat Sleepy - Alert</h3> \
-  \
-  <label class="switch" >\
-    <input id="sleepyId" onchange="setQuestion4(1)" type="checkbox">\
-    <div class="slider round"></div>\
-  </label>\
-  \
-  <label class="switch" >\
-    <input id="somewhatSleepyId" onchange="setQuestion4(2)" type="checkbox">\
-    <div class="slider round"></div>\
-  </label>\
-  \
-  <label class="switch" >\
-    <input id="alertId" onchange="setQuestion4(3)" type="checkbox">\
-    <div class="slider round"></div>\
-  </label>\
-  \
-</div>';
+      var qs3 = ' \
+      <div class="form-group" id="question3"> \
+        <h3>Last night did you wake up at all during the night?</h3> \
+        <h4 styles="display: inline-block">No</h4>\
+        <label class="switch" >\
+          <input id="inputDidWakeDuringTheNightId" onchange="setQuestion3()" type="checkbox">\
+          <div class="slider round"></div>\
+        </label>\
+        <h4>Yes</h4> \
+        \
+        \
+        <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
+        <h3>How many minutes did it take you to fall asleep? </h3> \
+        <input id="inputMinutesToFallBackToSleepId" onchange="setQuestion3()" type="Number" name="WakeTime">\
+      </div>';
 
 
 
 
 
+      var qs4 = ' \
+      <div class="form-group" id="question4"> \
+        <h3>When you woke up this morning, how did you feel?</h3> \
+        <h3>Sleepy - Somewhat Sleepy - Alert</h3> \
+        \
+        <label class="switch" >\
+          <input id="sleepyId" onchange="setQuestion4(1)" type="checkbox">\
+          <div class="slider round"></div>\
+        </label>\
+        \
+        <label class="switch" >\
+          <input id="somewhatSleepyId" onchange="setQuestion4(2)" type="checkbox">\
+          <div class="slider round"></div>\
+        </label>\
+        \
+        <label class="switch" >\
+          <input id="alertId" onchange="setQuestion4(3)" type="checkbox">\
+          <div class="slider round"></div>\
+        </label>\
+        \
+      </div>';
 
 
 
 
-var qs5 = ' \
-<div class="form-group" id="question5"> \
-  <h3>Did anything bother your sleep last night?</h3> \
-  <h2>Check all that apply</h2> \
-  <p><input type="Checkbox" id="noiseId" onclick="setQuestion5(0)" name="Noise"> Noise</p> \
-  <p><input type="Checkbox" id="lightId" onclick="setQuestion5(0)" name="Light"> Light</p> \
-  <p><input type="Checkbox" id="worryId" onclick="setQuestion5(0)" name="Stress/Worry"> Stress/Worry</p> \
-  <p><input type="Checkbox" id="tempId" onclick="setQuestion5(0)" name="Room Temperature"> Room Temperature</p> \
-  <p><input type="Checkbox" id="noneId" onclick="setQuestion5(1)" name="None of the above"> None of the above</p> \
-</div>';
 
 
-var questionBank = [qs1, qs2, qs3, qs4, qs5];
-
-</script>
 
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="assets/favicon.ico">
 
-<title>Sleep Diary</title>
+      var qs5 = ' \
+      <div class="form-group" id="question5"> \
+        <h3>Did anything bother your sleep last night?</h3> \
+        <h2>Check all that apply</h2> \
+        <p><input type="Checkbox" id="noiseId" onclick="setQuestion5(0)" name="Noise"> Noise</p> \
+        <p><input type="Checkbox" id="lightId" onclick="setQuestion5(0)" name="Light"> Light</p> \
+        <p><input type="Checkbox" id="worryId" onclick="setQuestion5(0)" name="Stress/Worry"> Stress/Worry</p> \
+        <p><input type="Checkbox" id="tempId" onclick="setQuestion5(0)" name="Room Temperature"> Room Temperature</p> \
+        <p><input type="Checkbox" id="noneId" onclick="setQuestion5(1)" name="None of the above"> None of the above</p> \
+      </div>';
 
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
 
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+      var questionBank = [qs1, qs2, qs3, qs4, qs5];
 
-<!-- Custom styles for this template -->
-<link href="css/jumbotron.css" rel="stylesheet">
+    </script>
 
-<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-<script src="assets/js/ie-emulation-modes-warning.js"></script>
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/favicon.ico">
+
+    <title>Sleep Diary</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -229,27 +229,27 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
 
 
 
-  <!-- End of BootStrap DatePicker Code --> 
-  <script type="text/javascript">
-    var elem = document.querySelector('.js-switch');
-    var init = new Switchery(elem);
-  </script>
+      <!-- End of BootStrap DatePicker Code --> 
+      <script type="text/javascript">
+        var elem = document.querySelector('.js-switch');
+        var init = new Switchery(elem);
+      </script>
 
-  <div class="questionButtonDiv">
-    <label id="q2" class="btn btn-default">Back</label>
-    <label id="q1" class="btn btn-default">Next</label>
-  </div>
-
-
-</div>
+      <div class="questionButtonDiv">
+        <label id="q2" class="btn btn-default">Back</label>
+        <label id="q1" class="btn btn-default">Next</label>
+      </div>
 
 
-<form  id="questions">
-  <p id="questionDisplay"> </p>
-</form>
+    </div>
 
 
-<button onclick="viewAll()">button</button>
+    <form  id="questions">
+      <p id="questionDisplay"> </p>
+    </form>
+
+
+    <button onclick="viewAll()">button</button>
 
   <script> // pages through the questions
 

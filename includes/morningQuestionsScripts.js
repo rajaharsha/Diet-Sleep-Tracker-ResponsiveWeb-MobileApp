@@ -98,18 +98,18 @@ function morningQuestion(
 			
 			switch (x){
 				case 1:
-				document.getElementById('somewhatSleepyId').checked = false;
-				document.getElementById('alertId').checked = false;
+				document.getElementById('somewhatSleepyId').checked 	= false;
+				document.getElementById('alertId').checked 				= false;
 				questions.setHowDidYouFeel("Sleepy");
 				break;
 				case 2:
-				document.getElementById('sleepyId').checked = false;
-				document.getElementById('alert').checked = false;
+				document.getElementById('sleepyId').checked 			= false;
+				document.getElementById('alertId').checked 				= false;
 				questions.setHowDidYouFeel("Somewhat_Sleepy");
 				break;
 				case 3:
-				document.getElementById('somewhatSleepyId').checked = false;
-				document.getElementById('sleepyId').checked = false;
+				document.getElementById('somewhatSleepyId').checked 	= false;
+				document.getElementById('sleepyId').checked 			= false;
 				questions.setHowDidYouFeel("Alert");
 				break;
 			}
@@ -124,7 +124,7 @@ function morningQuestion(
 				var e = document.getElementById('noneId').checked = true;
 			} else {
 
-			document.getElementById("noneId").checked = false;
+				document.getElementById("noneId").checked = false;
 			var a = document.getElementById('noiseId').checked // true/false
 			var b = document.getElementById('lightId').checked // true/false
 			var c = document.getElementById('worryId').checked // true/false
@@ -146,7 +146,7 @@ function morningQuestion(
 
   		function viewAll(){
   			window.alert(
-  				      questions.bedTime + 
+  				questions.bedTime + 
   				" " + questions.wakeTime + 
   				" " + questions.problemsFallingAsleep +
   				" " + questions.minutesToFallAsleep + 
@@ -164,10 +164,10 @@ function morningQuestion(
 
 
 
-function validateQ1() {
+  function validateQ1() {
 
 
-}
+  }
 
 
 
