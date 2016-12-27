@@ -10,8 +10,8 @@ include("./includes/header.php");
 <!-- ************************************************************************************ -->
 <!-- Needed at the top for the page features to load -->
 <!-- for the Apple-like SWITCHES -->
-<link rel="stylesheet" href="assets/switchery-master/switchery.css" />
-
+<script src="assets/switchery-master/dist/switchery.js" /></script>
+<script src="assets/switchery-master/dist/switchery.css" /></script>
 
 <script src="js/jquery.min.js"></script> 
 <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Needed at the top -->
@@ -45,12 +45,10 @@ function toFallAsleep() {
 }
 
 
-
-
 var qs1 = '\
 <div class="form-group" id="question1"> \
-  <h3>Bed Time:  </h3><input id="inputBedTimeId" onchange="setQuestion1()" type="Number" name="BedTime"> \
-  <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="setQuestion1()" type="Number" name="WakeTime"> \
+  <h3>Bed Time:  </h3><input id="inputBedTimeId" onchange="setQuestion1()" type="text/charset" name="BedTime"> \
+  <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="setQuestion1()" type="text/charset" name="WakeTime"> \
 </div>'; 
 
 var qs2 = ' \
@@ -64,7 +62,7 @@ var qs2 = ' \
 <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
 <h3>How many minutes did it take you to fall asleep? </h3> \
 \
-<input id="inputMinutesToFallAsleepId" onchange="setQuestion2()" type="Number" name="WakeTime">\
+<input id="inputMinutesToFallAsleepId" onchange="setQuestion2()" type="text/charset" name="WakeTime">\
 </div>';
 
 
@@ -239,6 +237,7 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
       if(ctr < 4) {
        ctr++;
        document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+       updateValues(); // updates the form with the appropriate data
        if (ctr >= 4) {ctr = 4;}
      }
    })
@@ -247,6 +246,7 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
       if( ctr >= 1){
        ctr--;
        document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+       updateValues(); // updates the form with the appropriate data
        if (ctr == 0) {ctr = 0;}
      }
    })
@@ -271,7 +271,8 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/switchery-master/switchery.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="wickedpicker/dist/wickedpicker.min.js"></script>
+    
+
     <script src="js/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="dist/js/bootstrap.min.js"></script>
