@@ -216,10 +216,16 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
 
 
       <!-- Navigation buttons for the Morning Questions --> 
-      <div class="questionButtonDiv">
-        <label id="backButton" class="btn btn-default">Back</label>
-        <label id="nextButton" class="btn btn-default">Next</label>
-      </div>
+      
+      <form>
+        <div class="questionButtonDiv">
+          <label id="backButton" class="btn btn-default">Back</label>
+          <label id="nextButton" class="btn btn-default">Next</label>
+          <label id="submitButton" class="btn btn-default">Submit</label>
+        </div>
+      </form>
+      
+
 
 
 
