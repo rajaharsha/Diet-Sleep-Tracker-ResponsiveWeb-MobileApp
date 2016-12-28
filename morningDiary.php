@@ -216,15 +216,17 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
 
 
       <!-- Navigation buttons for the Morning Questions --> 
-      
-      <form>
-        <div class="questionButtonDiv">
-          <label id="backButton" class="btn btn-default">Back</label>
-          <label id="nextButton" class="btn btn-default">Next</label>
-          <label id="submitButton" class="btn btn-default">Submit</label>
-        </div>
-      </form>
-      
+<form method="post" action="index.php">
+<div class="form-group">
+<nav aria-label="...">
+  <ul class="pager">
+    <li class="previous"><a id="backButton"><span aria-hidden="true"></span> Previous</a></li>
+    <li class="next"><a id="nextButton">Next <span aria-hidden="true"></span></a></li>
+    <li class="next"><button class="btn btn-primary" type="submit" id="submitButton">Submit <span aria-hidden="true"></span></button></li>
+  </ul>
+</nav>
+</div>
+</form>
 
 
 
@@ -246,6 +248,7 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
    document.getElementById("questionDisplay").innerHTML = questionBank[0];
    var ctr = 0; // start at first question
    document.getElementById("backButton").style.display = "none";
+   document.getElementById("submitButton").style.display = "none";
 
    $(document).ready(function(){
 
@@ -254,13 +257,17 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
        ctr++;
        document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
        updateValues(); // updates the form with the appropriate data
-       if (ctr >= 4) {ctr = 4;}
+       if (ctr >= 4) {
+        ctr = 4;
+        document.getElementById("submitButton").style.display = "inline";
+      }
        // ************************************************************************
        if (ctr == 4) { 
         document.getElementById("nextButton").style.display = "none"; 
       } else { 
         document.getElementById("nextButton").style.display = "inline";
-        document.getElementById("backButton").style.display = "inline"; 
+        document.getElementById("backButton").style.display = "inline";
+        document.getElementById("submitButton").style.display = "none";
       }
       // ************************************************************************** 
     }
@@ -273,10 +280,12 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
 
        if (ctr == 0) { 
         document.getElementById("backButton").style.display = "none";
-        document.getElementById("nextButton").style.display = "inline"; 
+        document.getElementById("nextButton").style.display = "inline";
+        document.getElementById("submitButton").style.display = "none";
       } else { 
         document.getElementById("nextButton").style.display = "inline";
         document.getElementById("backButton").style.display = "inline";
+        document.getElementById("submitButton").style.display = "none";
       }
 
 

@@ -212,7 +212,7 @@ function morningQuestion(
 
 
 // create object for morning questions
- var questions = new morningQuestion("0:00", "0:00", false, "0", false, "0", "0", "00000"); // create questions instance
+ var questions = new morningQuestion("", "", false, "", false, "", "0", "00001"); // create questions instance
 
 
 
