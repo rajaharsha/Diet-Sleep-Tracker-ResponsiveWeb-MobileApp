@@ -211,6 +211,16 @@ function morningQuestion(
   }
 
 
+function validateForm() {
+    
+	window.alert("Validate Form") ;
+
+
+    }
+
+
+
+
 // create object for morning questions
  var questions = new morningQuestion("", "", false, "", false, "", "0", "00001"); // create questions instance
 

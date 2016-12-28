@@ -47,9 +47,17 @@ function toFallAsleep() {
 
 var qs1 = '\
 <div class="form-group" id="question1"> \
-  <h3>Bed Time:  </h3><input id="inputBedTimeId" onchange="setQuestion1()" type="text/charset" name="BedTime"> \
+  <h3>Bed Time:  </h3><input id="inputBedTimeId" onkeydown="validateForm()" onchange="setQuestion1()" type="text/charset" name="BedTime"> \
   <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="setQuestion1()" type="text/charset" name="WakeTime"> \
 </div>'; 
+
+
+
+
+
+
+
+
 
 var qs2 = ' \
 <div class="form-group" id="question2"> \
@@ -229,12 +237,13 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
 </form>
 
 
+<!-- Form **************************** Where the questions pop-up at ********* --> 
 
-
-      <form  id="questions">
+      <form  name="questionsDisplayForm" id="questions">
         <p id="questionDisplay"> </p>  <!-- Displays the questions here -->
       </form>
 
+<!-- ************************************************************************* -->
 
 
 
