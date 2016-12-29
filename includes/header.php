@@ -31,6 +31,32 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
         <link rel="stylesheet" type="text/css" href="css/styles2.css">
+
+
+<!-- ************************************************************************************** -->
+<!-- SWITCHERY Switches -->
+<script src="assets/switchery-master/dist/switchery.js" /></script>
+<script src="assets/switchery-master/dist/switchery.css" /></script>
+<script src="js/jquery.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="styles.css"> <!-- Needed at the top -->
+<!-- ************************************************************************************** --> 
+
+<script type="text/javascript">
+  var elem = document.querySelector('.js-switch');
+  var init = new Switchery(elem);</script>
+<script src="includes/morningQuestionsScripts.js"></script> <!-- Grab script file -->
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <link rel="stylesheet" type="text/css" href="css/styles2.css">
+
+
+
+
+
   </head>
 
   <body>

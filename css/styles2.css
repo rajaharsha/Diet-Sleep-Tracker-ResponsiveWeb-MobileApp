@@ -16,10 +16,7 @@ box-shadow: 0px 0px 15px 5px white;
 
 }
 
-a {
 
-	color: white;
-}
 
 
 .jumbotron {
@@ -122,7 +119,7 @@ input:checked + .slider:before {
 }
 
 
-.questionButtonDiv {
+.form-group {
 	padding: 15px;
 	text-align: center;
 

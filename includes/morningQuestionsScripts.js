@@ -57,11 +57,6 @@ function morningQuestion(
 				this.howDidYouFeel = choice;
 			}
 
-
-
-
-
-
 			this.setAnythingBotherYourSleep = function setAnythingBotherYourSleep(valueString) {
 				
 				this.anythingBotherYourSleep = valueString;
@@ -69,43 +64,52 @@ function morningQuestion(
 		}
 
 
-
-
-
-		function checkQuestion1() { // Bed time and wake time
-			questions.setBedTime(document.getElementById('inputBedTimeId').value);
-			questions.setWakeTime(document.getElementById('inputWakeTimeId').value);
+		function setQuestion1() { // Bed time and wake time
+			var x = document.getElementById('inputBedTimeId').value
+			var y = document.getElementById('inputWakeTimeId').value
+			questions.setBedTime(x);
+			questions.setWakeTime(y);
 		}
 
-		function checkQuestion2() { // problems fall asleep, how many minutes
-			questions.setProblemsFallingAsleep(document.getElementById('inputProblemsFallingAsleepId').checked);
-			questions.setMinutesToFallAsleep(document.getElementById('inputMinutesToFallAsleepId').value);
-		}
-		function checkQuestion3() { // wake up at night, how many minutes to fall asleep
-			questions.setDidWakeDuringTheNight(document.getElementById('inputDidWakeDuringTheNightId').checked);
-			questions.setMinutesToFallBackToSleep(document.getElementById('inputMinutesToFallBackToSleepId').value);
+		function setQuestion2() { // problems fall asleep, how many minutes
+			var x = document.getElementById('inputProblemsFallingAsleepId').checked
+			var y = document.getElementById('inputMinutesToFallAsleepId').value
+			questions.setProblemsFallingAsleep(x);
+			questions.setMinutesToFallAsleep(y);
 		}
 
-		function checkQuestion4(choice) { // how did you feel
+		function setQuestion3() { // wake up at night, how many minutes to fall asleep
+			var x = document.getElementById('inputDidWakeDuringTheNightId').checked
+			var y = document.getElementById('inputMinutesToFallBackToSleepId').value
+			questions.setDidWakeDuringTheNight(x);
+			questions.setMinutesToFallBackToSleep(y);
+		}
+
+		function setQuestion4(choice) { // how did you feel
 			var x = choice;
-			questions.setHowDidYouFeel(choice);
-
+			
 			switch (x){
 				case 1:
-				document.getElementById('somewhatSleepyId').checked = false;
-				document.getElementById('alertId').checked = false;
+				// Sleepy Selected
+				document.getElementById('somewhatSleepyId').checked 	= false;
+				document.getElementById('alertId').checked 				= false;
+				questions.setHowDidYouFeel("1");
 				break;
 				case 2:
-				document.getElementById('sleepyId').checked = false;
-				document.getElementById('alert').checked = false;
+				// Somewhat_Sleepy Selected
+				document.getElementById('sleepyId').checked 			= false;
+				document.getElementById('alertId').checked 				= false;
+				questions.setHowDidYouFeel("2");
 				break;
 				case 3:
-				document.getElementById('somewhatSleepyId').checked = false;
-				document.getElementById('sleepyId').checked = false;
+				// Alert Selected
+				document.getElementById('somewhatSleepyId').checked 	= false;
+				document.getElementById('sleepyId').checked 			= false;
+				questions.setHowDidYouFeel("3");
 				break;
 			}
 		}
-		function checkQuestion5(choice) { // anything bother the sleeper last night
+		function setQuestion5(choice) { // anything bother the sleeper last night
 
 			if (choice == 1) {
 				document.getElementById("noiseId").checked = false;
@@ -115,49 +119,117 @@ function morningQuestion(
 				var e = document.getElementById('noneId').checked = true;
 			} else {
 
-			document.getElementById("noneId").checked = false;
+				document.getElementById("noneId").checked = false;
 			var a = document.getElementById('noiseId').checked // true/false
 			var b = document.getElementById('lightId').checked // true/false
 			var c = document.getElementById('worryId').checked // true/false
 			var d = document.getElementById('tempId').checked  // true/false
 			var e = document.getElementById('noneId').checked  // true/false
 		}
-
-
   			var a = a ? 1 : 0; // Ternary (conditional ) operator
   			var b = b ? 1 : 0; // variableName = (conditiona) ? value1:value2
   			var c = c ? 1 : 0; // value1 if true, value2 if false
   			var d = d ? 1 : 0;
   			var e = e ? 1 : 0;
-
-
-
   			var result = "" + a + b + c + d + e;
-
   			questions.setAnythingBotherYourSleep(result);
-
-
-
-  			
-
   		}
 
   		function viewAll(){
   			window.alert(
-  				      questions.bedTime + 
-  				" " + questions.wakeTime + 
-  				" " + questions.problemsFallingAsleep +
-  				" " + questions.minutesToFallAsleep + 
-  				" " + questions.didWakeDuringTheNight +
-  				" " + questions.minutesToFallBackToSleep + 
-  				" " + questions.howDidYouFeel + 
-  				" " + questions.anythingBotherYourSleep
+  				" " + questions.bedTime + "\n" +
+  				" " + questions.wakeTime + "\n" + 
+  				" " + questions.problemsFallingAsleep + "\n" + 
+  				" " + questions.minutesToFallAsleep + "\n" + 
+  				" " + questions.didWakeDuringTheNight + "\n" + 
+  				" " + questions.minutesToFallBackToSleep + "\n" + 
+  				" " + questions.howDidYouFeel + "\n" + 
+  				" " + questions.anythingBotherYourSleep + "\n"
   				);
   		}
 
 
 
-  var questions = new morningQuestion("0:00", "0:00", false, "0", "false", "0", "0", "00000"); // create questions instance
+  function updateValues(){
+  	   
+  	   if (ctr == 0) {  // question 1
+        document.getElementById("inputBedTimeId").value = questions.bedTime;
+  		document.getElementById("inputWakeTimeId").value = questions.wakeTime;
+       }
+       if (ctr == 1) {  // question 2
+        document.getElementById("inputProblemsFallingAsleepId").checked = questions.problemsFallingAsleep;
+  		document.getElementById("inputMinutesToFallAsleepId").value = questions.minutesToFallAsleep;
+       }
+       if (ctr == 2) {  // question 3
+        document.getElementById("inputDidWakeDuringTheNightId").checked = questions.didWakeDuringTheNight;
+  		document.getElementById("inputMinutesToFallBackToSleepId").value = questions.minutesToFallBackToSleep;
+       }
+       if (ctr == 3) {  // question 4
+       
+
+        if (questions.howDidYouFeel == "1"){
+        	document.getElementById("sleepyId").checked				= true;
+        	document.getElementById("somewhatSleepyId").checked 	= false;
+			document.getElementById("alertId").checked 				= false;
+        }
+
+        if (questions.howDidYouFeel == "2"){
+        	document.getElementById("sleepyId").checked				= false;
+        	document.getElementById("somewhatSleepyId").checked 	= true;
+			document.getElementById("alertId").checked 				= false;
+        }
+
+        if (questions.howDidYouFeel == "3"){
+        	document.getElementById("sleepyId").checked				= false;
+        	document.getElementById("somewhatSleepyId").checked 	= false;
+			document.getElementById("alertId").checked 				= true;
+        }
+
+
+       }
+
+       if (ctr == 4) {  // question 5
+        var parseThis = questions.anythingBotherYourSleep;
+        //window.alert(parseThis);
+        // five options to fill out with the parsed value
+        // need an php function to parse parseThis into a readable array
+        parseThis = parseThis.split("");
+        var choice1 = parseThis[0];
+        var choice2 = parseThis[1];
+        var choice3 = parseThis[2];
+        var choice4 = parseThis[3];
+        var choice5 = parseThis[4];
+
+        if (choice1 == "1") { document.getElementById("noiseId").checked = true } 
+        if (choice2 == "1") { document.getElementById("lightId").checked = true }
+        if (choice3 == "1") { document.getElementById("worryId").checked = true }
+		if (choice4 == "1") { document.getElementById("tempId").checked  = true }	
+		if (choice5 == "1") { document.getElementById("noneId").checked  = true }
+
+       }
+
+  }
+
+
+function validateForm() {
+  
+
+
+
+
+    }
+
+
+
+
+// create object for morning questions
+ var questions = new morningQuestion("", "", false, "", false, "", "0", "00001"); // create questions instance
+
+
+
+
+
+
 
 
 
