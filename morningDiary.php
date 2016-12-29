@@ -1,314 +1,26 @@
-<!-- Reference for all files that are being included in the page-->
 <?php
+// Bring in any JavaScript Functions 
 include("./includes/cz_functions.js");
+
+// Bring in header data
 include("./includes/header.php");
 ?>
 
 
 
+<body> <!-- Starting the Morning Questions --> 
 
-<!-- ************************************************************************************ -->
-<!-- Needed at the top for the page features to load -->
-<!-- for the Apple-like SWITCHES -->
-<script src="assets/switchery-master/dist/switchery.js" /></script>
-<script src="assets/switchery-master/dist/switchery.css" /></script>
+  <!-- Bring in Navigation Bar and Jumbotron -->
+  <?php include("navBarJumboTron.html"); ?>
 
-<script src="js/jquery.min.js"></script> 
-<link rel="stylesheet" type="text/css" href="styles.css"> <!-- Needed at the top -->
+  <!-- Bring in Navigation Buttons for paging through questions --> 
+  <?php include("pagingNavigation.html") ?>
 
 
-
-
-
-<script type="text/javascript">
-  var elem = document.querySelector('.js-switch');
-  var init = new Switchery(elem);
-</script>
-
-
-
-<script src="includes/morningQuestionsScripts.js"></script> <!-- Grab script file -->
-
-
-
-<script type="text/javascript">
-// Variables that hold the html for each question
-
-
-
-
-function toFallAsleep() {
-  var person = prompt("How many minutes did it take you to fall asleep?", "Minutes to fall asleep....");
-  if (person != null) {
-    document.getElementsByID("minutesTryingToFallAsleep".innerHTML = person);
-  }
-}
-
-
-var qs1 = '\
-<div class="form-group" id="question1"> \
-  <h3>Bed Time:  </h3><input id="inputBedTimeId" onkeydown="validateForm()" onchange="setQuestion1()" type="text/charset" name="BedTime"> \
-  <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="setQuestion1()" type="text/charset" name="WakeTime"> \
-</div>'; 
-
-
-
-
-
-
-
-
-
-var qs2 = ' \
-<div class="form-group" id="question2"> \
-  <h3>Did you have any problems falling asleep last night?</h3> \
-  <h4 styles="display: inline-block">No</h4><label class="switch" >\
-  <input id="inputProblemsFallingAsleepId" onchange="setQuestion2()" type="checkbox">\
-  <div class="slider round"></div>\
-  \
-</label><h4>Yes</h4> \
-<h4 type="text" name="minutesTryingToFallAsleep"></h4>\
-<h3>How many minutes did it take you to fall asleep? </h3> \
-\
-<input id="inputMinutesToFallAsleepId" onchange="setQuestion2()" type="text/charset" name="WakeTime">\
-</div>';
-
-
-
-var qs3 = ' \
-<div class="form-group" id="question3"> \
-  <h3>Last night did you wake up at all during the night?</h3> \
-  <h4 styles="display: inline-block">No</h4>\
-  <label class="switch" >\
-    <input id="inputDidWakeDuringTheNightId" onchange="setQuestion3()" type="checkbox">\
-    <div class="slider round"></div>\
-  </label>\
-  <h4>Yes</h4> \
-  \
-  \
-  <h4 type="text" name="minutesTryingToFallAsleep"></h4>\
-  <h3>How many minutes did it take you to fall asleep? </h3> \
-  <input id="inputMinutesToFallBackToSleepId" onchange="setQuestion3()" type="Number" name="WakeTime">\
-</div>';
-
-
-
-
-
-var qs4 = ' \
-<div class="form-group" id="question4"> \
-  <h3>When you woke up this morning, how did you feel?</h3> \
-  <h3>Sleepy - Somewhat Sleepy - Alert</h3> \
-  \
-  <label class="switch" >\
-    <input id="sleepyId" onchange="setQuestion4(1)" type="checkbox">\
-    <div class="slider round"></div>\
-  </label>\
-  \
-  <label class="switch" >\
-    <input id="somewhatSleepyId" onchange="setQuestion4(2)" type="checkbox">\
-    <div class="slider round"></div>\
-  </label>\
-  \
-  <label class="switch" >\
-    <input id="alertId" onchange="setQuestion4(3)" type="checkbox">\
-    <div class="slider round"></div>\
-  </label>\
-  \
-</div>';
-
-
-
-
-
-
-
-
-
-var qs5 = ' \
-<div class="form-group" id="question5"> \
-  <h3>Did anything bother your sleep last night?</h3> \
-  <h2>Check all that apply</h2> \
-  <p><input type="Checkbox" id="noiseId" onclick="setQuestion5(0)" name="Noise"> Noise</p> \
-  <p><input type="Checkbox" id="lightId" onclick="setQuestion5(0)" name="Light"> Light</p> \
-  <p><input type="Checkbox" id="worryId" onclick="setQuestion5(0)" name="Stress/Worry"> Stress/Worry</p> \
-  <p><input type="Checkbox" id="tempId" onclick="setQuestion5(0)" name="Room Temperature"> Room Temperature</p> \
-  <p><input type="Checkbox" id="noneId" onclick="setQuestion5(1)" name="None of the above"> None of the above</p> \
-</div>';
-
-
-var questionBank = [qs1, qs2, qs3, qs4, qs5];
-
-</script>
-
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="assets/favicon.ico">
-
-<title>Sleep Diary</title>
-
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="css/jumbotron.css" rel="stylesheet">
-
-<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-<script src="assets/js/ie-emulation-modes-warning.js"></script>
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-      <link rel="stylesheet" type="text/css" href="css/styles2.css">
-    </head>
-
-    <body>
-
-
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">Coach Z</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-              <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
-              </div>
-              <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control">
-              </div>
-              <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-          </div><!--/.navbar-collapse -->
-        </div>
-      </nav>
-
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1>Coach Z</h1>
-          <p>Welcome to your Morning Diary Questionnaire.</p>
-        </div>
-      </div>
-
-
-
-
-
-      <script type="text/javascript">
-        var elem = document.querySelector('.js-switch');
-        var init = new Switchery(elem);
-      </script>
-
-
-
-
-
-      <!-- Navigation buttons for the Morning Questions --> 
-<form method="post" action="index.php">
-<div class="form-group">
-<nav aria-label="...">
-  <ul class="pager">
-    <li class="previous"><a id="backButton"><span aria-hidden="true"></span> Previous</a></li>
-    <li class="next"><a id="nextButton">Next <span aria-hidden="true"></span></a></li>
-    <li class="next"><button class="btn btn-primary" type="submit" id="submitButton">Submit <span aria-hidden="true"></span></button></li>
-  </ul>
-</nav>
-</div>
-</form>
-
-
-<!-- Form **************************** Where the questions pop-up at ********* --> 
-
-      <form  name="questionsDisplayForm" id="questions">
-        <p id="questionDisplay"> </p>  <!-- Displays the questions here -->
-      </form>
-
-<!-- ************************************************************************* -->
-
-
-
-
-
-      <!-- Test Button - look at data -->
-      <!-- <button onclick="viewAll()">button</button> --> 
-
-  <script> // pages through the questions
-
-   document.getElementById("questionDisplay").innerHTML = questionBank[0];
-   var ctr = 0; // start at first question
-   document.getElementById("backButton").style.display = "none";
-   document.getElementById("submitButton").style.display = "none";
-
-   $(document).ready(function(){
-
-    $("#nextButton").click(function() {  // NEXT Button
-      if(ctr < 4) {
-       ctr++;
-       document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
-       updateValues(); // updates the form with the appropriate data
-       if (ctr >= 4) {
-        ctr = 4;
-        document.getElementById("submitButton").style.display = "inline";
-      }
-       // ************************************************************************
-       if (ctr == 4) { 
-        document.getElementById("nextButton").style.display = "none"; 
-      } else { 
-        document.getElementById("nextButton").style.display = "inline";
-        document.getElementById("backButton").style.display = "inline";
-        document.getElementById("submitButton").style.display = "none";
-      }
-      // ************************************************************************** 
-    }
-  })
-
-    $("#backButton").click(function() { // BACK Button
-      if( ctr >= 1){
-       ctr--;
-       if (ctr == 0) {ctr = 0;}
-
-       if (ctr == 0) { 
-        document.getElementById("backButton").style.display = "none";
-        document.getElementById("nextButton").style.display = "inline";
-        document.getElementById("submitButton").style.display = "none";
-      } else { 
-        document.getElementById("nextButton").style.display = "inline";
-        document.getElementById("backButton").style.display = "inline";
-        document.getElementById("submitButton").style.display = "none";
-      }
-
-
-      document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
-       updateValues(); // updates the form with the appropriate data
-       
-     }
-   })
-  });
-</script>
-
-
-
-
+  <!-- Display questions HERE -->
+  <form name="questionsDisplayForm" id="questions"> 
+    <p id="questionDisplay"> </p>  
+  </form>
 
 </body>
 
@@ -318,35 +30,36 @@ var questionBank = [qs1, qs2, qs3, qs4, qs5];
 
 
 
+<!-- All these scripts could be imported last from another file --> 
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/switchery-master/switchery.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- Bring in the questions -->
+<script src="js/morningQuestionsList.js"></script>
+
+<!-- Bring in the paging code -->
+<script src="js/pagingQuestions.js"></script> 
+
+<script src="js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+<script src="dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+<script type="text/javascript">
+  var elem = document.querySelector('.js-switch');
+  var init = new Switchery(elem);
+</script>
 
 
 
 
 
+<!-- Bring in the Footer --> 
+<?php require_once("./includes/footer.php"); // Footer ?>
 
 
 
 
 
-
-
-
-
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/switchery-master/switchery.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    
-
-    <script src="js/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-
-    <?php
-    require_once("./includes/footer.php"); // Footer 
-    ?>

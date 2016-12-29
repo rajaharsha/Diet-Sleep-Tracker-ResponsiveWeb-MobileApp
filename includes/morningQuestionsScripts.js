@@ -212,8 +212,9 @@ function morningQuestion(
 
 
 function validateForm() {
-    
-	window.alert("Validate Form") ;
+  
+
+
 
 
     }
