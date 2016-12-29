@@ -1,57 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="assets/favicon.ico">
+<head>
+  <title>Coach Z</title>  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
 
-    <title>Coach Z</title>
-    
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Timepicker CSS styles are here --> 
+  <link rel="stylesheet" type="text/css"    href="js/jquery-timepicker-master/lib/site.css" />
+  <link rel="stylesheet" type="text/css"    href="js/jquery-timepicker-master/jquery.timepicker.css" />.
+  <link rel="stylesheet" type="text/css"    href="js/jquery-timepicker-master/lib/bootstrap-datepicker.css" />
+  <link rel="icon" href="assets/favicon.ico">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/jumbotron.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-        <link rel="stylesheet" type="text/css" href="css/styles2.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/jumbotron.css" rel="stylesheet">
+  <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
 
-<!-- ************************************************************************************** -->
-<!-- SWITCHERY Switches -->
-<script src="assets/switchery-master/dist/switchery.js" /></script>
-<script src="assets/switchery-master/dist/switchery.css" /></script>
-<script src="js/jquery.min.js"></script> 
-<link rel="stylesheet" type="text/css" href="styles.css"> <!-- Needed at the top -->
-<!-- ************************************************************************************** --> 
+  <!-- ************************************************************************************** -->
+  <!-- SWITCHERY Switches -->
+  <script src="assets/switchery-master/dist/switchery.js" /></script>
+  <script src="assets/switchery-master/dist/switchery.css" /></script>
+  <script src="js/jquery.min.js"></script> 
+ 
+  <!-- ************************************************************************************** --> 
 
-<script type="text/javascript">
-  var elem = document.querySelector('.js-switch');
-  var init = new Switchery(elem);</script>
-<script src="includes/morningQuestionsScripts.js"></script> <!-- Grab script file -->
+  <script type="text/javascript">
+    var elem = document.querySelector('.js-switch');
+    var init = new Switchery(elem);</script>
+    <script src="includes/morningQuestionsScripts.js"></script> <!-- Grab script file -->
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-      <link rel="stylesheet" type="text/css" href="css/styles2.css">
+
+
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <link rel="stylesheet" type="text/css" href="css/styles2.css">
 
 
 
@@ -61,6 +50,8 @@
 
   <body>
 
+
+<!-- Navigation and login Bar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -87,6 +78,9 @@
     </nav>
 
     
+    <!-- Bring in Navigation Bar and Jumbotron -->
+    <?php include("jumboTron.html"); ?>
+
 
 
 

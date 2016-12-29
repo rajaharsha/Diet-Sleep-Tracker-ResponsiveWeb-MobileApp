@@ -4,14 +4,7 @@ include("./includes/cz_functions.js");
 include("./includes/header.php");
 ?>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Coach Z</h1>
-        <p>Coach Z, is a virtual sleep bootcamp, for students. An interactive sleep diary, which provides customized feeback based on diary responses! </p>
-        
-      </div>
-    </div>
+
 
     <div class="container">
       <!-- Example row of columns -->
@@ -19,7 +12,7 @@ include("./includes/header.php");
         <div class="col-md-4">
        
        <h2>About</h2>
-          <p>Coach Z is a website aimed to help college students improve their sleep. Sleep disturbances are common among young adults, and can impact academic performance, physical health, and mental health. Sleep is a vital aspect of health and Coach Z offers sleep tips to help users work towards and maintain healthy sleep hapbits. The website has two modes, bootcamp mode and refresher mode.</p>
+          <p>Coach Z is a website aimed to help college students improve their sleep. Sleep disturbances are common among young adults, and can impact academic performance, physical health, and mental health. Sleep is a vital aspect of health and Coach Z offers sleep tips to help users work towards and maintain healthy sleep habits. The website has two modes, bootcamp mode and refresher mode.</p>
         </div>
         
         <div class="col-md-4">

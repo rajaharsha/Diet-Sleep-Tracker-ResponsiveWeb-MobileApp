@@ -1,9 +1,12 @@
 
+
+
 var qs1 = '\
 <div class="form-group" id="question1"> \
   <h3>Bed Time:  </h3><input  type="text" class="time" id="inputBedTimeId" onkeydown="validateForm()" onchange="setQuestion1()" name="BedTime"> \
-  <h3>Wake Time: </h3><input id="inputWakeTimeId" onchange="setQuestion1()" type="text/charset" name="WakeTime"> \
-</div>'; 
+  <h3>Wake Time: </h3><input  type="text" class="time" id="inputWakeTimeId" onchange="setQuestion1()" name="WakeTime"> \
+</div>\
+';
 
 
 var qs2 = ' \
