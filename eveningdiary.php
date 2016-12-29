@@ -124,29 +124,6 @@ if (person != null) {
   </div>\
   ';
 
-function evg_ans_submit() {
-           var eqs_answers = {};
-           eqs_answers['eq1_Morning'] = user_rec.eq1_Morning;
-           eqs_answers['eq1_Afternoon'] = user_rec.eq1_Afternoon;
-           eqs_answers['eq1_Evening'] = user_rec.eq1_Evening;
-           console.log(eqs_answers);
-
-           alert(eqs_answers.eq1_Morning);
-
-        $.ajax({
-        url: 'post_evg_answers.php',
-        type: 'post',
-        data: {post_evg_answers:eqs_answers},
-        success: function(data) {
-                                  alert ('Posted Successfully')
-                                },
-        error: function(xhr, desc, err) {
-                                          console.log(xhr);
-                                          console.log("Details: " + desc + "\nError:" + err);
-                                        }
-              }); 
-
-      };
 
  var questionBank = [qs1, qs2, qs3, qs4, qs5, qs6, qs7, qs8];
 
