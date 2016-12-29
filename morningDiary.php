@@ -11,7 +11,7 @@ include("./includes/header.php");
 <body> <!-- Starting the Morning Questions --> 
 
   <!-- Bring in Navigation Bar and Jumbotron -->
-  <?php include("navBarJumboTron.html"); ?>
+  <?php include("jumboTron.html"); ?>
 
   <!-- Bring in Navigation Buttons for paging through questions --> 
   <?php include("pagingNavigation.html") ?>
