@@ -39,11 +39,8 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
-
-
-
 
 
   </head>
@@ -79,7 +76,9 @@
 
     
     <!-- Bring in Navigation Bar and Jumbotron -->
-    <?php include("jumboTron.html"); ?>
+    <?php 
+    //include("jumboTron.html"); 
+    ?>
 
 
 
