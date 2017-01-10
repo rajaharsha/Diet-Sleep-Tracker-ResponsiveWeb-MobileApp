@@ -113,4 +113,20 @@
 		}
 	}
 
+
+	function find_useremail($useremail) {
+		global $connection;		
+		$query  = "SELECT EMAIL FROM coach_z.app_users where EMAIL = '$useremail' LIMIT 1";
+		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+		$result_set = mysqli_query($connection, $query);
+		$result_email = mysqli_fetch_assoc($result_set);
+		$db_useremail = $result_email["EMAIL"];
+
+		if($db_useremail != NULL){ 
+			return $db_useremail;
+		} else {
+			return NULL;
+		}
+	}
+
 	?>

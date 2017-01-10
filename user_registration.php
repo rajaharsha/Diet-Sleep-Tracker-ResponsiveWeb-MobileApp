@@ -22,13 +22,13 @@ include("./includes/header.php");
                           <p class='help-block'></p>
                           <input type="text" class="form-control" placeholder="Enter Username" id="name" name="username" value = "" onkeyup="check_duplicate_user(this.id,this.value)" autofocus/>
                           <br/>
-                          <input type="text" name="email" id="email" placeholder="Enter User Email" class="form-control"/> 
+                          <input type="text" name="email" id="email" placeholder="Enter User Email" class="form-control" value="" onkeyup="check_duplicate_email(this.id,this.value)" autofocus/> 
                           <br/>
-                          <input type="text" name="password" id="password" placeholder="Enter User Password" class="form-control"/> 
+                          <input type="password" name="password" id="password" placeholder="Enter User Password" class="form-control"/> 
                           <br/>
-                          <input type="text" name="dup_password" id="dup_password" placeholder="Repeat User Password" class="form-control"/> 
+                          <input type="password" name="dup_password" id="dup_password" placeholder="Repeat User Password" class="form-control"/> 
                           <br/>
-                          <input type="button" name="submit_id" id="btn_id" value=" Register User " onclick="regsister_user()"/>
+                          <input type="button" name="submit_id" id="btn_id" value=" Register User " onclick="register_user()"/>
 
                         </div>
                       </form>
@@ -41,6 +41,7 @@ include("./includes/header.php");
 
 <script type="text/javascript">
 
+// Check for duplicate Username
 
 function check_duplicate_user(id,value) {
   var record_exists = verify_username(value);
@@ -67,8 +68,34 @@ function verify_username(username){
   });
 }
 
+// Check for duplicate Email Address
 
-function regsister_user() {
+function check_duplicate_email(id,value) {
+  var record_exists = verify_email(value);
+  var trim_response = record_exists.responseText;
+  if (trim_response.trim() == 'notok')
+    {
+      $( '#email' ).siblings('.help-block').html("User Email already exists")
+    } else ($( '#email' ).siblings('.help-block').html(""));
+  }
+
+function verify_email(email){
+  return $.ajax({
+    url: 'post_verify_email.php',
+    type: 'post',
+    async: false,
+    data: {myData:email},
+
+    error: function(xhr,desc,err){
+      console.log(xhr);
+      console.log("Details: " + desc + "\nError:" + err);
+    }
+  });
+}
+
+// User Registration
+
+function register_user() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
@@ -77,15 +104,22 @@ function regsister_user() {
   if(validation())// Calling validation function
     { 
       //document.getElementById("register_form").submit();//form submission
-      insert_new_user(name,email,password);
-      alert(  " Name : " + name
+
+      var user_rec_insert = insert_new_user(name,email,password);
+
+/*      var trim_response = user_rec_insert.responseText;
+        if (trim_response.trim() == 'Created')
+          {
+            $( '#btn_id' ).siblings('.help-block').html("User Account Created")
+          } else ($( '#btn_id' ).siblings('.help-block').html("Error"));
+        }*/
+/*      alert(  " Name : " + name
             + " \n Email : "+ email 
             + " \n password : " + password
             + " \n dup_password : " + dup_password
-            + " \n Form Submitted Successfully......");
-    } 
-} 
-
+            + " \n Form Submitted Successfully......");*/
+    }
+  }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //  Name and Email validation Function
@@ -127,16 +161,19 @@ function insert_new_user(username,useremail,userpassword){
 
   console.log(user_records);
 
-        $.ajax({
+  $.ajax({
         url: 'post_user_registration.php',
         type: 'post',
         data: {post_user_registration:user_records},
         success: function(data) {
-                                  alert ('Posted Successfully')
+                                  alert ('Posted Successfully');
+                                  $( '#btn_id' ).siblings('.help-block').html("User Account Created");
                                 },
         error: function(xhr, desc, err) {
+                                          $( '#btn_id' ).siblings('.help-block').html("Error in Account Creation");
                                           console.log(xhr);
                                           console.log("Details: " + desc + "\nError:" + err);
+
                                         }
               }); 
 
