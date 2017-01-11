@@ -1,7 +1,7 @@
 <?php
 	define("DB_SERVER", "localhost");
-	define("DB_USER", "coach_z_web");
-	define("DB_PASS", "M0n@rch$");
+	define("DB_USER", "root");
+	define("DB_PASS", "");
 	define("DB_NAME", "coach_z");
 
   // 1. Create a database connection

@@ -22,6 +22,7 @@
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -34,6 +35,12 @@
 
 
 
+=======
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
+    <link rel="stylesheet" type="text/css" href="css/styles2.css">
+
+
+>>>>>>> 4fc383f786ad078421a90a90d38b112a7a01f2f2
   </head>
 
 
@@ -86,6 +93,13 @@
 
     </header>
     
+<<<<<<< HEAD
+=======
+    <!-- Bring in Navigation Bar and Jumbotron -->
+    <?php 
+    //include("jumboTron.html"); 
+    ?>
+>>>>>>> 4fc383f786ad078421a90a90d38b112a7a01f2f2
 
 
 

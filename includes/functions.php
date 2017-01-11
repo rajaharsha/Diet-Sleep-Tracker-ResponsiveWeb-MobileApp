@@ -66,4 +66,67 @@
 		}
 		
 	}
+
+          function insert_usr_rec(
+            $user_name,
+            $user_email,
+            $user_pass
+            ){ 
+			global $connection;
+			$query = "INSERT INTO 
+					  coach_z.app_users
+					  (
+					   USER_NAME,
+					   EMAIL,
+					   PASS_CODE
+					  ) VALUES 
+					  (
+					   '$user_name',
+					   '$user_email',
+					   '$user_pass')";
+			$result_id = mysqli_query($connection, $query);
+			//error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+	
+			if($result_id) {
+				$_SESSION["message"] = "User registration is completed.";
+				return true;
+			} else {
+				$_SESSION["message"] = "Database Error";
+				return false;
+			}			
+
+          }
+
+
+	function find_username($username) {
+		global $connection;		
+		$query  = "SELECT USER_NAME FROM coach_z.app_users where USER_NAME = '$username' LIMIT 1";
+		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+		$result_set = mysqli_query($connection, $query);
+		$result_user = mysqli_fetch_assoc($result_set);
+		$db_username = $result_user["USER_NAME"];
+
+		if($db_username != NULL){ 
+			return $db_username;
+		} else {
+			return NULL;
+		}
+	}
+
+
+	function find_useremail($useremail) {
+		global $connection;		
+		$query  = "SELECT EMAIL FROM coach_z.app_users where EMAIL = '$useremail' LIMIT 1";
+		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+		$result_set = mysqli_query($connection, $query);
+		$result_email = mysqli_fetch_assoc($result_set);
+		$db_useremail = $result_email["EMAIL"];
+
+		if($db_useremail != NULL){ 
+			return $db_useremail;
+		} else {
+			return NULL;
+		}
+	}
+
 	?>
