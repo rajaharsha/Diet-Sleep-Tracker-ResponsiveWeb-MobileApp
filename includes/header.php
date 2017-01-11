@@ -9,46 +9,42 @@
   <meta name="author" content="">
 
 
-  <!-- Timepicker CSS styles are here --> 
-  <link rel="stylesheet" type="text/css"    href="js/jquery-timepicker-master/lib/site.css" />
-  <link rel="stylesheet" type="text/css"    href="js/jquery-timepicker-master/jquery.timepicker.css" />.
-  <link rel="stylesheet" type="text/css"    href="js/jquery-timepicker-master/lib/bootstrap-datepicker.css" />
-  <link rel="icon" href="assets/favicon.ico">
+
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/jumbotron.css" rel="stylesheet">
   <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
-
-  <!-- ************************************************************************************** -->
-  <!-- SWITCHERY Switches -->
-  <script src="assets/switchery-master/dist/switchery.js" /></script>
-  <script src="assets/switchery-master/dist/switchery.css" /></script>
   <script src="js/jquery.min.js"></script> 
- 
-  <!-- ************************************************************************************** --> 
-
-  <script type="text/javascript">
-    var elem = document.querySelector('.js-switch');
-    var init = new Switchery(elem);</script>
-    <script src="includes/morningQuestionsScripts.js"></script> <!-- Grab script file -->
 
 
 
-    <link rel="stylesheet" type="text/css" href="styles.css"> 
+
+
+
+
+
+<!-- custom styles -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
-
+    <link href="css/jumbotron.css" rel="stylesheet">
 
 
 
 
   </head>
 
-  <body>
+
+
+
+
+
+<body>
+
+
+  <header> 
 
 
 <!-- Navigation and login Bar -->
@@ -77,9 +73,19 @@
       </div>
     </nav>
 
+
+
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron hidden-xs">
+    <div class="container">
+      <h1>Coach Z</h1>
+      <p>Welcome to your Morning Diary Questionnaire.</p>
+    </div>
+  </div>
+
+    </header>
     
-    <!-- Bring in Navigation Bar and Jumbotron -->
-    <?php include("jumboTron.html"); ?>
 
 
 

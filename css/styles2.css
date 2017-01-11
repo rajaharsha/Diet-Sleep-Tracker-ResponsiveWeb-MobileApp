@@ -7,58 +7,52 @@ background-color: #223344;
 
 
 body {
-
+padding-top: 85px;
 opacity: 0.85;
 background-color: #e6ccff;
 border-radius: 10px;
 box-shadow: 0px 0px 15px 5px white;
-
-
 }
 
 
 
 
-.jumbotron {
 
+.jumbotron {
 margin: 5px;
-border-radius: 10px;
 background-color: #aabbcc;
-border: 2px solid #223344;
 box-shadow: 1px 1px 20px 5px #223344;
 margin-bottom: 20px;
+}
+
+.jumbotron > .container {
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
 }
 
 
 
 
 .btn-primary {
-
 	font-weight: 500;
 	padding: 20px;
-	
 }
 
 
 .col-md-4 {
-	text-align: center;
     padding: 5px;
-
 }
 
 .questionNumber {
 	text-shadow: 4px 4px 10px  #bb99ff;
-	
 }
 
 .form-group {
-
 	border: 2px solid white;
 	box-shadow: 2px 2px 20px white;
 	padding: 5px;
 	border-radius: 10px;
-	text-align: center;
-
 }
 
 
@@ -121,7 +115,7 @@ input:checked + .slider:before {
 
 .form-group {
 	padding: 15px;
-	text-align: center;
+
 
 }
 
@@ -133,7 +127,9 @@ input:checked + .slider:before {
 }
 
 
-
+.row {
+  margin: 10px;
+}
 
 
 

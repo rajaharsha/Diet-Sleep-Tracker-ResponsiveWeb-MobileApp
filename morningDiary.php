@@ -1,73 +1,47 @@
-<!-- header.php --> 
+<?php include('./includes/header.php'); ?><!-- Bring in the Jumbotron and Navigation bars --> 
 
-
-
-<?php
-include('./includes/header.php');
-?>
+<script>
 
 
 
 
+  </script>
 
 
 
- 
-<!-- Bring in Navigation Buttons for paging through questions --> 
-<?php include("pagingNavigation.html") ?>
+<div id="questionDisplay"></div>  <!-- Present questions HERE -->
 
+<script src="morningQuestionsScripts.js"></script> 
+<script>
 
-<!-- Display questions HERE -->
-<form name="questionsDisplayForm" id="questions"> 
-  <p id="questionDisplay"></p>  
-</form>
+var questionBank = [qs1, qs2, qs3, qs4, qs5];
+var questions = new morningQuestion("", "", false, "", false, "", "0", "00001"); 
+var ctr = 0; 
 
-
-
-
-
-</body>  <!-- The header has the open body tag --> 
-
-<!-- Bring in the questions -->
-<script src="js/morningQuestionsList.js"></script>
-
-<!-- Bring in the paging code -->
-<script src="js/pagingQuestions.js"></script> 
-
-<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-<script src="dist/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-
-<script type="text/javascript">
-  var elem = document.querySelector('.js-switch');
-  var init = new Switchery(elem);
-</script>
-
-
-<script src="assets/switchery-master/switchery.js"></script>
+document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
 
 
 
 
-<!-- timepicker requirements --> 
-  <script>$(function() { $('#inputBedTimeId').timepicker(); });</script>
-  <script>$(function() { $('#inputWakeTimeId').timepicker(); });</script>
-  
+function nextQuestion(){
+      if(ctr < 4) {
+       ctr++;
+       document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+       return false;
+    }
+  }
+  </script>
 
 
-  <script type="text/javascript"            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  
-  <script type="text/javascript"            src="js/jquery-timepicker-master/jquery.timepicker.js"></script>
-  <script type="text/javascript"            src="js/jquery-timepicker-master/lib/bootstrap-datepicker.js"></script>
-  <script type="text/javascript"            src="js/jquery-timepicker-master/lib/site.js"></script>
-  
+<?php require_once("./includes/footer.php"); ?>
+</body> <!-- Close the Body -->
 
 
 
 
-<!-- Bring in the Footer --> 
-<?php require_once("./includes/footer.php"); // Footer ?>
+
+
+
 
 
 
