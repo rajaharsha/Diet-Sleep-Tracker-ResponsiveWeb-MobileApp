@@ -25,7 +25,9 @@ function q1script() {
 
 // Question 2 Scripts
 function q2script() {
-	window.alert("Question 2" );
+a = document.getElementById('noiseId').checked // true/false		
+b = document.getElementById('lightId').checked // true/false
+	
 }
 
 
