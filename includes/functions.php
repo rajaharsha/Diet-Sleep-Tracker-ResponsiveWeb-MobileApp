@@ -129,4 +129,22 @@
 		}
 	}
 
+
+	function find_user_login($username,$userpassword) {
+		global $connection;		
+		$query  = "SELECT USER_NAME FROM coach_z.app_users where USER_NAME = '$username' AND PASS_CODE = '$userpassword' LIMIT 1";
+		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+		$result_set = mysqli_query($connection, $query);
+		$result_username = mysqli_fetch_assoc($result_set);
+		$db_username = $result_username["USER_NAME"];
+
+		if($db_username != NULL){ 
+			error_log("Inside query\n" . $db_username , 3, "C:/xampp/apache/logs/error.log");
+			return $db_username;
+		} else {
+			return NULL;
+		}
+	}
+
+
 	?>

@@ -35,8 +35,8 @@ margin-bottom: 20px;
 
 
 .btn-primary {
-	font-weight: 500;
-	padding: 20px;
+  font-weight: 500;
+  padding: 20px;
 }
 
 
@@ -45,14 +45,14 @@ margin-bottom: 20px;
 }
 
 .questionNumber {
-	text-shadow: 4px 4px 10px  #bb99ff;
+  text-shadow: 4px 4px 10px  #bb99ff;
 }
 
 .form-group {
-	border: 2px solid white;
-	box-shadow: 2px 2px 20px white;
-	padding: 5px;
-	border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: 2px 2px 20px white;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 
@@ -114,14 +114,14 @@ input:checked + .slider:before {
 
 
 .form-group {
-	padding: 15px;
+  padding: 15px;
 
 
 }
 
 
 .largerCheckbox {
-	transform: zoom(1.5);
+  transform: zoom(1.5);
 
 
 }
@@ -130,8 +130,3 @@ input:checked + .slider:before {
 .row {
   margin: 10px;
 }
-
-
-
-
-
