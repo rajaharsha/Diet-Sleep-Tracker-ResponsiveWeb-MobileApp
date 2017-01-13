@@ -82,9 +82,12 @@ function morningQuestion( // Create the morningQuestion prototype
 		<div class="col-md-4" id="question1"> \
 		<div class="form-group" >\
 		<form onSubmit="return !!(false & nextQuestion());">\
+		\
 		<h3>Bed Time</h3>  <input  type="text" class="form-control" id="inputBedTimeId"   name="BedTime"  required >  \
 		<h3>Wake Time</h3> <input  type="text" class="form-control" id="inputWakeTimeId"  name="WakeTime" required > \
-		<input class="form-control btn-default" id="submitButton1"  type="submit" value="Next" />\
+		\
+		<input class="form-control btn-default" id="submitButton1" onclick="q1script()"  type="submit" value="Next" />\
+		\
 		</form>\
 		</div>\
 		</div>\
@@ -97,17 +100,22 @@ function morningQuestion( // Create the morningQuestion prototype
 		<div class="col-md-4"></div>\
 		<div class="col-md-4" id="question2"> \
 		<div class="form-group" >\
+		\
 		<form onSubmit="return !!(false & nextQuestion());">\
 		\
 		<h3>Did you have any problems falling asleep last night?</h3> \
 		<h4 styles="display: inline-block">No</h4><label class="switch" >\
-		<input  type="checkbox">\
+		<input type="checkbox">\
 		<div class="slider round"></div>\
-		</label><h4>Yes</h4> \
+		</label>\
+		<h4>Yes</h4>\
+		\
 		<h4 type="text" name="minutesTryingToFallAsleep"></h4>\
+		\
 		<h3>How many minutes did it take you to fall asleep? </h3>\
 		<input class="form-control" id="inputMinutesToFallAsleepId" type="number" name="WakeTime">\
-		<input class="btn btn-default" id="submitButton1" type="submit" value="Next" />\
+		<input class="form-control btn btn-default" id="submitButton1" onclick="q2script()" type="submit" value="Next" />\
+		\
 		</form>\
 		</div>\
 		</div>\
@@ -132,7 +140,7 @@ function morningQuestion( // Create the morningQuestion prototype
 		<h4 type="text" name="minutesTryingToFallAsleep"></h4>\
 		<h3>How many minutes did it take you to fall asleep? </h3>\
 		<input class="form-control" id="inputMinutesToFallBackToSleepId" type="Number" name="WakeTime">\
-		<input class="btn btn-default" id="submitButton1" type="submit" value="Next" />\
+		<input class="form-control btn btn-default" id="submitButton1" onclick="q3script()" type="submit" value="Next" />\
 		</form>\
 		</div>\
 		</div>\
@@ -160,7 +168,7 @@ function morningQuestion( // Create the morningQuestion prototype
 		<input id="alertId" type="checkbox">\
 		<div class="slider round"></div>\
 		</label>\
-		<br/><br/><input class="btn btn-default" id="submitButton1" type="submit" value="Next" />\
+		<br/><br/><input class="form-control btn btn-default" id="submitButton1" onclick="q4script()" type="submit" value="Next" />\
 		</form>\
 		</div>\
 		</div>\
@@ -199,7 +207,7 @@ function morningQuestion( // Create the morningQuestion prototype
 		<label><input type="Checkbox" onclick="q5script(0)" id="noneId"   name="None of the above">None of the above</label>\
 		</div>\
 		\
-		<input class="btn btn-default" onclick="q5script()" id="submitButton1" type="submit" value="Next" />\
+		<input class="form-control btn btn-default" onclick="q5script()" onclick="q5script()" id="submitButton1" type="submit" value="Next" />\
 \
 		</form>\
 		\
