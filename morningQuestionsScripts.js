@@ -53,33 +53,8 @@ function morningQuestion( // Create the morningQuestion prototype
 	this.setAnythingBotherYourSleep = function setAnythingBotherYourSleep(valueString) {
 		this.anythingBotherYourSleep = valueString;
 	}
-}
 
-
-		function setQuestion1(x, y) { // Bed time and wake time
-			this.setBedTime(bed);
-			this.setWakeTime(wake);
-		}
-
-		function setQuestion2(x, y) { // problems fall asleep, how many minutes
-			this.setProblemsFallingAsleep(x);
-			this.setMinutesToFallAsleep(y);
-		}
-
-		function setQuestion3(x, y) { // wake up at night, how many minutes to fall asleep
-			this.setDidWakeDuringTheNight(x);
-			this.setMinutesToFallBackToSleep(y);
-		}
-
-		function setQuestion4(choice) { // how did you feel
-			this.setHowDidYouFeel(choice);
-		}
-
-		function setQuestion5(choice) { // anything bother the sleeper last night
-			this.setAnythingBotherYourSleep(choice);
-		}
-
-		function viewAll(){
+	this.viewAll = function viewAll(){
 			window.alert(
 				" " + this.bedTime + "\n" +
 				" " + this.wakeTime + "\n" + 
@@ -91,6 +66,12 @@ function morningQuestion( // Create the morningQuestion prototype
 				" " + this.anythingBotherYourSleep + "\n"
 				);
 		}
+}
+
+
+
+
+
 
 
 
@@ -193,32 +174,32 @@ function morningQuestion( // Create the morningQuestion prototype
 		<div class="col-md-4" id="question5">\
 		<div class="form-group">\
 		\
-		<form onSubmit="return !!(false & nextQuestion());">\
+		<form onSubmit="return !!(false);">\
 		<h3>Did anything bother your sleep last night?</h3>\
 		<h2>Check all that apply</h2>\
 		\
 \
 		<div class="checkbox">\
-		<label><input type="Checkbox" id="noiseId"  name="Noise">Noise</label>\
+		<label><input type="Checkbox" onclick="q5script(1)" id="noiseId"  name="Noise">Noise</label>\
 		</div>\
 		\
 		<div class="checkbox">\
-		<label><input type="Checkbox" id="lightId"  name="Light">Light</label>\
+		<label><input type="Checkbox" onclick="q5script(1)" id="lightId"  name="Light">Light</label>\
 		</div>\
 		\
 		<div class="checkbox">\
-		<label><input type="Checkbox" id="worryId"  name="Stress/Worry">Stress/Worry</label>\
+		<label><input type="Checkbox" onclick="q5script(1)" id="worryId"  name="Stress/Worry">Stress/Worry</label>\
 		</div>\
 		\
 		<div class="checkbox">\
-		<label><input type="Checkbox" id="tempId"   name="Room Temperature">Room Temperature</label>\
+		<label><input type="Checkbox" onclick="q5script(1)" id="tempId"   name="Room Temperature">Room Temperature</label>\
 		</div>\
 		\
 		<div class="checkbox">\
-		<label><input type="Checkbox" id="noneId"   name="None of the above">None of the above</label>\
+		<label><input type="Checkbox" onclick="q5script(0)" id="noneId"   name="None of the above">None of the above</label>\
 		</div>\
 		\
-		<input class="btn btn-default" id="submitButton1" type="submit" value="Next" />\
+		<input class="btn btn-default" onclick="q5script()" id="submitButton1" type="submit" value="Next" />\
 \
 		</form>\
 		\
@@ -226,8 +207,6 @@ function morningQuestion( // Create the morningQuestion prototype
 		</div>\
 \
 		</div>';
-
-
 
 
 
