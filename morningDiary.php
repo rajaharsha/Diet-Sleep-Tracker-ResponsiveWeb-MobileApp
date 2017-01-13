@@ -17,33 +17,29 @@
 		}
 	}
 
-	// Question 1 Scripts
-	function q1script() {
-		window.alert("Question 1" );
-	}
+// Question 1 Scripts
+function q1script() {
+	window.alert("Question 1" );
+}
 
 
-	// Question 2 Scripts
-	function q2script() {
-		window.alert("Question 2" );
-	}
+// Question 2 Scripts
+function q2script() {
+	window.alert("Question 2" );
+}
 
 
-	// Question 3 Scripts
-	function q3script() {
-		window.alert("Question 3" );
-	}
+// Question 3 Scripts
+function q3script() {
+	window.alert("Question 3" );
+}
 
-	// Question 4 Scripts
-	function q4script() {
-    window.alert("Question 4" );
-	}
+// Question 4 Scripts
+function q4script() {
+	window.alert("Question 4" );
+}
 
-	// Question 5 Scripts
-	function q5script() {
-    window.alert("Question 5" );
-	}
-
+// Question 5 Scripts
 function q5script(choice) { // anything bother the sleeper last night	
 
 var a, b, c, d, e = false; // declares all values to bool

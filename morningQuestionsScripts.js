@@ -207,7 +207,7 @@ function morningQuestion( // Create the morningQuestion prototype
 		<label><input type="Checkbox" onclick="q5script(0)" id="noneId"   name="None of the above">None of the above</label>\
 		</div>\
 		\
-		<input class="form-control btn btn-default" onclick="q5script()" onclick="q5script()" id="submitButton1" type="submit" value="Next" />\
+		<input class="form-control btn btn-default" onclick="q5script()" id="submitButton1" type="submit" value="Next" />\
 \
 		</form>\
 		\
