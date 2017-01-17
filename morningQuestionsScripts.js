@@ -6,7 +6,11 @@ function morningQuestion( // Create the morningQuestion prototype
 	didWakeDuringTheNight, // Boolean
 	minutesToFallBackToSleep, // String / Int
 	howDidYouFeel, // String || Int || BitWise
-	anythingBotherYourSleep // String to Hex ??? */
+	noise, 
+	light, 
+	stress, 
+	temp, 
+	nota
 	) {
 
 	// Parameters
@@ -17,7 +21,10 @@ function morningQuestion( // Create the morningQuestion prototype
 	this.didWakeDuringTheNight = didWakeDuringTheNight;
 	this.minutesToFallBackToSleep = minutesToFallBackToSleep;
 	this.howDidYouFeel = howDidYouFeel;
-	this.anythingBotherYourSleep = anythingBotherYourSleep;
+	this.noise = noise;
+	this.light = light;
+	this.stress = stress;
+	this.nota = nota;
 
 
 	// Methods
@@ -53,6 +60,40 @@ function morningQuestion( // Create the morningQuestion prototype
 	this.setAnythingBotherYourSleep = function setAnythingBotherYourSleep(valueString) {
 		this.anythingBotherYourSleep = valueString;
 	}
+
+	this.noise = function setNoise(valueString) {
+		this.noise = valueString;
+	}
+
+	this.light = function setLight(valueString) {
+		this.noise = valueString;
+	}
+
+	this.stress = function setStress(valueString) {
+		this.noise = valueString;
+	}
+
+	this.temp = function setTemp(valueString) {
+		this.noise = valueString;
+	}
+
+	this.nota = function setNota(valueString) {
+		this.noise = valueString;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	this.viewAll = function viewAll(){
 			window.alert(
@@ -105,7 +146,7 @@ function morningQuestion( // Create the morningQuestion prototype
 		\
 		<h3>Did you have any problems falling asleep last night?</h3> \
 		<h4 styles="display: inline-block">No</h4><label class="switch" >\
-		<input type="checkbox">\
+		<input type="checkbox" id="inputProblemsFallingAsleepId">\
 		<div class="slider round"></div>\
 		</label>\
 		<h4>Yes</h4>\
@@ -151,27 +192,30 @@ function morningQuestion( // Create the morningQuestion prototype
 		var qs4 = ' \
 		<div class="row">\
 		<div class="col-md-4"></div>\
-		<div class="col-md-4" id="question4">\
+		\
+		<div class="col-lg-4" id="question4">\
 		<div class="form-group">\
 		<form onSubmit="return !!(false & nextQuestion());">\
+	    <div>\
 		<h3>When you woke up this morning, how did you feel?</h3>\
-		<h3>Sleepy - Somewhat Sleepy - Alert</h3>\
-		<label class="switch">\
-		<input id="sleepyId" type="checkbox">\
-		<div class="slider round"></div>\
-		</label>\
-		<label class="switch">\
-		<input id="somewhatSleepyId" type="checkbox">\
-		<div class="slider round"></div>\
-		</label>\
-		<label class="switch">\
-		<input id="alertId" type="checkbox">\
-		<div class="slider round"></div>\
-		</label>\
-		<br/><br/><input class="form-control btn btn-default" id="submitButton1" onclick="q4script()" type="submit" value="Next" />\
+		\
+		<div class="col-lg-4">\
+				<label>Sleepy</label>\
+				<input  onclick="q4script(1)" type="radio" class="form-control  id="InputSleepyId" name="feel" required>\
+		</div>\
+		\
+		<div class="col-lg-4" >\
+		<label>Somewhat Sleepy</label><input  onclick="q4script(2)"  type="radio" class="form-control  id="InputSomewhatSleepyId" name="feel" required>\
+		</div>\
+		<div class="col-lg-4" >\
+		<label>Alert</label><input  onclick="q4script(3)" type="radio" class="form-control  id="inputAlertId" name="feel" required>\
+		</div>\
+		<br/>\
+		<input class="form-control btn btn-default" id="submitButton1" onclick="q4script()" type="submit" value="Next" />\
 		</form>\
 		</div>\
 		</div>\
+		\
 		</div>';
 
 
@@ -182,7 +226,7 @@ function morningQuestion( // Create the morningQuestion prototype
 		<div class="col-md-4" id="question5">\
 		<div class="form-group">\
 		\
-		<form onSubmit="return !!(false);">\
+		<form onSubmit="return !!(false & fiveVal() ); ">\
 		<h3>Did anything bother your sleep last night?</h3>\
 		<h2>Check all that apply</h2>\
 		\
@@ -207,7 +251,7 @@ function morningQuestion( // Create the morningQuestion prototype
 		<label><input type="Checkbox" onclick="q5script(0)" id="noneId"   name="None of the above">None of the above</label>\
 		</div>\
 		\
-		<input class="form-control btn btn-default" onclick="q5script()" id="submitButton1" type="submit" value="Next" />\
+		<input class="form-control btn btn-default" id="submitButton1" type="submit" value="Next" />\
 \
 		</form>\
 		\
