@@ -37,7 +37,6 @@ function morningQuestion( // Create the morningQuestion prototype
 	}
 
 	this.setProblemsFallingAsleep = function setProblemsFallingAsleep(problems) {
-
 		this.problemsFallingAsleep = problems;
 	}
 
