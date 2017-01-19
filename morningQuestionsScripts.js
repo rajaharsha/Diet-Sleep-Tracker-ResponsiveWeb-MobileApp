@@ -13,7 +13,7 @@ function morningQuestion( // Create the morningQuestion prototype
 	nota
 	) {
 
-	// Parameters
+	// Parameters - Constructor - defaults to Private (verify)
 	this.bedTime = bedTime;
 	this.wakeTime = wakeTime;
 	this.problemsFallingAsleep = problemsFallingAsleep;
@@ -57,31 +57,40 @@ function morningQuestion( // Create the morningQuestion prototype
 		this.howDidYouFeel = choice;
 	}
 
-	this.setAnythingBotherYourSleep = function setAnythingBotherYourSleep(valueString) {
-		this.anythingBotherYourSleep = valueString;
-	}
 
-	this.noise = function setNoise(valueString) {
+
+	this.setNoise = function setNoise(valueString) {
 		this.noise = valueString;
 	}
-
-	this.light = function setLight(valueString) {
-		this.noise = valueString;
+	this.setLight = function setLight(valueString) {
+		this.light = valueString;
 	}
-
-	this.stress = function setStress(valueString) {
-		this.noise = valueString;
+	this.setStress = function setStress(valueString) {
+		this.stress = valueString;
 	}
-
-	this.temp = function setTemp(valueString) {
-		this.noise = valueString;
+	this.setTemp = function setTemp(valueString) {
+		this.temp = valueString;
 	}
-
-	this.nota = function setNota(valueString) {
-		this.noise = valueString;
+	this.setNota = function setNota(valueString) {
+		this.nota = valueString;
 	}
 
 
+	this.getNoise = function getNoise() {
+		return this.noise;
+	}
+	this.getLight = function getLight() {
+		return this.light;
+	}
+	this.getStress = function getStress() {
+		return this.stress;
+	}
+	this.getTemp = function getTemp() {
+		return this.temp;
+	}
+	this.getNota = function getNota() {
+		return this.nota;
+	}
 
 
 

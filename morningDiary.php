@@ -4,7 +4,7 @@
 <script>
 
 	var questionBank = [qs1, qs2, qs3, qs4, qs5];
-	var questions = new morningQuestion("", "", false, "", false, "", "0", "00000"); 
+	var questions = new morningQuestion("", "", false, "", false, "", "0", "0", "0", "0", "0", "0"); 
 	var ctr = 0; 
 
 	document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
@@ -61,16 +61,6 @@ function q4script(choice) {
 
 function fiveVal() {
 
-if (questions.anythingBotherYourSleep == "00000" ) {
-	window.alert("Please make a selection");
-} else {
-	window.alert("Looks good, thanks! " + questions.anythingBotherYourSleep);
-	// submit questions.
-	// questions.anythingBotherYourSleep  -- Looks like this "00100"
-	// questions.sldkjflsd
-	// questions.sdjsflk
-	//
-}
 
 
 }
@@ -84,6 +74,7 @@ var a, b, c, d, e = false; // declares all values to bool
 
 if (choice == "0") { // If user selects "None of the above"
 // clear all other check boxes
+
 document.getElementById('noiseId').checked = false;		
 document.getElementById('lightId').checked = false;		
 document.getElementById('worryId').checked = false;		
@@ -101,21 +92,28 @@ a = document.getElementById('noiseId').checked // true/false
 b = document.getElementById('lightId').checked // true/false		
 c = document.getElementById('worryId').checked // true/false		
 d = document.getElementById('tempId').checked  // true/false
-document.getElementById('noneId').checked = false; // set NONE back to NO CHECK	
+    document.getElementById('noneId').checked = false; // set NONE back to NO CHECK	
 e = document.getElementById('noneId').checked  // true/false
 }
 
 // creates a bitwise string. 
-var noise   =    a ? 1 : 0; // Ternary (conditional ) operator		
-var light   =    b ? 1 : 0; // variableName = (conditiona) ? value1:value2		
-var stress  =    c ? 1 : 0; // value1 if true, value2 if false		
-var temp    =    d ? 1 : 0;		
-var nothing =    e ? 1 : 0;	
+var f = a ? 1 : 0; // Ternary (conditional ) operator		
+var g = b ? 1 : 0; // variableName = (conditiona) ? value1:value2		
+var h = c ? 1 : 0; // value1 if true, value2 if false		
+var i = d ? 1 : 0;		
+var j = e ? 1 : 0;	
 
-var result  = "" + noise + light + stress + temp + nothing;
+questions.setNoise(f);
+questions.setLight(g);
+questions.setStress(h);
+questions.setTemp(i);
+questions.setNota(j);
 
-// Sets the questions object parameter with final result of questions 5
-questions.setAnythingBotherYourSleep(result);
+var va = questions.getNoise();
+var vb = questions.getLight();
+var vc = questions.getStress();
+var vd = questions.getTemp();
+var ve = questions.getNota();
 
 }
 
