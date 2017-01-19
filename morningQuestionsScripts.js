@@ -153,16 +153,41 @@ function morningQuestion( // Create the morningQuestion prototype
 		<form onSubmit="return !!(false & nextQuestion());">\
 		\
 		<h3>Did you have any problems falling asleep last night?</h3> \
-		<h4 styles="display: inline-block">No</h4><label class="switch" >\
-		<input type="checkbox" id="inputProblemsFallingAsleepId">\
-		<div class="slider round"></div>\
-		</label>\
-		<h4>Yes</h4>\
 		\
-		<h4 type="text" name="minutesTryingToFallAsleep"></h4>\
+		<div class="row">\
+			<div class="col-xs-3"></div>\
+			<div class="col-xs-3"><h4>Yes</h4></div>\
+			<div class="col-xs-3"><h4>No</h4></div>\
+			<div class="col-xs-3"></div>\
+		</div>\
+\
+\
+		<div class="row">\
+			<div class="col-xs-3"></div>\
+			<div class="col-xs-3">\
+			<input type="radio" name="q2" onclick="checkQuestion2()" id="inputProblemsFallingAsleepId">\
+			</div>\
+	\
+			<div class="col-xs-3">\
+			<input type="radio" name="q2" onclick="checkQuestion2()" id="inputProblemsFallingAsleepId">\
+			</div>\
+			<div class="col-xs-3"></div>\
+		</div>\
 		\
+		\
+		<div id="part2" style="visibility: hidden;">\
+		<h4 name="minutesTryingToFallAsleep"></h4>\
 		<h3>How many minutes did it take you to fall asleep? </h3>\
+		<div class="col-xs-4"></div>\
+		\
+		<div class="col-xs-4">\
 		<input class="form-control" id="inputMinutesToFallAsleepId" type="number" name="WakeTime">\
+		</div>\
+		<div class="col-xs-4"></div>\
+		</div>\
+		\
+		\
+		\
 		<input class="form-control btn btn-default" id="submitButton1" onclick="q2script()" type="submit" value="Next" />\
 		\
 		</form>\
@@ -170,6 +195,8 @@ function morningQuestion( // Create the morningQuestion prototype
 		</div>\
 		</div>\
 		';
+
+
 
 
 
@@ -234,7 +261,7 @@ function morningQuestion( // Create the morningQuestion prototype
 		<div class="col-md-4" id="question5">\
 		<div class="form-group">\
 		\
-		<form onSubmit="return !!(false & fiveVal() ); ">\
+		<form onSubmit="return !!(false & q5script(2) ); ">\
 		<h3>Did anything bother your sleep last night?</h3>\
 		<h2>Check all that apply</h2>\
 		\

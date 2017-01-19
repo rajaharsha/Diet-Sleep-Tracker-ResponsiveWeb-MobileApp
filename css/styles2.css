@@ -130,3 +130,9 @@ input:checked + .slider:before {
 .row {
   margin: 10px;
 }
+
+.col-xs-3 {
+  text-align: center;
+}
+
+
