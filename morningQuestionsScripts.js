@@ -24,8 +24,8 @@ function morningQuestion( // Create the morningQuestion prototype
 	this.noise = noise;
 	this.light = light;
 	this.stress = stress;
+	this.temp = temp;
 	this.nota = nota;
-
 
 	// Methods
 	this.setBedTime = function setBedTime(time) {
@@ -55,7 +55,6 @@ function morningQuestion( // Create the morningQuestion prototype
 	this.setHowDidYouFeel = function setHowDidYouFeel(choice) {
 		this.howDidYouFeel = choice;
 	}
-
 
 
 	this.setNoise = function setNoise(valueString) {
@@ -96,25 +95,6 @@ function morningQuestion( // Create the morningQuestion prototype
 
 
 
-
-
-
-
-
-
-
-	this.viewAll = function viewAll(){
-			window.alert(
-				" " + this.bedTime + "\n" +
-				" " + this.wakeTime + "\n" + 
-				" " + this.problemsFallingAsleep + "\n" + 
-				" " + this.minutesToFallAsleep + "\n" + 
-				" " + this.didWakeDuringTheNight + "\n" + 
-				" " + this.minutesToFallBackToSleep + "\n" + 
-				" " + this.howDidYouFeel + "\n" + 
-				" " + this.anythingBotherYourSleep + "\n"
-				);
-		}
 }
 
 
@@ -152,9 +132,9 @@ function morningQuestion( // Create the morningQuestion prototype
 		\
 		<form onSubmit="return !!(false & nextQuestion());">\
 		\
-		<h3>Did you have any problems falling asleep last night?</h3> \
+		<h3 id="part1" >Did you have any problems falling asleep last night?</h3> \
 		\
-		<div class="row">\
+		<div class="row" id="part1">\
 			<div class="col-xs-3"></div>\
 			<div class="col-xs-3"><h4>Yes</h4></div>\
 			<div class="col-xs-3"><h4>No</h4></div>\
@@ -230,24 +210,46 @@ function morningQuestion( // Create the morningQuestion prototype
 		\
 		<div class="col-lg-4" id="question4">\
 		<div class="form-group">\
-		<form onSubmit="return !!(false & nextQuestion());">\
-	    <div>\
+        \
+        <div class="row">\
+		<div class="col-md-4"></div>\
+	    <div class="col-md-4">\
 		<h3>When you woke up this morning, how did you feel?</h3>\
+		</div>\
+		<div class="col-md-4"></div>\
+		</div>\
 		\
-		<div class="col-lg-4">\
-				<label>Sleepy</label>\
-				<input  onclick="q4script(1)" type="radio" class="form-control  id="InputSleepyId" name="feel" required>\
+		\
+		\
+		<form onSubmit="return !!(false & nextQuestion());">\
+		\
+		\
+		<div class="col-md-3">\
+		<div class="col=md-5">\
+		<label>Sleepy</label>\
+		</div>\
+		<div class="col-md-5">\
+		<input class="form-control" onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
+		</div>\
+		</div>\
+		\
+		<div class="col-md-3" >\
+		<div class="col-md-5" >\
+		<label>Somewhat Sleepy</label>\
+		</div>\
+		<div class="col-md-5">\
+		<input class="form-control  onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required>\
+		</div>\
 		</div>\
 		\
 		<div class="col-lg-4" >\
-		<label>Somewhat Sleepy</label><input  onclick="q4script(2)"  type="radio" class="form-control  id="InputSomewhatSleepyId" name="feel" required>\
+		<label>Alert</label><input class="form-control"  onclick="q4script(3)" type="radio" id="inputAlertId" name="feel" required>\
 		</div>\
-		<div class="col-lg-4" >\
-		<label>Alert</label><input  onclick="q4script(3)" type="radio" class="form-control  id="inputAlertId" name="feel" required>\
-		</div>\
+		\
 		<br/>\
-		<input class="form-control btn btn-default" id="submitButton1" onclick="q4script()" type="submit" value="Next" />\
+		<input class="form-control btn btn-default" id="submitButton1" type="submit" value="Next" />\
 		</form>\
+		<div class="col-md-4"></div>\
 		</div>\
 		</div>\
 		\
@@ -286,7 +288,7 @@ function morningQuestion( // Create the morningQuestion prototype
 		<label><input type="Checkbox" onclick="q5script(0)" id="noneId"   name="None of the above">None of the above</label>\
 		</div>\
 		\
-		<input class="form-control btn btn-default" id="submitButton1" type="submit" value="Next" />\
+		<input class="form-control btn btn-default" id="submitButton1" type="submit" value="Submit" />\
 \
 		</form>\
 		\

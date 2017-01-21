@@ -32,12 +32,12 @@ function q1script() {
 function checkQuestion2() {
 	a = document.getElementById('inputProblemsFallingAsleepId').checked;
 	if (a == true) {
-		
+
 		document.getElementById('part2').style.visibility = "visible";
 	}
 
 	if (a == false) {
-		
+
 		document.getElementById('part2').style.visibility = "hidden";
 	}
 }
@@ -65,6 +65,7 @@ function q3script() {
 // Question 4 Scripts
 function q4script(choice) {
 	questions.setHowDidYouFeel(choice);
+	
 
 }
 
@@ -128,19 +129,35 @@ submitMorningQuestions();
 }
 
 function submitMorningQuestions() {
+	var mqs_answers = {};
+           mqs_answers['mq1_bedTime'] = questions.bedTime;
+           mqs_answers['mq1_wakeTime'] = questions.wakeTime;
+           mqs_answers['mq2_problemsFallingAsleep'] = questions.problemsFallingAsleep;
+           mqs_answers['mq2_minutesToFallAsleep'] = questions.minutesToFallAsleep;
+           mqs_answers['mq3_didWakeDuringTheNight'] = questions.didWakeDuringTheNight;
+           mqs_answers['mq3_minutesToFallBackToSleep'] = questions.minutesToFallBackToSleep;
+           mqs_answers['mq4_howDidYouFeel'] = questions.howDidYouFeel;
+           mqs_answers['mq5_noise'] = questions.noise;
+           mqs_answers['mq5_light'] = questions.light;
+           mqs_answers['mq5_stress'] = questions.stress;
+           mqs_answers['mq5_temp'] = questions.temp;
+           mqs_answers['mq5_nota'] = questions.nota;
 
-window.alert("Submission Successful!!! ") ;
+console.log(mqs_answers);
 
-// check all values
-var a = questions.getNoise();
-var b = questions.getLight();
-var c = questions.getStress();
-var d = questions.getTemp();
-var e = questions.getNota();
 
-// view values in object
- window.alert(a + " " + b + " " + c + " " + d + " " + e );
-
+ $.ajax({
+        url: 'post_mng_answers.php',
+        type: 'post',
+        data: {post_mng_answers:mqs_answers},
+        success: function(data) {
+                                  alert ('Posted Successfully')
+                                },
+        error: function(xhr, desc, err) {
+                                          console.log(xhr);
+                                          console.log("Details: " + desc + "\nError:" + err);
+                                        }
+              }); 
 
 }
 
