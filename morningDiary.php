@@ -151,7 +151,7 @@ console.log(mqs_answers);
         type: 'post',
         data: {post_mng_answers:mqs_answers},
         success: function(data) {
-                                  alert ('Posted Successfully')
+                                  alert ('Posted Successfully');
                                 },
         error: function(xhr, desc, err) {
                                           console.log(xhr);

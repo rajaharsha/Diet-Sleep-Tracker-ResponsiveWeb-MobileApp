@@ -5,7 +5,7 @@
 $obj = $_POST['post_mng_answers'];
 
 
-          $mq1_bedTime = $obj["mq1_bedTime"];
+          $mq1_bedTime = $obj['mq1_bedTime'];
           $mq1_wakeTime = $obj['mq1_wakeTime'];
           $mq2_problemsFallingAsleep = $obj['mq2_problemsFallingAsleep'];
           $mq2_minutesToFallAsleep = $obj['mq2_minutesToFallAsleep'];
