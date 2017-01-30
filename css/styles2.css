@@ -136,4 +136,20 @@ input:checked + .slider:before {
   text-align: center;
 }
 
+.yesTag {
+
+  text-align: center;
+}
+
+.noTag {
+  text-align: center;
+}
+
+.sliderTag {
+  text-align: center;
+}
+.q4Tag {
+  text-align: center;
+}
+
 

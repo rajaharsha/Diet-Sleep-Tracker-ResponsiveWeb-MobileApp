@@ -187,12 +187,25 @@ function morningQuestion( // Create the morningQuestion prototype
 		<div class="form-group">\
 		<form onSubmit="return !!(false & nextQuestion());">\
 		<h3>Last night did you wake up at all during the night?</h3>\
-		<h4 styles="display: inline-block">No</h4>\
-		<label class="switch">\
+		\
+\
+\
+		<div class="row">\
+		\
+		<div class="col-md-4 noTag">\
+		<h4>No</h4>\
+		</div>\
+		\
+		<div class="col-md-4 sliderTag"><label class="switch">\
 		<input id="inputDidWakeDuringTheNightId" type="checkbox">\
 		<div class="slider round"></div>\
 		</label>\
-		<h4>Yes</h4>\
+		</div>\
+		\
+		<div class="col-md-4 yesTag"><h4>Yes</h4></div>\
+		<br/>\
+		</div>\
+\
 		<h4 type="text" name="minutesTryingToFallAsleep"></h4>\
 		<h3>How many minutes did it take you to fall asleep? </h3>\
 		<input class="form-control" id="inputMinutesToFallBackToSleepId" type="Number" name="WakeTime">\
@@ -211,12 +224,11 @@ function morningQuestion( // Create the morningQuestion prototype
 		<div class="col-lg-4" id="question4">\
 		<div class="form-group">\
         \
+        \
         <div class="row">\
-		<div class="col-md-4"></div>\
-	    <div class="col-md-4">\
-		<h3>When you woke up this morning, how did you feel?</h3>\
-		</div>\
-		<div class="col-md-4"></div>\
+		    <div class="col-md-12">\
+			<h3>When you woke up this morning, how did you feel?</h3>\
+			</div>\
 		</div>\
 		\
 		\
@@ -224,32 +236,22 @@ function morningQuestion( // Create the morningQuestion prototype
 		<form onSubmit="return !!(false & nextQuestion());">\
 		\
 		\
-		<div class="col-md-3">\
-		<div class="col=md-5">\
-		<label>Sleepy</label>\
-		</div>\
-		<div class="col-md-5">\
-		<input class="form-control" onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
-		</div>\
-		</div>\
-		\
-		<div class="col-md-3" >\
-		<div class="col-md-5" >\
-		<label>Somewhat Sleepy</label>\
-		</div>\
-		<div class="col-md-5">\
-		<input class="form-control  onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required>\
-		</div>\
-		</div>\
-		\
-		<div class="col-lg-4" >\
-		<label>Alert</label><input class="form-control"  onclick="q4script(3)" type="radio" id="inputAlertId" name="feel" required>\
-		</div>\
-		\
-		<br/>\
+				\
+				<div class="col-md-4" q4Tag>\
+				<label>Sleepy<input class="form-control" onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required></label>\
+				</div>\
+				\
+				<div class="col-md-4" q4Tag>\
+				<label>Somewhat Sleepy<input class="form-control  onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required></label>\
+				</div>\
+				\
+				<div class="col-md-4" q4Tag>\
+				<label>Alert<input class="form-control  onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required></label>\
+				</div>\
+				\
 		<input class="form-control btn btn-default" id="submitButton1" type="submit" value="Next" />\
 		</form>\
-		<div class="col-md-4"></div>\
+		\
 		</div>\
 		</div>\
 		\
