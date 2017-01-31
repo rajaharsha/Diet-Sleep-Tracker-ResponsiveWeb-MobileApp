@@ -119,7 +119,7 @@ questions.setStress(c);
 questions.setTemp(d);
 questions.setNota(e);
 
-window.alert("Items selected: " + finalResult);	
+
 submitMorningQuestions();
 
 } else if (choice == "2"  && finalResult == 0){
