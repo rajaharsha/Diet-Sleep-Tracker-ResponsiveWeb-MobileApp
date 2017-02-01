@@ -21,7 +21,7 @@ box-shadow: 0px 0px 15px 5px white;
 
 .jumbotron {
 margin: 5px;
-background-color: #aabbcc;
+background-color: #7b6493;
 box-shadow: 1px 1px 20px 5px #223344;
 margin-bottom: 20px;
 }
@@ -41,19 +41,18 @@ margin-bottom: 20px;
 }
 
 
-.col-md-4 {
-    padding: 5px;
-}
+
 
 .questionNumber {
   text-shadow: 4px 4px 10px  #bb99ff;
 }
 
 .form-group {
-  border: 2px solid white;
+  border: 1px solid white;
   box-shadow: 2px 2px 20px white;
-  padding: 2px;
+  padding: 5px;
   border-radius: 10px;
+  margin-top: 10px;
 }
 
 
@@ -113,16 +112,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-
-.form-group {
-  padding: 10px;
-
-
-}
-
-.row {
-  margin: 3px;
-}
 
 
 

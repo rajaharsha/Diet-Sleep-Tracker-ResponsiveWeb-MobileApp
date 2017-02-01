@@ -100,20 +100,20 @@ var qs1 = '\
 <form onSubmit="return !!(false & nextQuestion());">\
 <div class="container-fluid">\
 <div class="row">\
-<div class="text-right col-xs-5 col-md-5 col-lg-5"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
-<div class="col-xs-7 col-md-7 col-lg-7"><input type="time" class="form-control" id="inputBedTimeId" name="BedTime"  required ></div>\
+<div class="text-right col-xs-5 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
+<div class="           col-xs-6 col-md-6 col-lg-6"><input type="time" class="form-control" id="inputBedTimeId" name="BedTime"  required ></div>\
 </div>\
 \
 <div class="row">\
-<div class="text-right col-xs-5 col-lg-5"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
-<div class="col-xs-7 col-lg-7"><input type="time" class="form-control" id="inputWakeTimeId" name="WakeTime" required >\
+<div class="text-right col-xs-5 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
+<div class="           col-xs-6 col-md-6 col-lg-6"><input type="time" class="form-control" id="inputWakeTimeId" name="WakeTime" required >\
 </div>\
 \
 </div>\
 \
 <div class="row">\
-<div class="col-xs-4 col-md-4 col-lg-4"></div>\
-<div class="col-xs-4 col-md-4 col-lg-4">\
+<div class="col-xs-3 col-md-4 col-lg-4"></div>\
+<div class="col-xs-5 col-md-5 col-lg-4">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="q1script()" >\
 <span>Continue</span>\
 </button>\
@@ -240,7 +240,7 @@ var qs4 = ' \
 var qs5 = ' \
 <form onSubmit="return !!(false & q5script(2) ); ">\
 <div class="row">\
-<div class="col-xs-12 text-center">\
+<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
 <h3>Did anything bother your sleep last night?</h3>\
 <h4>Check all that apply</h4>\
 </div>\

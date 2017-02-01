@@ -6,9 +6,9 @@
 
 
 <div class="row">
-<div class="col-xs-0 col-md-4 col-lg-4"></div>
+<div class="col-xs-1 col-md-4 col-lg-4"></div>
 
-<div class="col-xs-12 col-md-4 col-lg-4" id="question1">
+<div class="col-xs-10 col-md-4 col-lg-4" id="question1">
 <div class="form-group">
 
 <div id="questionDisplay">
