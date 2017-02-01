@@ -112,8 +112,8 @@ var qs1 = '\
 </div>\
 \
 <div class="row">\
-<div class="col-xs-7 col-md-5 col-lg-5"></div>\
-<div class="col-xs-5 col-md-7 col-lg-7">\
+<div class="col-xs-4 col-md-4 col-lg-4"></div>\
+<div class="col-xs-4 col-md-4 col-lg-4">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="q1script()" >\
 <span>Continue</span>\
 </button>\
@@ -242,34 +242,42 @@ var qs5 = ' \
 <div class="row">\
 <div class="col-xs-12 text-center">\
 <h3>Did anything bother your sleep last night?</h3>\
-<h2>Check all that apply</h2>\
-</div>\
-</div>\
-\
-\
-<div class="col-md-2"></div>\
-<div class="col-md-10">\
-<div class="checkbox">\
-<label><input type="Checkbox" onclick="q5script(1)" id="noiseId"  name="Noise">Noise</label>\
+<h4>Check all that apply</h4>\
 </div>\
 \
-<div class="checkbox">\
-<label><input type="Checkbox" onclick="q5script(1)" id="lightId"  name="Light">Light</label>\
+\
+\
+<div class="col-xs-4 col-md-4 col-lg-4"></div>\
+\
+<div class="col-xs-8 col-md-6 col-lg-6">\
+\
+		<div class="checkbox">\
+		<label><input type="Checkbox" onclick="q5script(1)" id="noiseId"  name="Noise">Noise</label>\
+		</div>\
+		\
+		<div class="checkbox">\
+		<label><input type="Checkbox" onclick="q5script(1)" id="lightId"  name="Light">Light</label>\
+		</div>\
+		\
+		<div class="checkbox">\
+		<label><input type="Checkbox" onclick="q5script(1)" id="worryId"  name="Stress/Worry">Stress/Worry</label>\
+		</div>\
+		\
+		<div class="checkbox">\
+		<label><input type="Checkbox" onclick="q5script(1)" id="tempId"   name="Room Temperature">Room Temperature</label>\
+		</div>\
+		\
+		<div class="checkbox">\
+		<label><input type="Checkbox" onclick="q5script(0)" id="noneId"   name="None of the above">None of the above</label>\
+		</div>\
+\
 </div>\
 \
-<div class="checkbox">\
-<label><input type="Checkbox" onclick="q5script(1)" id="worryId"  name="Stress/Worry">Stress/Worry</label>\
+<div class="row">\
+<div class="col-xs-4 col-md-4 col-lg-4"></div>\
+<div class="col-xs-4 col-md-4 col-lg-4"><label for="submitButton1"></label><input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" />\
 </div>\
 \
-<div class="checkbox">\
-<label><input type="Checkbox" onclick="q5script(1)" id="tempId"   name="Room Temperature">Room Temperature</label>\
-</div>\
-\
-<div class="checkbox">\
-<label><input type="Checkbox" onclick="q5script(0)" id="noneId"   name="None of the above">None of the above</label>\
-</div>\
-\
-<input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" />\
 </div>\
 </div>\
 </form>\
