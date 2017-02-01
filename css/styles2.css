@@ -37,7 +37,7 @@ margin-bottom: 20px;
 
 .btn-primary {
   font-weight: 500;
-  padding: 20px;
+
 }
 
 
@@ -52,7 +52,7 @@ margin-bottom: 20px;
 .form-group {
   border: 2px solid white;
   box-shadow: 2px 2px 20px white;
-  padding: 5px;
+  padding: 2px;
   border-radius: 10px;
 }
 
@@ -115,41 +115,17 @@ input:checked + .slider:before {
 
 
 .form-group {
-  padding: 15px;
+  padding: 10px;
 
 
 }
-
-
-.largerCheckbox {
-  transform: zoom(1.5);
-
-
-}
-
 
 .row {
-  margin: 10px;
+  margin: 3px;
 }
 
-.col-xs-3 {
-  text-align: center;
-}
 
-.yesTag {
 
-  text-align: center;
-}
 
-.noTag {
-  text-align: center;
-}
-
-.sliderTag {
-  text-align: center;
-}
-.q4Tag {
-  text-align: center;
-}
 
 

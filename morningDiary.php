@@ -1,5 +1,31 @@
-<?php include('./includes/header.php'); ?><!-- Bring in the Jumbotron and Navigation bars --> 
-<div id="questionDisplay"></div>  <!-- Present questions HERE -->
+<?php include('./includes/header.php'); ?><!-- Bring in the Jumbotron and Navigation bars -->
+
+
+
+
+
+
+<div class="row">
+<div class="col-xs-0 col-md-4 col-lg-4"></div>
+
+<div class="col-xs-12 col-md-4 col-lg-4" id="question1">
+<div class="form-group">
+
+<div id="questionDisplay">
+	
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+  <!-- Present questions HERE -->
 <script src="morningQuestionsScripts.js"></script> 
 <script>
 
