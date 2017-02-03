@@ -1,14 +1,24 @@
-<!DOCTYPE html>
+
 <html lang="en">
+
+<?php
+// Checks if a Active session is created for a user or not.
+
+$userid = '';
+$username = '';  
+if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
+
+if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
+
+?>
+
 <head>
   <title>Coach Z</title>  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-
+  <meta name="description" content="Coach Z or Sleep App">
+  <meta name="author" content="Raja Harsha Chinta & Brian Watkins">
 
 
   <!-- Bootstrap core CSS -->
@@ -21,73 +31,62 @@
 
 
 
-
-
-
-
-
 <!-- custom styles -->
     <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
     <link href="css/jumbotron.css" rel="stylesheet">
-
-
-
-
-
     <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
-
-
+  
 
   </head>
 
-
-
-
-
-
 <body>
 
+    <script src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 
-  <header> 
+  
+<script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
+<script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">CoachZ</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class=""><a href="#">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <?php
+        
+          if($userid){
+                       echo "
+                             <li><a href='logout.php'><b>Logout<b></a></li>
+                            ";
+          }
+          else {  
+
+                       echo "<li><a href='#' data-toggle='modal' data-target='#modalRegister'>Login</a></li>         
+                             <li><a href='#' data-toggle='modal' data-target='#modalRegister'>Register</a></li>";
+          }
+          ?>
+        </ul>
+        
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
 
 
 <!-- Navigation and login Bar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Coach Z</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-
-
-
-
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron hidden-xs">
-    <div class="container">
-      <h1>Coach Z</h1>
-      <p>Welcome to your Morning Diary Questionnaire.</p>
-    </div>
-  </div>
-
-    </header>

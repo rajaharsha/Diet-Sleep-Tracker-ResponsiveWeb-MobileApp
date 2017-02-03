@@ -6,11 +6,11 @@
    $(document).ready(function(){
 
 
-    $("#coach_z_reg").click(function()){
+    $("#coach_z_reg").click(function(){
       var reg_form = document.getElementById("newuser");
       user_reg['username'] = form_value[0],value;
       alert(user_reg['username']);
-    }
+    })
 
 
     $("#q1").click(function() {  // NEXT Button
@@ -43,7 +43,7 @@
            if (document.getElementById("eqs5op1").checked)(user_rec['eq5_Mood'] = document.getElementById("eqs5op1").value)
            else if(document.getElementById("eqs5op2").checked)(user_rec['eq5_Mood'] = document.getElementById("eqs5op2").value)
            else if(document.getElementById("eqs5op3").checked)(user_rec['eq5_Mood'] = document.getElementById("eqs5op3").value)
-           else if(document.getElementById("eqs5op4").checked)(user_rec['eq5_Mood'] = document.getElementById("eqs5op4").value)            )
+           else if(document.getElementById("eqs5op4").checked)(user_rec['eq5_Mood'] = document.getElementById("eqs5op4").value)
            else '';                     
          }
 

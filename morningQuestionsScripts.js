@@ -1,3 +1,5 @@
+alert ("Hi ");
+
 function morningQuestion( // Create the morningQuestion prototype
     bedTime, // String
 	wakeTime, // String
@@ -96,6 +98,12 @@ function morningQuestion( // Create the morningQuestion prototype
 
 
 		var qs1 = '\
+		<div class="progress">\
+		  <div class="progress-bar progress-bar-striped active" role="progressbar"\
+		  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
+		    20%\
+		  </div>\
+		</div>\
 		<div class="row" >\
 		<div class="col-md-4"></div>\
 		<div class="col-md-4" id="question1"> \

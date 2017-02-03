@@ -1,4 +1,12 @@
-<?php include('./includes/header.php'); ?><!-- Bring in the Jumbotron and Navigation bars --> 
+<?php 
+  include("./includes/db_connection.php");
+  include("./includes/session.php");
+  include("./includes/functions.php");
+  confirm_logged_in();
+  include('./includes/header.php');
+?>
+
+<!-- Bring in the Jumbotron and Navigation bars --> 
 
 <script>
 

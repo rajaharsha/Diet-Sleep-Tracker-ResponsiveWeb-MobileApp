@@ -6,6 +6,113 @@ include("./includes/header.php");
 
 
 
+      <div class="container">
+
+          <form id="signin" method ="post" action="login_validation.php">
+
+              <div class="col-sm-4" style="text-align:center"> 
+              <img src="assets/unnamed.png" class="center-block" alt="CoachZ" width="200" height="200"> 
+              <h1><b>CoachZ<b></h1>
+              </div>
+
+              <div class="col-sm-4" style="text-align:center"> 
+                   
+              </div>    
+
+              <?php        
+
+              if ($userid){  
+
+               echo '<div class="col-sm-4" style="text-align:center"> 
+                         <h3><b>Welcome Back! '.$username.  ' <b></h3>
+                     </div>';
+                   }
+               else {    
+
+               echo '<div class="col-sm-4" style="text-align:center"> 
+                         <h3><b>Login Here!<b></h3>
+                         
+                         <input type="text" id="nav_username" placeholder="Username" name="username" class="form-control">
+                         
+                         <input type="password" id="nav_password" placeholder="Password" name="password" class="form-control">
+                         <br>
+                         <button type="submit" class="btn btn-success center-block value="login_button" id="login_button">Sign in</button> 
+                         <br>
+                         <div id="errormsg"  role="alert"><?php echo message(); ?></div> 
+                     </div>';}
+
+              ?>
+
+          </form>
+
+      </div>
+
+<script>
+
+
+function user_login(){
+
+  var username = document.getElementById("nav_username").value;
+  var userpassword = document.getElementById("nav_password").value;  
+  var user_login_check = check_user_login(username,userpassword);
+  var db_resp = user_login_check.responseText;
+  console.log(db_resp);
+  if (db_resp.trim() == 'ACCESS_GRANTED')
+                                        {
+                                    /*      alert('ACCESS_GRANTED');*/
+                                          create_session(username);
+                                        }
+    else ($( '#login_button' ).siblings('.help-block').html("Incorrect Credentials"));
+  }
+
+
+
+function create_session(username){
+  return $.ajax({
+    url: 'post_create_session.php',
+    type: 'post',
+    async: false,
+    data: {myData:username},
+
+    error: function(xhr,desc,err){
+      console.log(xhr);
+      console.log("Details: " + desc + "\nError:" + err);
+    }
+  });
+}
+
+function check_user_login(username,userpassword){
+
+    var user_login = {};
+    user_login['username'] = username;
+    user_login['userpassword'] = userpassword;
+
+
+    return $.ajax({
+          url: 'post_user_login.php',
+          type: 'post',
+          async: false,
+          data: {myData:user_login},
+          error: function(xhr, desc, err){
+                                         alert('User Validation is not Complete');
+                                         console.log(xhr);
+                                         console.log("Details: " + desc + "\nError:" + err);
+                                         }
+  });
+}
+</script>    
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
