@@ -97,8 +97,10 @@ this.getNota = function getNota() {
 
 
 var qs1 = '\
-<form onSubmit="return !!(false & nextQuestion());">\
 <div class="container-fluid">\
+\
+<form onSubmit="return !!(false & nextQuestion());">\
+\
 <div class="row">\
 <div class="text-right col-xs-5 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
 <div class="           col-xs-6 col-md-6 col-lg-6"><input type="time" class="form-control" id="inputBedTimeId" name="BedTime"  required ></div>\
@@ -118,123 +120,216 @@ var qs1 = '\
 <span>Continue</span>\
 </button>\
 </div>\
-</div>\
+\
 </form>\
 \
+</div>\
 ';
+
+
+
+
 
 
 var qs2 = ' \
+\
+<div class="container-fluid">\
 <form onSubmit="return !!(false & nextQuestion());">\
-<h3 id="part1" >Did you have any problems falling asleep last night?</h3> \
-<div class="row" id="part1">\
-<div class="col-xs-3"></div>\
-<div class="col-xs-3"><h4>Yes</h4></div>\
-<div class="col-xs-3"><h4>No</h4></div>\
-<div class="col-xs-3"></div>\
-</div>\
-\
 <div class="row">\
-<div class="col-xs-3"></div>\
-<div class="col-xs-3">\
-<input type="radio" name="q2" onclick="checkQuestion2()" id="inputProblemsFallingAsleepId">\
-</div>\
 \
-<div class="col-xs-3">\
-<input type="radio" name="q2" onclick="checkQuestion2()" id="inputProblemsFallingAsleepId">\
-</div>\
-<div class="col-xs-3"></div>\
-</div>\
 \
-<div id="part2" style="visibility: hidden;">\
-<h4 name="minutesTryingToFallAsleep"></h4>\
-<h3>How many minutes did it take you to fall asleep? </h3>\
-<div class="col-xs-4"></div>\
-\
-<div class="col-xs-4">\
-<input class="form-control" id="inputMinutesToFallAsleepId" min="0" type="number" name="WakeTime">\
-</div>\
-<div class="col-xs-4"></div>\
-</div>\
-\
+			<div class="row">\
+			<div class="col-xs-12 text-center">\
+			<h3 id="part1">Did you have any problems falling asleep last night?</h3> \
+			</div>\
+			</div>\
+			\
+			\
+			\
+			\
+			<div class="row" id="part1">\
+					<div class="col-xs-3"></div>\
+					\
+					<div class="col-xs-3 text-center">\
+					<h4>Yes</h4>\
+					</div>\
+					\
+					<div class="col-xs-3 text-center">\
+					<h4>No</h4>\
+					</div>\
+					\
+					<div class="col-xs-3"></div>\
+			</div>\
+			\
+			\
+			<div class="row">\
+					<div class="col-xs-3"></div>\
+					\
+					<div class="col-xs-3 text-center">\
+					<input type="radio" name="q2" onclick="checkQuestion2()" id="inputProblemsFallingAsleepId">\
+					</div>\
+					\
+					<div class="col-xs-3 text-center">\
+					<input type="radio" name="q2" onclick="checkQuestion2()" id="inputProblemsFallingAsleepId">\
+					</div>\
+					\
+					<div class="col-xs-3"></div>\
+			</div>\
+			\
+			\
+			\
+			\
+			<div class="row" id="part2" style="visibility: hidden;">\
+					<div class="row">\
+						<div class="col-xs-12 text-center">\
+						<h3>How many minutes did it take you to fall asleep?</h3> \
+						</div>\
+					</div>\
+					\
+					\
+							<div class="row">\
+									<div class="col-xs-4"></div>\
+										<div class="col-xs-4">\
+											<input class="form-control text-center " id="inputMinutesToFallAsleepId" min="0" type="number" name="WakeTime">\
+										</div>\
+										<div class="col-xs-4"></div>\
+									</div>\
+							</div>\
+							\
+<br\>						\
+							\
+<div class="row">\
+<div class="col-xs-4 col-md-4 col-lg-4"></div>\
+<div class="col-xs-4 col-md-4 col-lg-4">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
 <span>Continue</span>\
 </button>\
+</div>\
+</div>\
+</div\
+			\
 \
-</form>\
+\
+</div> <!-- End of Row -->\
+</form> <!-- End of form --> \
+</div> <!-- End of Container-fluid --> \
 ';
+
+
+
+
+
+
 
 
 
 
 
 var qs3 = ' \
+<div class="container-fluid">\
+<div class="row">\
 <form onSubmit="return !!(false & nextQuestion());">\
-<h3>Last night did you wake up at all during the night?</h3>\
 <div class="row">\
 \
-<div class="col-md-4 noTag">\
-<h4>No</h4>\
-</div>\
-\
-<div class="col-md-4 sliderTag"><label class="switch">\
-<input id="inputDidWakeDuringTheNightId" type="checkbox">\
-<div class="slider round"></div>\
-</label>\
-</div>\
-\
-<div class="col-md-4 yesTag"><h4>Yes</h4></div>\
-<br/>\
-</div>\
-\
-<h4 type="text" name="minutesTryingToFallAsleep"></h4>\
-<h3>How many minutes did it take you to fall asleep? </h3>\
-<input class="form-control" id="inputMinutesToFallBackToSleepId" type="Number" min="0"  name="WakeTime">\
-\
+	<div class="row">\
+	<div class="col-xs-12 text-center">\
+	<h3>Last night did you wake up at all during the night?</h3> \
+	</div>\
+	</div>\
+	\
+	<div class="row">\
+	<div class="col-md-3"></div>\
+	<div class="col-md-2 noTag text-center">\
+	<h4>No</h4>\
+	</div>\
+	\
+	<div class="col-md-3 sliderTag text-center"><label class="switch">\
+	<input id="inputDidWakeDuringTheNightId" type="checkbox">\
+	<div class="slider round"></div>\
+	</label>\
+	</div>\
+	\
+	<div class="col-md-2 yesTag text-center"><h4>Yes</h4></div>\
+	<br/>\
+	</div>\
+	\
+	\		<div class="row">\
+				<div class="col-xs-12 text-center">\
+				<h3>How many minutes did it take you to fall asleep?</h3> \
+				</div>\
+			</div>\
+			\
+			<div class="row">\
+				<div class="col-md-3"></div>\
+				<div class="col-md-6 text-center">\
+				<input class="form-control text-center" id="inputMinutesToFallBackToSleepId" type="Number" min="0"  name="WakeTime">\
+				</div>\
+			</div>\
+	<br/>\
+<div class="row">\
+<div class="col-xs-4 col-md-4 col-lg-4"></div>\
+<div class="col-xs-4 col-md-4 col-lg-4">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="q3script()" >\
 <span>Continue</span>\
 </button>\
+</div>\
+</div>\
+	\
 \
-</form>\
-\
+</form>  <!-- Form --> \
+</div>   <!-- Row --> \
+</div>   <!-- Container-fluid --> \
 ';
 
 
 var qs4 = ' \
+<div class="container-fluid">\
 <div class="row">\
-<div class="col-xs-12 text-center">\
-<h3>When you woke up this morning, how did you feel?</h3>\
-</div>\
-</div>\
-\
 <form onSubmit="return !!(false & nextQuestion());">\
-\
-<div class="container-fluid text-center">\
-\
-<div class="row">\
-<div class="col-xs-12">\
-<label for="InputSleepyId">Sleepy</label> <input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
-</div>\
-</div>\
-\
-<div class="row blankrow" style="height: 5px;"></div>\
-\
-<div class="row">\
-<div class="col-xs-12">\
-<label for="InputSomewhatSleepyId">Somewhat Sleepy</label> <input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required></div>\
-</div> \
-\
-<div class="row blankrow" style="height: 5px;"></div> \
-\
-\
-<div class="row">\
-<div class="col-xs-12"><label for="InputAlertId">Alert</label> <input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required></div>\
-</div> \
-\
-</div>\
-\
-<input class="form-control btn-primary" id="submitButton1" type="submit" value="Next" />\
-</form>';
+	\
+	\
+	<div class="row">\
+		<div class="col-xs-12 text-center">\
+			<h3>When you woke up this morning, how did you feel?</h3>\
+		</div> <!-- col-xs-12 -->\
+	</div> <!-- Row -->\
+	\
+	\
+	<div class="row">\
+		<div class="col-xs-12">\
+		<label for="InputSleepyId">Sleepy</label> <input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
+		</div> <!-- col-xs-12 -->\
+	</div> <!-- Row -->\
+	\
+	\
+	\
+	\
+	<div class="row">\
+	<div class="col-xs-12 text-left">\
+	\
+			<label for="InputSomewhatSleepyId">Somewhat Sleepy</label> <input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required></div>\
+			</div>\
+			\
+			<div class="row blankrow" style="height: 5px;"></div> <!-- I created Blankrow -->  \
+			\
+			\
+			<div class="row">\
+			<div class="col-xs-12"><label for="InputAlertId">Alert</label> <input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required></div>\
+			</div>\
+			\
+			</div>\
+			\
+			<input class="form-control btn-primary" id="submitButton1" type="submit" value="Next" />\
+			</form>\
+	</div> <!-- Row --> \
+	</div> <!-- col-x-12 --> \
+	\
+	\
+	\
+	\
+</row> <!-- Row --> \
+</div> <!-- Container-Fluid --> \
+';
 
 
 var qs5 = ' \
