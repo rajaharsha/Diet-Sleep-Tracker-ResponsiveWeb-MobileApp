@@ -288,47 +288,56 @@ var qs4 = ' \
 <form onSubmit="return !!(false & nextQuestion());">\
 	\
 	\
+	\
+	\
 	<div class="row">\
 		<div class="col-xs-12 text-center">\
-			<h3>When you woke up this morning, how did you feel?</h3>\
-		</div> <!-- col-xs-12 -->\
-	</div> <!-- Row -->\
+		<h3>When you woke up this morning, how did you feel?</h3>\
+		</div>\
+	</div>\
 	\
 	\
+	\
+	<!-- Sleepy Checkbox -->\
+	<div class="row">\
+		<div onmouseover="hoverFunction(1);" class="col-xs-12">\
+		<label for="InputSleepyId"><input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
+		Sleepy</label>\
+		</div>\
+	</div>\
+	\
+	\
+	\
+	\
+	<!-- Somewhat Sleepy Checkbox --> \
 	<div class="row">\
 		<div class="col-xs-12">\
-		<label for="InputSleepyId">Sleepy</label> <input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
-		</div> <!-- col-xs-12 -->\
-	</div> <!-- Row -->\
+		<label for="InputSomewhatSleepyId"><input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required>\
+		Somewhat Sleepy</label> \
+		</div>\
+	</div>\
 	\
 	\
 	\
 	\
+	<!-- Alert Checkbox --> \
 	<div class="row">\
-	<div class="col-xs-12 text-left">\
-	\
-			<label for="InputSomewhatSleepyId">Somewhat Sleepy</label> <input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required></div>\
-			</div>\
-			\
-			<div class="row blankrow" style="height: 5px;"></div> <!-- I created Blankrow -->  \
-			\
-			\
-			<div class="row">\
-			<div class="col-xs-12"><label for="InputAlertId">Alert</label> <input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required></div>\
-			</div>\
-			\
-			</div>\
-			\
-			<input class="form-control btn-primary" id="submitButton1" type="submit" value="Next" />\
-			</form>\
-	</div> <!-- Row --> \
-	</div> <!-- col-x-12 --> \
+		<div class="col-xs-12"><label for="InputAlertId"><input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required>\
+		Alert</label> \
+		</div>\
+	</div> \
 	\
 	\
 	\
-	\
-</row> <!-- Row --> \
-</div> <!-- Container-Fluid --> \
+	<input class="form-control btn-primary" id="submitButton1" type="submit" value="Continue" />\
+\
+\
+\
+\
+\
+</form>\
+</row>\
+</div>\
 ';
 
 

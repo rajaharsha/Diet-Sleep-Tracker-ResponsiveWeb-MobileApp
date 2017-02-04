@@ -154,6 +154,13 @@ submitMorningQuestions();
 
 }
 
+
+function hoverFunction(x) {
+	document.getElementById('choice1').innerHTML 
+}
+
+
+
 function submitMorningQuestions() {
 	var mqs_answers = {};
            mqs_answers['mq1_bedTime'] = questions.bedTime;
