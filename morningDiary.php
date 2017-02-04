@@ -156,7 +156,7 @@ submitMorningQuestions();
 
 
 function hoverFunction(x) {
-	document.getElementById('choice1').innerHTML 
+	document.getElementById('choice1').style.backgroundColor = "red";
 }
 
 
