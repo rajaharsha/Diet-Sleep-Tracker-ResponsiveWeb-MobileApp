@@ -2,10 +2,15 @@
 
 
 
+<body>
 
+<div class="container">
+<div class="row" id="mainRow">
 
+<div class="col-md-12">
+<?php include('./includes/navigation_bar.php'); ?>
+</div><br /><br /><br />
 
-<div class="row">
 <div class="col-xs-1 col-md-4 col-lg-4"></div>
 
 <div class="col-xs-10 col-md-4 col-lg-4" id="question1">
@@ -16,10 +21,11 @@
 </div>
 </div>
 </div>
+</div>
 
 </div>
 
-
+</body>
 
 
 

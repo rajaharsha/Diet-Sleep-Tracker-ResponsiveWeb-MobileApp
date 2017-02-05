@@ -5,36 +5,11 @@ background-color: #223344;
 
 }
 
-
-body {
-padding-top: 85px;
-opacity: 0.85;
-background-color: #e6ccff;
-border-radius: 10px;
-box-shadow: 0px 0px 15px 5px white;
+#mainRow {
+  border: 1px solid black;
+  margin-top: 200px;
 }
 
-
-
-
-
-
-.jumbotron {
-margin: 5px;
-background-color: #7b6493;
-box-shadow: 1px 1px 20px 5px #223344;
-margin-bottom: 20px;
-}
-
-
-
-
-
-
-.btn-primary {
-  font-weight: 500;
-
-}
 
 
 
