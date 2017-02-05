@@ -185,9 +185,9 @@ console.log(mqs_answers);
                                           console.log(xhr);
                                           console.log("Details: " + desc + "\nError:" + err);
                                         }
-              }); 
-
+              });
 }
+
 
 
 
@@ -196,7 +196,6 @@ console.log(mqs_answers);
 
 
 <?php require_once("./includes/footer.php"); ?>
-</body> <!-- Close the Body -->
 
 
 

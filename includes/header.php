@@ -1,18 +1,8 @@
 
+
+<!DOCTYPE html>
 <html lang="en">
-
-<?php
-// Checks if a Active session is created for a user or not.
-
-$userid = '';
-$username = '';  
-if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
-
-if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
-
-?>
-
-<head>
+  <head>
   <title>Coach Z</title>  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +10,13 @@ if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
   <meta name="description" content="Coach Z or Sleep App">
   <meta name="author" content="Raja Harsha Chinta & Brian Watkins">
 
-
+<?php
+// Checks if a Active session is created for a user or not.
+$userid = '';
+$username = '';  
+if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
+if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
+?>
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
