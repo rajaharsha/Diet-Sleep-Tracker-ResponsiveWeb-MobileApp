@@ -6,6 +6,7 @@
    $(document).ready(function(){
 
 
+<<<<<<< HEAD
     $("#coach_z_reg").click(function(){
       var reg_form = document.getElementById("newuser");
       user_reg['username'] = form_value[0],value;
@@ -190,6 +191,8 @@
          }
       })
   });
+
+
 
 function evg_ans_submit() {
            var eqs_answers = {};

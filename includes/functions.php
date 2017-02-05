@@ -128,6 +128,71 @@
 		
 	}
 
+function insert_mng_answer(						
+		  $mq1_bedTime,
+          $mq1_wakeTime,
+          $mq2_problemsFallingAsleep,
+          $mq2_minutesToFallAsleep,
+          $mq3_didWakeDuringTheNight,
+          $mq3_minutesToFallBackToSleep,
+          $mq4_howDidYouFeel,
+          $mq5_noise,
+          $mq5_light,
+          $mq5_stress,
+          $mq5_temp,
+          $mq5_nota) 
+{
+		global $connection;
+		
+
+		$query  = "INSERT INTO 
+				   cz_mng_answers 
+				   (mq1_bedTime,
+				   mq1_wakeTime,
+          mq2_problemsFallingAsleep,
+          mq2_minutesToFallAsleep,
+          mq3_didWakeDuringTheNight,
+          mq3_minutesToFallBackToSleep,
+          mq4_howDidYouFeel,
+          mq5_noise,
+          mq5_light,
+          mq5_stress,
+          mq5_temp,
+          mq5_nota	
+				   ) VALUES 
+				   (
+		  '$mq1_bedTime',
+          '$mq1_wakeTime',
+          '$mq2_problemsFallingAsleep',
+          '$mq2_minutesToFallAsleep',
+          '$mq3_didWakeDuringTheNight',
+          '$mq3_minutesToFallBackToSleep',
+          '$mq4_howDidYouFeel',
+          '$mq5_noise',
+          '$mq5_light',
+          '$mq5_stress',
+          '$mq5_temp',
+          '$mq5_nota'	
+				   )";
+
+		$result_id = mysqli_query($connection, $query);
+		error_log("Inside query\n" . $query , 3, "/Users/bfwatkin/Desktop/error.log");
+		// confirm_query($result_id);
+		if($result_id) {
+			$_SESSION["message"] = "Response Posted";
+			return true;
+
+		} else {
+			$_SESSION["message"] = "Database Error";
+			return false;
+		}
+		
+	}
+
+
+
+
+
           function insert_usr_rec(
             $user_name,
             $user_email,
@@ -229,6 +294,11 @@
 			return NULL;
 		}
 	}
+
+
+
+
+
 
 
 	?>
