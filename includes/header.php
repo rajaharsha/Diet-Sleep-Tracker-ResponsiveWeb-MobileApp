@@ -30,11 +30,6 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
     <link href="css/jumbotron.css" rel="stylesheet">
-
-
-
-
-
     <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
 
@@ -82,12 +77,5 @@
 
 
 
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron hidden-xs">
-    <div class="container">
-      <h1>Coach Z</h1>
-      <p>Welcome to your Morning Diary Questionnaire.</p>
-    </div>
-  </div>
 
     </header>

@@ -96,6 +96,7 @@ this.getNota = function getNota() {
 
 
 
+
 var qs1 = '\
 <div class="container-fluid">\
 \
@@ -300,8 +301,8 @@ var qs4 = ' \
 	\
 	<!-- Sleepy Checkbox -->\
 	<div class="row">\
-		<div onmouseover="hoverFunction(1);" class="col-xs-12">\
-		<label for="InputSleepyId"><input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
+		<div class="col-xs-12">\
+		<label id="q4Label" for="InputSleepyId"><input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
 		Sleepy</label>\
 		</div>\
 	</div>\
@@ -312,7 +313,7 @@ var qs4 = ' \
 	<!-- Somewhat Sleepy Checkbox --> \
 	<div class="row">\
 		<div class="col-xs-12">\
-		<label for="InputSomewhatSleepyId"><input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required>\
+		<label id="q4Label"  for="InputSomewhatSleepyId"><input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required>\
 		Somewhat Sleepy</label> \
 		</div>\
 	</div>\
@@ -322,7 +323,7 @@ var qs4 = ' \
 	\
 	<!-- Alert Checkbox --> \
 	<div class="row">\
-		<div class="col-xs-12"><label for="InputAlertId"><input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required>\
+		<div class="col-xs-12"><label id="q4Label"  for="InputAlertId"><input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required>\
 		Alert</label> \
 		</div>\
 	</div> \

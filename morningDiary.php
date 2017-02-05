@@ -155,9 +155,6 @@ submitMorningQuestions();
 }
 
 
-function hoverFunction(x) {
-	document.getElementById('choice1').style.backgroundColor = "red";
-}
 
 
 
