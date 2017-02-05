@@ -1,9 +1,12 @@
 <!-- Reference for all files that are being included in the page-->
-<?php
-include("./includes/cz_functions.js");
-include("./includes/header.php");
+<?php 
+  include("./includes/db_connection.php");
+  include("./includes/session.php");
+  include("./includes/functions.php");
+  confirm_logged_in();
+  include('./includes/header.php');
+  include("./includes/cz_functions.js");
 ?>
-
 
 <!-- for the Apple-like switch -->
 <link rel="stylesheet" href="assets/switchery-master/switchery.css" />

@@ -2,7 +2,7 @@
   include("./includes/db_connection.php");
   include("./includes/session.php");
   include("./includes/functions.php");
-  //confirm_logged_in();
+  confirm_logged_in();
   include('./includes/header.php');
 ?>
 

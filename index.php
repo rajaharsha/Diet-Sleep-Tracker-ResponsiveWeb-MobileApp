@@ -1,7 +1,10 @@
 <!-- Reference for all files that are being included in the page-->
 <?php
-include("./includes/cz_functions.js");
-include("./includes/header.php");
+  include("./includes/cz_functions.js");
+  include("./includes/db_connection.php");
+  include("./includes/session.php");
+  include("./includes/functions.php");
+  include('./includes/header.php');
 ?>
 
 
@@ -24,7 +27,7 @@ include("./includes/header.php");
               if ($userid){  
 
                echo '<div class="col-sm-4" style="text-align:center"> 
-                         <h3><b>Welcome Back! '.$username.  ' <b></h3>
+                         <h3><b>Welcome! '.$username.  ' <b></h3>
                      </div>';
                    }
                else {    
@@ -105,14 +108,6 @@ function check_user_login(username,userpassword){
 
 
 
-
-
-
-
-
-
-
-
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
@@ -135,9 +130,6 @@ function check_user_login(username,userpassword){
       </div>
 
       <hr>
-
-
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

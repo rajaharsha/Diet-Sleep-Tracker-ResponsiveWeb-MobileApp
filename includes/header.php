@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,24 +56,27 @@ if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">CoachZ</a>
+        <a class="navbar-brand" href="index.php">CoachZ</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class=""><a href="#">Home</a></li>
-        </ul>
+
         <ul class="nav navbar-nav navbar-right">
           <?php
         
           if($userid){
                        echo "
-                             <li><a href='logout.php'><b>Logout<b></a></li>
+                             <li>
+                             <a href='home.php'>Home</a>
+                             </li>
+                             <li>
+                             <a href='logout.php'>Logout</a>                           
+                             </li>
                             ";
           }
           else {  
 
-                       echo "<li><a href='#' data-toggle='modal' data-target='#modalRegister'>Login</a></li>         
-                             <li><a href='#' data-toggle='modal' data-target='#modalRegister'>Register</a></li>";
+                       echo "<li><a href='index.php'>Login</a></li>         
+                             <li><a href='user_registration.php'>Register</a></li>";
           }
           ?>
         </ul>
