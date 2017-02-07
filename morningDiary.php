@@ -1,32 +1,36 @@
-<?php include('./includes/header.php'); ?><!-- Bring in the Jumbotron and Navigation bars -->
+<?php
+include('./includes/header.php');
+  include("./includes/db_connection.php");
+  include("./includes/session.php");
+  include("./includes/functions.php");
+  confirm_logged_in();
+  include('./includes/header.php');
+ ?>
 
 
 
-<body>
+
+
 
 <div class="container">
 <div class="row" id="mainRow">
-
 <div class="col-md-12">
-<?php include('./includes/navigation_bar.php'); ?>
-</div><br /><br /><br />
-
 <div class="col-xs-1 col-md-4 col-lg-4"></div>
-
 <div class="col-xs-10 col-md-4 col-lg-4" id="question1">
 <div class="form-group">
-
 <div id="questionDisplay">
-	
+</div>
 </div>
 </div>
 </div>
 </div>
 
-</div>
+
+
+
+
 
 </body>
-
 
 
 
@@ -193,9 +197,9 @@ console.log(mqs_answers);
                                           console.log(xhr);
                                           console.log("Details: " + desc + "\nError:" + err);
                                         }
-              }); 
-
+              });
 }
+
 
 
 
@@ -204,7 +208,6 @@ console.log(mqs_answers);
 
 
 <?php require_once("./includes/footer.php"); ?>
-</body> <!-- Close the Body -->
 
 
 

@@ -1,9 +1,12 @@
 <!-- Reference for all files that are being included in the page-->
-<?php
-include("./includes/cz_functions.js");
-include("./includes/header.php");
+<?php 
+  include("./includes/db_connection.php");
+  include("./includes/session.php");
+  include("./includes/functions.php");
+  confirm_logged_in();
+  include('./includes/header.php');
+  include("./includes/cz_functions.js");
 ?>
-
 
 <!-- for the Apple-like switch -->
 <link rel="stylesheet" href="assets/switchery-master/switchery.css" />
@@ -50,43 +53,6 @@ include("./includes/header.php");
     <body>
 
 
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">Coach Z</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-              <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
-              </div>
-              <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control">
-              </div>
-              <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-          </div><!--/.navbar-collapse -->
-        </div>
-      </nav>
-
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-<!--
-      <div class="jumbotron">
-        <div class="container">
-          <h1>Coach Z</h1>
-          <p>Welcome to your Evening Diary Questionnaire.</p>
-        </div>
-      </div>
--->
-
-  <!-- End of BootStrap DatePicker Code --> 
 <script type="text/javascript">
   var elem = document.querySelector('.js-switch');
 var init = new Switchery(elem);

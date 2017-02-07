@@ -1,4 +1,68 @@
 	<?php
+
+// Sesssion Creation Functions.
+
+/*	session_start();
+	
+	function message() {
+		if (isset($_SESSION["message"])) {
+			$output = "<div class=\"alert alert-danger\" role=\"alert\">";
+			$output .= "<i class=\"fa fa-exclamation-circle\"></i>";
+			$output .= htmlentities($_SESSION["message"]);
+			$output .= "</div>";
+			
+			// clear message after use
+			$_SESSION["message"] = null;
+			
+			return $output;
+		}
+	}
+
+	function errors() {
+		if (isset($_SESSION["errors"])) {
+			$errors = $_SESSION["errors"];
+			
+			// clear message after use
+			$_SESSION["errors"] = null;
+			
+			return $errors;
+		}
+	}*/
+
+// Session Creation Functions ends.
+
+
+		function redirect_to($new_location) {
+	  	header("Location: " . $new_location);
+	  	exit;
+	}
+
+
+	function logged_in() {
+		return isset($_SESSION['uid']);
+	}
+	
+	function confirm_logged_in() {
+		if (!logged_in()) {
+			redirect_to("index.php");
+		}
+	}
+	
+
+	function logged_uid() {
+		return isset($_SESSION['uid']);
+	}
+
+	function logged_uname() {
+		return isset($_SESSION['username']);
+	}
+
+
+	function session_check() {
+		if (isset($_SESSION["uid"]) && isset($_SESSION["username"])) 
+			{return $_SESSION["uid"];}; 
+	}
+
 	function insert_evg_answer(						
 					            $eq1_Morning,                  // 1
 					            $eq1_Afternoon,                // 2    
@@ -16,10 +80,7 @@
 							  ) {
 		global $connection;
 		
-		//$title = verify_input($title);
-		//$title = mysqli_real_escape_string($title);
-		//$question = verify_input($question);
-		//$tag = verify_input($tag);
+
 		$query  = "INSERT INTO 
 				   cz_evg_answers 
 				   (
@@ -166,8 +227,8 @@ function insert_mng_answer(
 	function find_username($username) {
 		global $connection;		
 		$query  = "SELECT USER_NAME FROM coach_z.app_users where USER_NAME = '$username' LIMIT 1";
-		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
-		$result_set = mysqli_query($connection, $query);
+/*		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+*/		$result_set = mysqli_query($connection, $query);
 		$result_user = mysqli_fetch_assoc($result_set);
 		$db_username = $result_user["USER_NAME"];
 
@@ -179,11 +240,36 @@ function insert_mng_answer(
 	}
 
 
+	function find_uid($username) {
+		global $connection;		
+		$query  = "SELECT U_ID FROM coach_z.app_users where USER_NAME = '$username' LIMIT 1";
+/*		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+*/		$result_set = mysqli_query($connection, $query);
+		$result_user = mysqli_fetch_assoc($result_set);
+		$db_uid = $result_user["U_ID"];
+
+		if($db_uid != NULL){ 
+			return $db_uid;
+		} else {
+			return NULL;
+		}
+	}	
+
+	function find_usercred($username) {
+		global $connection;
+		$query  = "SELECT U_ID,USER_NAME,PASS_CODE FROM coach_z.app_users where USER_NAME = '$username' LIMIT 1";
+/*		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+*/		$result_set = mysqli_query($connection, $query);
+		if(!$result_set){die("Database query failed.".$query);}
+		return ($result_set);
+	}
+
+
 	function find_useremail($useremail) {
 		global $connection;		
 		$query  = "SELECT EMAIL FROM coach_z.app_users where EMAIL = '$useremail' LIMIT 1";
-		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
-		$result_set = mysqli_query($connection, $query);
+/*		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+*/		$result_set = mysqli_query($connection, $query);
 		$result_email = mysqli_fetch_assoc($result_set);
 		$db_useremail = $result_email["EMAIL"];
 
@@ -198,13 +284,11 @@ function insert_mng_answer(
 	function find_user_login($username,$userpassword) {
 		global $connection;		
 		$query  = "SELECT USER_NAME FROM coach_z.app_users where USER_NAME = '$username' AND PASS_CODE = '$userpassword' LIMIT 1";
-		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
 		$result_set = mysqli_query($connection, $query);
 		$result_username = mysqli_fetch_assoc($result_set);
 		$db_username = $result_username["USER_NAME"];
 
 		if($db_username != NULL){ 
-			error_log("Inside query\n" . $db_username , 3, "C:/xampp/apache/logs/error.log");
 			return $db_username;
 		} else {
 			return NULL;
