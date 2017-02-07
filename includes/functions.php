@@ -256,11 +256,17 @@ function insert_mng_answer(
 	}	
 
 	function find_usercred($username) {
+		
 		global $connection;
+
 		$query  = "SELECT U_ID,USER_NAME,PASS_CODE FROM coach_z.app_users where USER_NAME = '$username' LIMIT 1";
 /*		error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
-*/		$result_set = mysqli_query($connection, $query);
+*/		
+
+        $result_set = mysqli_query($connection, $query);
+
 		if(!$result_set){die("Database query failed.".$query);}
+		
 		return ($result_set);
 	}
 
