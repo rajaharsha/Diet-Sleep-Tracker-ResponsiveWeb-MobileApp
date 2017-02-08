@@ -6,12 +6,7 @@ include('./includes/header.php');
   confirm_logged_in();
   include('./includes/header.php');
  ?>
-
-
-
-
-
-
+   <!-- Present questions HERE -->
 <div class="container">
 <div class="row" id="mainRow">
 <div class="col-md-12">
@@ -24,18 +19,6 @@ include('./includes/header.php');
 </div>
 </div>
 </div>
-
-
-
-
-
-
-</body>
-
-
-
-
-  <!-- Present questions HERE -->
 <script src="morningQuestionsScripts.js"></script> 
 <script>
 

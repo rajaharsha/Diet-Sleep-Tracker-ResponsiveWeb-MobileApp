@@ -1,3 +1,10 @@
+<?php
+// Checks if a Active session is created for a user or not.
+$userid = '';
+$username = '';  
+if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
+if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,14 +14,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Coach Z or Sleep App">
   <meta name="author" content="Raja Harsha Chinta & Brian Watkins">
-
-<?php
-// Checks if a Active session is created for a user or not.
-$userid = '';
-$username = '';  
-if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
-if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
-?>
 
 
 
