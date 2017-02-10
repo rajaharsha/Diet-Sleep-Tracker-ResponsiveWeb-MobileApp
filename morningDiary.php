@@ -1,10 +1,14 @@
 <?php 
   include("./includes/db_connection.php");
+
+  echo $connection;
   include("./includes/session.php");
   include("./includes/functions.php");
   confirm_logged_in();
   include('./includes/header.php');
 ?>
+
+
 
 <div class="row">
 <div class="col-xs-1 col-md-4 col-lg-4"></div>
@@ -187,10 +191,6 @@ console.log(mqs_answers);
                                         }
               });
 }
-
-
-
-
 
 </script>
 
