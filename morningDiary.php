@@ -6,6 +6,9 @@ include('./includes/header.php');
   confirm_logged_in();
   include('./includes/header.php');
  ?>
+
+
+ 
    <!-- Present questions HERE -->
 <div class="container">
 <div class="row" id="mainRow">
@@ -19,8 +22,11 @@ include('./includes/header.php');
 </div>
 </div>
 </div>
-<script src="morningQuestionsScripts.js"></script> 
+<script src="morningQuestionsScripts.js"></script> <!-- Questions -->
 <script>
+
+
+
 
 	var questionBank = [qs1, qs2, qs3, qs4, qs5];
 	var questions = new morningQuestion("", "", false, "", false, "", "0", "0", "0", "0", "0", "0"); 
@@ -153,18 +159,18 @@ submitMorningQuestions();
 
 function submitMorningQuestions() {
 	var mqs_answers = {};
-           mqs_answers['mq1_bedTime'] = questions.bedTime;
-           mqs_answers['mq1_wakeTime'] = questions.wakeTime;
+           mqs_answers['mq1_bedTime'] 				= questions.bedTime;
+           mqs_answers['mq1_wakeTime'] 				= questions.wakeTime;
            mqs_answers['mq2_problemsFallingAsleep'] = questions.problemsFallingAsleep;
-           mqs_answers['mq2_minutesToFallAsleep'] = questions.minutesToFallAsleep;
+           mqs_answers['mq2_minutesToFallAsleep'] 	= questions.minutesToFallAsleep;
            mqs_answers['mq3_didWakeDuringTheNight'] = questions.didWakeDuringTheNight;
            mqs_answers['mq3_minutesToFallBackToSleep'] = questions.minutesToFallBackToSleep;
-           mqs_answers['mq4_howDidYouFeel'] = questions.howDidYouFeel;
-           mqs_answers['mq5_noise'] = questions.noise;
-           mqs_answers['mq5_light'] = questions.light;
-           mqs_answers['mq5_stress'] = questions.stress;
-           mqs_answers['mq5_temp'] = questions.temp;
-           mqs_answers['mq5_nota'] = questions.nota;
+           mqs_answers['mq4_howDidYouFeel'] 		= questions.howDidYouFeel;
+           mqs_answers['mq5_noise'] 				= questions.noise;
+           mqs_answers['mq5_light'] 				= questions.light;
+           mqs_answers['mq5_stress'] 				= questions.stress;
+           mqs_answers['mq5_temp'] 					= questions.temp;
+           mqs_answers['mq5_nota'] 					= questions.nota;
 
 console.log(mqs_answers);
 
