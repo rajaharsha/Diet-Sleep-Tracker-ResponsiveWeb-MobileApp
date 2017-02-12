@@ -170,24 +170,51 @@ var qs5 = ' \
 <div class="container-fluid">\
 \
 <form onSubmit="return !!(false & nextQuestion());">\
-<h3>How is your mood today?</h3> \
-<form>\
-<div class="radio">\
-<label><input type="radio" name="optradio" value="Happy" id="eqs5op1"> Happy</label>\
-<label><input type="radio" name="optradio" value="Neutral" id="eqs5op2"> Neutral</label>\
-<label><input type="radio" name="optradio" value="Mad" id="eqs5op3"> Mad</label>\
-<label><input type="radio" name="optradio" value="Sad" id="eqs5op4"> Sad</label>\
-</div>\
+        <div class="row text-center">\
+        <div class="col-xs-12 col-md-12 col-lg-12">\
+        <h3>How is your mood today?</h3>\
+        </div>\
+        </div>\
+        \
+        <div class="row">\
+        <div class="col-xs-12 col-md-12 col-lg-12">\
+        <button id="eqs5op1" class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
+        <span>Happy</span>\
+        </button>\
+        </div>\
+        </div>\
+        <br />\
+        <div class="row">\
+        <div class="col-xs-12 col-md-12 col-lg-12">\
+        <button id="eqs5op2" class="form-control btn btn-large btn-Default" type="submit" onclick="q2script()">\
+        <span>Neutral</span>\
+        </button>\
+        </div>\
+        </div>\
+        <br />\
+        <div class="row">\
+        <div class="col-xs-12 col-md-12 col-lg-12">\
+        <button id="eqs5op3" class="form-control btn btn-large btn-danger" type="submit" onclick="q2script()">\
+        <span>Angry</span>\
+        </button>\
+        </div>\
+        </div>\
+        <br />\
+        <div class="row">\
+        <div class="col-xs-12 col-md-12 col-lg-12">\
+        <button id="eqs5op4" class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
+        <span>Sad</span>\
+        </button>\
+        </div>\
+        </div>\
+        \
 </form>\
-\
-<div class="row">\
-<div class="col-xs-3 col-md-4 col-lg-4"></div>\
-<div class="col-xs-5 col-md-5 col-lg-4">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="q1script()" >\
-<span>Continue</span>\
-</button>\
-</div>\
-</div>';
+';
+
+
+
+
+
 
 var qs6 = ' \
 <div class="container-fluid">\
@@ -209,6 +236,11 @@ var qs6 = ' \
 </button>\
 </div>\
 </div>';
+
+
+
+
+
 
 var qs7 = ' \
 <div class="form-group" id="question5"> \
