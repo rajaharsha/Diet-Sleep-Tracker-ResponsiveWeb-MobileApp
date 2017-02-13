@@ -108,20 +108,19 @@ var qs1 = '\
 </div>\
 \
 <div class="row">\
-<div class="text-left col-xs-5 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
-<div class="text-center col-xs-6 col-md-6 col-lg-6"><input type="time" class="form-control" id="inputBedTimeId" name="BedTime"  required ></div>\
+<div class="text-center col-xs-5 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
+<div class="           col-xs-7 col-md-8 col-lg-8"><input type="time" class="form-control" id="inputBedTimeId" name="BedTime"  required ></div>\
 </div>\
 \
 <div class="row">\
-<div class="text-left col-xs-5 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
-<div class="text-center col-xs-6 col-md-6 col-lg-6"><input type="time" class="form-control" id="inputWakeTimeId" name="WakeTime" required >\
+<div class="text-right col-xs-5 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
+<div class="           col-xs-7 col-md-8 col-lg-8"><input type="time" class="form-control" id="inputWakeTimeId" name="WakeTime" required >\
 </div>\
 \
 </div>\
-\
+<br />\
 <div class="row">\
-<div class="col-xs-3 col-md-4 col-lg-4"></div>\
-<div class="col-xs-5 col-md-5 col-lg-4">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="q1script()" >\
 <span>Continue</span>\
 </button>\
@@ -213,8 +212,7 @@ var qs2 = ' \
 <br\>						\
 							\
 <div class="row">\
-<div class="col-xs-4 col-md-4 col-lg-4"></div>\
-<div class="col-xs-4 col-md-4 col-lg-4">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
 <span>Continue</span>\
 </button>\
@@ -289,8 +287,7 @@ var qs3 = ' \
 			</div>\
 	<br/>\
 <div class="row">\
-<div class="col-xs-4 col-md-4 col-lg-4"></div>\
-<div class="col-xs-4 col-md-4 col-lg-4">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="q3script()" >\
 <span>Continue</span>\
 </button>\
@@ -414,8 +411,7 @@ var qs5 = ' \
 </div>\
 \
 <div class="row">\
-<div class="col-xs-4 col-md-4 col-lg-4"></div>\
-<div class="col-xs-4 col-md-4 col-lg-4"><label for="submitButton1"></label><input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" />\
+<div class="col-xs-12 col-md-12 col-lg-12"><label for="submitButton1"></label><input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" />\
 </div>\
 \
 </div>\

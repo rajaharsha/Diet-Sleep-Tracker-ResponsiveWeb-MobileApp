@@ -36,7 +36,7 @@
                          <h3><b>Login Here!<b></h3>
                          
                          <input type="text" id="nav_username" placeholder="Username" name="username" class="form-control">
-                         
+                         <br>
                          <input type="password" id="nav_password" placeholder="Password" name="password" class="form-control">
                          <br>
                          <button type="submit" class="btn btn-success center-block value="login_button" id="login_button">Sign in</button> 

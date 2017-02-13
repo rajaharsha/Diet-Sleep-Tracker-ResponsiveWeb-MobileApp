@@ -12,6 +12,10 @@
     })
 
 
+
+
+
+
     $("#q1").click(function() {  // NEXT Button
       if(ctr < 7) {
 
@@ -80,6 +84,8 @@
            if (ctr >= 7) {ctr = 7;}
          }
       })
+
+
 
 
 
@@ -191,6 +197,27 @@
   });
 
 
+
+
+
+function toFallAsleep() {
+var person = prompt("How many minutes did it take you to fall asleep?", "Minutes to fall asleep....");
+if (person != null) {
+  document.getElementsByID("minutesTryingToFallAsleep".innerHTML = person);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 function evg_ans_submit() {
            var eqs_answers = {};

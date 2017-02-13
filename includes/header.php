@@ -14,7 +14,7 @@ if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Coach Z or Sleep App">
   <meta name="author" content="Raja Harsha Chinta & Brian Watkins">
-
+  <script src="js/jquery.min.js"></script>
 
 
   <!-- Bootstrap core CSS -->
@@ -35,8 +35,6 @@ if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
     <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
     <link href="css/jumbotron.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
-    <link rel="stylesheet" type="text/css" href="css/styles2.css">
 
   
 

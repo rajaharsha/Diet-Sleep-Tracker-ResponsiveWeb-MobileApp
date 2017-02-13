@@ -5,18 +5,18 @@ include("./includes/header.php");
     <div class="row">
               <div class="col-sm-4"></div>
               <div class="col-sm-4">
+                      <br>
+                      <br>
 
-                      <br/><center><h3>Register to Coach Z</h3></center>
-
-                      
-                      
+                      <br/>
+                                      
                       <form action="#" method="post" name="register_form" id="register_form" class="form_class" >
                       <center><p class='help-block'></p></center>
                       <br/>
                       <!--
                       <input typee="text" name="name" id="name" placeholder="Enter User Name" class="form-control" onkeyup="check_duplicate_user(this.id,this.value)"/>
                       -->
-
+                        <center><h3>Register to Coach Z</h3></center>
                         <div class="form-group">
 
                           <p class='help-block'></p>
