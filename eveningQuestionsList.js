@@ -10,7 +10,26 @@ var qs1 = '\
 </div>\
 </div>\
 \
-<div class="row text-center">\
+        <div class="row">\
+        <div class="col-xs-12 col-md-12 col-lg-12">\
+        <button class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
+        <span>Yes!</span>\
+        </button>\
+        </div>\
+        </div>\
+        \
+        <br />\
+\
+        <div class="row">\
+        <div class="col-xs-12 col-md-12 col-lg-12">\
+        <button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
+        <span>Not today!</span>\
+        </button>\
+        </div>\
+        </div>';
+
+
+var qs1partb = '<div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <h4> Records number of caffeinated drinks consumed during each time of day</h4>\
 </div>\
