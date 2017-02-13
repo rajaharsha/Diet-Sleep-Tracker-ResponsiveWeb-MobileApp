@@ -4,6 +4,10 @@ background-color: #223344;
 
 }
 
+body {
+  padding-top: 70px; 
+}
+
 #mainRow {
 
   margin-top: 150px;
@@ -74,7 +78,7 @@ input:checked + .slider:before {
   background-color: white;
 }
 
-.btn-primary, .btn-success, .btn-danger, .btn-Default{
+.btn-primary, .btn-success, .btn-danger, .btn-Default, .btn-info, .btn-warning{
   box-shadow: 3px 3px 3px black;
 }
 
