@@ -1,20 +1,10 @@
 
-
-
-
-
-
-
-
-
-
 var qs1 = '\
 <div class="container-fluid">\
 \
 <form onSubmit="return !!(false & nextQuestion());">\
 \
 <div class="row text-center">\
-\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <h3>Did you drink any caffeinated drinks today?</h3>\
 </div>\

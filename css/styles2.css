@@ -2,39 +2,27 @@ html {
 
 background-color: #223344;
 
-
 }
 
 #mainRow {
-  border: 1px solid black;
-  margin-top: 200px;
+
+  margin-top: 150px;
+  padding: 10px;
 }
 
-
-
-
-
 .questionNumber {
-  text-shadow: 4px 4px 10px  #bb99ff;
+  text-shadow: 4px 4px 10px #bb99ff;
 }
 
 .form-group {
   border: 1px solid white;
   box-shadow: 2px 2px 20px white;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   margin-top: 10px;
+  background-color: #aabbcc;
 }
 
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {display:none;}
 
 .slider {
   position: absolute;
@@ -74,15 +62,6 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
 #q4Label {
   border-radius: 5px;
   padding: 5px;
@@ -95,7 +74,13 @@ input:checked + .slider:before {
   background-color: white;
 }
 
+.btn-primary, .btn-success, .btn-danger, .btn-Default{
+  box-shadow: 3px 3px 3px black;
+}
 
+.btn-Default:hover {
+  background-color: #ccddee;
+}
 
 
 
