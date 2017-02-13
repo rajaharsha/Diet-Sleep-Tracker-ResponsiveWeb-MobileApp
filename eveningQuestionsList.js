@@ -133,7 +133,7 @@ var qs2 = ' \
 var qs3 = '\
 <div class="container-fluid">\
 \
-<form onSubmit="return !!(false & nextQuestion());">\
+\
 \
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -145,7 +145,7 @@ var qs3 = '\
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
+<button class="form-control btn btn-large btn-success" type="submit" onclick="question3(1)">\
 <span>Yes</span>\
 </button>\
 </div>\
@@ -155,14 +155,14 @@ var qs3 = '\
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="question3(0)">\
 <span>No</span>\
 </button>\
 </div>\
 </div>\
 \
 \
-</form>\
+\
 \
 </div>\
 ';
@@ -216,7 +216,7 @@ var qs5 = ' \
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs5op1" class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
+<button id="eqs5op1" class="form-control btn btn-large btn-success" type="submit" onclick="question5(0)">\
 <span>Happy</span>\
 </button>\
 </div>\
@@ -224,7 +224,7 @@ var qs5 = ' \
 <br />\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs5op2" class="form-control btn btn-large btn-Default" type="submit" onclick="q2script()">\
+<button id="eqs5op2" class="form-control btn btn-large btn-Default" type="submit" onclick="question5(1)">\
 <span>Neutral</span>\
 </button>\
 </div>\
@@ -232,7 +232,7 @@ var qs5 = ' \
 <br />\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs5op3" class="form-control btn btn-large btn-danger" type="submit" onclick="q2script()">\
+<button id="eqs5op3" class="form-control btn btn-large btn-danger" type="submit" onclick="question5(2)">\
 <span>Angry</span>\
 </button>\
 </div>\
@@ -240,7 +240,7 @@ var qs5 = ' \
 <br />\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs5op4" class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
+<button id="eqs5op4" class="form-control btn btn-large btn-primary" type="submit" onclick="question5(3)">\
 <span>Sad</span>\
 </button>\
 </div>\
