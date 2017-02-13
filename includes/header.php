@@ -1,3 +1,10 @@
+<?php
+// Checks if a Active session is created for a user or not.
+$userid = '';
+$username = '';  
+if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
+if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,19 +15,18 @@
   <meta name="description" content="Coach Z or Sleep App">
   <meta name="author" content="Raja Harsha Chinta & Brian Watkins">
 
-<?php
-// Checks if a Active session is created for a user or not.
-$userid = '';
-$username = '';  
-if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
-if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
-?>
+
+
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
   <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
+
+  <!-- jquery Resources --> 
   <script src="js/jquery.min.js"></script> 
 
 
@@ -31,6 +37,7 @@ if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
     <link href="css/jumbotron.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
+
   
 
   </head>
@@ -87,3 +94,4 @@ if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
 
 
 <!-- Navigation and login Bar -->
+

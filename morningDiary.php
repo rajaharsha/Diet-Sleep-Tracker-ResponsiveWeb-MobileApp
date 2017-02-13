@@ -1,7 +1,5 @@
-<?php 
+<?php
   include("./includes/db_connection.php");
-
-  echo $connection;
   include("./includes/session.php");
   include("./includes/functions.php");
   confirm_logged_in();
@@ -11,23 +9,27 @@
 
 
 <div class="row">
-<div class="col-xs-1 col-md-4 col-lg-4"></div>
+=======
+ ?>
+   <!-- Present questions HERE -->
+<div class="container">
+<div class="row" id="mainRow">
+<div class="col-md-12">
 
+
+
+<div class="col-xs-1 col-md-4 col-lg-4"></div>
 <div class="col-xs-10 col-md-4 col-lg-4" id="question1">
 <div class="form-group">
-
 <div id="questionDisplay">
-	
 </div>
 </div>
 </div>
-
 </div>
-
-  <!-- Present questions HERE -->
+</div>
 <script src="morningQuestionsScripts.js"></script> 
-<script>
 
+<script>
 	var questionBank = [qs1, qs2, qs3, qs4, qs5];
 	var questions = new morningQuestion("", "", false, "", false, "", "0", "0", "0", "0", "0", "0"); 
 	var ctr = 0; 
@@ -154,9 +156,6 @@ submitMorningQuestions();
 }
 
 
-function hoverFunction(x) {
-	document.getElementById('choice1').style.backgroundColor = "red";
-}
 
 
 

@@ -94,21 +94,27 @@ this.getNota = function getNota() {
 
 
 
-
-
 var qs1 = '\
 <div class="container-fluid">\
 \
 <form onSubmit="return !!(false & nextQuestion());">\
 \
-<div class="row">\
-<div class="text-right col-xs-5 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
-<div class="           col-xs-6 col-md-6 col-lg-6"><input type="time" class="form-control" id="inputBedTimeId" name="BedTime"  required ></div>\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">\
+    1/5 Complete (success)\
+  </div>\
 </div>\
 \
 <div class="row">\
-<div class="text-right col-xs-5 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
-<div class="           col-xs-6 col-md-6 col-lg-6"><input type="time" class="form-control" id="inputWakeTimeId" name="WakeTime" required >\
+<div class="text-left col-xs-5 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
+<div class="text-center col-xs-6 col-md-6 col-lg-6"><input type="time" class="form-control" id="inputBedTimeId" name="BedTime"  required ></div>\
+</div>\
+\
+<div class="row">\
+<div class="text-left col-xs-5 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
+<div class="text-center col-xs-6 col-md-6 col-lg-6"><input type="time" class="form-control" id="inputWakeTimeId" name="WakeTime" required >\
 </div>\
 \
 </div>\
@@ -135,6 +141,14 @@ var qs2 = ' \
 \
 <div class="container-fluid">\
 <form onSubmit="return !!(false & nextQuestion());">\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
+    2/5 Complete (success)\
+  </div>\
+</div>\
+\
 <div class="row">\
 \
 \
@@ -229,6 +243,14 @@ var qs3 = ' \
 <div class="container-fluid">\
 <div class="row">\
 <form onSubmit="return !!(false & nextQuestion());">\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">\
+    3/5 Complete (success)\
+  </div>\
+</div>\
+\
 <div class="row">\
 \
 	<div class="row">\
@@ -287,8 +309,14 @@ var qs4 = ' \
 <div class="row">\
 <form onSubmit="return !!(false & nextQuestion());">\
 	\
-	\
-	\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">\
+    4/5 Complete (success)\
+  </div>\
+</div>\
+\
 	\
 	<div class="row">\
 		<div class="col-xs-12 text-center">\
@@ -300,8 +328,8 @@ var qs4 = ' \
 	\
 	<!-- Sleepy Checkbox -->\
 	<div class="row">\
-		<div onmouseover="hoverFunction(1);" class="col-xs-12">\
-		<label for="InputSleepyId"><input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
+		<div class="col-xs-12">\
+		<label id="q4Label" for="InputSleepyId"><input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
 		Sleepy</label>\
 		</div>\
 	</div>\
@@ -312,7 +340,7 @@ var qs4 = ' \
 	<!-- Somewhat Sleepy Checkbox --> \
 	<div class="row">\
 		<div class="col-xs-12">\
-		<label for="InputSomewhatSleepyId"><input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required>\
+		<label id="q4Label"  for="InputSomewhatSleepyId"><input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required>\
 		Somewhat Sleepy</label> \
 		</div>\
 	</div>\
@@ -322,7 +350,7 @@ var qs4 = ' \
 	\
 	<!-- Alert Checkbox --> \
 	<div class="row">\
-		<div class="col-xs-12"><label for="InputAlertId"><input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required>\
+		<div class="col-xs-12"><label id="q4Label"  for="InputAlertId"><input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required>\
 		Alert</label> \
 		</div>\
 	</div> \
@@ -343,6 +371,14 @@ var qs4 = ' \
 
 var qs5 = ' \
 <form onSubmit="return !!(false & q5script(2) ); ">\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">\
+    5/5 Complete (success)\
+  </div>\
+</div>\
+\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
 <h3>Did anything bother your sleep last night?</h3>\
