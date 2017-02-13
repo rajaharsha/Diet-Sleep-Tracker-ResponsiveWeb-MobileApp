@@ -2,7 +2,7 @@
 var qs1 = '\
 <div class="container-fluid">\
 \
-<form onSubmit="return !!(false & nextQuestion());">\
+<form onSubmit="return !!(false & nextQuestion());"> \
 \
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -12,7 +12,7 @@ var qs1 = '\
 \
         <div class="row">\
         <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
+        <button class="form-control btn btn-large btn-success" onclick="yesCaffeine()">\
         <span>Yes!</span>\
         </button>\
         </div>\
@@ -22,7 +22,7 @@ var qs1 = '\
 \
         <div class="row">\
         <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
+        <button class="form-control btn btn-large btn-primary" type="submit" onclick="noCaffeine()">\
         <span>Not today!</span>\
         </button>\
         </div>\
