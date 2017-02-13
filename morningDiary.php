@@ -10,7 +10,6 @@
 
 
 <div class="row">
-=======
  ?>
    <!-- Present questions HERE -->
 <div class="container">
