@@ -410,26 +410,6 @@ var qs5 = ' \
 \
 </div>\
 \
-\
-  <div class="modal fade" id="morning_tip" role="dialog">\
-    <div class="modal-dialog">\
-    \
-      <div class="modal-content">\
-        <div class="modal-header">\
-          <button type="button" class="close" data-dismiss="modal">&times;</button>\
-          <h4 class="modal-title">Here is your Morning Tip</h4>\
-        </div>\
-        <div class="modal-body">\
-          <p>Did you know that not sleeping enough can impact your grades?  Pulling an all-nighter to study for a test can actually worsen your recall and memory the next day.  Getting the right amount of sleep that your body needs is important for your sleep health!</p>\
-        </div>\
-        <div class="modal-footer">\
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\
-        </div>\
-      </div>\
-      \
-    </div>\
-  </div>\
-\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12"><label for="submitButton1"></label><input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" data-toggle="modal" data-target="#morning_tip" />\
 </div>\
@@ -438,15 +418,6 @@ var qs5 = ' \
 </div>\
 </form>\
 ';
-
-
-
-
-
-
-
-
-
 
 
 

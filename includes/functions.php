@@ -216,4 +216,16 @@ return $db_username;
 return NULL;
 }
 }
+
+function get_new_morning_entry_day($userid){
+global $connection;
+$query = "SELECT MAX(LOG_DAY) AS MAX_MOR_DAY FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid";
+
+$query_result = mysqli_query($connection, $query);
+$fetch_rows = mysqli_fetch_assoc($query_result);
+$total_completed_mor_days = $fetch_rows["MAX_MOR_DAY"];
+$current_mor_day = $total_completed_mor_days + 1;
+return $current_mor_day;
+
+}
 ?>

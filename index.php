@@ -44,11 +44,15 @@
                          <div id="errormsg"  role="alert"><?php echo message(); ?></div> 
                      </div>';}
 
+              echo $btcmp_morning_val;
+
               ?>
 
           </form>
 
       </div>
+
+
 
 <script>
 
