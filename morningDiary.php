@@ -52,10 +52,9 @@ include('./includes/header.php');
 	<script>
 
 
-
-
 		var div = document.getElementById('push_morning_tip');
-		div.innerHTML = div.innerHTML + 'Extra stuff';
+		div.innerHTML = div.innerHTML + 'Populate Morning Tip Here';
+
 	</script>
 
 
@@ -156,10 +155,8 @@ submitMorningQuestions();
 
 var mqs_answers = {};
 
-function submitMorningQuestions() {
-	
 	mqs_answers['mq1_bedTime'] 				= questions.bedTime;
-	mqs_answers['mq1_wakeTime'] 				= questions.wakeTime;
+	mqs_answers['mq1_wakeTime'] 			= questions.wakeTime;
 	mqs_answers['mq2_problemsFallingAsleep'] = questions.problemsFallingAsleep;
 	mqs_answers['mq2_minutesToFallAsleep'] 	= questions.minutesToFallAsleep;
 	mqs_answers['mq3_didWakeDuringTheNight'] = questions.didWakeDuringTheNight;
@@ -170,6 +167,9 @@ function submitMorningQuestions() {
 	mqs_answers['mq5_stress'] 				= questions.stress;
 	mqs_answers['mq5_temp'] 					= questions.temp;
 	mqs_answers['mq5_nota'] 					= questions.nota;
+
+function submitMorningQuestions() {
+	
 	//	console.log(mqs_answers);
 	$.ajax({
 		url: 'post_mng_answers.php',
@@ -186,6 +186,16 @@ function submitMorningQuestions() {
 }
 
 	console.log(mqs_answers);
+
+// build logic for tip generation
+
+	var btcmp_morning_val = '<?php echo $btcmp_morning_val;?>';
+	var cur_mor_day = btcmp_morning_val + 1;
+
+	if (cur_mor_day < 15) {
+		if (cur_mor_day = 1){}
+	};
+
 
 </script>
 <?php require_once("./includes/footer.php"); ?>
