@@ -94,13 +94,18 @@ this.getNota = function getNota() {
 
 
 
-
-
-
 var qs1 = '\
 <div class="container-fluid">\
 \
 <form onSubmit="return !!(false & nextQuestion());">\
+\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">\
+    1/5 Complete (success)\
+  </div>\
+</div>\
 \
 <div class="row">\
 <div class="text-center col-xs-5 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
@@ -135,6 +140,14 @@ var qs2 = ' \
 \
 <div class="container-fluid">\
 <form onSubmit="return !!(false & nextQuestion());">\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
+    2/5 Complete (success)\
+  </div>\
+</div>\
+\
 <div class="row">\
 \
 \
@@ -228,6 +241,14 @@ var qs3 = ' \
 <div class="container-fluid">\
 <div class="row">\
 <form onSubmit="return !!(false & nextQuestion());">\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">\
+    3/5 Complete (success)\
+  </div>\
+</div>\
+\
 <div class="row">\
 \
 	<div class="row">\
@@ -285,8 +306,14 @@ var qs4 = ' \
 <div class="row">\
 <form onSubmit="return !!(false & nextQuestion());">\
 	\
-	\
-	\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">\
+    4/5 Complete (success)\
+  </div>\
+</div>\
+\
 	\
 	<div class="row">\
 		<div class="col-xs-12 text-center">\
@@ -341,6 +368,14 @@ var qs4 = ' \
 
 var qs5 = ' \
 <form onSubmit="return !!(false & q5script(2) ); ">\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">\
+    5/5 Complete (success)\
+  </div>\
+</div>\
+\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
 <h3>Did anything bother your sleep last night?</h3>\
@@ -376,22 +411,13 @@ var qs5 = ' \
 </div>\
 \
 <div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12"><label for="submitButton1"></label><input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" />\
+<div class="col-xs-12 col-md-12 col-lg-12"><label for="submitButton1"></label><input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" data-toggle="modal" data-target="#morning_tip" />\
 </div>\
 \
 </div>\
 </div>\
 </form>\
 ';
-
-
-
-
-
-
-
-
-
 
 
 

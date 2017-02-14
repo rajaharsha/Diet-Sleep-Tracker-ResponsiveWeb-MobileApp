@@ -254,26 +254,69 @@ var qs5 = ' \
 
 
 
-var qs6 = ' \
+var qs6 = '\
 <div class="container-fluid">\
 \
-<form onSubmit="return !!(false & nextQuestion());">\
-<h3>Do you do any of the followin in your bed?</h3> \
-<h2>Check all that apply</h2> \
-<p><input class="largerCheckbox" type="Checkbox" name="Use your phone" id="eqs6op1"> Use your phone</p> \
-<p><input type="Checkbox" name="Read or do homework" id="eqs6op2"> Read or do homework</p> \
-<p><input type="Checkbox" name="Watch TV" id="eqs6op3"> Watch TV</p> \
-<p><input type="Checkbox" name="Play video games" id="eqs6op4"> Play video games</p> \
-<p><input type="Checkbox" name="None of the above" id="eqs6op5"> None of the above</p> \
+  <div class="col-lg-12 text-center">\
+    <h3>Do you do any of the following in your bed?</h3>\
+  </div>\
+  <div class="col-lg-12 text-center">\
+    <h4>Select all that apply</h4>\
+  </div>\
 \
-<div class="row">\
-<div class="col-xs-3 col-md-4 col-lg-4"></div>\
-<div class="col-xs-5 col-md-5 col-lg-4">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="q1script()" >\
-<span>Continue</span>\
-</button>\
-</div>\
-</div>';
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs7op1" class="form-control btn btn-large btn-Default" onclick="question6(1)">\
+        <span>Use my phone</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs7op2" class="form-control btn btn-large btn-Default" onclick="question6(2)">\
+        <span>Read or do homework</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs7op3" class="form-control btn btn-large btn-Default" onclick="question6(3)">\
+        <span>Watch TV</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs7op4" class="form-control btn btn-large btn-Default" onclick="question6(4)">\
+        <span>Play Video Games</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs7op5" class="form-control btn btn-large btn-danger" onclick="question6(5)">\
+        <span>None of the above</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+\
+\
+\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-6">\
+      <button class="form-control btn btn-large btn-primary" type="submit" onclick="submitQuestion7()">\
+        <span>Continue</span>\
+      </button>\
+    </div>\
+  </div>\
+\
+';
 
 
 

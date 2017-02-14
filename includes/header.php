@@ -2,9 +2,14 @@
 // Checks if a Active session is created for a user or not.
 $userid = '';
 $username = '';  
+$btcmp_morning_val = '';
+$btcmp_evening_val = '';
 if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
 if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
+if (isset($_SESSION["btcmp_morning_val"])){ $btcmp_morning_val = $_SESSION["btcmp_morning_val"];}
+if (isset($_SESSION["btcmp_evening_val"])){ $btcmp_evening_val = $_SESSION["btcmp_evening_val"];} 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,8 +40,6 @@ if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
     <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
     <link href="css/jumbotron.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
-    <link rel="stylesheet" type="text/css" href="css/styles2.css">
 
   
 
