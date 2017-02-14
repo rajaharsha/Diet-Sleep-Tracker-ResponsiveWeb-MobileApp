@@ -249,7 +249,7 @@ var qs5 = ' \
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs5op1" class="form-control btn btn-large btn-success" type="submit" onclick="question5(0)">\
+<button id="eqs5op1" class="form-control btn btn-large btn-success" type="submit" onclick="question5(1)">\
 <span>Happy</span>\
 </button>\
 </div>\
@@ -257,7 +257,7 @@ var qs5 = ' \
 <br />\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs5op2" class="form-control btn btn-large btn-Default" type="submit" onclick="question5(1)">\
+<button id="eqs5op2" class="form-control btn btn-large btn-Default" type="submit" onclick="question5(2)">\
 <span>Neutral</span>\
 </button>\
 </div>\
@@ -265,7 +265,7 @@ var qs5 = ' \
 <br />\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs5op3" class="form-control btn btn-large btn-danger" type="submit" onclick="question5(2)">\
+<button id="eqs5op3" class="form-control btn btn-large btn-danger" type="submit" onclick="question5(3)">\
 <span>Angry</span>\
 </button>\
 </div>\
@@ -273,13 +273,13 @@ var qs5 = ' \
 <br />\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs5op4" class="form-control btn btn-large btn-primary" type="submit" onclick="question5(3)">\
+<button id="eqs5op4" class="form-control btn btn-large btn-primary" type="submit" onclick="question5(4)">\
 <span>Sad</span>\
 </button>\
 </div>\
 </div>\
 \
-</form>\
+\
 ';
 
 
@@ -300,7 +300,7 @@ var qs6 = '\
   <br />\
   <div class="row">\
     <div class="col-xs-12 col-md-12 col-lg-12">\
-      <button id="eqs7op1" class="form-control btn btn-large btn-Default" onclick="question6(1)">\
+      <button id="eqs6op1" class="form-control btn btn-large btn-Default" onclick="question6(1)">\
         <span>Use my phone</span>\
       </button>\
     </div>\
@@ -308,7 +308,7 @@ var qs6 = '\
   <br />\
   <div class="row">\
     <div class="col-xs-12 col-md-12 col-lg-12">\
-      <button id="eqs7op2" class="form-control btn btn-large btn-Default" onclick="question6(2)">\
+      <button id="eqs6op2" class="form-control btn btn-large btn-Default" onclick="question6(2)">\
         <span>Read or do homework</span>\
       </button>\
     </div>\
@@ -316,7 +316,7 @@ var qs6 = '\
   <br />\
   <div class="row">\
     <div class="col-xs-12 col-md-12 col-lg-12">\
-      <button id="eqs7op3" class="form-control btn btn-large btn-Default" onclick="question6(3)">\
+      <button id="eqs6op3" class="form-control btn btn-large btn-Default" onclick="question6(3)">\
         <span>Watch TV</span>\
       </button>\
     </div>\
@@ -324,7 +324,7 @@ var qs6 = '\
   <br />\
   <div class="row">\
     <div class="col-xs-12 col-md-12 col-lg-12">\
-      <button id="eqs7op4" class="form-control btn btn-large btn-Default" onclick="question6(4)">\
+      <button id="eqs6op4" class="form-control btn btn-large btn-Default" onclick="question6(4)">\
         <span>Play Video Games</span>\
       </button>\
     </div>\
@@ -332,7 +332,7 @@ var qs6 = '\
   <br />\
   <div class="row">\
     <div class="col-xs-12 col-md-12 col-lg-12">\
-      <button id="eqs7op5" class="form-control btn btn-large btn-danger" onclick="question6(5)">\
+      <button id="eqs6op5" class="form-control btn btn-large btn-danger" onclick="question6(5)">\
         <span>None of the above</span>\
       </button>\
     </div>\
@@ -342,7 +342,7 @@ var qs6 = '\
 \
 \
   <div class="row">\
-    <div class="col-xs-12 col-md-12 col-lg-6">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
       <button class="form-control btn btn-large btn-primary" type="submit" onclick="submitQuestion6()">\
         <span>Continue</span>\
       </button>\
@@ -367,7 +367,7 @@ var qs7 = ' \
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-warning" type="submit" onclick="q2script()">\
+<button class="form-control btn btn-large btn-warning" type="submit" onclick="question7(1)">\
 <span>Morning</span>\
 </button>\
 </div>\
@@ -377,7 +377,7 @@ var qs7 = ' \
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
+<button class="form-control btn btn-large btn-success" type="submit" onclick="question7(2)">\
 <span>Afternoon</span>\
 </button>\
 </div>\
@@ -387,7 +387,7 @@ var qs7 = ' \
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-info" type="submit" onclick="q2script()">\
+<button class="form-control btn btn-large btn-info" type="submit" onclick="question7(3)">\
 <span>Evening</span>\
 </button>\
 </div>\

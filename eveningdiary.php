@@ -1,4 +1,3 @@
-<!-- Reference for all files that are being included in the page-->
 <?php 
 include("./includes/db_connection.php");
 include("./includes/session.php");
@@ -30,7 +29,6 @@ include("./includes/cz_functions.js");
       </div>
     </div>
   </div>
-  <script src="eveningQuestionsScripts.js"></script> 
   <script src="eveningQuestionsList.js"></script>
 <!-- End Question Block --> 
 
@@ -63,10 +61,13 @@ function nextQuestion()
   if(ctr < 7) // 0 through 6 - Seven Questions
   {
     //alert(ctr);
+    displayAllData();
     ctr++;
     document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
     return false;
+      
   }
+
 }
 // Next Question *************************
 
@@ -105,9 +106,13 @@ function getCaffeineResults() { // collect selected data
 // Question 1 ******************************************
 
 // Question 2 ******************************************
-// One or a Zero Boolean
+// Yes or No
 function question2(choice) { 
-eqs_answers['eq2_Exercise'] = choice;
+  if (choice == 0 ) {
+eqs_answers['eq2_Exercise'] = "No";
+} else {
+  eqs_answers['eq2_Exercise'] = "Yes";
+}
 nextQuestion();
 }
 // Question 2 ******************************************
@@ -115,7 +120,11 @@ nextQuestion();
 // Question 3 ******************************************
 // One or a Zero Boolean
 function question3(choice) { 
-eqs_answers['eq3_Alcohol'] = choice;
+  if (choice == 0 ) {
+     eqs_answers['eq3_Alcohol'] = "No";
+} else {
+    eqs_answers['eq3_Alcohol'] = "Yes";
+}
 nextQuestion();
 }
 // Question 3 ******************************************
@@ -123,7 +132,11 @@ nextQuestion();
 // Question 4 ******************************************
 // One or a Zero Boolean
 function question4(choice) { 
-eqs_answers['eq4_Nap'] = choice;
+  if (choice == 0 ) {
+     eqs_answers['eq4_Nap'] = "No";
+} else {
+    eqs_answers['eq4_Nap'] = "Yes";
+}
 nextQuestion();
 }
 // Question 4 ******************************************
@@ -131,7 +144,7 @@ nextQuestion();
 // Question 5 ******************************************
 // One or a Zero Boolean
 function question5(choice) { 
-eqs_answers['eq4_Mood'] = choice;
+eqs_answers['eq5_Mood'] = choice;
 nextQuestion();
 }
 // Question 5 ******************************************
@@ -142,27 +155,27 @@ nextQuestion();
 function question6(choice) {
   switch (choice) {
     case 1: // case 1, comes from first button
-      id = "eqs7op1"; // get the id
+      id = "eqs6op1"; // get the id
       var background = document.getElementById(id).style.backgroundColor;
       checkColor(background, id);
       break;
     case 2:
-      id = "eqs7op2";
+      id = "eqs6op2";
       var background = document.getElementById(id).style.backgroundColor;
       checkColor(background, id);
       break;
     case 3:
-      id = "eqs7op3";
+      id = "eqs6op3";
       var background = document.getElementById(id).style.backgroundColor;
       checkColor(background, id);
       break;
     case 4:
-      id = "eqs7op4";
+      id = "eqs6op4";
       var background = document.getElementById(id).style.backgroundColor;
       checkColor(background, id);
       break;
     case 5:
-      id = "eqs7op5";
+      id = "eqs6op5";
       var background = document.getElementById(id).style.backgroundColor;
       document.getElementById(id).value = "true";
       clearOtherChoices();
@@ -176,15 +189,15 @@ function question6(choice) {
 function clearOtherChoices() { // Clears all choices when NOTA is clicked
 
   for (i = 1; i < 5; i++) { // Loop through other choices
-    document.getElementById('eqs7op' + i).style.backgroundColor = "white";
-    document.getElementById('eqs7op' + i).style.color = "black";
-    document.getElementById('eqs7op' + i).value = "false";
+    document.getElementById('eqs6op' + i).style.backgroundColor = "white";
+    document.getElementById('eqs6op' + i).style.color = "black";
+    document.getElementById('eqs6op' + i).value = "false";
   }
 }
 
 
 function checkColor(myColor, myId) {
-  document.getElementById("eqs7op5").value = "false"; // Ensure NOTA is Reset
+  document.getElementById("eqs6op5").value = "false"; // Ensure NOTA is Reset
   var id = myId;
   var background = myColor;
   if (background != "black") {
@@ -203,11 +216,11 @@ function checkColor(myColor, myId) {
 
 function submitQuestion6() {
 
-  a = document.getElementById("eqs7op1").value;
-  b = document.getElementById("eqs7op2").value;
-  c = document.getElementById("eqs7op3").value;
-  d = document.getElementById("eqs7op4").value;
-  e = document.getElementById("eqs7op5").value;
+  a = document.getElementById("eqs6op1").value;
+  b = document.getElementById("eqs6op2").value;
+  c = document.getElementById("eqs6op3").value;
+  d = document.getElementById("eqs6op4").value;
+  e = document.getElementById("eqs6op5").value;
   a = (a != "true") ? "false" : "true"; // verfies that there IS a value
   b = (b != "true") ? "false" : "true"; // verfies that there IS a value
   c = (c != "true") ? "false" : "true"; // verfies that there IS a value
@@ -240,9 +253,57 @@ nextQuestion(); // Move to #7 Question, then prepare to parse to PHP.
 // Question 7 ******************************************
 function question7(choice) { 
 eqs_answers['eq7_TimeOfDay'] = choice;
+    displayAllData();
+
+
 // Last Question
 }
 // Question 7 ******************************************
+
+
+
+
+function displayAllData() {
+
+
+console.log ("" + 
+  eqs_answers['eq1_Morning'] + " " +
+  eqs_answers['eq1_Afternoon'] + " " +
+  eqs_answers['eq1_Evening'] + " " +
+  eqs_answers['eq2_Exercise'] + " " +
+  eqs_answers['eq3_Alcohol'] + " " +
+  eqs_answers['eq4_Nap'] + " " +
+  eqs_answers['eq5_Mood'] + " " +
+  eqs_answers['eq6_Phone'] + " " +
+  eqs_answers['eq6_ReadHomework'] + " " +
+  eqs_answers['eq6_WatchTV'] + " " +
+  eqs_answers['eq6_PlayVideoGames'] + " " +
+  eqs_answers['eq6_None'] + " " + 
+  eqs_answers['eq7_TimeOfDay']
+
+
+  );
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -275,20 +336,6 @@ function evg_ans_submit() {
 
 
 <?php require_once("./includes/footer.php"); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
