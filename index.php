@@ -12,7 +12,7 @@
       <div class="container">
 
           <form id="signin" method ="post" action="login_validation.php">
-
+  
               <div class="col-sm-4" style="text-align:center"> 
               <img src="assets/unnamed.png" class="center-block" alt="CoachZ" width="200" height="200"> 
               <h1><b>CoachZ<b></h1>
@@ -20,7 +20,7 @@
 
               <div class="col-sm-4" style="text-align:center"> 
                    
-              </div>    
+              </div>   
 
               <?php        
 
@@ -43,8 +43,6 @@
                          <br>
                          <div id="errormsg"  role="alert"><?php echo message(); ?></div> 
                      </div>';}
-
-              echo $btcmp_morning_val;
 
               ?>
 

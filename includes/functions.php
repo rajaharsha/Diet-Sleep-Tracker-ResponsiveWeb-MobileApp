@@ -1,26 +1,40 @@
 <?php
+
+
 function redirect_to($new_location) {
 header("Location: " . $new_location);
 exit;
 }
+
+
 function logged_in() {
 return isset($_SESSION['uid']);
 }
+
+
 function confirm_logged_in() {
 if (!logged_in()) {
 redirect_to("index.php");
 }
 }
+
+
 function logged_uid() {
 return isset($_SESSION['uid']);
 }
+
+
 function logged_uname() {
 return isset($_SESSION['username']);
 }
+
+
 function session_check() {
 if (isset($_SESSION["uid"]) && isset($_SESSION["username"])) 
 {return $_SESSION["uid"];}; 
 }
+
+
 function insert_evg_answer(						
 $eq1_Morning,                  // 1
 $eq1_Afternoon,                // 2    
@@ -80,6 +94,8 @@ $_SESSION["message"] = "Database Error";
 return false;
 }
 }
+
+
 function insert_mng_answer(						
 $mq1_bedTime,
 $mq1_wakeTime,
@@ -125,7 +141,7 @@ mq5_nota
 '$mq5_nota'	
 )";
 $result_id = mysqli_query($connection, $query);
-error_log("Inside query\n" . $query , 3, "/Users/bfwatkin/Desktop/error.log");
+//error_log("Inside query\n" . $query , 3, "/Users/bfwatkin/Desktop/error.log");
 // confirm_query($result_id);
 if($result_id) {
 $_SESSION["message"] = "Response Posted";
@@ -135,6 +151,8 @@ $_SESSION["message"] = "Database Error";
 return false;
 }
 }
+
+
 function insert_usr_rec(
 $user_name,
 $user_email,
@@ -161,6 +179,8 @@ $_SESSION["message"] = "Database Error";
 return false;
 }			
 }
+
+
 function find_username($username) {
 global $connection;		
 $query  = "SELECT USER_NAME FROM coach_z.app_users where USER_NAME = '$username' LIMIT 1";
@@ -173,6 +193,8 @@ return $db_username;
 return NULL;
 }
 }
+
+
 function find_uid($username) {
 global $connection;		
 $query  = "SELECT U_ID FROM coach_z.app_users where USER_NAME = '$username' LIMIT 1";
@@ -185,6 +207,8 @@ return $db_uid;
 return NULL;
 }
 }	
+
+
 function find_usercred($username) {
 global $connection;
 $query  = "SELECT U_ID,USER_NAME,PASS_CODE FROM coach_z.app_users where USER_NAME = '$username' LIMIT 1";
@@ -192,6 +216,8 @@ $result_set = mysqli_query($connection, $query);
 if(!$result_set){die("Database query failed.".$query);}
 return ($result_set);
 }
+
+
 function find_useremail($useremail) {
 global $connection;		
 $query  = "SELECT EMAIL FROM coach_z.app_users where EMAIL = '$useremail' LIMIT 1";
@@ -204,6 +230,8 @@ return $db_useremail;
 return NULL;
 }
 }
+
+
 function find_user_login($username,$userpassword) {
 global $connection;		
 $query  = "SELECT USER_NAME FROM coach_z.app_users where USER_NAME = '$username' AND PASS_CODE = '$userpassword' LIMIT 1";
@@ -217,15 +245,25 @@ return NULL;
 }
 }
 
+
 function get_new_morning_entry_day($userid){
 global $connection;
-$query = "SELECT MAX(LOG_DAY) AS MAX_MOR_DAY FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid";
-
+$query = "SELECT MAX(LOG_DAY) AS MAX_MOR_DAY FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid AND LOG_TYPE = 'M'";
 $query_result = mysqli_query($connection, $query);
 $fetch_rows = mysqli_fetch_assoc($query_result);
 $total_completed_mor_days = $fetch_rows["MAX_MOR_DAY"];
-$current_mor_day = $total_completed_mor_days + 1;
-return $current_mor_day;
-
+return $total_completed_mor_days;
 }
+
+function get_new_evening_entry_day($userid){
+global $connection;
+$query = "SELECT MAX(LOG_DAY) AS MAX_EVG_DAY FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid AND LOG_TYPE = 'E'";
+$query_result = mysqli_query($connection, $query);
+$fetch_rows = mysqli_fetch_assoc($query_result);
+$total_completed_evg_days = $fetch_rows["MAX_EVG_DAY"];
+error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+error_log("Inside query\n" . $total_completed_evg_days , 3, "C:/xampp/apache/logs/error.log");
+return $total_completed_evg_days;
+}
+
 ?>
