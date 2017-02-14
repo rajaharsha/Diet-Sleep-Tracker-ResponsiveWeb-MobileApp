@@ -62,6 +62,7 @@ function nextQuestion()
 {
   if(ctr < 7) // 0 through 6 - Seven Questions
   {
+    //alert(ctr);
     ctr++;
     document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
     return false;
@@ -105,7 +106,7 @@ function getCaffeineResults() { // collect selected data
 
 // Question 2 ******************************************
 // One or a Zero Boolean
-function question3(choice) { 
+function question2(choice) { 
 eqs_answers['eq2_Exercise'] = choice;
 nextQuestion();
 }
@@ -138,6 +139,97 @@ nextQuestion();
 
 
 // Question 6 ******************************************
+function question6(choice) {
+  switch (choice) {
+    case 1: // case 1, comes from first button
+      id = "eqs7op1"; // get the id
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 2:
+      id = "eqs7op2";
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 3:
+      id = "eqs7op3";
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 4:
+      id = "eqs7op4";
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 5:
+      id = "eqs7op5";
+      var background = document.getElementById(id).style.backgroundColor;
+      document.getElementById(id).value = "true";
+      clearOtherChoices();
+      break;
+    default:
+      id = "None";
+  }
+
+}
+
+function clearOtherChoices() { // Clears all choices when NOTA is clicked
+
+  for (i = 1; i < 5; i++) { // Loop through other choices
+    document.getElementById('eqs7op' + i).style.backgroundColor = "white";
+    document.getElementById('eqs7op' + i).style.color = "black";
+    document.getElementById('eqs7op' + i).value = "false";
+  }
+}
+
+
+function checkColor(myColor, myId) {
+  document.getElementById("eqs7op5").value = "false"; // Ensure NOTA is Reset
+  var id = myId;
+  var background = myColor;
+  if (background != "black") {
+    document.getElementById(id).style.backgroundColor = "black";
+    document.getElementById(id).style.color = "white";
+    document.getElementById(id).value = "true";
+
+
+  } else {
+    document.getElementById(id).style.backgroundColor = "white";
+    document.getElementById(id).style.color = "black";
+    document.getElementById(id).value = "false";
+
+  }
+}
+
+function submitQuestion6() {
+
+  a = document.getElementById("eqs7op1").value;
+  b = document.getElementById("eqs7op2").value;
+  c = document.getElementById("eqs7op3").value;
+  d = document.getElementById("eqs7op4").value;
+  e = document.getElementById("eqs7op5").value;
+  a = (a != "true") ? "false" : "true"; // verfies that there IS a value
+  b = (b != "true") ? "false" : "true"; // verfies that there IS a value
+  c = (c != "true") ? "false" : "true"; // verfies that there IS a value
+  d = (d != "true") ? "false" : "true"; // verfies that there IS a value
+  e = (e != "true") ? "false" : "true"; // verfies that there IS a value
+
+
+  // Now, send the data to the object
+  eqs_answers['eq6_Phone'] =          a;
+  eqs_answers['eq6_ReadHomework'] =   b;
+  eqs_answers['eq6_WatchTV'] =        c;
+  eqs_answers['eq6_PlayVideoGames'] = d;
+  eqs_answers['eq6_None'] =           e;
+
+  
+  
+
+nextQuestion(); // Move to #7 Question, then prepare to parse to PHP. 
+
+// Call database functionality........ 
+
+}
 
 // Question 6 ******************************************
 

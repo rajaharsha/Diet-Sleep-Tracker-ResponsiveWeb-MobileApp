@@ -136,6 +136,11 @@ var qs1 = '\
 
 
 
+
+
+
+
+
 var qs2 = ' \
 \
 <div class="container-fluid">\
@@ -237,6 +242,15 @@ var qs2 = ' \
 
 
 
+
+
+
+
+
+
+
+
+
 var qs3 = ' \
 <div class="container-fluid">\
 <div class="row">\
@@ -299,6 +313,15 @@ var qs3 = ' \
 </div>   <!-- Row --> \
 </div>   <!-- Container-fluid --> \
 ';
+
+
+
+
+
+
+
+
+
 
 
 var qs4 = ' \
@@ -364,6 +387,16 @@ var qs4 = ' \
 </row>\
 </div>\
 ';
+
+
+
+
+
+
+
+
+
+
 
 
 var qs5 = ' \

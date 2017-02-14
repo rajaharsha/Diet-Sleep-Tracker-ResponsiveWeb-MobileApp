@@ -93,10 +93,12 @@ max="10">\
 
 
 
+
+
 var qs2 = ' \
 <div class="container-fluid">\
 \
-<form onSubmit="return !!(false & nextQuestion());">\
+\
 \
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -108,7 +110,7 @@ var qs2 = ' \
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
+<button class="form-control btn btn-large btn-success" type="submit" onclick="question2(1)">\
 <span>Yes!</span>\
 </button>\
 </div>\
@@ -118,7 +120,7 @@ var qs2 = ' \
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="question2(0)">\
 <span>Not today!</span>\
 </button>\
 </div>\
@@ -129,6 +131,16 @@ var qs2 = ' \
 \
 </div>\
 ';
+
+
+
+
+
+
+
+
+
+
 
 var qs3 = '\
 <div class="container-fluid">\
@@ -167,10 +179,21 @@ var qs3 = '\
 </div>\
 ';
 
+
+
+
+
+
+
+
+
+
+
+
 var qs4 = ' \
 <div class="container-fluid">\
 \
-<form onSubmit="return !!(false & nextQuestion());">\
+\
 \
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -182,7 +205,7 @@ var qs4 = ' \
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
+<button class="form-control btn btn-large btn-success" type="submit" onclick="question4(1)">\
 <span>Yes</span>\
 </button>\
 </div>\
@@ -192,22 +215,32 @@ var qs4 = ' \
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="question4(0)">\
 <span>No</span>\
 </button>\
 </div>\
 </div>\
 \
 \
-</form>\
+\
 \
 </div>\
 ';
 
+
+
+
+
+
+
+
+
+
+
 var qs5 = ' \
 <div class="container-fluid">\
 \
-<form onSubmit="return !!(false & nextQuestion());">\
+\
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <h3>How is your mood today?</h3>\
@@ -310,7 +343,7 @@ var qs6 = '\
 \
   <div class="row">\
     <div class="col-xs-12 col-md-12 col-lg-6">\
-      <button class="form-control btn btn-large btn-primary" type="submit" onclick="submitQuestion7()">\
+      <button class="form-control btn btn-large btn-primary" type="submit" onclick="submitQuestion6()">\
         <span>Continue</span>\
       </button>\
     </div>\
@@ -323,8 +356,13 @@ var qs6 = '\
 
 
 
+
+
+
+
 var qs7 = ' \
-<div class="form-group" > \
+<div class="container-fluid" > \
+\
 <h3>During what time of day do you have the most energy and motivation?</h3> \
 \
 <div class="row">\
