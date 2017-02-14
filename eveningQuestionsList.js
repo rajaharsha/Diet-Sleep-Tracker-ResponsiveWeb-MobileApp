@@ -324,7 +324,7 @@ var qs6 = '\
 
 
 var qs7 = ' \
-<div class="form-group" id="question5"> \
+<div class="form-group" > \
 <h3>During what time of day do you have the most energy and motivation?</h3> \
 \
 <div class="row">\

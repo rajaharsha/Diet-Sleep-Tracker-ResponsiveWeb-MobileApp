@@ -411,7 +411,15 @@ var qs5 = ' \
 </div>\
 \
 <div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12"><label for="submitButton1"></label><input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" data-toggle="modal" data-target="#morning_tip" />\
+\
+<div class="col-xs-12 col-md-12 col-lg-12"><label for="submitButton1"></label><input \
+class="form-control btn btn-primary" \
+id="submitButton1" \
+type="submit" \
+value="Submit" \
+data-toggle="modal" \
+data-target="#morning_tip" /><!-- MODAL Drop down - TIPs --> \ 
+\
 </div>\
 \
 </div>\
