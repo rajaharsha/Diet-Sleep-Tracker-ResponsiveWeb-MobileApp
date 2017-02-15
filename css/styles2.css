@@ -86,5 +86,30 @@ input:checked + .slider:before {
   background-color: #ccddee;
 }
 
+#coffeeIntake {
+  background-color: #4d2600;
+  background-image: url("https://s24.postimg.org/hzce4t379/Coffee_Beans.jpg");
+  color: white;
+  padding-bottom: 10px;
+  im
+}
+
+#eq1a,
+#eq1b,
+#eq1c {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.btn {
+  border-radius: 20px;
+}
+
+.img {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
 
 

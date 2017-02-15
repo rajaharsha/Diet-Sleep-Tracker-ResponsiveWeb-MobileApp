@@ -28,57 +28,68 @@ var qs1 = '\
 </div>';
 
 
-var qs1partb = '<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<h4>Record your coffee intake below!</h4>\
-</div>\
-</div>\
-\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
-<h3>Morning</h3>\
-<input \
-id="eq1a" \
-onchange="getCaffeineResults()" \
-type="Number" \
-name="Morning"\
-min="0"\
-max="10">\
-</div>\
-</div>\
-\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<h3>Afternoon</h3>\
-<input \
-id="eq1b" \
-onchange="getCaffeineResults()" \
-type="Number" \
-name="Afternoon"\
-min="0"\
-max="10">\
-</div>\
-</div>\
-\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<h3>Evening</h3>\
-<input \
-id="eq1c" \
-onchange="getCaffeineResults()" \
-type="Number" \
-name="Evening"\
-min="0"\
-max="10">\
-</div>\
-</div>\
-<br />\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="nextQuestion()" >\
-<span>Continue</span>\
-</button>\
-</div>\
+var qs1partb = '\
+<div class="container-fluid"  id="coffeeIntake">\
+  <div class="row text-center">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <h4>Record your Joe below!</h4>\
+    </div>\
+  </div>\
+  <div class="row text-center">\
+    <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+      <h3>Morning &#x2615;</h3>\
+    </div>\
+    <div class="row">\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <button class="btn btn-Default" onClick="minusOneCoffee("eq1a")">&#10134;</button>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 ">\
+        <label class="form-control text-center" id="eq1a" disabled onchange="getCaffeineResults()" type="number" name="Morning" min="0" max="10" >0</label>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
+        <button class="btn btn-Default" onClick="addOneCoffee("eq1a")">&#10133;</button>\
+      </div>\
+    </div>\
+    <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+      <h3>Afternoon &#x2615;</h3>\
+    </div>\
+    <div class="row">\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <button class="btn btn-Default" onClick="minusOneCoffee("eq1b")">&#10134; </button>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <label class="form-control text-center" id="eq1b" disabled onchange="getCaffeineResults()" type="number" name="Afternoon" min="0" max="10">0</label>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
+        <button class="btn btn-Default" onClick="addOneCoffee("eq1b")">&#10133; </button>\
+      </div>\
+    </div>\
+    <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+      <h3>Evening &#x2615;</h3>\
+    </div>\
+    <div class="row">\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <button class="btn btn-Default" onClick="minusOneCoffee("eq1c")">&#10134; </button>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <label class="form-control text-center" id="eq1c" disabled onchange="getCaffeineResults()" type="text" name="Evening" min="0" max="10">0</label>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
+        <button class="btn btn-Default" onClick="addOneCoffee("eq1c")">&#10133;</button>\
+      </div>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row text-center">\
+    <div class="col-xs-12 col-md-4 col-lg-4"></div>\
+    <div class="col-xs-12 col-md-4 col-lg-4">\
+      <button class="form-control btn btn-large btn-default" type="submit" onclick="nextQuestion()">\
+        <span>Continue</span>\
+      </button>\
+      <div class="col-xs-12 col-md-12 col-lg-4"></div>\
+    </div>\
+    <br />\
+  </div>\
 </div>'; 
 
 

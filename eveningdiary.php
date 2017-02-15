@@ -60,8 +60,6 @@ function nextQuestion()
 {
   if(ctr < 7) // 0 through 6 - Seven Questions
   {
-    //alert(ctr);
-    displayAllData();
     ctr++;
     document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
     return false;
@@ -253,7 +251,7 @@ nextQuestion(); // Move to #7 Question, then prepare to parse to PHP.
 // Question 7 ******************************************
 function question7(choice) { 
 eqs_answers['eq7_TimeOfDay'] = choice;
-    displayAllData();
+    
 
 
 // Last Question
