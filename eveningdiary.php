@@ -36,6 +36,7 @@ include("./includes/cz_functions.js");
 
 
   <script>
+
 // Initial Values ****************************
 var eqs_answers = {};
 var questionBank = [qs1, qs2, qs3, qs4, qs5, qs6, qs7]; // Seven questions
@@ -101,7 +102,94 @@ function getCaffeineResults() { // collect selected data
   eqs_answers['eq1_Afternoon'] = b;
   eqs_answers['eq1_Evening'] = c;
 }
+
+
+clicker = 0;
+a = 0;
+b = 0;
+c = 0;
+function addOneCoffee(choice) {
+alert("add");
+  theId = choice;
+
+if (theId == "eq1a") { 
+clicker = a;
+}
+if (theId == "eq1b") {
+clicker = b;
+}
+if (theId == "eq1c") {
+clicker = c;
+}
+  
+  if (clicker < 10 || clicker == null) {
+    clicker = clicker + 1;
+    document.getElementById(theId).innerHTML = clicker;
+  }
+  
+if (theId == "eq1a") { 
+a = clicker;
+}
+if (theId == "eq1b") {
+b = clicker;
+}
+if (theId == "eq1c") {
+c = clicker;
+}
+
+}
+
+function minusOneCoffee(choice) {
+  
+
+  theId = choice;
+  
+  if (theId == "eq1a") { 
+clicker = a;
+}
+if (theId == "eq1b") {
+clicker = b;
+}
+if (theId == "eq1c") {
+clicker = c;
+}
+
+  
+  if (clicker <= 10 && clicker != 0) {
+    clicker = clicker - 1;
+    document.getElementById(theId).innerHTML = clicker;
+  }
+  
+  if (theId == "eq1a") { 
+a = clicker;
+}
+if (theId == "eq1b") {
+b = clicker;
+}
+if (theId == "eq1c") {
+c = clicker;
+}
+  
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 // Question 1 ******************************************
+
+
+
+
+
 
 // Question 2 ******************************************
 // Yes or No
