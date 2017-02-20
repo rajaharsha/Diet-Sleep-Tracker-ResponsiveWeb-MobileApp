@@ -1,78 +1,377 @@
-<!-- Reference for all files that are being included in the page-->
 <?php 
-  include("./includes/db_connection.php");
-  include("./includes/session.php");
-  include("./includes/functions.php");
-  confirm_logged_in();
-  include('./includes/header.php');
-  include("./includes/cz_functions.js");
+include("./includes/db_connection.php");
+include("./includes/session.php");
+include("./includes/functions.php");
+confirm_logged_in();
+include('./includes/header.php');
+include("./includes/cz_functions.js");
 ?>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
 
 
 
 
-
-
-
-
-
-
-
-
-   <!-- Present questions HERE -->
+<!-- Present questions HERE -->
 <div class="container">
-<div class="row" id="mainRow">
-<div class="col-md-12">
-<div class="col-xs-1 col-md-4 col-lg-4"></div>
-<div class="col-xs-10 col-md-4 col-lg-4" id="question1">
-<div class="form-group">
-<div id="questionDisplay"> <!-- Where the question is displayed --> 
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src="eveningQuestionsScripts.js"></script> 
-<script src="eveningQuestionsList.js"></script>
+  <div class="row" id="mainRow">
+    <div class="col-md-12">
+      <div class="col-xs-1 col-md-4 col-lg-4"></div>
+      <div class="col-xs-10 col-md-4 col-lg-4" id="question1">
+        <div class="form-group">
+          <div id="questionDisplay"> <!-- Where the question is displayed --> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="eveningQuestionsList.js"></script>
+<!-- End Question Block --> 
 
 
-<script>
-   var user_rec = {};
-var questionBank = [qs1, qs2, qs3, qs4, qs5];
+
+
+  <script>
+
+// Initial Values ****************************
+var eqs_answers = {};
+var questionBank = [qs1, qs2, qs3, qs4, qs5, qs6, qs7]; // Seven questions
 var ctr = 0; // start at first question
 
-
+// Upon page refresh, the page gets loaded with the first question
 document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+// Initial Values ****************************
 
 
 
+
+
+
+
+
+
+
+// Next Question ************************
+// Changes to next question
 function nextQuestion()
 {
-  if(ctr < 6) 
+  if(ctr < 7) // 0 through 6 - Seven Questions
   {
     ctr++;
     document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
     return false;
+      
+  }
+
+}
+// Next Question *************************
+
+
+
+
+
+
+
+
+
+// Question 1 ******************************************
+// No Caffeine was used. All set to zero (0)
+// Needs to be refactored to one Function. 
+function noCaffeine() { // Could be merged as one function later
+eqs_answers['eq1_Morning'] = "0"; // Integers or strings. 
+eqs_answers['eq1_Afternoon'] = "0";
+eqs_answers['eq1_Evening'] = "0";
+nextQuestion();
+}
+
+// If Caffeine was used, the new form will appear
+function showCaffeineMenu() { // Could be merged as one function later
+  document.getElementById("questionDisplay").innerHTML = qs1partb;
+}
+
+// After each selection is changed, this data gets updated. 
+function getCaffeineResults() { // collect selected data
+  a = document.getElementById('eq1a').value;
+  b = document.getElementById('eq1b').value;
+  c = document.getElementById('eq1c').value;
+  eqs_answers['eq1_Morning'] = a;
+  eqs_answers['eq1_Afternoon'] = b;
+  eqs_answers['eq1_Evening'] = c;
+}
+
+
+clicker = 0;
+a = 0;
+b = 0;
+c = 0;
+function addOneCoffee(choice) {
+alert("add");
+  theId = choice;
+
+if (theId == "eq1a") { 
+clicker = a;
+}
+if (theId == "eq1b") {
+clicker = b;
+}
+if (theId == "eq1c") {
+clicker = c;
+}
+  
+  if (clicker < 10 || clicker == null) {
+    clicker = clicker + 1;
+    document.getElementById(theId).innerHTML = clicker;
+  }
+  
+if (theId == "eq1a") { 
+a = clicker;
+}
+if (theId == "eq1b") {
+b = clicker;
+}
+if (theId == "eq1c") {
+c = clicker;
+}
+
+}
+
+function minusOneCoffee(choice) {
+  
+
+  theId = choice;
+  
+  if (theId == "eq1a") { 
+clicker = a;
+}
+if (theId == "eq1b") {
+clicker = b;
+}
+if (theId == "eq1c") {
+clicker = c;
+}
+
+  
+  if (clicker <= 10 && clicker != 0) {
+    clicker = clicker - 1;
+    document.getElementById(theId).innerHTML = clicker;
+  }
+  
+  if (theId == "eq1a") { 
+a = clicker;
+}
+if (theId == "eq1b") {
+b = clicker;
+}
+if (theId == "eq1c") {
+c = clicker;
+}
+  
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// Question 1 ******************************************
+
+
+
+
+
+
+// Question 2 ******************************************
+// Yes or No
+function question2(choice) { 
+  if (choice == 0 ) {
+eqs_answers['eq2_Exercise'] = "No";
+} else {
+  eqs_answers['eq2_Exercise'] = "Yes";
+}
+nextQuestion();
+}
+// Question 2 ******************************************
+
+// Question 3 ******************************************
+// One or a Zero Boolean
+function question3(choice) { 
+  if (choice == 0 ) {
+     eqs_answers['eq3_Alcohol'] = "No";
+} else {
+    eqs_answers['eq3_Alcohol'] = "Yes";
+}
+nextQuestion();
+}
+// Question 3 ******************************************
+
+// Question 4 ******************************************
+// One or a Zero Boolean
+function question4(choice) { 
+  if (choice == 0 ) {
+     eqs_answers['eq4_Nap'] = "No";
+} else {
+    eqs_answers['eq4_Nap'] = "Yes";
+}
+nextQuestion();
+}
+// Question 4 ******************************************
+
+// Question 5 ******************************************
+// One or a Zero Boolean
+function question5(choice) { 
+eqs_answers['eq5_Mood'] = choice;
+nextQuestion();
+}
+// Question 5 ******************************************
+
+
+
+// Question 6 ******************************************
+function question6(choice) {
+  switch (choice) {
+    case 1: // case 1, comes from first button
+      id = "eqs6op1"; // get the id
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 2:
+      id = "eqs6op2";
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 3:
+      id = "eqs6op3";
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 4:
+      id = "eqs6op4";
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 5:
+      id = "eqs6op5";
+      var background = document.getElementById(id).style.backgroundColor;
+      document.getElementById(id).value = "true";
+      clearOtherChoices();
+      break;
+    default:
+      id = "None";
+  }
+
+}
+
+function clearOtherChoices() { // Clears all choices when NOTA is clicked
+
+  for (i = 1; i < 5; i++) { // Loop through other choices
+    document.getElementById('eqs6op' + i).style.backgroundColor = "white";
+    document.getElementById('eqs6op' + i).style.color = "black";
+    document.getElementById('eqs6op' + i).value = "false";
   }
 }
 
 
-function yesCaffeine() { // Could be merged as one function later
+function checkColor(myColor, myId) {
+  document.getElementById("eqs6op5").value = "false"; // Ensure NOTA is Reset
+  var id = myId;
+  var background = myColor;
+  if (background != "black") {
+    document.getElementById(id).style.backgroundColor = "black";
+    document.getElementById(id).style.color = "white";
+    document.getElementById(id).value = "true";
 
-// show qs1partb code
-document.getElementById("questionDisplay").innerHTML = qs1partb;
+
+  } else {
+    document.getElementById(id).style.backgroundColor = "white";
+    document.getElementById(id).style.color = "black";
+    document.getElementById(id).value = "false";
+
+  }
+}
+
+function submitQuestion6() {
+
+  a = document.getElementById("eqs6op1").value;
+  b = document.getElementById("eqs6op2").value;
+  c = document.getElementById("eqs6op3").value;
+  d = document.getElementById("eqs6op4").value;
+  e = document.getElementById("eqs6op5").value;
+  a = (a != "true") ? "false" : "true"; // verfies that there IS a value
+  b = (b != "true") ? "false" : "true"; // verfies that there IS a value
+  c = (c != "true") ? "false" : "true"; // verfies that there IS a value
+  d = (d != "true") ? "false" : "true"; // verfies that there IS a value
+  e = (e != "true") ? "false" : "true"; // verfies that there IS a value
+
+
+  // Now, send the data to the object
+  eqs_answers['eq6_Phone'] =          a;
+  eqs_answers['eq6_ReadHomework'] =   b;
+  eqs_answers['eq6_WatchTV'] =        c;
+  eqs_answers['eq6_PlayVideoGames'] = d;
+  eqs_answers['eq6_None'] =           e;
+
+  
+  
+
+nextQuestion(); // Move to #7 Question, then prepare to parse to PHP. 
+
+// Call database functionality........ 
 
 }
 
-function noCaffeine() { // Could be merged as one function later
-alert("No");
+// Question 6 ******************************************
+
+
+
+
+
+// Question 7 ******************************************
+function question7(choice) { 
+eqs_answers['eq7_TimeOfDay'] = choice;
+    
+
+
+// Last Question
+}
+// Question 7 ******************************************
+
+
+
+
+function displayAllData() {
+
+
+console.log ("" + 
+  eqs_answers['eq1_Morning'] + " " +
+  eqs_answers['eq1_Afternoon'] + " " +
+  eqs_answers['eq1_Evening'] + " " +
+  eqs_answers['eq2_Exercise'] + " " +
+  eqs_answers['eq3_Alcohol'] + " " +
+  eqs_answers['eq4_Nap'] + " " +
+  eqs_answers['eq5_Mood'] + " " +
+  eqs_answers['eq6_Phone'] + " " +
+  eqs_answers['eq6_ReadHomework'] + " " +
+  eqs_answers['eq6_WatchTV'] + " " +
+  eqs_answers['eq6_PlayVideoGames'] + " " +
+  eqs_answers['eq6_None'] + " " + 
+  eqs_answers['eq7_TimeOfDay']
+
+
+  );
+
+
+
 }
 
 
@@ -80,14 +379,6 @@ alert("No");
 
 
 
-function q1script() { // collect selected data
-  a = document.getElementById('eq1a').value;
-  b = document.getElementById('eq1b').value;
-  c = document.getElementById('eq1c').value;
-  user_rec['eq1_Morning'] = a;
-  user_rec['eq1_Afternoon'] = b;
-  user_rec['eq1_Evening'] = c;
-}
 
 
 
@@ -102,270 +393,24 @@ function q1script() { // collect selected data
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   $(document).ready(function(){
-
-    $("#coach_z_reg").click(function(){
-      var reg_form = document.getElementById("newuser");
-      user_reg['username'] = form_value[0],value;
-      alert(user_reg['username']);
-    });
-
-
-
-
-
-
-    $("#q1").click(function() {  // NEXT Button
-      if(ctr < 7) {
-
-         if (ctr == 0){
-           var form_value = document.getElementById("questions");
-           user_rec['eq1_Morning'] = form_value[0].value;
-           user_rec['eq1_Afternoon'] = form_value[1].value;
-           user_rec['eq1_Evening'] = form_value[2].value;
-         }
-
-         else if (ctr == 1){
-          var result = document.getElementById("eq2").checked;
-          user_rec['eq2_Exercise'] = result;
-         }
-
-         else if (ctr == 2){
-          var result = document.getElementById("eq3").checked;
-          user_rec['eq3_Alcohol'] = result;
-         }
-
-         else if (ctr == 3){
-          var result = document.getElementById("eq4").checked;
-          user_rec['eq4_Nap'] = result;
-         }         
-
-         else if (ctr == 4){
-
-           if (document.getElementById("eqs5op1").checked)(user_rec['eq5_Mood'] = document.getElementById("eqs5op1").value)
-           else if(document.getElementById("eqs5op2").checked)(user_rec['eq5_Mood'] = document.getElementById("eqs5op2").value)
-           else if(document.getElementById("eqs5op3").checked)(user_rec['eq5_Mood'] = document.getElementById("eqs5op3").value)
-           else if(document.getElementById("eqs5op4").checked)(user_rec['eq5_Mood'] = document.getElementById("eqs5op4").value)
-           else '';                     
-         }
-
-         else if (ctr == 5){
-
-            if (document.getElementById("eqs6op1").checked)(user_rec['eq6_Phone'] = 'True')
-            else (user_rec['eq6_Phone'] = 'False');
-
-            if (document.getElementById("eqs6op2").checked)(user_rec['eq6_ReadHomeWork'] = 'True')
-            else (user_rec['eq6_ReadHomeWork'] = 'False');
-
-            if (document.getElementById("eqs6op3").checked)(user_rec['eq6_WatchTV'] = 'True')
-            else (user_rec['eq6_WatchTV'] = 'False');
-
-            if (document.getElementById("eqs6op4").checked)(user_rec['eq6_PlayVideoGames'] = 'True')
-            else (user_rec['eq6_PlayVideoGames'] = 'False');
-
-            if (document.getElementById("eqs6op5").checked)(user_rec['eq6_None'] = 'True')
-            else (user_rec['eq6_None'] = 'False');
-         }
-
-         else if (ctr == 6){
-
-           if (document.getElementById("eqs7op1").checked)(user_rec['eq7_TimeOfDay'] = document.getElementById("eqs7op1").value)
-           else if(document.getElementById("eqs7op2").checked)(user_rec['eq7_TimeOfDay'] = document.getElementById("eqs7op2").value)
-           else if(document.getElementById("eqs5op3").checked)(user_rec['eq7_TimeOfDay'] = document.getElementById("eqs7op3").value)
-           else (user_rec['eq7_TimeOfDay'] = '');                   
-         }       
-
-         else '';
-
-           ctr++;
-           document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
-           console.log(user_rec);
-           if (ctr >= 7) {ctr = 7;}
-         }
-      })
-
-
-
-
-
-    $("#q2").click(function() { // BACK Button
-      if( ctr >= 1){
-
-         if (ctr == 0){
-           var form_value = document.getElementById("questions");
-           user_rec['eq1_Morning'] = form_value[0].value;
-           user_rec['eq1_Afternoon'] = form_value[1].value;
-           user_rec['eq1_Evening'] = form_value[2].value;
-         }
-
-         else if (ctr == 1){
-          var result = document.getElementById("eq2").checked;
-          user_rec['eq2_Exercise'] = result;
-         }
-
-         else if (ctr == 2){
-          var result = document.getElementById("eq3").checked;
-          user_rec['eq3_Alcohol'] = result;
-         }
-
-         else if (ctr == 3){
-          var result = document.getElementById("eq4").checked;
-          user_rec['eq4_Nap'] = result;
-         }
-
-         else if (ctr == 4){
-
-           if (document.getElementById("eqs5op1").checked)
-              (
-                user_rec['eq5_Mood'] = document.getElementById("eqs5op1").value
-              )
-           else if(document.getElementById("eqs5op2").checked)
-              (
-                user_rec['eq5_Mood'] = document.getElementById("eqs5op2").value 
-              )
-           else if(document.getElementById("eqs5op3").checked)
-              (
-                user_rec['eq5_Mood'] = document.getElementById("eqs5op3").value 
-              )
-           else if(document.getElementById("eqs5op4").checked)
-              (
-                user_rec['eq5_Mood'] = document.getElementById("eqs5op4").value 
-              )
-           else '';                     
-         }
-
-         else if (ctr == 5){
-
-            if (document.getElementById("eqs6op1").checked)
-              (
-                user_rec['eq6_Phone'] = 'True'
-              )
-            else (user_rec['eq6_Phone'] = 'False');
-
-            if (document.getElementById("eqs6op2").checked)
-              (
-                user_rec['eq6_ReadHomeWork'] = 'True'
-              )
-            else (user_rec['eq6_ReadHomeWork'] = 'False');
-
-            if (document.getElementById("eqs6op3").checked)
-              (
-                user_rec['eq6_WatchTV'] = 'True'
-              )
-            else (user_rec['eq6_WatchTV'] = 'False');
-
-            if (document.getElementById("eqs6op4").checked)
-              (
-                user_rec['eq6_PlayVideoGames'] = 'True'
-              )
-            else (user_rec['eq6_PlayVideoGames'] = 'False');
-
-            if (document.getElementById("eqs6op5").checked)
-              (
-                user_rec['eq6_None'] = 'True'
-              )
-            else (user_rec['eq6_None'] = 'False');
-         }
-
-         else if (ctr == 6){
-
-           if (document.getElementById("eqs7op1").checked)
-              (
-                user_rec['eq7_TimeOfDay'] = document.getElementById("eqs7op1").value
-              )
-           else if(document.getElementById("eqs7op2").checked)
-              (
-                user_rec['eq7_TimeOfDay'] = document.getElementById("eqs7op2").value 
-              )
-           else if(document.getElementById("eqs5op3").checked)
-              (
-                user_rec['eq7_TimeOfDay'] = document.getElementById("eqs7op3").value 
-              )
-           else (user_rec['eq7_TimeOfDay'] = '');                     
-         }         
-
-         else '';
-
-
-           ctr--;
-           console.log(user_rec);
-           document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
-           if (ctr == 0) {ctr = 0;}
-         }
-      })
-  });
-
-
-
-
-
-function toFallAsleep() {
-var person = prompt("How many minutes did it take you to fall asleep?", "Minutes to fall asleep....");
-if (person != null) {
-  document.getElementsByID("minutesTryingToFallAsleep".innerHTML = person);
-}
-}
-
-
- 
-
+// Set Values PHP Values
 function evg_ans_submit() {
-           var eqs_answers = {};
-           eqs_answers['eq1_Morning'] = user_rec.eq1_Morning;
-           eqs_answers['eq1_Afternoon'] = user_rec.eq1_Afternoon;
-           eqs_answers['eq1_Evening'] = user_rec.eq1_Evening;
-           eqs_answers['eq2_Exercise'] = user_rec.eq2_Exercise;
-           eqs_answers['eq3_Alcohol'] = user_rec.eq3_Alcohol;
-           eqs_answers['eq4_Nap'] = user_rec.eq4_Nap;
-           eqs_answers['eq5_Mood'] = user_rec.eq5_Mood;
-           eqs_answers['eq6_Phone'] = user_rec.eq6_Phone;
-           eqs_answers['eq6_ReadHomeWork'] = user_rec.eq6_ReadHomeWork;
-           eqs_answers['eq6_WatchTV'] = user_rec.eq6_WatchTV;
-           eqs_answers['eq6_PlayVideoGames'] = user_rec.eq6_PlayVideoGames;
-           eqs_answers['eq6_None'] = user_rec.eq6_None;
-           eqs_answers['eq7_TimeOfDay'] = user_rec.eq7_TimeOfDay;
+  
 
-           console.log(eqs_answers);
+  $.ajax({
+    url: 'post_evg_answers.php',
+    type: 'post',
+    success: function(data) {
+      alert ('Posted Successfully')
+    },
+    data: {post_evg_answers:eqs_answers},
+    error: function(xhr, desc, err) {
+      console.log(xhr);
+      console.log("Details: " + desc + "\nError:" + err);
+    }
+  }); 
 
-           alert(eqs_answers.eq7_TimeOfDay);
-
-
-        $.ajax({
-        url: 'post_evg_answers.php',
-        type: 'post',
-        data: {post_evg_answers:eqs_answers},
-        success: function(data) {
-                                  alert ('Posted Successfully')
-                                },
-        error: function(xhr, desc, err) {
-                                          console.log(xhr);
-                                          console.log("Details: " + desc + "\nError:" + err);
-                                        }
-              }); 
-
-      };
+};
 
 
 
@@ -374,4 +419,34 @@ function evg_ans_submit() {
 </script>
 
 
+
+
 <?php require_once("./includes/footer.php"); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+// $(document).ready(function(){
+
+//  $("#coach_z_reg").click(function(){
+//    var reg_form = document.getElementById("newuser");
+//    user_reg['username'] = form_value[0],value;
+//    alert(user_reg['username']);
+//  });
+
+
+
+
+
+
+

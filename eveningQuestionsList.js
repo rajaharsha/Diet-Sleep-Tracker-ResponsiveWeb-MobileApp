@@ -2,7 +2,6 @@
 var qs1 = '\
 <div class="container-fluid">\
 \
-<form onSubmit="return !!(false & nextQuestion());"> \
 \
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -10,56 +9,99 @@ var qs1 = '\
 </div>\
 </div>\
 \
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-success" onclick="yesCaffeine()">\
-        <span>Yes!</span>\
-        </button>\
-        </div>\
-        </div>\
-        \
-        <br />\
-\
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-primary" type="submit" onclick="noCaffeine()">\
-        <span>Not today!</span>\
-        </button>\
-        </div>\
-        </div>';
-
-
-var qs1partb = '<div class="row text-center">\
+<div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<h4> Records number of caffeinated drinks consumed during each time of day</h4>\
-</div>\
-</div>\
-\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<h3>Morning</h3><input id="eq1a" type="Number" name="Morning">\
-</div>\
-</div>\
-\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<h3>Afternoon</h3><input id="eq1b" type="Number" name="Afternoon">\
-</div>\
-</div>\
-\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<h3>Evening</h3><input id="eq1c" type="Number" name="Evening">\
-</div>\
-</div>\
-<br />\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="q1script()" >\
-<span>Continue</span>\
+<button class="form-control btn btn-large btn-success" onclick="showCaffeineMenu()">\
+<span>Yes!</span>\
 </button>\
 </div>\
+</div>\
+\
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="noCaffeine()">\
+<span>Not today!</span>\
+</button>\
+</div>\
+</div>';
+
+
+var qs1partb = '\
+<div class="container-fluid"  id="coffeeIntake">\
+  <div class="row text-center">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <h4>Record your Joe below!</h4>\
+    </div>\
+  </div>\
+  <div class="row text-center">\
+    <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+      <h3>Morning &#x2615;</h3>\
+    </div>\
+    <div class="row">\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <button class="btn btn-Default" onClick="minusOneCoffee("eq1a")">&#10134;</button>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 ">\
+        <label class="form-control text-center" id="eq1a" disabled onchange="getCaffeineResults()" type="number" name="Morning" min="0" max="10" >0</label>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
+        <button class="btn btn-Default" onClick="addOneCoffee("eq1a")">&#10133;</button>\
+      </div>\
+    </div>\
+    <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+      <h3>Afternoon &#x2615;</h3>\
+    </div>\
+    <div class="row">\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <button class="btn btn-Default" onClick="minusOneCoffee("eq1b")">&#10134; </button>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <label class="form-control text-center" id="eq1b" disabled onchange="getCaffeineResults()" type="number" name="Afternoon" min="0" max="10">0</label>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
+        <button class="btn btn-Default" onClick="addOneCoffee("eq1b")">&#10133; </button>\
+      </div>\
+    </div>\
+    <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+      <h3>Evening &#x2615;</h3>\
+    </div>\
+    <div class="row">\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <button class="btn btn-Default" onClick="minusOneCoffee("eq1c")">&#10134; </button>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
+        <label class="form-control text-center" id="eq1c" disabled onchange="getCaffeineResults()" type="text" name="Evening" min="0" max="10">0</label>\
+      </div>\
+      <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
+        <button class="btn btn-Default" onClick="addOneCoffee("eq1c")">&#10133;</button>\
+      </div>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row text-center">\
+    <div class="col-xs-12 col-md-4 col-lg-4"></div>\
+    <div class="col-xs-12 col-md-4 col-lg-4">\
+      <button class="form-control btn btn-large btn-default" type="submit" onclick="nextQuestion()">\
+        <span>Continue</span>\
+      </button>\
+      <div class="col-xs-12 col-md-12 col-lg-4"></div>\
+    </div>\
+    <br />\
+  </div>\
 </div>'; 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -67,157 +109,188 @@ var qs1partb = '<div class="row text-center">\
 var qs2 = ' \
 <div class="container-fluid">\
 \
-        <form onSubmit="return !!(false & nextQuestion());">\
 \
-        <div class="row text-center">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <h3>Did you exercise today?</h3>\
-        </div>\
-        </div>\
-        \
-        <br />\
 \
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
-        <span>Yes!</span>\
-        </button>\
-        </div>\
-        </div>\
-        \
-        <br />\
+<div class="row text-center">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<h3>Did you exercise today?</h3>\
+</div>\
+</div>\
 \
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
-        <span>Not today!</span>\
-        </button>\
-        </div>\
-        </div>\
-        \
-        \
-       </form>\
-        \
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-success" type="submit" onclick="question2(1)">\
+<span>Yes!</span>\
+</button>\
+</div>\
+</div>\
+\
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="question2(0)">\
+<span>Not today!</span>\
+</button>\
+</div>\
+</div>\
+\
+\
+</form>\
+\
 </div>\
 ';
+
+
+
+
+
+
+
+
+
+
 
 var qs3 = '\
 <div class="container-fluid">\
 \
-        <form onSubmit="return !!(false & nextQuestion());">\
 \
-        <div class="row text-center">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <h3>Did you drink Alcohol?</h3>\
-        </div>\
-        </div>\
-        \
-        <br />\
 \
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
-        <span>Yes</span>\
-        </button>\
-        </div>\
-        </div>\
-        \
-        <br />\
+<div class="row text-center">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<h3>Did you drink Alcohol?</h3>\
+</div>\
+</div>\
 \
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
-        <span>No</span>\
-        </button>\
-        </div>\
-        </div>\
-        \
-        \
-       </form>\
-        \
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-success" type="submit" onclick="question3(1)">\
+<span>Yes</span>\
+</button>\
+</div>\
+</div>\
+\
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="question3(0)">\
+<span>No</span>\
+</button>\
+</div>\
+</div>\
+\
+\
+\
+\
 </div>\
 ';
+
+
+
+
+
+
+
+
+
+
+
 
 var qs4 = ' \
 <div class="container-fluid">\
 \
-        <form onSubmit="return !!(false & nextQuestion());">\
 \
-        <div class="row text-center">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <h3>Did you take a nap today?</h3>\
-        </div>\
-        </div>\
-        \
-        <br />\
 \
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
-        <span>Yes</span>\
-        </button>\
-        </div>\
-        </div>\
-        \
-        <br />\
+<div class="row text-center">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<h3>Did you take a nap today?</h3>\
+</div>\
+</div>\
 \
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
-        <span>No</span>\
-        </button>\
-        </div>\
-        </div>\
-        \
-        \
-       </form>\
-        \
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-success" type="submit" onclick="question4(1)">\
+<span>Yes</span>\
+</button>\
+</div>\
+</div>\
+\
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="question4(0)">\
+<span>No</span>\
+</button>\
+</div>\
+</div>\
+\
+\
+\
+\
 </div>\
 ';
+
+
+
+
+
+
+
+
+
+
 
 var qs5 = ' \
 <div class="container-fluid">\
 \
-<form onSubmit="return !!(false & nextQuestion());">\
-        <div class="row text-center">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <h3>How is your mood today?</h3>\
-        </div>\
-        </div>\
-        \
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button id="eqs5op1" class="form-control btn btn-large btn-success" type="submit" onclick="q2script()">\
-        <span>Happy</span>\
-        </button>\
-        </div>\
-        </div>\
-        <br />\
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button id="eqs5op2" class="form-control btn btn-large btn-Default" type="submit" onclick="q2script()">\
-        <span>Neutral</span>\
-        </button>\
-        </div>\
-        </div>\
-        <br />\
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button id="eqs5op3" class="form-control btn btn-large btn-danger" type="submit" onclick="q2script()">\
-        <span>Angry</span>\
-        </button>\
-        </div>\
-        </div>\
-        <br />\
-        <div class="row">\
-        <div class="col-xs-12 col-md-12 col-lg-12">\
-        <button id="eqs5op4" class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()">\
-        <span>Sad</span>\
-        </button>\
-        </div>\
-        </div>\
-        \
-</form>\
+\
+<div class="row text-center">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<h3>How is your mood today?</h3>\
+</div>\
+</div>\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button id="eqs5op1" class="form-control btn btn-large btn-success" type="submit" onclick="question5(1)">\
+<span>Happy</span>\
+</button>\
+</div>\
+</div>\
+<br />\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button id="eqs5op2" class="form-control btn btn-large btn-Default" type="submit" onclick="question5(2)">\
+<span>Neutral</span>\
+</button>\
+</div>\
+</div>\
+<br />\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button id="eqs5op3" class="form-control btn btn-large btn-danger" type="submit" onclick="question5(3)">\
+<span>Angry</span>\
+</button>\
+</div>\
+</div>\
+<br />\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button id="eqs5op4" class="form-control btn btn-large btn-primary" type="submit" onclick="question5(4)">\
+<span>Sad</span>\
+</button>\
+</div>\
+</div>\
+\
+\
 ';
 
 
@@ -225,26 +298,73 @@ var qs5 = ' \
 
 
 
-var qs6 = ' \
+var qs6 = '\
 <div class="container-fluid">\
 \
-<form onSubmit="return !!(false & nextQuestion());">\
-<h3>Do you do any of the followin in your bed?</h3> \
-<h2>Check all that apply</h2> \
-<p><input class="largerCheckbox" type="Checkbox" name="Use your phone" id="eqs6op1"> Use your phone</p> \
-<p><input type="Checkbox" name="Read or do homework" id="eqs6op2"> Read or do homework</p> \
-<p><input type="Checkbox" name="Watch TV" id="eqs6op3"> Watch TV</p> \
-<p><input type="Checkbox" name="Play video games" id="eqs6op4"> Play video games</p> \
-<p><input type="Checkbox" name="None of the above" id="eqs6op5"> None of the above</p> \
+  <div class="col-lg-12 text-center">\
+    <h3>Do you do any of the following in your bed?</h3>\
+  </div>\
+  <div class="col-lg-12 text-center">\
+    <h4>Select all that apply</h4>\
+  </div>\
 \
-<div class="row">\
-<div class="col-xs-3 col-md-4 col-lg-4"></div>\
-<div class="col-xs-5 col-md-5 col-lg-4">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="q1script()" >\
-<span>Continue</span>\
-</button>\
-</div>\
-</div>';
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs6op1" class="form-control btn btn-large btn-Default" onclick="question6(1)">\
+        <span>Use my phone</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs6op2" class="form-control btn btn-large btn-Default" onclick="question6(2)">\
+        <span>Read or do homework</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs6op3" class="form-control btn btn-large btn-Default" onclick="question6(3)">\
+        <span>Watch TV</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs6op4" class="form-control btn btn-large btn-Default" onclick="question6(4)">\
+        <span>Play Video Games</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button id="eqs6op5" class="form-control btn btn-large btn-danger" onclick="question6(5)">\
+        <span>None of the above</span>\
+      </button>\
+    </div>\
+  </div>\
+  <br />\
+\
+\
+\
+  <div class="row">\
+    <div class="col-xs-12 col-md-12 col-lg-12">\
+      <button class="form-control btn btn-large btn-primary" type="submit" onclick="submitQuestion6()">\
+        <span>Continue</span>\
+      </button>\
+    </div>\
+  </div>\
+\
+';
+
+
+
+
 
 
 
@@ -252,25 +372,39 @@ var qs6 = ' \
 
 
 var qs7 = ' \
-<div class="form-group" id="question5"> \
+<div class="container-fluid" > \
+\
 <h3>During what time of day do you have the most energy and motivation?</h3> \
-<form>\
-<div class="radio">\
-<label><input type="radio" name="optradio" value="Early Morning" id="eqs7op1"> Early Morning</label>\
-<label><input type="radio" name="optradio" value="Afternoon" id="eqs7op2"> Afternoon</label>\
-<label><input type="radio" name="optradio" value="Evening" id="eqs7op3"> Evening</label>\
-</div>\
-</form>\
 \
 <div class="row">\
-<div class="col-xs-3 col-md-4 col-lg-4"></div>\
-<div class="col-xs-5 col-md-5 col-lg-4">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="q1script()" >\
-<span>Continue</span>\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-warning" type="submit" onclick="question7(1)">\
+<span>Morning</span>\
 </button>\
 </div>\
-</div>';
-
+</div>\
+\
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-success" type="submit" onclick="question7(2)">\
+<span>Afternoon</span>\
+</button>\
+</div>\
+</div>\
+\
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-info" type="submit" onclick="question7(3)">\
+<span>Evening</span>\
+</button>\
+</div>\
+</div>\
+\
+';
 
 
 
