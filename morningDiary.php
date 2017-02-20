@@ -48,19 +48,10 @@ include('./includes/header.php');
 	<script src="morningQuestionsScripts.js"></script> <!-- Questions -->
 
 <!-- Tips generation JScript and Logic -->
-	<script type="text/javascript" src="assets/Morning_Tips_test.json"></script>
+	<script type="text/javascript" src="assets/Morning_Tips.json"></script>
+	<script type="text/javascript" src="assets/Standard_Tips.json"></script>
 	<script>
-
-
-		var div = document.getElementById('push_morning_tip');
-		div.innerHTML = div.innerHTML + 'Populate Morning Tip Here';
-
-	</script>
-
-
-
-
-	<script>	
+	
 
 		var questionBank = [qs1, qs2, qs3, qs4, qs5];
 		var questions = new morningQuestion("", "", false, "", false, "", "0", "0", "0", "0", "0", "0"); 
@@ -153,7 +144,17 @@ submitMorningQuestions();
 }
 
 
+
 var mqs_answers = {};
+var mng_tip_message = '';
+var cur_mor_day = 0;
+var btcmp_morning_val = 0;
+
+var btcmp_morning_val = parseInt('<?php echo $btcmp_morning_val;?>');
+var cur_mor_day = btcmp_morning_val + 1;
+
+
+function submitMorningQuestions() {
 
 	mqs_answers['mq1_bedTime'] 				= questions.bedTime;
 	mqs_answers['mq1_wakeTime'] 			= questions.wakeTime;
@@ -165,17 +166,48 @@ var mqs_answers = {};
 	mqs_answers['mq5_noise'] 				= questions.noise;
 	mqs_answers['mq5_light'] 				= questions.light;
 	mqs_answers['mq5_stress'] 				= questions.stress;
-	mqs_answers['mq5_temp'] 					= questions.temp;
-	mqs_answers['mq5_nota'] 					= questions.nota;
+	mqs_answers['mq5_temp'] 				= questions.temp;
+	mqs_answers['mq5_nota'] 				= questions.nota;	
 
-function submitMorningQuestions() {
+	console.log(mqs_answers);
+
+	if (cur_mor_day < 15) {
+		if (cur_mor_day == 1){mng_tip_message = Standard_Tips.S[0].S1;}
+
+		if (cur_mor_day == 2){ 
+
+			if(questions.problemsFallingAsleep == 'on'){
+
+					local_array = [];
+					local_array.push(Morning_Tips.Q2[0].M8);
+					local_array.push(Morning_Tips.Q2[0].M9);
+
+					var randomIndex = Math.floor(Math.random() * local_array.length); 
+					var mng_tip_message = local_array[randomIndex];
+				}
+			}		
+
+/*		if (cur_mor_day == 3){mng_tip_message = Standard_Tips.S[0].S1;}	
+		if (cur_mor_day == 4){mng_tip_message = Standard_Tips.S[0].S1;}	
+		if (cur_mor_day == 5){mng_tip_message = Standard_Tips.S[0].S1;}	
+		if (cur_mor_day == 6){mng_tip_message = Standard_Tips.S[0].S1;}	
+		if (cur_mor_day == 7){mng_tip_message = Standard_Tips.S[0].S1;}	
+		if (cur_mor_day == 8){mng_tip_message = Standard_Tips.S[0].S1;}	
+		if (cur_mor_day == 9){mng_tip_message = Standard_Tips.S[0].S1;}	
+		if (cur_mor_day == 10){mng_tip_message = Standard_Tips.S[0].S1;}	
+		if (cur_mor_day == 11){mng_tip_message = Standard_Tips.S[0].S1;}	
+		if (cur_mor_day == 12){mng_tip_message = Standard_Tips.S[0].S1;}					
+		if (cur_mor_day == 13){mng_tip_message = Standard_Tips.S[0].S1;}					
+		if (cur_mor_day == 14){mng_tip_message = Standard_Tips.S[0].S1;}					*/
+	};
 	
-	//	console.log(mqs_answers);
 	$.ajax({
 		url: 'post_mng_answers.php',
 		type: 'post',
 		data: {post_mng_answers:mqs_answers},
-		success: function(data) {
+		success: function(data) {	
+			var div = document.getElementById('push_morning_tip');
+	        div.innerHTML = div.innerHTML + mng_tip_message;
 			alert ('Posted Successfully');
 		},
 		error: function(xhr, desc, err) {
@@ -185,16 +217,6 @@ function submitMorningQuestions() {
 	});
 }
 
-	console.log(mqs_answers);
-
-// build logic for tip generation
-
-	var btcmp_morning_val = '<?php echo $btcmp_morning_val;?>';
-	var cur_mor_day = btcmp_morning_val + 1;
-
-	if (cur_mor_day < 15) {
-		if (cur_mor_day = 1){}
-	};
 
 
 </script>
