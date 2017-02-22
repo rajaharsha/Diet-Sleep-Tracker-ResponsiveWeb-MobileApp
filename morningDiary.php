@@ -245,13 +245,20 @@ function submitMorningQuestions() {
 			if (questions.didWakeDuringTheNight == 'off'){
 				var mng_tip_message = Morning_Tips.Q3[0].M15;
 			}
-
-
-
-
 		}
 
+		/*
+	    	Day 4 Tip 1: S4	
+	    */
+
+	    if (cur_mor_day == 4){mng_tip_message = Standard_Tips.S[0].S4;}
+
+	    
+
+
 	};
+
+
 	
 	$.ajax({
 		url: 'post_mng_answers.php',
