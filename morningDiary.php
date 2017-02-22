@@ -161,7 +161,7 @@ function submitMorningQuestions() {
 	mqs_answers['mq2_problemsFallingAsleep'] = questions.problemsFallingAsleep;
 	mqs_answers['mq2_minutesToFallAsleep'] 	= questions.minutesToFallAsleep;
 	mqs_answers['mq3_didWakeDuringTheNight'] = questions.didWakeDuringTheNight;
-	mqs_answers['mq3_minutesToFallBackToSleep'] = questions.minutesToFallBackToSleep;
+	mqs_answers['mq3_minutesToFallBackToSleep'] = parseInt(questions.minutesToFallBackToSleep);
 	mqs_answers['mq4_howDidYouFeel'] 		= questions.howDidYouFeel;
 	mqs_answers['mq5_noise'] 				= questions.noise;
 	mqs_answers['mq5_light'] 				= questions.light;
@@ -172,11 +172,18 @@ function submitMorningQuestions() {
 	console.log(mqs_answers);
 
 	if (cur_mor_day < 15) {
+		alert (cur_mor_day);
+
+		// Day - 1 - Morning //
+
 		if (cur_mor_day == 1){mng_tip_message = Standard_Tips.S[0].S1;}
+
+		// Day - 2 - Morning //
 
 		if (cur_mor_day == 2){ 
 
 			if(questions.problemsFallingAsleep == 'on'){
+				alert ('1');
 
 					local_array = [];
 					local_array.push(Morning_Tips.Q2[0].M8);
@@ -185,20 +192,65 @@ function submitMorningQuestions() {
 					var randomIndex = Math.floor(Math.random() * local_array.length); 
 					var mng_tip_message = local_array[randomIndex];
 				}
+			if(questions.problemsFallingAsleep == ''){
+	alert ('2');
+					local_array = [];
+					local_array.push(Morning_Tips.Q2[0].M10);
+					local_array.push(Morning_Tips.Q2[0].M11);
+
+					var randomIndex = Math.floor(Math.random() * local_array.length); 
+					var mng_tip_message = local_array[randomIndex];				
+			}
+
+			if(questions.problemsFallingAsleep == 'off'){
+					var mng_tip_message = Morning_Tips.Q2[0].M14;				
+			}
 			}		
 
-/*		if (cur_mor_day == 3){mng_tip_message = Standard_Tips.S[0].S1;}	
-		if (cur_mor_day == 4){mng_tip_message = Standard_Tips.S[0].S1;}	
-		if (cur_mor_day == 5){mng_tip_message = Standard_Tips.S[0].S1;}	
-		if (cur_mor_day == 6){mng_tip_message = Standard_Tips.S[0].S1;}	
-		if (cur_mor_day == 7){mng_tip_message = Standard_Tips.S[0].S1;}	
-		if (cur_mor_day == 8){mng_tip_message = Standard_Tips.S[0].S1;}	
-		if (cur_mor_day == 9){mng_tip_message = Standard_Tips.S[0].S1;}	
-		if (cur_mor_day == 10){mng_tip_message = Standard_Tips.S[0].S1;}	
-		if (cur_mor_day == 11){mng_tip_message = Standard_Tips.S[0].S1;}	
-		if (cur_mor_day == 12){mng_tip_message = Standard_Tips.S[0].S1;}					
-		if (cur_mor_day == 13){mng_tip_message = Standard_Tips.S[0].S1;}					
-		if (cur_mor_day == 14){mng_tip_message = Standard_Tips.S[0].S1;}					*/
+		/*  Day 3 Tip 1:
+			If “no” on morning question 3 then: M15 
+			If “yes” and <15 mins awake on morning question 3 then: M16 
+			If “yes” and >16 mins awake on morning question 3 then: M17 or M18
+			If no response on morning question 3 then: M19
+		*/
+
+		if (cur_mor_day == 3){
+
+			if (questions.didWakeDuringTheNight == ''){
+				var mng_tip_message = Morning_Tips.Q3[0].M15;
+			}
+
+			if (questions.didWakeDuringTheNight == 'on'){
+
+				if (parseInt(questions.minutesToFallBackToSleep) <= 15){
+
+					var mng_tip_message = Morning_Tips.Q3[0].M15;
+				}
+				if (parseInt(questions.minutesToFallBackToSleep) > 16){
+
+
+					local_array = [];
+					local_array.push(Morning_Tips.Q3[0].M17);
+					local_array.push(Morning_Tips.Q3[0].M18);
+
+					var randomIndex = Math.floor(Math.random() * local_array.length); 
+					var mng_tip_message = local_array[randomIndex];	
+				}
+				if  (questions.minutesToFallBackToSleep == ''){
+
+					var mng_tip_message = Morning_Tips.Q3[0].M19;
+				}				
+			}
+
+			if (questions.didWakeDuringTheNight == 'off'){
+				var mng_tip_message = Morning_Tips.Q3[0].M15;
+			}
+
+
+
+
+		}
+
 	};
 	
 	$.ajax({
