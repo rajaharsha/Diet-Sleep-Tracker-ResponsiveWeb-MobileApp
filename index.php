@@ -1,4 +1,4 @@
-
+<!DOCTYPE HTML>
 <?php
   include("./includes/cz_functions.js");
   include("./includes/db_connection.php");
@@ -6,7 +6,6 @@
   include("./includes/functions.php");
   include('./includes/header.php');
 ?>
-<!DOCTYPE HTML>
 <meta charset=“utf-8”>
 
 <br><br><br>

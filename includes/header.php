@@ -30,7 +30,7 @@ if (isset($_SESSION["btcmp_evening_val"])){ $btcmp_evening_val = $_SESSION["btcm
 
   <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
-
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
   <!-- jquery Resources --> 
   <script src="js/jquery.min.js"></script> 
 
@@ -40,6 +40,8 @@ if (isset($_SESSION["btcmp_evening_val"])){ $btcmp_evening_val = $_SESSION["btcm
     <link rel="stylesheet" type="text/css" href="css/styles.css"> 
     <link rel="stylesheet" type="text/css" href="css/styles2.css">
     <link href="css/jumbotron.css" rel="stylesheet">
+
+
 
   
 
