@@ -12,6 +12,10 @@ include('./includes/header.php');
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="Coach Z Application (Web) ">
   <meta name="author" content="Brian Watkins & Raja Harsha Chinta">
+
+
+
+
 <!-- Present questions HERE -->
 <div class="container">
 	<div class="row" id="mainRow">
@@ -25,6 +29,11 @@ include('./includes/header.php');
 			</div>
 		</div>
 	</div>
+
+
+
+
+
 
 <!-- Tip generation DIV elements -->
 
@@ -75,6 +84,14 @@ function nextQuestion()
 		return false;
 	}
 }
+
+
+
+
+
+
+
+
 // Question 1 Scripts
 function q1script() {
 	a = document.getElementById('inputBedTimeId').value;
@@ -82,6 +99,13 @@ function q1script() {
 	questions.setBedTime(a);
 	questions.setWakeTime(b);
 }
+
+
+
+
+
+
+
 function checkQuestion2() {
 	a = document.getElementById('inputProblemsFallingAsleepId').checked;
 	if (a == true) {
@@ -91,6 +115,12 @@ function checkQuestion2() {
 		document.getElementById('part2').style.visibility = "hidden";
 	}
 }
+
+
+
+
+
+
 // Question 2 Scripts
 function q2script() {
 	a = document.getElementById('inputProblemsFallingAsleepId').value;
@@ -98,6 +128,13 @@ function q2script() {
 	questions.setProblemsFallingAsleep(a);
 	questions.setMinutesToFallAsleep(b);
 }
+
+
+
+
+
+
+
 // Question 3 Scripts
 function q3script() {
 	a = document.getElementById('inputDidWakeDuringTheNightId').value;
@@ -105,10 +142,22 @@ function q3script() {
 	questions.setDidWakeDuringTheNight(a);
 	questions.setMinutesToFallBackToSleep(b);
 }
+
+
+
+
+
+
 // Question 4 Scripts
 function q4script(choice) {
 	questions.setHowDidYouFeel(choice);
 }
+
+
+
+
+
+
 // Question 5 Scripts
 function q5script(choice) {
 var a = document.getElementById('noiseId').checked // true/false		
@@ -155,18 +204,36 @@ submitMorningQuestions();
 
 var mqs_answers = {};
 
-	mqs_answers['mq1_bedTime'] 				= questions.bedTime;
-	mqs_answers['mq1_wakeTime'] 			= questions.wakeTime;
-	mqs_answers['mq2_problemsFallingAsleep'] = questions.problemsFallingAsleep;
-	mqs_answers['mq2_minutesToFallAsleep'] 	= questions.minutesToFallAsleep;
-	mqs_answers['mq3_didWakeDuringTheNight'] = questions.didWakeDuringTheNight;
+	mqs_answers['mq1_bedTime'] 					= questions.bedTime;
+	mqs_answers['mq1_wakeTime'] 				= questions.wakeTime;
+	mqs_answers['mq2_problemsFallingAsleep'] 	= questions.problemsFallingAsleep;
+	mqs_answers['mq2_minutesToFallAsleep'] 		= questions.minutesToFallAsleep;
+	mqs_answers['mq3_didWakeDuringTheNight'] 	= questions.didWakeDuringTheNight;
 	mqs_answers['mq3_minutesToFallBackToSleep'] = questions.minutesToFallBackToSleep;
-	mqs_answers['mq4_howDidYouFeel'] 		= questions.howDidYouFeel;
-	mqs_answers['mq5_noise'] 				= questions.noise;
-	mqs_answers['mq5_light'] 				= questions.light;
-	mqs_answers['mq5_stress'] 				= questions.stress;
+	mqs_answers['mq4_howDidYouFeel'] 			= questions.howDidYouFeel;
+	mqs_answers['mq5_noise'] 					= questions.noise;
+	mqs_answers['mq5_light'] 					= questions.light;
+	mqs_answers['mq5_stress'] 					= questions.stress;
 	mqs_answers['mq5_temp'] 					= questions.temp;
 	mqs_answers['mq5_nota'] 					= questions.nota;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function submitMorningQuestions() {
 	
@@ -198,6 +265,25 @@ function submitMorningQuestions() {
 	};
 
 // *****************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
 <?php require_once("./includes/footer.php"); ?>
