@@ -260,7 +260,7 @@ global $connection;
 $query = "SELECT MAX(LOG_DAY) AS MAX_EVG_DAY FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid AND LOG_TYPE = 'E'";
 $query_result = mysqli_query($connection, $query);
 $fetch_rows = mysqli_fetch_assoc($query_result);
-$total_completed_evg_days = $fetch_rows["MAX_EVG_DAY"];
+$total_completed_evg_days = $fetch_rows["MAX_EVG_DAY"];	
 return $total_completed_evg_days;
 }
 
