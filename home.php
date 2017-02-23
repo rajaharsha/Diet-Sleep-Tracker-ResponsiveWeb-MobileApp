@@ -6,7 +6,7 @@
   include('./includes/header.php');
 ?>
 
-<br><br>
+<br>
 
 <div class="container">
       <!-- Example row of columns -->
@@ -25,7 +25,6 @@
             <h3><b>Log Your Morning Diary</b></h3>
             </div>
             </button>
-
             <br>
 
             <button type="button" class="btn btn-primary btn-lg btn-block btn-warning" onclick="location.href='eveningdiary.php';">
@@ -45,5 +44,6 @@
       </div>
 </div>            
 
+<br><br>
 <?php require_once("./includes/footer.php"); ?>
 </body> <!-- Close the Body -->

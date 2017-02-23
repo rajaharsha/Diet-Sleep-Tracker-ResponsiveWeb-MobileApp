@@ -3,10 +3,7 @@
 
 var qs1 = '\
 <div class="container-fluid">\
-\
 <form onSubmit="return !!(false & nextQuestion());">\
-\
-\
 <div class="progress">\
   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
   aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">\

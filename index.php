@@ -8,14 +8,13 @@
 ?>
 <meta charset=“utf-8”>
 
-<br><br><br>
       <div class="container">
 
           <form id="signin" method ="post" action="login_validation.php">
   
-              <div class="col-sm-4" style="text-align:center"> 
+              <div class="col-sm-4" style="text-align:center">              
               <img src="assets/unnamed.png" class="center-block" alt="CoachZ" width="200" height="200"> 
-              <h1><b>CoachZ<b></h1>
+              
               </div>
 
               <div class="col-sm-4" style="text-align:center"> 
@@ -115,17 +114,17 @@ function check_user_login(username,userpassword){
       <div class="row">
         <div class="col-md-4">
        
-       <h2>About</h2>
+       <h2 style="text-align: center;">CoachZ</h2>
           <p>Coach Z is a website aimed to help college students improve their sleep. Sleep disturbances are common among young adults, and can impact academic performance, physical health, and mental health. Sleep is a vital aspect of health and Coach Z offers sleep tips to help users work towards and maintain healthy sleep habits. The website has two modes, bootcamp mode and refresher mode.</p>
         </div>
         
         <div class="col-md-4">
-          <h2>Refresher</h2>
+          <h2 style="text-align: center;">Refresher</h2>
           <p>Refresher mode allows users to keep a sleep diary at their own pace. In refresher mode users do not receive diary completion reminders, but can complete entries as they determine to be helpful. Users will receive a random sleep tip after every completed diary entry.</p>
           </div>
         
         <div class="col-md-4">
-          <h2>Bootcamp</h2>
+          <h2 style="text-align: center;">Bootcamp</h2>
           <p>Bootcamp mode is a two-week experience where users are provided with daily reminders to complete a morning and evening sleep diary. Upon completion of diary entries, two customized sleep tips are provided to users each day. In addition to sleep tips, students can utilize graphs calculated from their daily diary entries to track their total sleep time and sleep efficiciency scores throughout bootcamp.</p>
         </div>
         

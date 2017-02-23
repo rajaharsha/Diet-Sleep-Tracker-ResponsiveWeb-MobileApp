@@ -409,6 +409,9 @@ var qs7 = ' \
 </div>\
 </div>\
 \
+  <div class="questionButtonDiv">\
+  <button id="eqs_submit" class="btn btn-default" onclick="evg_ans_submit()">Submit Your Response</button>\
+  </div>\
 ';
 
 

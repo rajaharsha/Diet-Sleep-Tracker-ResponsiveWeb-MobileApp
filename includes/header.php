@@ -37,10 +37,6 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
   <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
 
-
-
-
-
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <script type="text/javascript" src="jquery.timepicker.js"></script>
@@ -61,9 +57,6 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
   <link rel="stylesheet" type="text/css" href="css/styles.css"> 
   <link rel="stylesheet" type="text/css" href="css/styles2.css">
   <link href="css/jumbotron.css" rel="stylesheet">
-
-
-
 
 
 </head>
