@@ -4,14 +4,20 @@ include("./includes/session.php");
 include("./includes/functions.php");
 confirm_logged_in();
 include('./includes/header.php');
-?>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="Coach Z Application (Web) ">
-  <meta name="author" content="Brian Watkins & Raja Harsha Chinta">
+?>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="Coach Z Application (Web) ">
+<meta name="author" content="Brian Watkins & Raja Harsha Chinta">
+
+
+
+
 <!-- Present questions HERE -->
 <div class="container">
 	<div class="row" id="mainRow">
@@ -23,8 +29,14 @@ include('./includes/header.php');
 					</div>
 				</div>
 			</div>
+			</div>
 		</div>
-	</div>
+
+
+<script src="morningQuestionsScripts.js" type="text/javascript"></script>
+
+
+
 
 <!-- Tip generation DIV elements -->
 
@@ -448,3 +460,4 @@ function submitMorningQuestions() {
 
 </script>
 <?php require_once("./includes/footer.php"); ?>
+

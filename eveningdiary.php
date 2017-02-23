@@ -93,86 +93,44 @@ function showCaffeineMenu() { // Could be merged as one function later
   document.getElementById("questionDisplay").innerHTML = qs1partb;
 }
 
+
+
 // After each selection is changed, this data gets updated. 
 function getCaffeineResults() { // collect selected data
-  a = document.getElementById('eq1a').value;
-  b = document.getElementById('eq1b').value;
-  c = document.getElementById('eq1c').value;
-  eqs_answers['eq1_Morning'] = a;
-  eqs_answers['eq1_Afternoon'] = b;
-  eqs_answers['eq1_Evening'] = c;
+  morningValue = document.getElementById('eq1a').value;
+  afternoonValue = document.getElementById('eq1b').value;
+  eveningValue = document.getElementById('eq1c').value;
+  eqs_answers['eq1_Morning'] = morningValue;
+  eqs_answers['eq1_Afternoon'] = afternoonValue;
+  eqs_answers['eq1_Evening'] = eveningValue;
 }
 
 
-clicker = 0;
-a = 0;
-b = 0;
-c = 0;
-function addOneCoffee(choice) {
-alert("add");
-  theId = choice;
 
-if (theId == "eq1a") { 
-clicker = a;
-}
-if (theId == "eq1b") {
-clicker = b;
-}
-if (theId == "eq1c") {
-clicker = c;
-}
-  
-  if (clicker < 10 || clicker == null) {
-    clicker = clicker + 1;
-    document.getElementById(theId).innerHTML = clicker;
-  }
-  
-if (theId == "eq1a") { 
-a = clicker;
-}
-if (theId == "eq1b") {
-b = clicker;
-}
-if (theId == "eq1c") {
-c = clicker;
-}
 
-}
+function updateCoffee(timeOfDay, plusMinus) {
 
-function minusOneCoffee(choice) {
-  
+   value = document.getElementById(timeOfDay).innerHTML; 
+   counter = value;                 
+          
+          if (plusMinus == "plus" && counter != 10) {
+            counter++;
+            document.getElementById(timeOfDay).innerHTML = counter.toString();
 
-  theId = choice;
-  
-  if (theId == "eq1a") { 
-clicker = a;
-}
-if (theId == "eq1b") {
-clicker = b;
-}
-if (theId == "eq1c") {
-clicker = c;
-}
+          } else if (plusMinus == "minus" && counter != 0) {
+            counter--;
+            document.getElementById(timeOfDay).innerHTML = counter.toString(); 
+          }
 
-  
-  if (clicker <= 10 && clicker != 0) {
-    clicker = clicker - 1;
-    document.getElementById(theId).innerHTML = clicker;
-  }
-  
-  if (theId == "eq1a") { 
-a = clicker;
-}
-if (theId == "eq1b") {
-b = clicker;
-}
-if (theId == "eq1c") {
-c = clicker;
-}
-  
+
+  eqs_answers['eq1_Morning'] = document.getElementById('eq1a').value;
+  eqs_answers['eq1_Afternoon'] = document.getElementById('eq1b').value;
+  eqs_answers['eq1_Evening'] = document.getElementById('eq1c').value;
 
 
 }
+
+
 
 
 
@@ -302,24 +260,24 @@ function checkColor(myColor, myId) {
 
 function submitQuestion6() {
 
-  a = document.getElementById("eqs6op1").value;
-  b = document.getElementById("eqs6op2").value;
-  c = document.getElementById("eqs6op3").value;
-  d = document.getElementById("eqs6op4").value;
-  e = document.getElementById("eqs6op5").value;
-  a = (a != "true") ? "false" : "true"; // verfies that there IS a value
-  b = (b != "true") ? "false" : "true"; // verfies that there IS a value
-  c = (c != "true") ? "false" : "true"; // verfies that there IS a value
-  d = (d != "true") ? "false" : "true"; // verfies that there IS a value
-  e = (e != "true") ? "false" : "true"; // verfies that there IS a value
+  op1 = document.getElementById("eqs6op1").value;
+  op2 = document.getElementById("eqs6op2").value;
+  op3 = document.getElementById("eqs6op3").value;
+  op4 = document.getElementById("eqs6op4").value;
+  op5 = document.getElementById("eqs6op5").value;
+  op1 = (op1 != "true") ? "false" : "true"; // verfies that there IS a value
+  op2 = (op2 != "true") ? "false" : "true"; // verfies that there IS a value
+  op3 = (op3 != "true") ? "false" : "true"; // verfies that there IS a value
+  op4 = (op4 != "true") ? "false" : "true"; // verfies that there IS a value
+  op5 = (op5 != "true") ? "false" : "true"; // verfies that there IS a value
 
 
   // Now, send the data to the object
-  eqs_answers['eq6_Phone'] =          a;
-  eqs_answers['eq6_ReadHomework'] =   b;
-  eqs_answers['eq6_WatchTV'] =        c;
-  eqs_answers['eq6_PlayVideoGames'] = d;
-  eqs_answers['eq6_None'] =           e;
+  eqs_answers['eq6_Phone'] =          op1;
+  eqs_answers['eq6_ReadHomework'] =   op2;
+  eqs_answers['eq6_WatchTV'] =        op3;
+  eqs_answers['eq6_PlayVideoGames'] = op4;
+  eqs_answers['eq6_None'] =           op5;
 
   
   
@@ -345,6 +303,33 @@ eqs_answers['eq7_TimeOfDay'] = choice;
 // Last Question
 }
 // Question 7 ******************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,6 +6,7 @@ background-color: #223344;
 
 body {
   padding-top: 70px; 
+  background-color: #ccddee;
 }
 
 #mainRow {
@@ -87,19 +88,20 @@ input:checked + .slider:before {
 }
 
 #coffeeIntake {
-  background-color: #4d2600;
-  background-image: url("https://s24.postimg.org/hzce4t379/Coffee_Beans.jpg");
-  color: white;
-  padding-bottom: 10px;
+/*  background-color: #4d2600;*/
+/*  background-image: url("https://s24.postimg.org/hzce4t379/Coffee_Beans.jpg");*/
+/*  color: white;
+*/  padding-bottom: 10px;
   im
 }
 
 #eq1a,
 #eq1b,
 #eq1c {
-  background-color: black;
-  color: white;
+  background-color: #bbccdd;
+  border-radius: 10px;
   border: none;
+
 }
 
 .btn {

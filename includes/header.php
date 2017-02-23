@@ -12,18 +12,24 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <title>Coach Z</title>  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Coach Z or Sleep App">
   <meta name="author" content="Raja Harsha Chinta & Brian Watkins">
-  <script src="js/jquery.min.js"></script>
+
+
+  <!-- jQuery --> 
+  <script 
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 
 
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -31,40 +37,57 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
   <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
 
-  <!-- jquery Resources --> 
-  <script src="js/jquery.min.js"></script> 
 
 
 
-<!-- custom styles -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
-    <link rel="stylesheet" type="text/css" href="css/styles2.css">
-    <link href="css/jumbotron.css" rel="stylesheet">
 
-  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-  </head>
+  <script type="text/javascript" src="jquery.timepicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="jonthornton-jquery-timepicker-5588a9e/jquery.timepicker.css" />
+
+  <script type="text/javascript" src="lib/bootstrap-datepicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="jonthornton-jquery-timepicker-5588a9e/lib/bootstrap-datepicker.css" />
+
+  <script type="text/javascript" src="lib/site.js"></script>
+  <link rel="stylesheet" type="text/css" href="jonthornton-jquery-timepicker-5588a9e/lib/site.css" />
+
+
+  <script src="jonthornton-jquery-timepicker-5588a9e/jquery.timepicker.min.js"></script>
+
+
+
+  <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css"> 
+  <link rel="stylesheet" type="text/css" href="css/styles2.css">
+  <link href="css/jumbotron.css" rel="stylesheet">
+
+
+
+
+
+</head>
 
 <body>
 
-    <script src="js/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+  <script src="dist/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 
-  
-<script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
-<script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
+  <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.php">CoachZ</a>
       </div>
@@ -72,29 +95,29 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
 
         <ul class="nav navbar-nav navbar-right">
           <?php
-        
+
           if($userid){
-                       echo "
-                             <li>
-                             <a href='home.php'>Home</a>
-                             </li>
-                             <li>
-                             <a href='logout.php'>Logout</a>                           
-                             </li>
-                            ";
+            echo "
+            <li>
+              <a href='home.php'>Home</a>
+            </li>
+            <li>
+              <a href='logout.php'>Logout</a>                           
+            </li>
+            ";
           }
           else {  
 
-                       echo "<li><a href='index.php'>Login</a></li>         
-                             <li><a href='user_registration.php'>Register</a></li>";
+            echo "<li><a href='index.php'>Login</a></li>         
+            <li><a href='user_registration.php'>Register</a></li>";
           }
           ?>
         </ul>
-        
+
       </div><!--/.navbar-collapse -->
     </div>
   </nav>
 
 
-<!-- Navigation and login Bar -->
+  <!-- Navigation and login Bar -->
 

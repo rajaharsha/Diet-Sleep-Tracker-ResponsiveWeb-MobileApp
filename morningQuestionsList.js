@@ -1,97 +1,4 @@
-function morningQuestion( // Create the morningQuestion prototype
-bedTime, // String
-wakeTime, // String
-problemsFallingAsleep, // Boolean
-minutesToFallAsleep, // String || Int
-didWakeDuringTheNight, // Boolean
-minutesToFallBackToSleep, // String / Int
-howDidYouFeel, // String || Int || BitWise
-noise, 
-light, 
-stress, 
-temp, 
-nota
-) {
 
-// Parameters - Constructor - defaults to Private (verify)
-this.bedTime = bedTime;
-this.wakeTime = wakeTime;
-this.problemsFallingAsleep = problemsFallingAsleep;
-this.minutesToFallAsleep = minutesToFallAsleep;
-this.didWakeDuringTheNight = didWakeDuringTheNight;
-this.minutesToFallBackToSleep = minutesToFallBackToSleep;
-this.howDidYouFeel = howDidYouFeel;
-this.noise = noise;
-this.light = light;
-this.stress = stress;
-this.temp = temp;
-this.nota = nota;
-
-// Methods
-this.setBedTime = function setBedTime(time) {
-	this.bedTime = time;
-}
-
-this.setWakeTime = function setWakeTime(time) {
-	this.wakeTime = time;
-}
-
-this.setProblemsFallingAsleep = function setProblemsFallingAsleep(problems) {
-	this.problemsFallingAsleep = problems;
-}
-
-this.setMinutesToFallAsleep = function setMinutesToFallAsleep(mins) {
-	this.minutesToFallAsleep = mins;
-}
-
-this.setDidWakeDuringTheNight = function setDidWakeDuringTheNight(didwake) {
-	this.didWakeDuringTheNight = didwake;
-}
-
-this.setMinutesToFallBackToSleep = function setMinutesToFallBackToSleep(mins) {
-	this.minutesToFallBackToSleep = mins;
-}
-
-this.setHowDidYouFeel = function setHowDidYouFeel(choice) {
-	if (choice == 1) {this.howDidYouFeel = 'Sleepy';}
-	if (choice == 2) {this.howDidYouFeel = 'Somewhat Sleepy';}
-	if (choice == 3) {this.howDidYouFeel = 'Alert';}
-}
-
-this.setNoise = function setNoise(valueString) {
-	this.noise = valueString;
-}
-this.setLight = function setLight(valueString) {
-	this.light = valueString;
-}
-this.setStress = function setStress(valueString) {
-	this.stress = valueString;
-}
-this.setTemp = function setTemp(valueString) {
-	this.temp = valueString;
-}
-this.setNota = function setNota(valueString) {
-	this.nota = valueString;
-}
-
-
-this.getNoise = function getNoise() {
-	return this.noise;
-}
-this.getLight = function getLight() {
-	return this.light;
-}
-this.getStress = function getStress() {
-	return this.stress;
-}
-this.getTemp = function getTemp() {
-	return this.temp;
-}
-this.getNota = function getNota() {
-	return this.nota;
-}
-
-}
 
 
 var qs1 = '\
@@ -100,30 +7,22 @@ var qs1 = '\
 <form onSubmit="return !!(false & nextQuestion());">\
 \
 \
-<div class="row progress">\
+<div class="progress">\
   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
   aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">\
     1/5 Complete (success)\
   </div>\
 </div>\
 \
-           <div class="demo">\
-                <h2>Step Example</h2>\
-                <p>Generate drop-down options with varying levels of precision.</p>\
-                <p><input id="stepExample1" type="text" class="time" /> <input id="stepExample2" type="text" class="time" /></p>\
-            </div>\
+<div class="row">\
+<div class="text-center col-xs-5 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
+<div class="           col-xs-7 col-md-8 col-lg-8"><input type="time" class="form-control" id="inputBedTimeId" name="BedTime"  required ></div>\
+</div>\
 \
-            <script>\
-                $(function() {\
-                    $("#stepExample1").timepicker({ "step": 15 });\
-                    $("#stepExample2").timepicker({\
-                        "step": function(i) {\
-                            return (i%2) ? 15 : 45;\
-                        }\
-                    });\
-                });\
-            </script>\
-\
+<div class="row">\
+<div class="text-right col-xs-5 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
+<div class="           col-xs-7 col-md-8 col-lg-8"><input type="time" class="form-control" id="inputWakeTimeId" name="WakeTime" required >\
+</div>\
 \
 </div>\
 <br />\
@@ -407,8 +306,7 @@ var qs4 = ' \
 
 
 
-var qs5 = ' \
-<form onSubmit="return !!(false & q5script(2) ); ">\
+var qs5 = '<form onSubmit="return !!(false & q5script(2) ); ">\
 \
 <div class="progress">\
   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
@@ -453,7 +351,13 @@ var qs5 = ' \
 \
 <div class="row">\
 \
-<div class="col-xs-12 col-md-12 col-lg-12"><label for="submitButton1"></label><input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" data-toggle="modal" data-target="#morning_tip" />\
+<div class="col-xs-12 col-md-12 col-lg-12"><label for="submitButton1"></label><input \
+class="form-control btn btn-primary" \
+id="submitButton1" \
+type="submit" \
+value="Submit" \
+data-toggle="modal" \
+data-target="#morning_tip" /><!-- MODAL Drop down - TIPs --> \ 
 \
 </div>\
 \
@@ -461,6 +365,216 @@ var qs5 = ' \
 </div>\
 </form>\
 ';
+
+	
+
+
+		var questionBank = [qs1, qs2, qs3, qs4, qs5]; // found in morningQuestionsScripts.js
+	
+		var ctr = 0; 
+
+		var questions = new morningQuestion("", "", false, "", false, "", "0", "0", "0", "0", "0", "0");
+
+
+
+
+		document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+		
+
+
+function nextQuestion()
+{
+	if(ctr < 4) 
+	{
+		ctr++;
+		document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
+		return false;
+	}
+}
+
+
+
+
+
+
+
+
+
+function q1script() {
+	a = document.getElementById('inputBedTimeId').value;
+	b = document.getElementById('inputWakeTimeId').value;
+	questions.setBedTime(a);
+	questions.setWakeTime(b);
+}
+
+
+
+
+
+
+
+function checkQuestion2() {
+	a = document.getElementById('inputProblemsFallingAsleepId').checked;
+	if (a == true) {
+		document.getElementById('part2').style.visibility = "visible";
+	}
+	if (a == false) {
+		document.getElementById('part2').style.visibility = "hidden";
+	}
+}
+
+
+
+
+
+
+
+function q2script() {
+	a = document.getElementById('inputProblemsFallingAsleepId').value;
+	b = document.getElementById('inputMinutesToFallAsleepId').value;
+	questions.setProblemsFallingAsleep(a);
+	questions.setMinutesToFallAsleep(b);
+}
+
+
+
+
+
+
+
+
+function q3script() {
+	a = document.getElementById('inputDidWakeDuringTheNightId').value;
+	b = document.getElementById('inputMinutesToFallBackToSleepId').value;
+	questions.setDidWakeDuringTheNight(a);
+	questions.setMinutesToFallBackToSleep(b);
+}
+
+
+
+
+
+
+
+function q4script(choice) {
+	questions.setHowDidYouFeel(choice);
+}
+
+
+
+
+
+
+// Question 5 Scripts
+function q5script(choice) {
+var a = document.getElementById('noiseId').checked // true/false		
+var b = document.getElementById('lightId').checked // true/false		
+var c = document.getElementById('worryId').checked // true/false		
+var d = document.getElementById('tempId').checked  // true/false		
+var e = document.getElementById('noneId').checked  // true/false
+if (choice == "0") { 
+	document.getElementById('noiseId').checked = false;		
+	document.getElementById('lightId').checked = false;		
+	document.getElementById('worryId').checked = false;		
+	document.getElementById('tempId').checked = false;
+	a = false;		
+	b = false;		
+	c = false;		
+	d = false;		
+	e = true;
+} 		
+if (choice == "1") { 
+document.getElementById('noneId').checked = false; // deselect Nota	
+e = false; // set Nota to false
+}
+// validate data first
+var f = a ? 1 : 0; // Ternary (conditional ) operator		
+var g = b ? 1 : 0; // variableName = (conditional) ? value1:value2		
+var h = c ? 1 : 0; // 1 if true, 0 if false		
+var i = d ? 1 : 0;		
+var j = e ? 1 : 0;	
+var finalResult = f + g + h + i + j; // if NOT zero, then can be submitted. 
+// only happens if the user has made a selection and pressed submit. 
+if (choice == "2"  && finalResult != 0) {
+// set object parameters to true and false 
+questions.setNoise(a);
+questions.setLight(b);
+questions.setStress(c);
+questions.setTemp(d);
+questions.setNota(e);
+submitMorningQuestions();
+} else if (choice == "2"  && finalResult == 0){
+	window.alert("Please make a selection");
+}
+}
+
+
+var mqs_answers = {};
+
+mqs_answers['mq1_bedTime'] 					= questions.bedTime;
+mqs_answers['mq1_wakeTime'] 				= questions.wakeTime;
+mqs_answers['mq2_problemsFallingAsleep'] 	= questions.problemsFallingAsleep;
+mqs_answers['mq2_minutesToFallAsleep'] 		= questions.minutesToFallAsleep;
+mqs_answers['mq3_didWakeDuringTheNight'] 	= questions.didWakeDuringTheNight;
+mqs_answers['mq3_minutesToFallBackToSleep'] = questions.minutesToFallBackToSleep;
+mqs_answers['mq4_howDidYouFeel'] 			= questions.howDidYouFeel;
+mqs_answers['mq5_noise'] 					= questions.noise;
+mqs_answers['mq5_light'] 					= questions.light;
+mqs_answers['mq5_stress'] 					= questions.stress;
+mqs_answers['mq5_temp'] 					= questions.temp;
+mqs_answers['mq5_nota'] 					= questions.nota;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function submitMorningQuestions() {
+
+//	console.log(mqs_answers);
+$.ajax({
+	url: 'post_mng_answers.php',
+	type: 'post',
+	data: {post_mng_answers:mqs_answers},
+	success: function(data) {
+		alert ('Posted Successfully');
+	},
+	error: function(xhr, desc, err) {
+		console.log(xhr);
+		console.log("Details: " + desc + "\nError:" + err);
+	}
+});
+}
+
+console.log(mqs_answers);
+
+// build logic for tip generation Raja
+
+var btcmp_morning_val = '<?php echo $btcmp_morning_val;?>';
+var cur_mor_day = btcmp_morning_val + 1;
+
+
+if (cur_mor_day < 15) {
+	if (cur_mor_day = 1){}
+};
+
+// *****************************************************************
+
+
+
 
 
 
