@@ -99,22 +99,30 @@ var qs1 = '\
 <form onSubmit="return !!(false & nextQuestion());">\
 \
 \
-<div class="progress">\
+<div class="row progress">\
   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
   aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">\
     1/5 Complete (success)\
   </div>\
 </div>\
 \
-<div class="row">\
-<div class="text-center col-xs-5 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
-<div class="           col-xs-7 col-md-8 col-lg-8"><input type="time" class="form-control" id="inputBedTimeId" name="BedTime"  required ></div>\
-</div>\
+           <div class="demo">\
+                <h2>Step Example</h2>\
+                <p>Generate drop-down options with varying levels of precision.</p>\
+                <p><input id="stepExample1" type="text" class="time" /> <input id="stepExample2" type="text" class="time" /></p>\
+            </div>\
 \
-<div class="row">\
-<div class="text-right col-xs-5 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
-<div class="           col-xs-7 col-md-8 col-lg-8"><input type="time" class="form-control" id="inputWakeTimeId" name="WakeTime" required >\
-</div>\
+            <script>\
+                $(function() {\
+                    $("#stepExample1").timepicker({ "step": 15 });\
+                    $("#stepExample2").timepicker({\
+                        "step": function(i) {\
+                            return (i%2) ? 15 : 45;\
+                        }\
+                    });\
+                });\
+            </script>\
+\
 \
 </div>\
 <br />\

@@ -290,4 +290,4 @@ function submitMorningQuestions() {
 
 </script>
 <?php require_once("./includes/footer.php"); ?>
->>>>>>> 69dd2f8e6c0d38499d46dbced76a62bddc9ae34b
+
