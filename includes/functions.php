@@ -246,22 +246,34 @@ return NULL;
 }
 
 
-function get_new_morning_entry_day($userid){
+function get_user_log_day($userid){
 global $connection;
-$query = "SELECT MAX(LOG_DAY) AS MAX_MOR_DAY FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid AND LOG_TYPE = 'M'";
+$query = "
+SELECT 
+CASE 
+WHEN DATEDIFF(NOW(),LOG_TIME) < 15 THEN DATEDIFF(NOW(),LOG_TIME)
+ELSE 14
+END
+AS CUR_LOG_DAY 
+FROM CZ_USR_BOOTCAMP_LOG WHERE UID = 9 AND LOG_DAY = 1 AND LOG_TYPE = 'M'
+";
 $query_result = mysqli_query($connection, $query);
 $fetch_rows = mysqli_fetch_assoc($query_result);
-$total_completed_mor_days = $fetch_rows["MAX_MOR_DAY"];
-return $total_completed_mor_days;
+$cur_log_day = $fetch_rows["CUR_LOG_DAY"];
+return $cur_log_day;
 }
 
-function get_new_evening_entry_day($userid){
-global $connection;
-$query = "SELECT MAX(LOG_DAY) AS MAX_EVG_DAY FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid AND LOG_TYPE = 'E'";
-$query_result = mysqli_query($connection, $query);
-$fetch_rows = mysqli_fetch_assoc($query_result);
-$total_completed_evg_days = $fetch_rows["MAX_EVG_DAY"];	
-return $total_completed_evg_days;
+function get_user_log_count($userid){
+	global $connection;
+	$query = "SELECT COUNT(*) USR_LOG_COUNT FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid";
+
+	//error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+	$query_result = mysqli_query($connection, $query);
+	$fetch_rows = mysqli_fetch_assoc($query_result);
+	$usr_log_count = $fetch_rows["USR_LOG_COUNT"];
+	return $usr_log_count;
 }
+
+
 
 ?>

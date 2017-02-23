@@ -6,7 +6,7 @@
   include('./includes/header.php');
 ?>
 
-<br><br><br><br>
+<br><br>
 
 <div class="container">
       <!-- Example row of columns -->
@@ -16,7 +16,7 @@
 
             <button type="button" class="btn btn-primary btn-lg btn-block btn-info" onclick="location.href='morningdiary.php';"> 
             <?php 
-            echo "<div><h4>" . (14-$btcmp_morning_val) . " Days More</h4></div>";
+            echo "<div><h4>" . (14-$btcmp_log_day_val) . " Days More</h4></div>";
             ?>
             <div>    
             <img src="img/sunrise.png" class="center-block" alt="CoachZ" width="100" height="100">
@@ -30,7 +30,7 @@
 
             <button type="button" class="btn btn-primary btn-lg btn-block btn-warning" onclick="location.href='eveningdiary.php';">
             <?php 
-            echo "<div><h4>" . (14-$btcmp_evening_val) . " Days More</h4></div>";
+            echo "<div><h4>" . (14-$btcmp_log_day_val) . " Days More</h4></div>";
             ?>
             <div>
             <img src="img/sunset.png" class="center-block" alt="CoachZ" width="100" height="100">

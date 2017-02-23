@@ -1,0 +1,9 @@
+Notes & Requirement Queries
+
+Skipped Day 5 because the requirement points to Eventing Tips in Morning Tips section - Need to Validate from Megg
+Currently populated with 'Have a nice day.' message.
+
+		/*
+		Day 12 Tip 2: S8
+		Tip 2 is choosed because Tip 1 is pointing to Evening Questions.
+		*/

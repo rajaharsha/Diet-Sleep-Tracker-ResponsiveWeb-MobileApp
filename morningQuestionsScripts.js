@@ -53,9 +53,10 @@ this.setMinutesToFallBackToSleep = function setMinutesToFallBackToSleep(mins) {
 }
 
 this.setHowDidYouFeel = function setHowDidYouFeel(choice) {
-	this.howDidYouFeel = choice;
+	if (choice == 1) {this.howDidYouFeel = 'Sleepy';}
+	if (choice == 2) {this.howDidYouFeel = 'Somewhat Sleepy';}
+	if (choice == 3) {this.howDidYouFeel = 'Alert';}
 }
-
 
 this.setNoise = function setNoise(valueString) {
 	this.noise = valueString;

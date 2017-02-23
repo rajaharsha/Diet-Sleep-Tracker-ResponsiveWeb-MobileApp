@@ -30,5 +30,6 @@ $obj = $_POST['post_mng_answers'];
           $mq5_light,
           $mq5_stress,
           $mq5_temp,
-          $mq5_nota);          
+          $mq5_nota);  
+      
     ?>
