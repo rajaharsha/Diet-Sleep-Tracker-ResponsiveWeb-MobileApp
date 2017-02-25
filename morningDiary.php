@@ -153,7 +153,7 @@ var cur_mor_day = '';
 var btcmp_log_day_val = '';
 
 var btcmp_log_day_val = parseInt('<?php echo $btcmp_log_day_val;?>');
-var cur_mor_day = btcmp_log_day_val;
+var cur_mor_day = btcmp_log_day_val + 1;
 
 var btcmp_user_log_count = '';
 var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');
@@ -450,4 +450,6 @@ function submitMorningQuestions() {
 
 </script>
 <?php require_once("./includes/footer.php"); ?>
+
+
 

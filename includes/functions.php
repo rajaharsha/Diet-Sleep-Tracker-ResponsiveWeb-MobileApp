@@ -251,11 +251,11 @@ global $connection;
 $query = "
 SELECT 
 CASE 
-WHEN DATEDIFF(NOW(),LOG_TIME) < 15 THEN DATEDIFF(NOW(),LOG_TIME)
+WHEN (DATEDIFF(NOW(),LOG_TIME)) < 15 THEN (DATEDIFF(NOW(),LOG_TIME))
 ELSE 14
 END
 AS CUR_LOG_DAY 
-FROM CZ_USR_BOOTCAMP_LOG WHERE UID = 9 AND LOG_DAY = 1 AND LOG_TYPE = 'M'
+FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid AND LOG_DAY = 1
 ";
 $query_result = mysqli_query($connection, $query);
 $fetch_rows = mysqli_fetch_assoc($query_result);

@@ -6,14 +6,12 @@ confirm_logged_in();
 include('./includes/header.php');
 include("./includes/cz_functions.js");
 ?>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="">
-<meta name="author" content="">
 
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/Evening_Tips.json"></script>
+  <script type="text/javascript" src="assets/Standard_Tips.json"></script>
 
 
 <!-- Present questions HERE -->
@@ -32,6 +30,30 @@ include("./includes/cz_functions.js");
   <script src="eveningQuestionsList.js"></script>
 <!-- End Question Block --> 
 
+<!-- Tip generation DIV elements -->
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="evening_tip" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Here is your Evening Tip</h4>
+        </div>
+        <div class="modal-body" id="push_evening_tip" >
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 
 
@@ -331,9 +353,6 @@ eqs_answers['eq7_TimeOfDay'] = choice;
 
 
 
-
-
-
 function displayAllData() {
 
 
@@ -375,17 +394,238 @@ console.log ("" +
 
 
 
+var evg_tip_message = '';
+var cur_evg_day = '';
+var btcmp_log_day_val = '';
 
+var btcmp_log_day_val = parseInt('<?php echo $btcmp_log_day_val;?>');
+var cur_evg_day = btcmp_log_day_val + 1;
+
+var btcmp_user_log_count = '';
+var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');
 
 
 // Set Values PHP Values
 function evg_ans_submit() {
-  
+
+/*
+  eqs_answers['eq1_Morning'] 
+  eqs_answers['eq1_Afternoon'] + " " +
+  eqs_answers['eq1_Evening'] + " " +
+  eqs_answers['eq2_Exercise'] + " " +
+  eqs_answers['eq3_Alcohol'] + " " +
+  eqs_answers['eq4_Nap'] + " " +
+  eqs_answers['eq5_Mood'] + " " +
+  eqs_answers['eq6_Phone'] + " " +
+  eqs_answers['eq6_ReadHomework'] + " " +
+  eqs_answers['eq6_WatchTV'] + " " +
+  eqs_answers['eq6_PlayVideoGames'] + " " +
+  eqs_answers['eq6_None'] + " " + 
+  eqs_answers['eq7_TimeOfDay']
+*/
+
+    if (cur_evg_day < 15) {
+
+
+      alert(cur_evg_day);
+
+      // Day 1 Tip 2: S2 //
+
+      if (cur_evg_day == 1){evg_tip_message = Standard_Tips.S[0].S2;}
+
+ /*
+Day 2 Tip 2:
+If “phone” on evening question 6 then: E32 or E33
+If “read or homework” on evening question 6 then: E34
+If “tv” on evening question 6 then: E35
+If “videogames” on evening question 6 then: E36
+If “none” on evening question 6 then: E37 or E38
+If no response on evening question 6 then: E37 or E38
+
+evening question 6 is check all that apply question, so I was thinking for every box the user checks that get a tip.  So if they check phone and tv they get a tip for each.
+*/
+      if (cur_evg_day == 2){
+        if (eqs_answers['eq6_Phone'] == true){
+          local_array = [];
+          local_array.push(Evening_Tips.Q6[0].E32);
+          local_array.push(Evening_Tips.Q6[0].E33);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];
+          }
+        if (eqs_answers['eq6_ReadHomework'] == true){evg_tip_message = Evening_Tips.Q6[0].E34;}
+        if (eqs_answers['eq6_WatchTV'] == true){evg_tip_message = Evening_Tips.Q6[0].E35;}
+        if (eqs_answers['eq6_PlayVideoGames'] == true){evg_tip_message = Evening_Tips.Q6[0].E36;}
+        if (eqs_answers['eq6_None'] == true){
+          local_array = [];
+          local_array.push(Evening_Tips.Q6[0].E37);
+          local_array.push(Evening_Tips.Q6[0].E38);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];          
+          }
+        if (eqs_answers['eq6_None'] == ''){
+          local_array = [];
+          local_array.push(Evening_Tips.Q6[0].E37);
+          local_array.push(Evening_Tips.Q6[0].E38);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];          
+          }          
+      }
+
+
+/*Day 3 Tip 1:
+If “no” on morning question 3 then: M15
+If “yes” and <15 mins awake on morning question 3 then: M16
+If “yes” and >16 mins awake on morning question 3 then: M17 or M18
+If no response on morning question 3 then: M19
+Day 3 Tip 2: E28 or E30 
+*/
+      if (cur_evg_day == 3){
+          local_array = [];
+          local_array.push(Evening_Tips.Q5[0].E28);
+          local_array.push(Evening_Tips.Q5[0].E30);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];  
+      }
+
+/*
+
+ PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING
+
+Day 4 Tip 2: 
+Add up the past 4 responses for evening question 2, if “yes” has been answered two or more times then: E8
+Add up the past 4 responses for evening question 2, if “yes” has been answered less then two times then: E11
+*/
+
+      if (cur_evg_day == 4){}
+
+/*
+Day 5 Tip 2:
+If “no” on evening question 4 then: E23
+If “yes” on evening question 4 then: E25
+*/
+
+      if (cur_evg_day == 5){
+        if (eqs_answers['eq4_Nap'] == 'No'){var evg_tip_message = Evening_Tips.Q4[0].E23}
+        if (eqs_answers['eq4_Nap'] == 'Yes'){var evg_tip_message = Evening_Tips.Q4[0].E25}
+      }
+
+/*
+Day 6 Tip 2:
+If “yes” on evening question 3 then: E15 or E16 or E17 or E18 or E19
+If “no” on evening question 3 then: E20 or E21
+*/
+
+      if (cur_evg_day == 6){
+        if (eqs_answers['eq3_Alcohol'] == 'Yes'){
+          local_array = [];
+          local_array.push(Evening_Tips.Q3[0].E15);
+          local_array.push(Evening_Tips.Q3[0].E16);
+          local_array.push(Evening_Tips.Q3[0].E17);
+          local_array.push(Evening_Tips.Q3[0].E18);
+          local_array.push(Evening_Tips.Q3[0].E19);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];           
+        }
+        if (eqs_answers['eq3_Alcohol'] == 'No'){
+          local_array = [];
+          local_array.push(Evening_Tips.Q3[0].E20);
+          local_array.push(Evening_Tips.Q3[0].E21);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];           
+        }
+      }
+
+
+/*
+Day 7 Tip 2:
+If “morning” on evening question 7 then: E39
+If “afternoon” on evening question 7 then: E40
+If “evening” on evening question 7 then: E41 or E42
+*/
+      if (cur_evg_day == 7){
+        if (eqs_answers['eq7_TimeOfDay'] == 'Morning') {var evg_tip_message = Evening_Tips.Q7[0].E39}
+        if (eqs_answers['eq7_TimeOfDay'] == 'Afternoon') {var evg_tip_message = Evening_Tips.Q7[0].E40} 
+        if (eqs_answers['eq7_TimeOfDay'] == 'Evening') {
+          local_array = [];
+          local_array.push(Evening_Tips.Q7[0].E41);
+          local_array.push(Evening_Tips.Q7[0].E42);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];           
+        }
+        }
+
+/*
+Day 8 Tip 2: S10
+*/
+      if (cur_evg_day == 8){evg_tip_message = Standard_Tips.S[0].S10;}
+
+/*  PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING 
+
+
+Day 9 Tip 2:
+If “noise” on morning question 5 then: M26
+If “light” on morning question 5 then: M28
+If “stress/worry” on morning question 5 then: M30 or M31
+If “room temperature” on morning question 5 then: M33
+If “none of the above” or no response on morning question 5 then: M34 or M35
+*morning question 5 is check all that apply question, so I was thinking for every box the user checks they get a tip.  So if they check noise and light they get a tip for each.
+*/
+
+      if (cur_evg_day == 9){}
+
+
+/* Day 10 Tip 2: S7 */
+      if (cur_evg_day == 10){evg_tip_message = Standard_Tips.S[0].S7;}
+
+/*
+
+ PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING
+
+Day 11 Tip 2:
+Add up the past 11 responses for evening question 2, if “yes” has been answered four or more times then: E9 or E10
+Add up the past 11 responses for evening question 2, if “yes” has been answered less then four times then: E12 or E13
+If no response on evening question 2 then: E14
+*/
+      if (cur_evg_day == 11){}
+
+/*
+
+ PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING
+
+Day 12 Tip 1:
+If “phone” on evening question 6 then: E32 or E33
+If “read/homework” on evening question 6 then: E34
+If “tv” on evening question 6 then: E35
+If “videogames” on evening question 6 then: E36
+If “none” or no response on evening question 6 then: E37 or E38
+*evening question 6 is check all that apply question, so I was thinking for every box the user checks that get a tip.  So if they check phone and tv they get a tip for each.
+Day 12 Tip 2: S8
+*/
+
+      if (cur_evg_day == 12){evg_tip_message = Standard_Tips.S[0].S8;}
+
+/* Day 13 Tip 2: E29 or E31 */
+
+      if (cur_evg_day == 13){
+          local_array = [];
+          local_array.push(Evening_Tips.Q5[0].E29);
+          local_array.push(Evening_Tips.Q5[0].E31);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];           
+      }
+
+/* Day 14 Tip 2: S13* */
+
+      if (cur_evg_day == 14){evg_tip_message = Standard_Tips.S[0].S13;}
+
+}
 
   $.ajax({
     url: 'post_evg_answers.php',
     type: 'post',
     success: function(data) {
+      var div = document.getElementById('push_evening_tip');
+      div.innerHTML = div.innerHTML + evg_tip_message;
       alert ('Posted Successfully')
     },
     data: {post_evg_answers:eqs_answers},
