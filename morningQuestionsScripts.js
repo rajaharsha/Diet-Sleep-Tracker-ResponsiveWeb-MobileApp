@@ -106,23 +106,15 @@ var qs1 = '\
   </div>\
 </div>\
 \
-           <div class="demo">\
-                <h2>Step Example</h2>\
-                <p>Generate drop-down options with varying levels of precision.</p>\
-                <p><input id="stepExample1" type="text" class="time" /> <input id="stepExample2" type="text" class="time" /></p>\
-            </div>\
+<div class="row">\
+<div class="text-right col-xs-6 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
+<div class="           col-xs-6 col-md-6 col-lg-6"><input id="stepExample1" type="text" class="time" required></div>\
+</div>\
 \
-            <script>\
-                $(function() {\
-                    $("#stepExample1").timepicker({ "step": 15 });\
-                    $("#stepExample2").timepicker({\
-                        "step": function(i) {\
-                            return (i%2) ? 15 : 45;\
-                        }\
-                    });\
-                });\
-            </script>\
-\
+<div class="row">\
+<div class="text-right col-xs-6 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
+<div class="           col-xs-6 col-md-6 col-lg-6"><input id="stepExample2" type="text" class="time" required>\
+</div>\
 \
 </div>\
 <br />\
@@ -134,13 +126,8 @@ var qs1 = '\
 </div>\
 \
 </form>\
-\
 </div>\
 ';
-
-
-
-
 
 
 
@@ -165,38 +152,25 @@ var qs2 = ' \
 \
 			<div class="row">\
 			<div class="col-xs-12 text-center">\
-			<h3 id="part1">Did you have any problems falling asleep last night?</h3> \
+			<h3 id="part1">Have any problems falling asleep last night?</h3> \
 			</div>\
 			</div>\
 			\
 			\
 			\
 			\
-			<div class="row" id="part1">\
-					<div class="col-xs-3"></div>\
-					\
-					<div class="col-xs-3 text-center">\
-					<h4>Yes</h4>\
-					</div>\
-					\
-					<div class="col-xs-3 text-center">\
-					<h4>No</h4>\
-					</div>\
-					\
-					<div class="col-xs-3"></div>\
-			</div>\
 			\
 			\
 			<div class="row">\
 					<div class="col-xs-3"></div>\
 					\
 					<div class="col-xs-3 text-center">\
-					<input type="radio" name="q2" onclick="checkQuestion2()" id="inputProblemsFallingAsleepId">\
-					</div>\
+					<div class="btn btn-danger" name="q2" onclick="checkQuestion2(1)" id="inputProblemsFallingAsleepId">\
+					Yes</div></div>\
 					\
 					<div class="col-xs-3 text-center">\
-					<input type="radio" name="q2" onclick="checkQuestion2()" id="inputProblemsFallingAsleepId">\
-					</div>\
+					<div class="btn btn-success" name="q2" onclick="checkQuestion2(0)" id="inputProblemsFallingAsleepId">\
+					No</div></div>\
 					\
 					<div class="col-xs-3"></div>\
 			</div>\
@@ -274,39 +248,51 @@ var qs3 = ' \
 \
 	<div class="row">\
 	<div class="col-xs-12 text-center">\
-	<h3>Last night did you wake up at all during the night?</h3> \
+	<h3>Last night, did you wake up at all during the night?</h3> \
 	</div>\
 	</div>\
-	\
-	<div class="row">\
-	<div class="col-md-3"></div>\
-	<div class="col-md-2 noTag text-center">\
-	<h4>No</h4>\
-	</div>\
-	\
-	<div class="col-md-3 sliderTag text-center"><label class="switch">\
-	<input id="inputDidWakeDuringTheNightId" type="checkbox">\
-	<div class="slider round"></div>\
-	</label>\
-	</div>\
-	\
-	<div class="col-md-2 yesTag text-center"><h4>Yes</h4></div>\
-	<br/>\
-	</div>\
-	\
-	\		<div class="row">\
-				<div class="col-xs-12 text-center">\
-				<h3>How many minutes did it take you to fall asleep?</h3> \
-				</div>\
+\
+				<div class="row">\
+					<div class="col-xs-3"></div>\
+					\
+					<div class="col-xs-3 text-center">\
+					<div class="btn btn-danger" name="q3" onclick="checkQuestion3(1)" id="inputProblemsFallingAsleepId">\
+					Yes</div></div>\
+					\
+					<div class="col-xs-3 text-center">\
+					<div class="btn btn-success" name="q3" onclick="checkQuestion3(0)" id="inputProblemsFallingAsleepId">\
+					No</div></div>\
+					\
+					<div class="col-xs-3"></div>\
 			</div>\
+\
+	\
+\
+\
 			\
-			<div class="row">\
-				<div class="col-md-3"></div>\
-				<div class="col-md-6 text-center">\
-				<input class="form-control text-center" id="inputMinutesToFallBackToSleepId" type="Number" min="0"  name="WakeTime">\
-				</div>\
-			</div>\
-	<br/>\
+			\
+			\
+	<div class="row" id="part2" style="visibility: hidden;">\
+					<div class="row">\
+						<div class="col-xs-12 text-center">\
+						<h3>How many minutes did it take you to fall asleep?</h3> \
+						</div>\
+					</div>\
+					\
+					\
+							<div class="row">\
+									<div class="col-xs-4"></div>\
+										<div class="col-xs-4">\
+											<input class="form-control text-center " id="inputMinutesToFallBackToSleepId" min="0" type="number">\
+										</div>\
+										<div class="col-xs-4"></div>\
+									</div>\
+							</div>\
+							\
+							\
+<br\>\
+\
+\						\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="q3script()" >\
@@ -347,7 +333,7 @@ var qs4 = ' \
 	\
 	<div class="row">\
 		<div class="col-xs-12 text-center">\
-		<h3>When you woke up this morning, how did you feel?</h3>\
+		<h3>After waking, how did you feel?</h3>\
 		</div>\
 	</div>\
 	\
