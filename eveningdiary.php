@@ -382,18 +382,6 @@ console.log ("" +
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 var evg_tip_message = '';
 var cur_evg_day = '';
 var btcmp_log_day_val = '';
@@ -408,28 +396,13 @@ var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');
 // Set Values PHP Values
 function evg_ans_submit() {
 
-/*
-  eqs_answers['eq1_Morning'] 
-  eqs_answers['eq1_Afternoon'] + " " +
-  eqs_answers['eq1_Evening'] + " " +
-  eqs_answers['eq2_Exercise'] + " " +
-  eqs_answers['eq3_Alcohol'] + " " +
-  eqs_answers['eq4_Nap'] + " " +
-  eqs_answers['eq5_Mood'] + " " +
-  eqs_answers['eq6_Phone'] + " " +
-  eqs_answers['eq6_ReadHomework'] + " " +
-  eqs_answers['eq6_WatchTV'] + " " +
-  eqs_answers['eq6_PlayVideoGames'] + " " +
-  eqs_answers['eq6_None'] + " " + 
-  eqs_answers['eq7_TimeOfDay']
-*/
 
     if (cur_evg_day < 15) {
 
 
       alert(cur_evg_day);
 
-      // Day 1 Tip 2: S2 //
+// Day 1 Tip 2: S2 //
 
       if (cur_evg_day == 1){evg_tip_message = Standard_Tips.S[0].S2;}
 
@@ -589,20 +562,40 @@ If no response on evening question 2 then: E14
       if (cur_evg_day == 11){}
 
 /*
-
- PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING
-
-Day 12 Tip 1:
+Day 12 Tip 2:
 If “phone” on evening question 6 then: E32 or E33
 If “read/homework” on evening question 6 then: E34
 If “tv” on evening question 6 then: E35
 If “videogames” on evening question 6 then: E36
-If “none” or no response on evening question 6 then: E37 or E38
-*evening question 6 is check all that apply question, so I was thinking for every box the user checks that get a tip.  So if they check phone and tv they get a tip for each.
-Day 12 Tip 2: S8
+If “none” on evening question 6 then: E37 or E38
+*evening question 6 is check all that apply question, so I was thinking for every box the user checks that get a tip.  So if they check phone and tv they get a tip for each. 
 */
 
-      if (cur_evg_day == 12){evg_tip_message = Standard_Tips.S[0].S8;}
+      if (cur_evg_day == 12){
+        if (eqs_answers['eq6_Phone'] = true){
+          local_array = [];
+          local_array.push(Evening_Tips.Q6[0].E32);
+          local_array.push(Evening_Tips.Q6[0].E33);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];               
+        }
+        if (eqs_answers['eq6_ReadHomework'] = true){
+          var evg_tip_message = Evening_Tips.Q6[0].E34;
+        }
+        if (eqs_answers['eq6_WatchTV'] = true){
+          var evg_tip_message = Evening_Tips.Q6[0].E35;            
+        }
+        if (eqs_answers['eq6_PlayVideoGames'] = true){
+          var evg_tip_message = Evening_Tips.Q6[0].E36;            
+        }
+        if (eqs_answers['eq6_None'] = true){
+          local_array = [];
+          local_array.push(Evening_Tips.Q6[0].E37);
+          local_array.push(Evening_Tips.Q6[0].E38);
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          var evg_tip_message = local_array[randomIndex];                      
+        }
+      }
 
 /* Day 13 Tip 2: E29 or E31 */
 
