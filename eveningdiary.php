@@ -71,11 +71,8 @@ document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
 
 
 
-
-
-
-
-
+var userid = '<?php echo $userid; ?>';
+eqs_answers['uid'] = userid;
 
 // Next Question ************************
 // Changes to next question
@@ -332,62 +329,14 @@ eqs_answers['eq7_TimeOfDay'] = choice;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function displayAllData() {
-
-
-console.log ("" + 
-  eqs_answers['eq1_Morning'] + " " +
-  eqs_answers['eq1_Afternoon'] + " " +
-  eqs_answers['eq1_Evening'] + " " +
-  eqs_answers['eq2_Exercise'] + " " +
-  eqs_answers['eq3_Alcohol'] + " " +
-  eqs_answers['eq4_Nap'] + " " +
-  eqs_answers['eq5_Mood'] + " " +
-  eqs_answers['eq6_Phone'] + " " +
-  eqs_answers['eq6_ReadHomework'] + " " +
-  eqs_answers['eq6_WatchTV'] + " " +
-  eqs_answers['eq6_PlayVideoGames'] + " " +
-  eqs_answers['eq6_None'] + " " + 
-  eqs_answers['eq7_TimeOfDay']
-
-
-  );
-
-
-
-}
-
-
-
-
-
 var evg_tip_message = '';
 var cur_evg_day = '';
 var btcmp_log_day_val = '';
 
 var btcmp_log_day_val = parseInt('<?php echo $btcmp_log_day_val;?>');
 var cur_evg_day = btcmp_log_day_val + 1;
+
+eqs_answers['cur_evg_day'] = cur_evg_day;
 
 var btcmp_user_log_count = '';
 var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');

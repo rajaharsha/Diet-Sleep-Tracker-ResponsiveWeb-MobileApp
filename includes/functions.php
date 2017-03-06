@@ -48,7 +48,10 @@ $eq6_ReadHomeWork,             // 9
 $eq6_WatchTV,                  //10
 $eq6_PlayVideoGames,           //11
 $eq6_None,                     //12
-$eq7_TimeOfDay                 //13								
+$eq7_TimeOfDay,                //13
+$uid,                          //14
+$cur_evg_day                   //15
+
 ) {
 global $connection;
 $query  = "INSERT INTO 
@@ -66,7 +69,8 @@ eq6_ReadHomeWork,             -- 9
 eq6_WatchTV,                  -- 10
 eq6_PlayVideoGames,           -- 11
 eq6_None,                     -- 12
-eq7_TimeOfDay                 -- 13		
+eq7_TimeOfDay,                -- 13		
+uid           				  -- 14
 ) VALUES 
 (
 $eq1_Morning,                 -- 1
@@ -81,12 +85,15 @@ $eq1_Evening,                 -- 3
 '$eq6_WatchTV',               -- 10
 '$eq6_PlayVideoGames',        -- 11
 '$eq6_None',                  -- 12
-'$eq7_TimeOfDay'              -- 13		
+'$eq7_TimeOfDay',             -- 13		
+$uid                          -- 14
 )";
 $result_id = mysqli_query($connection, $query);
-//error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+$query_2 = "INSERT cz_usr_bootcamp_log (UID, LOG_DAY, LOG_TYPE, LOG_TIME) VALUES ($uid, $cur_evg_day, 'E', NOW())";
+$result_id2 = mysqli_query($connection, $query_2);
 //confirm_query($result_id);
-if($result_id) {
+
+if($result_id && $result_id2) {
 $_SESSION["message"] = "Response Posted";
 return true;
 } else {
@@ -143,6 +150,8 @@ mq5_nota
 $result_id = mysqli_query($connection, $query);
 //error_log("Inside query\n" . $query , 3, "/Users/bfwatkin/Desktop/error.log");
 // confirm_query($result_id);
+
+
 if($result_id) {
 $_SESSION["message"] = "Response Posted";
 return true;

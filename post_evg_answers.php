@@ -17,7 +17,9 @@ $obj = $_POST['post_evg_answers'];
             $eq6_WatchTV = $obj["eq6_WatchTV"];                    // 10
             $eq6_PlayVideoGames = $obj["eq6_PlayVideoGames"];      // 11
             $eq6_None = $obj["eq6_None"];                          // 12
-            $eq7_TimeOfDay = $obj["eq7_TimeOfDay"];                // 13           
+            $eq7_TimeOfDay = $obj["eq7_TimeOfDay"];                // 13
+            $uid = $obj["uid"];                                    // 14
+            $cur_evg_day = $obj["cur_evg_day"];                    // 15
 
            insert_evg_answer(
             $eq1_Morning,                  // 1
@@ -32,6 +34,8 @@ $obj = $_POST['post_evg_answers'];
             $eq6_WatchTV,                  // 10
             $eq6_PlayVideoGames,           // 11
             $eq6_None,                     // 12
-            $eq7_TimeOfDay                 // 13
+            $eq7_TimeOfDay,                // 13
+            $uid,                          // 14
+            $cur_evg_day                   // 15 
             );          
     ?>
