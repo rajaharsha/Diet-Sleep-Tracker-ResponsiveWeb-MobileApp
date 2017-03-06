@@ -6,16 +6,6 @@ confirm_logged_in(); // Function
 include('./includes/header.php'); // Bring in the Menus, etc
 ?>
 
-
-<!-- Not going to affect the code Basic Meta--> 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="Coach Z Application (Web) ">
-<meta name="author" content="Brian Watkins & Raja Harsha Chinta">
-<!-- ****************************** End Meta ********* --> 
-
   
   <!-- jQuery --> 
   <script src="js/jquery.min.js"></script>
@@ -259,11 +249,14 @@ submitMorningQuestions();
 
 var mqs_answers = {};
 var mng_tip_message = '';
-var cur_mor_day = 0;
-var btcmp_morning_val = 0;
+var cur_mor_day = '';
+var btcmp_log_day_val = '';
 
-var btcmp_morning_val = parseInt('<?php echo $btcmp_morning_val;?>');
-var cur_mor_day = btcmp_morning_val + 1;
+var btcmp_log_day_val = parseInt('<?php echo $btcmp_log_day_val;?>');
+var cur_mor_day = btcmp_log_day_val + 1;
+
+var btcmp_user_log_count = '';
+var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');
 
 
 function submitMorningQuestions() {
@@ -275,7 +268,7 @@ function submitMorningQuestions() {
 	mqs_answers['mq3_didWakeDuringTheNight'] = questions.didWakeDuringTheNight;
 	mqs_answers['mq3_minutesToFallBackToSleep'] = parseInt(questions.minutesToFallBackToSleep);
 	mqs_answers['mq4_howDidYouFeel'] 		= questions.howDidYouFeel;
-	mqs_answers['mq5_noise'] 				= questions.noise;
+	mqs_answers['mq5_noise'] 				= questions.noise;  
 	mqs_answers['mq5_light'] 				= questions.light;
 	mqs_answers['mq5_stress'] 				= questions.stress;
 	mqs_answers['mq5_temp'] 				= questions.temp;
@@ -294,12 +287,18 @@ if (cur_mor_day == 1){mng_tip_message = Standard_Tips.S[0].S1;}
 
 if (cur_mor_day == 2){ 
 
+
 	if(questions.problemsFallingAsleep == 'on'){
 		alert ('1');
+
+			if(questions.problemsFallingAsleep == 'on'){
+
+
 
 		local_array = [];
 		local_array.push(Morning_Tips.Q2[0].M8);
 		local_array.push(Morning_Tips.Q2[0].M9);
+
 
 		var randomIndex = Math.floor(Math.random() * local_array.length); 
 		var mng_tip_message = local_array[randomIndex];
@@ -313,6 +312,15 @@ if (cur_mor_day == 2){
 		var randomIndex = Math.floor(Math.random() * local_array.length); 
 		var mng_tip_message = local_array[randomIndex];				
 	}
+
+					var randomIndex = Math.floor(Math.random() * local_array.length); 
+					var mng_tip_message = local_array[randomIndex];
+				}
+			if(questions.problemsFallingAsleep == ''){
+					local_array = [];
+					local_array.push(Morning_Tips.Q2[0].M10);
+					local_array.push(Morning_Tips.Q2[0].M11);
+
 
 	if(questions.problemsFallingAsleep == 'off'){
 		var mng_tip_message = Morning_Tips.Q2[0].M14;				
@@ -366,7 +374,177 @@ Day 4 Tip 1: S4
 if (cur_mor_day == 4){mng_tip_message = Standard_Tips.S[0].S4;}
 
 
+		/* Skipped Day 5 because the requirement points to Eventing Tips in Morning Tips section - Need to Validate from Megg
+			    Day 5 Tip 1:
+		If “morning” in evening question 1 then: E1 or E2
+		If “afternoon” in evening question 1 then: E3
+		If “evening” in evening question 1 then: E4 or E5
+		If “no caffeine” in evening question 1 then: E6
+		If no response in evening question 1 then: E7
+		*If more than box is checked (morning and afternoon, or all three)- provide a tip for each time of day where caffeine use was reported
+		*/
 
+		if (cur_mor_day == 5) {mng_tip_message = 'Have a nice day.'}
+
+		/*
+		Day 6 Tip 1:
+		If “noise” on morning question 5 then: M26
+		If “light” on morning question 5 then: M27 
+		If “stress/worry” on morning question 5 then: M29 
+		If “room temperature” on morning question 5 then: M32 
+		If “none of the above” or no response on morning question 5 then: M34 or M35
+		*morning question 5 is check all that apply question, so I was thinking for every box the user checks they get a tip.  So if they check noise and light they get a tip for each.
+		*/
+
+		if (cur_mor_day == 6) {
+
+			local_array = [];
+			mng_tip_message = ''
+
+			if (questions.noise == true){local_array.push(Morning_Tips.Q5[0].M26);} 
+			if (questions.light == true){local_array.push(Morning_Tips.Q5[0].M27);}
+			if (questions.stress == true){local_array.push(Morning_Tips.Q5[0].M29);}
+			if (questions.temp == true){local_array.push(Morning_Tips.Q5[0].M32);}
+
+			local_array_length = local_array.length;
+			for (i=0; i<local_array_length; i++){
+				mng_tip_message += local_array[i] + "<br><br>";
+
+
+			}	
+
+			if (questions.nota == true){
+				
+				local_array = [];
+				local_array.push(Morning_Tips.Q5[0].M34);
+				local_array.push(Morning_Tips.Q5[0].M35);
+
+				var randomIndex = Math.floor(Math.random() * local_array.length); 
+				var mng_tip_message = local_array[randomIndex];	
+			}
+		}
+
+		/*
+		Day 7 Tip 1: S3
+		*/
+	    if (cur_mor_day == 7){mng_tip_message = Standard_Tips.S[0].S3;}
+
+		/*
+		Day 8 Tip 1:
+		If “sleepy” on morning question 4 then: M20 or M21 or M22
+		If “somewhat sleepy” on morning question 4 then: M23
+		If “alert” on morning question 4 then: M24
+		If no response on morning question 4 then: M25
+		*/
+		if (cur_mor_day == 8) {
+
+			if (questions.howDidYouFeel == 'Sleepy') {
+
+				local_array = [];
+				local_array.push(Morning_Tips.Q4[0].M20);
+				local_array.push(Morning_Tips.Q4[0].M21);
+				local_array.push(Morning_Tips.Q4[0].M22);
+
+				var randomIndex = Math.floor(Math.random() * local_array.length); 
+				var mng_tip_message = local_array[randomIndex];	
+			}
+
+			if (questions.howDidYouFeel == 'Somewhat Sleepy') {mng_tip_message = Standard_Tips.Q4[0].M23;}
+			if (questions.howDidYouFeel == 'Alert') {mng_tip_message = Standard_Tips.Q4[0].M24;}
+			if (questions.howDidYouFeel == '') {mng_tip_message = Standard_Tips.Q4[0].M25;}
+		} 
+
+		/*
+		Day 9 Tip 1: S5
+		*/
+	    if (cur_mor_day == 9){mng_tip_message = Standard_Tips.S[0].S5;}		
+	    /*
+	    Day 10 Tip 1:
+		If “no” on morning question 2 then: M7
+		If “yes” on morning question 2 then: M12 or M13
+		If no response on morning question 2 then: M14
+	    */
+	    if (cur_mor_day == 10){
+	    	if (questions.problemsFallingAsleep == 'no') {mng_tip_message = Standard_Tips.Q2[0].M7;}
+	    	if (questions.problemsFallingAsleep == 'yes') {
+
+				local_array = [];
+				local_array.push(Morning_Tips.Q2[0].M12);
+				local_array.push(Morning_Tips.Q2[0].M13);
+
+				var randomIndex = Math.floor(Math.random() * local_array.length); 
+				var mng_tip_message = local_array[randomIndex];	
+	    	}
+	    	if (questions.problemsFallingAsleep == '') {mng_tip_message = Standard_Tips.Q2[0].M14;}
+	    }
+
+		/*
+		Day 11 Tip 1:
+		If sleep time calculated from morning question 1 is less than 7 hours then: M1 or M2
+		If sleep time calculated from morning question 1 is between 7-9 hours then: M5
+		If sleep time calculated from morning question 1 is greater than 9 hours then: M3 or M4
+		If no response on morning question 1 then: M6
+		*/
+
+		function diff_minutes(dt2, dt1) 
+		 {
+
+		  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+		  diff /= 60;
+		  return Math.abs(Math.round(diff));
+		  
+		 }
+
+		if (cur_mor_day == 11) {
+
+			var bt = new Date("January 01, 1001 " + questions.bedTime);
+			var wt = new Date("January 01, 1001 " + questions.wakeTime);
+			sleep_hrs = diff_minutes(bt,wt) / 60;
+			if (sleep_hrs > 12) {sleep_hrs = (24 - sleep_hrs);}
+			
+			if (sleep_hrs < 7) {
+				local_array = [];
+				local_array.push(Morning_Tips.Q1[0].M1);
+				local_array.push(Morning_Tips.Q1[0].M2);
+
+				var randomIndex = Math.floor(Math.random() * local_array.length); 
+				var mng_tip_message = local_array[randomIndex];	
+			}
+
+			if (sleep_hrs >= 7 && sleep_hrs <= 8){mng_tip_message = Standard_Tips.Q1[0].M5;}
+			if (sleep_hrs > 9){
+				local_array = [];
+				local_array.push(Morning_Tips.Q1[0].M3);
+				local_array.push(Morning_Tips.Q1[0].M4);
+
+				var randomIndex = Math.floor(Math.random() * local_array.length); 
+				var mng_tip_message = local_array[randomIndex];	
+			}
+		}
+
+		/*
+		Day 12 Tip 2: S8
+		Tip 2 is choosed because Tip 1 is pointing to Evening Questions.
+		*/
+
+		if (cur_mor_day == 12){mng_tip_message = Standard_Tips.S[0].S8;}
+
+		/*
+		Day 13 Tip 1: S9
+		*/	
+
+		if (cur_mor_day == 13){mng_tip_message = Standard_Tips.S[0].S9;}
+
+		/*
+		Day 14 Tip 1:
+		If at least 15 out of 28 diary entries were completed then: S11
+		If less than 15 diary entries were completed then: S12
+		*/	
+		if (cur_mor_day == 14){
+
+			if (btcmp_user_log_count < 15) {mng_tip_message = Standard_Tips.S[0].S12;}
+			if (btcmp_user_log_count > 15) {mng_tip_message = Standard_Tips.S[0].S11;}
+		}
 
 };
 
@@ -387,7 +565,11 @@ $.ajax({
 	}
 });
 }
+}
+
 
 </script>
 <?php require_once("./includes/footer.php"); ?>
+
+
 

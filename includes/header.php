@@ -2,12 +2,12 @@
 // Checks if a Active session is created for a user or not.
 $userid = '';
 $username = '';  
-$btcmp_morning_val = '';
-$btcmp_evening_val = '';
+$btcmp_log_day_val = '';
+$btcmp_user_log_count = '';
 if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
 if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
-if (isset($_SESSION["btcmp_morning_val"])){ $btcmp_morning_val = $_SESSION["btcmp_morning_val"];}
-if (isset($_SESSION["btcmp_evening_val"])){ $btcmp_evening_val = $_SESSION["btcmp_evening_val"];} 
+if (isset($_SESSION["btcmp_log_day_val"])){ $btcmp_log_day_val = $_SESSION["btcmp_log_day_val"];}
+if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION["btcmp_user_log_count"];}
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +23,7 @@ if (isset($_SESSION["btcmp_evening_val"])){ $btcmp_evening_val = $_SESSION["btcm
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="css/styles.css"> 
   <link rel="stylesheet" type="text/css" href="css/styles2.css">
@@ -30,7 +31,13 @@ if (isset($_SESSION["btcmp_evening_val"])){ $btcmp_evening_val = $_SESSION["btcm
 
 
 
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
+  <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
 

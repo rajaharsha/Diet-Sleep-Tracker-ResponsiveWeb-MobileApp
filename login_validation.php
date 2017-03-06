@@ -11,15 +11,16 @@ if(isset($_POST)){
 	$result_username = $result_cred["USER_NAME"];
 	$result_passcode = $result_cred["PASS_CODE"];
 
-	$btcmp_morning_val = get_new_morning_entry_day($result_uid);
-	$btcmp_evening_val = get_new_evening_entry_day($result_uid);
+	$btcmp_log_day_val = get_user_log_day($result_uid);
+	$btcmp_user_log_count = get_user_log_count($result_uid);
 
 	if ($result_username){
 		if($password == $result_passcode){  
+											
 											$_SESSION["uid"] = (int)$result_uid;
 											$_SESSION["username"] = $result_username;
-											$_SESSION["btcmp_morning_val"] = $btcmp_morning_val;
-											$_SESSION["btcmp_evening_val"] = $btcmp_evening_val;
+											$_SESSION["btcmp_log_day_val"] = (int)$btcmp_log_day_val;
+											$_SESSION["btcmp_user_log_count"] = (int)$btcmp_user_log_count;
 
 											header("Location: " . 'home.php');
 										 }

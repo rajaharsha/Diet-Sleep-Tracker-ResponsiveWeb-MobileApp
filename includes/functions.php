@@ -48,7 +48,10 @@ $eq6_ReadHomeWork,             // 9
 $eq6_WatchTV,                  //10
 $eq6_PlayVideoGames,           //11
 $eq6_None,                     //12
-$eq7_TimeOfDay                 //13								
+$eq7_TimeOfDay,                //13
+$uid,                          //14
+$cur_evg_day                   //15
+
 ) {
 global $connection;
 $query  = "INSERT INTO 
@@ -66,7 +69,8 @@ eq6_ReadHomeWork,             -- 9
 eq6_WatchTV,                  -- 10
 eq6_PlayVideoGames,           -- 11
 eq6_None,                     -- 12
-eq7_TimeOfDay                 -- 13		
+eq7_TimeOfDay,                -- 13		
+uid           				  -- 14
 ) VALUES 
 (
 $eq1_Morning,                 -- 1
@@ -81,12 +85,15 @@ $eq1_Evening,                 -- 3
 '$eq6_WatchTV',               -- 10
 '$eq6_PlayVideoGames',        -- 11
 '$eq6_None',                  -- 12
-'$eq7_TimeOfDay'              -- 13		
+'$eq7_TimeOfDay',             -- 13		
+$uid                          -- 14
 )";
 $result_id = mysqli_query($connection, $query);
-//error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+$query_2 = "INSERT cz_usr_bootcamp_log (UID, LOG_DAY, LOG_TYPE, LOG_TIME) VALUES ($uid, $cur_evg_day, 'E', NOW())";
+$result_id2 = mysqli_query($connection, $query_2);
 //confirm_query($result_id);
-if($result_id) {
+
+if($result_id && $result_id2) {
 $_SESSION["message"] = "Response Posted";
 return true;
 } else {
@@ -143,6 +150,8 @@ mq5_nota
 $result_id = mysqli_query($connection, $query);
 //error_log("Inside query\n" . $query , 3, "/Users/bfwatkin/Desktop/error.log");
 // confirm_query($result_id);
+
+
 if($result_id) {
 $_SESSION["message"] = "Response Posted";
 return true;
@@ -246,22 +255,34 @@ return NULL;
 }
 
 
-function get_new_morning_entry_day($userid){
+function get_user_log_day($userid){
 global $connection;
-$query = "SELECT MAX(LOG_DAY) AS MAX_MOR_DAY FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid AND LOG_TYPE = 'M'";
+$query = "
+SELECT 
+CASE 
+WHEN (DATEDIFF(NOW(),LOG_TIME)) < 15 THEN (DATEDIFF(NOW(),LOG_TIME))
+ELSE 14
+END
+AS CUR_LOG_DAY 
+FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid AND LOG_DAY = 1
+";
 $query_result = mysqli_query($connection, $query);
 $fetch_rows = mysqli_fetch_assoc($query_result);
-$total_completed_mor_days = $fetch_rows["MAX_MOR_DAY"];
-return $total_completed_mor_days;
+$cur_log_day = $fetch_rows["CUR_LOG_DAY"];
+return $cur_log_day;
 }
 
-function get_new_evening_entry_day($userid){
-global $connection;
-$query = "SELECT MAX(LOG_DAY) AS MAX_EVG_DAY FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid AND LOG_TYPE = 'E'";
-$query_result = mysqli_query($connection, $query);
-$fetch_rows = mysqli_fetch_assoc($query_result);
-$total_completed_evg_days = $fetch_rows["MAX_EVG_DAY"];	
-return $total_completed_evg_days;
+function get_user_log_count($userid){
+	global $connection;
+	$query = "SELECT COUNT(*) USR_LOG_COUNT FROM CZ_USR_BOOTCAMP_LOG WHERE UID = $userid";
+
+	//error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+	$query_result = mysqli_query($connection, $query);
+	$fetch_rows = mysqli_fetch_assoc($query_result);
+	$usr_log_count = $fetch_rows["USR_LOG_COUNT"];
+	return $usr_log_count;
 }
+
+
 
 ?>

@@ -53,9 +53,10 @@ this.setMinutesToFallBackToSleep = function setMinutesToFallBackToSleep(mins) {
 }
 
 this.setHowDidYouFeel = function setHowDidYouFeel(choice) {
-	this.howDidYouFeel = choice;
+	if (choice == 1) {this.howDidYouFeel = 'Sleepy';}
+	if (choice == 2) {this.howDidYouFeel = 'Somewhat Sleepy';}
+	if (choice == 3) {this.howDidYouFeel = 'Alert';}
 }
-
 
 this.setNoise = function setNoise(valueString) {
 	this.noise = valueString;
@@ -438,7 +439,9 @@ var qs5 = ' \
 \
 <div class="row">\
 \
-<div class="col-xs-12 col-md-12 col-lg-12"><label for="submitButton1"></label><input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" data-toggle="modal" data-target="#morning_tip" />\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+	<label for="submitButton1"></label>\
+	<input class="form-control btn btn-primary" id="submitButton1" type="submit" value="Submit" data-toggle="modal" data-target="#morning_tip" />\
 \
 </div>\
 \

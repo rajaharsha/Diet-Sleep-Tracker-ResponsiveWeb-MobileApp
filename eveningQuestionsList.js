@@ -408,7 +408,10 @@ var qs7 = ' \
 </button>\
 </div>\
 </div>\
-\
+<br>\
+  <div class="questionButtonDiv">\
+  <button style="text-align:center;" id="eqs_submit" class="btn btn-default" onclick="evg_ans_submit()" data-toggle="modal" data-target="#evening_tip">Submit your Evening Diary</button>\
+  </div>\
 ';
 
 
