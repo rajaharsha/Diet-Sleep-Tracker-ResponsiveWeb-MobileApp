@@ -341,6 +341,7 @@ eqs_answers['cur_evg_day'] = cur_evg_day;
 var btcmp_user_log_count = '';
 var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');
 
+var tip_code = '';
 
 // Set Values PHP Values
 function evg_ans_submit() {
@@ -402,11 +403,17 @@ If no response on morning question 3 then: M19
 Day 3 Tip 2: E28 or E30 
 */
       if (cur_evg_day == 3){
-          local_array = [];
+/*          local_array = [];
           local_array.push(Evening_Tips.Q5[0].E28);
           local_array.push(Evening_Tips.Q5[0].E30);
           var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];  
+          var evg_tip_message = local_array[randomIndex];  */
+
+          local_array = ['E28','E30'];
+          var randomIndex = Math.floor(Math.random() * local_array.length);
+          tip_code = local_array[randomIndex];
+          if (tip_code = 'E28'){var evg_tip_message = Evening_Tips.Q5[0].E28;};
+          if (tip_code = 'E30'){var evg_tip_message = Evening_Tips.Q5[0].E30;};
       }
 
 /*
@@ -561,6 +568,8 @@ If “none” on evening question 6 then: E37 or E38
       if (cur_evg_day == 14){evg_tip_message = Standard_Tips.S[0].S13;}
 
 }
+
+eqs_answers['tip_code'] = tip_code;
 
   $.ajax({
     url: 'post_evg_answers.php',
