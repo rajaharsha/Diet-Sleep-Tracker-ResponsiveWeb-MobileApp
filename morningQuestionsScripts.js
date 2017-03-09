@@ -163,50 +163,45 @@ var qs2 = ' \
 			\
 			\
 			<div class="row">\
-					<div class="col-xs-3"></div>\
+					<div class="col-xs-4"></div>\
 					\
-					<div class="col-xs-3 text-center">\
-					<div class="btn btn-danger" name="q2" onclick="checkQuestion2(1)" id="inputProblemsFallingAsleepId">\
-					Yes</div></div>\
-					\
-					<div class="col-xs-3 text-center">\
-					<div class="btn btn-success" name="q2" onclick="checkQuestion2(0)" id="inputProblemsFallingAsleepId">\
-					No</div></div>\
-					\
-					<div class="col-xs-3"></div>\
-			</div>\
-			\
-			\
-			\
-			\
-			<div class="row" id="part2" style="visibility: hidden;">\
-					<div class="row">\
-						<div class="col-xs-12 text-center">\
-						<h3>How many minutes did it take you to fall asleep?</h3> \
-						</div>\
+					<div class="col-xs-4 text-center">\
+					  <div class="btn btn-primary" type="button" data-toggle="collapse" data-target="#part2" onclick="checkQuestion2()" name="q2" id="inputProblemsFallingAsleepId">Yes?</div>\
 					</div>\
 					\
-					\
+					<div class="col-xs-4"></div>\
+			</div>\
+\
+\
+\
+\
+			<div id="part2" class="collapse">\
+\
+							<div class="row">\
+								<div class="col-xs-12 text-center">\
+								<h3>How many minutes did it take you to fall asleep?</h3> \
+								</div>\
+							</div>\
+\
 							<div class="row">\
 									<div class="col-xs-4"></div>\
 										<div class="col-xs-4">\
-											<input class="form-control text-center " id="inputMinutesToFallAsleepId" min="0" type="number" name="WakeTime">\
+											<input class="form-control text-center " id="inputMinutesToFallAsleepId" min="0" step="5" value="0" type="number" name="WakeTime">\
 										</div>\
-										<div class="col-xs-4"></div>\
-									</div>\
+									<div class="col-xs-4"></div>\
 							</div>\
-							\
-<br\>						\
-							\
+			</div>\
+\
+<br />\
+\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
-<span>Continue</span>\
+<span id="q2NextButton">No, please continue</span>\
 </button>\
 </div>\
 </div>\
 </div\
-			\
 \
 \
 </div> <!-- End of Row -->\
@@ -224,16 +219,90 @@ var qs2 = ' \
 
 
 
-
-
-
-
-
-
-
-
-
 var qs3 = ' \
+\
+<div class="container-fluid">\
+<form onSubmit="return !!(false & nextQuestion());">\
+\
+<div class="progress">\
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
+    3/5 Complete (success)\
+  </div>\
+</div>\
+\
+<div class="row">\
+\
+\
+			<div class="row">\
+			<div class="col-xs-12 text-center">\
+			<h3 id="part1">Last night, did you wake up at all during the night?</h3> \
+			</div>\
+			</div>\
+			\
+			\
+			\
+			\
+			\
+			\
+			<div class="row">\
+					<div class="col-xs-4"></div>\
+					\
+					<div class="col-xs-4 text-center">\
+					  <div class="btn btn-primary" type="button" data-toggle="collapse" data-target="#part2" onclick="checkQuestion2()" name="q2" id="inputDidWakeDuringTheNight">Yes?</div>\
+					</div>\
+					\
+					<div class="col-xs-4"></div>\
+			</div>\
+\
+\
+\
+\
+			<div id="part2" class="collapse">\
+\
+							<div class="row">\
+								<div class="col-xs-12 text-center">\
+								<h3>Minutes to fall back asleep?</h3> \
+								</div>\
+							</div>\
+\
+							<div class="row">\
+									<div class="col-xs-4"></div>\
+										<div class="col-xs-4">\
+											<input class="form-control text-center " id="inputMinutesToFallBackAsleepId" min="0" step="5" value="0" type="number" name="WakeTime">\
+										</div>\
+									<div class="col-xs-4"></div>\
+							</div>\
+			</div>\
+\
+<br />\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
+<span id="q3NextButton">No, please continue</span>\
+</button>\
+</div>\
+</div>\
+</div\
+\
+\
+</div> <!-- End of Row -->\
+</form> <!-- End of form --> \
+</div> <!-- End of Container-fluid --> \
+';
+
+
+
+
+
+
+
+
+
+
+
+var qs3b = ' \
 <div class="container-fluid">\
 <div class="row">\
 <form onSubmit="return !!(false & nextQuestion());">\

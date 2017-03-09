@@ -20,8 +20,16 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
   <meta name="description" content="Coach Z or Sleep App">
   <meta name="author" content="Raja Harsha Chinta & Brian Watkins">
 
-  <!-- Bootstrap core CSS -->
+  <!-- 1. Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- 2. jQuery MUST come before the Bootstrap.min.js !!!!!!!! :)   --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  
+
+  <!-- 3. Bootstrap core JavaScript --> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 
 
   <!-- custom styles -->
@@ -35,9 +43,6 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
   <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
   <script src="assets/js/ie-emulation-modes-warning.js"></script>
-
-
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
 
@@ -61,7 +66,7 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
 
 
   <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
-  <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+ 
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">

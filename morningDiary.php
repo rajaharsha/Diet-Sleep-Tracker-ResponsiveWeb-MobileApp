@@ -6,16 +6,18 @@ confirm_logged_in(); // Function
 include('./includes/header.php'); // Bring in the Menus, etc
 ?>
 
+
+
   
-  <!-- jQuery --> 
-  <script src="js/jquery.min.js"></script>
+  <!-- Jhorton Bootstrap-Datepicker REQUIRES! jQuery --> 
+  <!-- jQuery is brought in from header.php --> 
 <script src="Jhorton/jquery.timepicker.js" type="text/javascript"></script>
 <link href="Jhorton/jquery.timepicker.css"  type="text/css" rel="stylesheet" />
 <script src="Jhorton/lib/bootstrap-datepicker.js" type="text/javascript"></script>
 <link href="Jhorton/lib/bootstrap-datepicker.css" type="text/css" rel="stylesheet" />
 <script src="Jhorton/lib/site.js" type="text/javascript"></script>
 <link href="Jhorton/lib/site.css" type="text/css" rel="stylesheet" />
-
+<!-- *********************************** end date-picker dependencies *** -->
 
 
 
@@ -88,20 +90,6 @@ return (i%2) ? 15 : 45;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<script>
 
 
@@ -126,33 +114,50 @@ return (i%2) ? 15 : 45;
 
 
 
-
-
-
-
-
-
-
 // Question 1 Scripts
 function q1script() {
-	a = document.getElementById('inputBedTimeId').value;
-	b = document.getElementById('inputWakeTimeId').value;
+	var a = document.getElementById('inputBedTimeId').value;
+	var b = document.getElementById('inputWakeTimeId').value;
 	questions.setBedTime(a);
 	questions.setWakeTime(b);
 }
-function checkQuestion2(choice) {
+
+function checkQuestion2() {
+
 	
-	if (choice == "1") {
-		document.getElementById('part2').style.visibility = "visible";
-	}
-	if (choice == "0") {
-		document.getElementById('part2').style.visibility = "collapse";
-	}
+	var a = document.getElementById('inputProblemsFallingAsleepId').innerHTML;
+
+
+
+	if (a == "Yes?") {
+		document.getElementById('inputProblemsFallingAsleepId').innerHTML = "No";
+		var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
+		console.log("Yes :" + a);
+		document.getElementById('q2NextButton').innerHTML = "Continue"
+		
+	} 
+
+
+	if (a == "No") { 
+		document.getElementById('inputProblemsFallingAsleepId').innerHTML = "Yes?";
+		var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
+		console.log("No :" + a);
+		document.getElementById('q2NextButton').innerHTML = "No. Please continue!"
 }
+
+}
+
+
+
+
+
+
+
+
 // Question 2 Scripts
 function q2script() {
-	a = document.getElementById('inputProblemsFallingAsleepId').value;
-	b = document.getElementById('inputMinutesToFallAsleepId').value;
+	var a = document.getElementById('inputProblemsFallingAsleepId').value;
+	var b = document.getElementById('inputMinutesToFallAsleepId').value;
 	questions.setProblemsFallingAsleep(a);
 	questions.setMinutesToFallAsleep(b);
 }
@@ -160,24 +165,39 @@ function q2script() {
 
 
 
-function checkQuestion3(choice) {
-	
-	if (choice == "1") {
-		document.getElementById('part2').style.visibility = "visible";
-	}
-	if (choice == "0") {
-		document.getElementById('part2').style.visibility = "collapse";
-	}
-}
+
 // Question 3 Scripts
 function q3script() {
-	a = document.getElementById('inputDidWakeDuringTheNightId').value;
-	b = document.getElementById('inputMinutesToFallBackToSleepId').value;
+	var a = document.getElementById('inputDidWakeDuringTheNightId').value;
+	var b = document.getElementById('inputMinutesToFallBackToSleepId').value;
 	questions.setDidWakeDuringTheNight(a);
 	questions.setMinutesToFallBackToSleep(b);
 }
 
+function checkQuestion3() {
 
+	
+	var a = document.getElementById('inputDidWakeDuringTheNightId').innerHTML;
+
+
+
+	if (a == "Yes?") {
+		document.getElementById('inputDidWakeDuringTheNightId').innerHTML = "No";
+		var a = document.getElementById('inputMinutesToFallBackToSleepId').innerHTML;
+		console.log("Yes :" + a);
+		document.getElementById('q3NextButton').innerHTML = "Continue"
+		
+	} 
+
+
+	if (a == "No") { 
+		document.getElementById('inputDidWakeDuringTheNightId').innerHTML = "Yes?";
+		var a = document.getElementById('inputMinutesToFallBackToSleepId').innerHTML;
+		console.log("No :" + a);
+		document.getElementById('q3NextButton').innerHTML = "No. Please continue!"
+}
+
+}
 
 
 
@@ -275,6 +295,14 @@ function submitMorningQuestions() {
 	mqs_answers['mq5_nota'] 				= questions.nota;	
 
 	console.log(mqs_answers);
+
+
+// Send to Database???????? the morning questions??
+
+
+
+
+
 
 	if (cur_mor_day < 15) {
 		alert (cur_mor_day);
