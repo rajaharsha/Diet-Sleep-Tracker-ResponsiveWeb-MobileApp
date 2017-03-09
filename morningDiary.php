@@ -116,8 +116,8 @@ return (i%2) ? 15 : 45;
 
 // Question 1 Scripts
 function q1script() {
-	var a = document.getElementById('inputBedTimeId').value;
-	var b = document.getElementById('inputWakeTimeId').value;
+	var a = document.getElementById('stepExample1').value;
+	var b = document.getElementById('stepExample2').value;
 	questions.setBedTime(a);
 	questions.setWakeTime(b);
 }
