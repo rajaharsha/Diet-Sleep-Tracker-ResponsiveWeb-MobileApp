@@ -95,7 +95,7 @@ this.getNota = function getNota() {
 
 
 var qs1 = '\
-<div class="container-fluid">\
+<div class="container-fluid collapse">\
 \
 <form onSubmit="return !!(false & nextQuestion());">\
 \
