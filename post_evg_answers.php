@@ -20,6 +20,8 @@ $obj = $_POST['post_evg_answers'];
             $eq7_TimeOfDay = $obj["eq7_TimeOfDay"];                // 13
             $uid = $obj["uid"];                                    // 14
             $cur_evg_day = $obj["cur_evg_day"];                    // 15
+            $tip_code = $obj["tip_code"];                          // 16
+
 
            insert_evg_answer(
             $eq1_Morning,                  // 1
@@ -36,6 +38,7 @@ $obj = $_POST['post_evg_answers'];
             $eq6_None,                     // 12
             $eq7_TimeOfDay,                // 13
             $uid,                          // 14
-            $cur_evg_day                   // 15 
+            $cur_evg_day,                  // 15
+            $tip_code                      // 16
             );          
     ?>

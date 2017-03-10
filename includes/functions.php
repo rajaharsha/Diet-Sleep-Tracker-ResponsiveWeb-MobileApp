@@ -50,8 +50,8 @@ $eq6_PlayVideoGames,           //11
 $eq6_None,                     //12
 $eq7_TimeOfDay,                //13
 $uid,                          //14
-$cur_evg_day                   //15
-
+$cur_evg_day,                  //15
+$tip_code					   //16
 ) {
 global $connection;
 $query  = "INSERT INTO 
@@ -70,7 +70,8 @@ eq6_WatchTV,                  -- 10
 eq6_PlayVideoGames,           -- 11
 eq6_None,                     -- 12
 eq7_TimeOfDay,                -- 13		
-uid           				  -- 14
+uid,           				  -- 14
+tip_code					  -- 15
 ) VALUES 
 (
 $eq1_Morning,                 -- 1
@@ -86,8 +87,14 @@ $eq1_Evening,                 -- 3
 '$eq6_PlayVideoGames',        -- 11
 '$eq6_None',                  -- 12
 '$eq7_TimeOfDay',             -- 13		
-$uid                          -- 14
+$uid,                         -- 14
+'$tip_code'					  -- 15
 )";
+
+//error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+
+error_log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n".$query."\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",3,"C:/xampp/apache/logs/error.log");
+
 $result_id = mysqli_query($connection, $query);
 $query_2 = "INSERT cz_usr_bootcamp_log (UID, LOG_DAY, LOG_TYPE, LOG_TIME) VALUES ($uid, $cur_evg_day, 'E', NOW())";
 $result_id2 = mysqli_query($connection, $query_2);
@@ -148,7 +155,7 @@ mq5_nota
 '$mq5_nota'	
 )";
 $result_id = mysqli_query($connection, $query);
-//error_log("Inside query\n" . $query , 3, "/Users/bfwatkin/Desktop/error.log");
+//error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
 // confirm_query($result_id);
 
 
