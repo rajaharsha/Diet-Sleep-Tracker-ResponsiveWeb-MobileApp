@@ -132,7 +132,6 @@ function checkQuestion2() {
 	if (a == "Yes?") {
 		document.getElementById('inputProblemsFallingAsleepId').innerHTML = "No";
 		var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
-		console.log("Yes :" + a);
 		document.getElementById('q2NextButton').innerHTML = "Continue"
 		
 	} 
@@ -141,7 +140,6 @@ function checkQuestion2() {
 	if (a == "No") { 
 		document.getElementById('inputProblemsFallingAsleepId').innerHTML = "Yes?";
 		var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
-		console.log("No :" + a);
 		document.getElementById('q2NextButton').innerHTML = "No. Please continue!"
 }
 
@@ -184,7 +182,6 @@ function checkQuestion3() {
 	if (a == "Yes?") {
 		document.getElementById('inputDidWakeDuringTheNightId').innerHTML = "No";
 		var a = document.getElementById('inputMinutesToFallBackToSleepId').innerHTML;
-		console.log("Yes :" + a);
 		document.getElementById('q3NextButton').innerHTML = "Continue"
 		
 	} 
@@ -193,7 +190,6 @@ function checkQuestion3() {
 	if (a == "No") { 
 		document.getElementById('inputDidWakeDuringTheNightId').innerHTML = "Yes?";
 		var a = document.getElementById('inputMinutesToFallBackToSleepId').innerHTML;
-		console.log("No :" + a);
 		document.getElementById('q3NextButton').innerHTML = "No. Please continue!"
 }
 
@@ -211,48 +207,119 @@ function checkQuestion3() {
 function q4script(choice) {
 	questions.setHowDidYouFeel(choice);
 }
-// Question 5 Scripts
-function q5script(choice) {
-var a = document.getElementById('noiseId').checked // true/false		
-var b = document.getElementById('lightId').checked // true/false		
-var c = document.getElementById('worryId').checked // true/false		
-var d = document.getElementById('tempId').checked  // true/false		
-var e = document.getElementById('noneId').checked  // true/false
-if (choice == "0") { 
-	document.getElementById('noiseId').checked = false;		
-	document.getElementById('lightId').checked = false;		
-	document.getElementById('worryId').checked = false;		
-	document.getElementById('tempId').checked = false;
-	a = false;		
-	b = false;		
-	c = false;		
-	d = false;		
-	e = true;
-} 		
-if (choice == "1") { 
-document.getElementById('noneId').checked = false; // deselect Nota	
-e = false; // set Nota to false
+
+
+// Question 6 ******************************************
+function question5(choice) {
+  switch (choice) {
+    case 1: // case 1, comes from first button
+      id = "mqs5op1"; // get the id
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 2:
+      id = "mqs5op2";
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 3:
+      id = "mqs5op3";
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 4:
+      id = "mqs5op4";
+      var background = document.getElementById(id).style.backgroundColor;
+      checkColor(background, id);
+      break;
+    case 5:
+      id = "mqs5op5";
+      var background = document.getElementById(id).style.backgroundColor;
+      document.getElementById(id).value = "true";
+      clearOtherChoices();
+      break;
+    default:
+      id = "None";
+  }
+
 }
-// validate data first
-var f = a ? 1 : 0; // Ternary (conditional ) operator		
-var g = b ? 1 : 0; // variableName = (conditional) ? value1:value2		
-var h = c ? 1 : 0; // 1 if true, 0 if false		
-var i = d ? 1 : 0;		
-var j = e ? 1 : 0;	
-var finalResult = f + g + h + i + j; // if NOT zero, then can be submitted. 
-// only happens if the user has made a selection and pressed submit. 
-if (choice == "2"  && finalResult != 0) {
-// set object parameters to true and false 
-questions.setNoise(a);
-questions.setLight(b);
-questions.setStress(c);
-questions.setTemp(d);
-questions.setNota(e);
-submitMorningQuestions();
-} else if (choice == "2"  && finalResult == 0){
-	window.alert("Please make a selection");
+
+function clearOtherChoices() { // Clears all choices when NOTA is clicked
+
+  for (i = 1; i < 5; i++) { // Loop through other choices
+    document.getElementById('mqs5op' + i).style.backgroundColor = "white";
+    document.getElementById('mqs5op' + i).style.color = "black";
+    document.getElementById('mqs5op' + i).value = "false";
+  }
 }
+
+
+function checkColor(myColor, myId) {
+  document.getElementById("mqs5op5").value = "false"; // Ensure NOTA is Reset
+  var id = myId;
+  var background = myColor;
+  if (background != "black") {
+    document.getElementById(id).style.backgroundColor = "black";
+    document.getElementById(id).style.color = "white";
+    document.getElementById(id).value = "true";
+
+
+  } else {
+    document.getElementById(id).style.backgroundColor = "white";
+    document.getElementById(id).style.color = "black";
+    document.getElementById(id).value = "false";
+
+  }
 }
+
+
+
+
+
+// // Question 5 Scripts
+// function q5script(choice) {
+// var a = document.getElementById('noiseId').checked // true/false		
+// var b = document.getElementById('lightId').checked // true/false		
+// var c = document.getElementById('worryId').checked // true/false		
+// var d = document.getElementById('tempId').checked  // true/false		
+// var e = document.getElementById('noneId').checked  // true/false
+// if (choice == "0") { 
+// 	document.getElementById('noiseId').checked = false;		
+// 	document.getElementById('lightId').checked = false;		
+// 	document.getElementById('worryId').checked = false;		
+// 	document.getElementById('tempId').checked = false;
+// 	a = false;		
+// 	b = false;		
+// 	c = false;		
+// 	d = false;		
+// 	e = true;
+// } 		
+// if (choice == "1") { 
+// document.getElementById('noneId').checked = false; // deselect Nota	
+// e = false; // set Nota to false
+// }
+// // validate data first
+// var f = a ? 1 : 0; // Ternary (conditional ) operator		
+// var g = b ? 1 : 0; // variableName = (conditional) ? value1:value2		
+// var h = c ? 1 : 0; // 1 if true, 0 if false		
+// var i = d ? 1 : 0;		
+// var j = e ? 1 : 0;	
+// var finalResult = f + g + h + i + j; // if NOT zero, then can be submitted. 
+// // only happens if the user has made a selection and pressed submit. 
+// if (choice == "2"  && finalResult != 0) {
+// // set object parameters to true and false 
+// questions.setNoise(a);
+// questions.setLight(b);
+// questions.setStress(c);
+// questions.setTemp(d);
+// questions.setNota(e);
+// submitMorningQuestions();
+// } else if (choice == "2"  && finalResult == 0){
+// 	window.alert("Please make a selection");
+// }
+// }
+
+
 
 
 

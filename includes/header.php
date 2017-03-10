@@ -30,6 +30,8 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
+  <!-- animation.css --> 
+  <link rel="stylesheet" type="text/css" href="css/animation.css">
 
 
   <!-- custom styles -->
