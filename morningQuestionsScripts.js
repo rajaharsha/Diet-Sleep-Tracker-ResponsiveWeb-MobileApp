@@ -234,7 +234,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 \
 <div class="row">\
 <div class="col-xs-12 text-center">\
-<h3 id="part1">Last night, did you wake up at all during the night?</h3> \
+<h3 id="part1">Did you wake up at all during the night?</h3> \
 </div>\
 </div>\
 \
@@ -293,22 +293,19 @@ var qs4 = ' \
 <div class="row">\
 <form onSubmit="return !!(false & nextQuestion());">\
 \
-\
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">\
 4/5 Complete (success)\
 </div>\
 </div>\
-\
+<!-- ************************************** End of Progress Bar *********** --> \ 
 \
 <div class="row">\
 <div class="col-xs-12 text-center">\
 <h3>After waking, how did you feel?</h3>\
 </div>\
 </div>\
-\
-\
 \
 <!-- Sleepy Checkbox -->\
 <div class="row">\
@@ -318,9 +315,6 @@ Sleepy</label>\
 </div>\
 </div>\
 \
-\
-\
-\
 <!-- Somewhat Sleepy Checkbox --> \
 <div class="row">\
 <div class="col-xs-12">\
@@ -329,9 +323,6 @@ Somewhat Sleepy</label> \
 </div>\
 </div>\
 \
-\
-\
-\
 <!-- Alert Checkbox --> \
 <div class="row">\
 <div class="col-xs-12"><label id="q4Label"  for="InputAlertId"><input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required>\
@@ -339,12 +330,7 @@ Alert</label> \
 </div>\
 </div> \
 \
-\
-\
 <input class="form-control btn-primary" id="submitButton1" type="submit" value="Continue" />\
-\
-\
-\
 \
 \
 </form>\

@@ -114,13 +114,14 @@ return (i%2) ? 15 : 45;
 
 
 
-// Question 1 Scripts
+// ****************************** Question 1 Scripts **********************
 function q1script() {
 	var a = document.getElementById('stepExample1').value;
 	var b = document.getElementById('stepExample2').value;
 	questions.setBedTime(a);
 	questions.setWakeTime(b);
 }
+// ****************************** End Question 1 Scripts ******************
 
 
 
@@ -128,20 +129,15 @@ function q1script() {
 
 
 
-
-
+// ****************************** Question 2 Scripts **********************
 function showPart2Q2() {
 
-	alert("showPart2Q2");
 	var a = document.getElementById('inputProblemsFallingAsleepId').innerHTML;
-
-
 
 	if (a == "Yes?") {
 		document.getElementById('inputProblemsFallingAsleepId').innerHTML = "No";
 		var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
 		document.getElementById('q2NextButton').innerHTML = "Continue"
-		
 	} 
 
 
@@ -149,19 +145,18 @@ function showPart2Q2() {
 		document.getElementById('inputProblemsFallingAsleepId').innerHTML = "Yes?";
 		var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
 		document.getElementById('q2NextButton').innerHTML = "No. Please continue!"
+	}
 }
 
-}
 
-// Question 2 Scripts
 function q2script() {
-	var a = document.getElementById('inputProblemsFallingAsleepId').value;
+	var a = document.getElementById('inputProblemsFallingAsleepId').value; // may not need
 	var b = document.getElementById('inputMinutesToFallAsleepId').value;
 	questions.setProblemsFallingAsleep(a);
 	questions.setMinutesToFallAsleep(b);
 }
 
-// **************************** end of question 2 Scripts ****************
+// ****************************** End Question 2 Scripts ******************
 
 
 
@@ -171,8 +166,7 @@ function q2script() {
 
 
 
-// Question 3 Scripts ****************************************************
-
+// ****************************** Question 3 Scripts **********************
 
 function showPart2Q3() {
 
@@ -192,26 +186,32 @@ function showPart2Q3() {
 }
 
 function q3script() {
-	var a = document.getElementById('inputDidWakeDuringTheNightId').innerHTML;
+	var a = document.getElementById('inputDidWakeDuringTheNightId').innerHTML; // may not need
 	var b = document.getElementById('inputMinutesToFallBackAsleepId').value;
 	questions.setDidWakeDuringTheNight(a);
 	questions.setMinutesToFallBackToSleep(b);
 }
 
-// ****************************************** end Question 3 Scripts ******
+// ****************************** End Question 3 Scripts ******************
 
 
 
 
 
 
-// Question 4 Scripts
+// ****************************** Question 4 Scripts **********************
 function q4script(choice) {
-	questions.setHowDidYouFeel(choice);
+	questions.setHowDidYouFeel(choice); // Choices 1-Sleepy, 2-Somewhat Sleepy, 3-Alert
 }
+// ****************************** End Question 4 Scripts ******************
 
 
-// Question 5 ******************************************
+
+
+
+
+
+// ****************************** Question 5 Scripts **********************
 function question5(choice) {
   switch (choice) {
     case 1: // case 1, comes from first button
@@ -246,9 +246,17 @@ function question5(choice) {
 
 }
 
-function clearOtherChoices() { // Clears all choices when NOTA is clicked
 
-  for (i = 1; i < 5; i++) { // Loop through other choices
+
+
+
+
+
+
+
+function clearOtherChoices() {
+
+  for (i = 1; i < 5; i++) {
     document.getElementById('mqs5op' + i).style.backgroundColor = "white";
     document.getElementById('mqs5op' + i).style.color = "black";
     document.getElementById('mqs5op' + i).value = "false";
@@ -295,9 +303,9 @@ alert("In submitQuestion5");
 	questions.temp = op4;
 	questions.nota = op5;
   
-submitMorningQuestions();
+submitMorningQuestions(); // last question, No. 5, submits all the results 
 
-
+// ****************************** End Question 5 Scripts ******************
 
 
 }
