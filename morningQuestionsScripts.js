@@ -6,11 +6,11 @@ minutesToFallAsleep, // String || Int
 didWakeDuringTheNight, // Boolean
 minutesToFallBackToSleep, // String / Int
 howDidYouFeel, // String || Int || BitWise
-noise, 
-light, 
-stress, 
-temp, 
-nota
+noise, // Boolean
+light, // Boolean 
+stress, // Boolean
+temp, // Boolean
+nota // Boolean
 ) {
 
 // Parameters - Constructor - defaults to Private (verify)
@@ -394,7 +394,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="hatch form-control btn btn-large btn-success" type="submit" onclick="submitQuestion5()">\
-<span>Submit!</span>\
+<span>Submit Diary!</span>\
 </button>\
 </div>\
 </div>\

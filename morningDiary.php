@@ -161,12 +161,6 @@ function q2script() {
 
 
 
-
-
-
-
-
-
 // ****************************** Question 3 Scripts **********************
 
 function showPart2Q3() {
@@ -187,10 +181,15 @@ function showPart2Q3() {
 }
 
 function q3script() {
-	var a = document.getElementById('inputDidWakeDuringTheNightId').innerHTML; // may not need
+
 	var b = document.getElementById('inputMinutesToFallBackAsleepId').value;
-	questions.setDidWakeDuringTheNight(a);
-	questions.setMinutesToFallBackToSleep(b);
+	if (b > 0) {
+		questions.setDidWakeDuringTheNight("Yes");
+		questions.setMinutesToFallBackToSleep(b);
+	} else {
+		questions.setDidWakeDuringTheNight("No");
+		questions.setMinutesToFallBackToSleep(b); // Defaults to zero
+	}
 }
 
 // ****************************** End Question 3 Scripts ******************
@@ -238,7 +237,7 @@ function q4script(choice) {
 					    case 5:
 					      id = "mqs5op5";
 					      var background = document.getElementById(id).style.backgroundColor;
-					      document.getElementById(id).value = "true";
+					      document.getElementById(id).value = true;
 					      clearOtherChoices();
 					      break;
 					    default:
@@ -247,17 +246,18 @@ function q4script(choice) {
 					}
 
 					function checkColor(myColor, myId) {
-					  document.getElementById("mqs5op5").value = "false"; // Ensure NOTA is Reset
+					  document.getElementById("mqs5op5").value = false; // Ensure NOTA is Reset
 					  var id = myId;
 					  var background = myColor;
 					  if (background != "black") {
 					    document.getElementById(id).style.backgroundColor = "black";
 					    document.getElementById(id).style.color = "white";
-					    document.getElementById(id).value = "true";
+					    document.getElementById(id).value = true;
+					    //document.getElementById('mqs5op5').value = false;
 					  } else {
 					    document.getElementById(id).style.backgroundColor = "white";
 					    document.getElementById(id).style.color = "black";
-					    document.getElementById(id).value = "false";
+					    document.getElementById(id).value = false;
 					  }
 					}
 
@@ -265,21 +265,25 @@ function q4script(choice) {
 					  for (i = 1; i < 5; i++) { // Sets all four choices to false and resets UI Colors
 					    document.getElementById('mqs5op' + i).style.backgroundColor = "white";
 					    document.getElementById('mqs5op' + i).style.color = "black";
-					    document.getElementById('mqs5op' + i).value = "false";
+					    document.getElementById('mqs5op' + i).value = false;
 					  }
 					}
 
 function submitQuestion5() {
-  var op1 = document.getElementById("mqs5op1").value;
+  var op1 = document.getElementById("mqs5op1").value; 
   var op2 = document.getElementById("mqs5op2").value;
   var op3 = document.getElementById("mqs5op3").value;
   var op4 = document.getElementById("mqs5op4").value;
   var op5 = document.getElementById("mqs5op5").value;
-  op1 = (op1 != "true") ? "false" : "true"; // verfies that there IS a value
-  op2 = (op2 != "true") ? "false" : "true"; // verfies that there IS a value
-  op3 = (op3 != "true") ? "false" : "true"; // verfies that there IS a value
-  op4 = (op4 != "true") ? "false" : "true"; // verfies that there IS a value
-  op5 = (op5 != "true") ? "false" : "true"; // verfies that there IS a value
+
+
+  op1 = (op1 == "" ) ? false : false; 
+  op2 = (op2 == "" ) ? false : false; 
+  op3 = (op3 == "" ) ? false : false; 
+  op4 = (op4 == "" ) ? false : false; 
+  op5 = (op5 == "" ) ? false : true;
+
+
 
   	questions.noise  = op1;
 	questions.light  = op2;
@@ -314,11 +318,15 @@ function submitMorningQuestions() {
 
 	mqs_answers['mq1_bedTime'] 				    = questions.bedTime;
 	mqs_answers['mq1_wakeTime'] 			    = questions.wakeTime;
+
 	mqs_answers['mq2_problemsFallingAsleep']    = questions.problemsFallingAsleep;
-	mqs_answers['mq2_minutesToFallAsleep'] 	    = questions.minutesToFallAsleep;
+	mqs_answers['mq2_minutesToFallAsleep'] 	    = parseInt(questions.minutesToFallAsleep);
+
 	mqs_answers['mq3_didWakeDuringTheNight']    = questions.didWakeDuringTheNight;
 	mqs_answers['mq3_minutesToFallBackToSleep'] = parseInt(questions.minutesToFallBackToSleep);
+
 	mqs_answers['mq4_howDidYouFeel'] 		    = questions.howDidYouFeel;
+
 	mqs_answers['mq5_noise'] 				    = questions.noise;  
 	mqs_answers['mq5_light'] 				    = questions.light;
 	mqs_answers['mq5_stress'] 				    = questions.stress;
@@ -336,7 +344,7 @@ function submitMorningQuestions() {
 
 
 	if (cur_mor_day < 15) {
-		alert (cur_mor_day);
+		//alert (cur_mor_day);
 
 // Day - 1 - Morning //
 
@@ -348,7 +356,7 @@ if (cur_mor_day == 2){
 
 
 	if(questions.problemsFallingAsleep == 'on'){
-		alert ('1');
+		//alert ('1');
 
 			if(questions.problemsFallingAsleep == 'on'){
 
