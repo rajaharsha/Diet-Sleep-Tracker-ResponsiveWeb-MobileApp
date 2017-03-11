@@ -122,9 +122,17 @@ function q1script() {
 	questions.setWakeTime(b);
 }
 
-function checkQuestion2() {
 
-	
+
+
+
+
+
+
+
+function showPart2Q2() {
+
+	alert("showPart2Q2");
 	var a = document.getElementById('inputProblemsFallingAsleepId').innerHTML;
 
 
@@ -145,13 +153,6 @@ function checkQuestion2() {
 
 }
 
-
-
-
-
-
-
-
 // Question 2 Scripts
 function q2script() {
 	var a = document.getElementById('inputProblemsFallingAsleepId').value;
@@ -160,43 +161,44 @@ function q2script() {
 	questions.setMinutesToFallAsleep(b);
 }
 
+// **************************** end of question 2 Scripts ****************
 
 
 
 
-// Question 3 Scripts
+
+
+
+
+
+// Question 3 Scripts ****************************************************
+
+
+function showPart2Q3() {
+
+	var a = document.getElementById('inputDidWakeDuringTheNightId').innerHTML;
+
+	if (a == "Yes?") {
+		document.getElementById('inputDidWakeDuringTheNightId').innerHTML = "No";
+		var a = document.getElementById('inputMinutesToFallBackAsleepId').innerHTML;
+		document.getElementById('q3NextButton').innerHTML = "Continue"
+	} 
+
+	if (a == "No") { 
+		document.getElementById('inputDidWakeDuringTheNightId').innerHTML = "Yes?";
+		var a = document.getElementById('inputMinutesToFallBackAsleepId').innerHTML;
+		document.getElementById('q3NextButton').innerHTML = "No. Please continue!"
+	}
+}
+
 function q3script() {
-	var a = document.getElementById('inputDidWakeDuringTheNightId').value;
-	var b = document.getElementById('inputMinutesToFallBackToSleepId').value;
+	var a = document.getElementById('inputDidWakeDuringTheNightId').innerHTML;
+	var b = document.getElementById('inputMinutesToFallBackAsleepId').value;
 	questions.setDidWakeDuringTheNight(a);
 	questions.setMinutesToFallBackToSleep(b);
 }
 
-function checkQuestion3() {
-
-	
-	var a = document.getElementById('inputDidWakeDuringTheNightId').innerHTML;
-
-
-
-	if (a == "Yes?") {
-		document.getElementById('inputDidWakeDuringTheNightId').innerHTML = "No";
-		var a = document.getElementById('inputMinutesToFallBackToSleepId').innerHTML;
-		document.getElementById('q3NextButton').innerHTML = "Continue"
-		
-	} 
-
-
-	if (a == "No") { 
-		document.getElementById('inputDidWakeDuringTheNightId').innerHTML = "Yes?";
-		var a = document.getElementById('inputMinutesToFallBackToSleepId').innerHTML;
-		document.getElementById('q3NextButton').innerHTML = "No. Please continue!"
-}
-
-}
-
-
-
+// ****************************************** end Question 3 Scripts ******
 
 
 
@@ -287,19 +289,16 @@ alert("In submitQuestion5");
   op5 = (op5 != "true") ? "false" : "true"; // verfies that there IS a value
 
 
-  // Now, send the data to the object
-  eqs_answers['eq5_?'] =   op1;
-  eqs_answers['eq5_?'] =   op2;
-  eqs_answers['eq5_?'] =   op3;
-  eqs_answers['eq5_?'] =   op4;
-  eqs_answers['eq5_None'] =   op5;
-
+  	questions.noise =  op1;
+	questions.light = op2;
+	questions.stress = op3;
+	questions.temp = op4;
+	questions.nota = op5;
   
-  
+submitMorningQuestions();
 
 
 
-// Call database functionality........ 
 
 }
 
