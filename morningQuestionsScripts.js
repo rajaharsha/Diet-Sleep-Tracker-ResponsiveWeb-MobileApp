@@ -96,27 +96,28 @@ return this.nota;
 
 var qs1 = '\
 \
-<div class="container-fluid" id="question1">\
+<div class="fadeIn container-fluid" id="question1">\
 \
-<form onSubmit="return !!(false & nextQuestion());">\
+<form class="" onSubmit="return !!(false & nextQuestion());">\
 \
 \
-<div class="row progress">\
+<div class=" row progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">\
 1/5 Complete (success)\
 </div>\
 </div>\
 \
-<div class="row">\
-<div class="hatch text-right col-xs-6 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
-<div class="hatch            col-xs-6 col-md-6 col-lg-6"><input id="stepExample1" type="text" class="time" required></div>\
-</div>\
+<div class=" well row">\
+	<div class="row">\
+	<div class="hatch text-right col-xs-6 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
+	<div class="hatch            col-xs-6 col-md-6 col-lg-6"><input id="stepExample1" type="text" class="time" required></div>\
+	</div>\
 \
-<div class="row">\
-<div class="hatch text-right col-xs-6 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
-<div class="hatch            col-xs-6 col-md-6 col-lg-6"><input id="stepExample2" type="text" class="time" required>\
-</div>\
+	<div class="row">\
+	<div class="hatch text-right col-xs-6 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
+	<div class="hatch            col-xs-6 col-md-6 col-lg-6"><input id="stepExample2" type="text" class="time" required>\
+	</div>\
 \
 </div>\
 <br />\
@@ -139,7 +140,7 @@ aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">\
 
 var qs2 = ' \
 \
-<div class="container-fluid">\
+<div class="fadeIn container-fluid">\
 <form onSubmit="return !!(false & nextQuestion());">\
 \
 <div class="progress">\
@@ -149,7 +150,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 </div>\
 </div>\
 \
-<div class="row">\
+<div class="well row">\
 \
 \
 <div class="row">\
@@ -159,13 +160,13 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 </div>\
 \
 <div class="row">\
-<div class="col-xs-4"></div>\
 \
-<div class="col-xs-4 text-center">\
-<div class="hatch btn btn-primary" type="button" data-toggle="collapse" data-target="#part2" onclick="showPart2Q2()" name="q2" id="inputProblemsFallingAsleepId">Yes?</div>\
+\
+<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+<button class="hatch form-control btn btn-large btn-primary" type="button" data-toggle="collapse" data-target="#part2" onclick="showPart2Q2()" name="q2" id="inputProblemsFallingAsleepId">Yes?</button>\
 </div>\
 \
-<div class="col-xs-4"></div>\
+\
 </div>\
 \
 <div id="part2" class="collapse  ">\
@@ -189,7 +190,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
+<button class="hatch form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
 <span id="q2NextButton">No, please continue</span>\
 </button>\
 </div>\
@@ -214,7 +215,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 
 var qs3 = ' \
 \
-<div class="container-fluid">\
+<div class="fadeIn container-fluid">\
 <form onSubmit="return !!(false & nextQuestion());">\
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
@@ -222,7 +223,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 3/5 Complete (success)\
 </div>\
 </div>\
-<div class="row">\
+<div class="row well">\
 \
 <div class="row">\
 <div class="col-xs-12 text-center">\
@@ -231,13 +232,13 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 </div>\
 \
 <div class="row">\
-<div class="col-xs-4"></div>\
 \
-<div class="col-xs-4 text-center">\
-<div class="hatch btn btn-primary" type="button" data-toggle="collapse" data-target="#part2" onclick="showPart2Q3()" name="q3" id="inputDidWakeDuringTheNightId">Yes?</div>\
+\
+<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+<button class="atch form-control btn btn-large btn-primary" type="button" data-toggle="collapse" data-target="#part2" onclick="showPart2Q3()" name="q3" id="inputDidWakeDuringTheNightId">Yes?</button>\
 </div>\
 \
-<div class="col-xs-4"></div>\
+\
 </div>\
 \
 \
@@ -281,8 +282,8 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 
 
 var qs4 = ' \
-<div class="container-fluid">\
-<div class="row">\
+<div class="fadeIn container-fluid">\
+\
 <form onSubmit="return !!(false & nextQuestion());">\
 \
 <div class="progress">\
@@ -291,47 +292,47 @@ aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">\
 4/5 Complete (success)\
 </div>\
 </div>\
+<div class="row well">\
+		<div class="row">\
+			<div class="col-xs-12 text-center">\
+			<h3>After waking, how did you feel?</h3>\
+			</div>\
+		</div>\
 \
-<div class="row">\
-<div class="col-xs-12 text-center">\
-<h3>After waking, how did you feel?</h3>\
-</div>\
-</div>\
+	<!-- Sleepy Checkbox -->\
+	<div class="row">\
+	<div class="col-xs-12">\
+	<label id="q4Label" for="InputSleepyId"><input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
+	Sleepy</label>\
+	</div>\
+	</div>\
 \
-<!-- Sleepy Checkbox -->\
-<div class="row">\
-<div class="col-xs-12">\
-<label id="q4Label" for="InputSleepyId"><input onclick="q4script(1)" type="radio" id="InputSleepyId" name="feel" required>\
-Sleepy</label>\
-</div>\
-</div>\
+	<!-- Somewhat Sleepy Checkbox --> \
+	<div class="row">\
+	<div class="col-xs-12">\
+	<label id="q4Label"  for="InputSomewhatSleepyId"><input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required>\
+	Somewhat Sleepy</label> \
+	</div>\
+	</div>\
 \
-<!-- Somewhat Sleepy Checkbox --> \
-<div class="row">\
-<div class="col-xs-12">\
-<label id="q4Label"  for="InputSomewhatSleepyId"><input onclick="q4script(2)" type="radio" id="InputSomewhatSleepyId" name="feel" required>\
-Somewhat Sleepy</label> \
-</div>\
-</div>\
-\
-<!-- Alert Checkbox --> \
-<div class="row">\
-<div class="col-xs-12"><label id="q4Label"  for="InputAlertId"><input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required>\
-Alert</label> \
-</div>\
-</div> \
+	<!-- Alert Checkbox --> \
+	<div class="row">\
+	<div class="col-xs-12"><label id="q4Label"  for="InputAlertId"><input onclick="q4script(3)" type="radio" id="InputAlertId" name="feel" required>\
+	Alert</label> \
+	</div>\
+	</div> \
 \
 <input class="form-control btn-primary" id="submitButton1" type="submit" value="Continue" />\
 \
 \
 </form>\
-</row>\
+</div>\
 </div>\
 ';
 
 
 var qs5 = '\
-<div class="container-fluid">\
+<div class="fadeIn container-fluid">\
 \
 \
 <div class="progress">\
@@ -341,55 +342,57 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 </div>\
 </div>\
 \
-<div class="col-lg-12 text-center">\
-<h3>Do you do any of the following in your bed?</h3>\
-</div>\
-<div class="col-lg-12 text-center">\
-<h4>Select all that apply</h4>\
-</div>\
+<div class="row well">\
+			<div class="col-lg-12 text-center">\
+			<h3>Did anything below, bother your sleep last night?</h3>\
+			</div>\
+			<div class="col-lg-12 text-center">\
+			<h4>Select all that apply</h4>\
+			</div>\
 \
 <br />\
-<div class="hatch row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="mqs5op1" class="form-control btn btn-large btn-Default" onclick="question5(1)">\
-<span>Noise</span>\
-</button>\
-</div>\
-</div>\
+			<div class="hatch row">\
+			<div class="col-xs-12 col-md-12 col-lg-12">\
+			<button id="mqs5op1" class="form-control btn btn-large btn-Default" onclick="question5(1)">\
+			<span>Noise</span>\
+			</button>\
+			</div>\
+			</div>\
 <br />\
-<div class="hatch row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="mqs5op2" class="form-control btn btn-large btn-Default" onclick="question5(2)">\
-<span>Light</span>\
-</button>\
-</div>\
-</div>\
+			<div class="hatch row">\
+			<div class="col-xs-12 col-md-12 col-lg-12">\
+			<button id="mqs5op2" class="form-control btn btn-large btn-Default" onclick="question5(2)">\
+			<span>Light</span>\
+			</button>\
+			</div>\
+			</div>\
 <br />\
-<div class="hatch row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="mqs5op3" class="form-control btn btn-large btn-Default" onclick="question5(3)">\
-<span>Stress/Worry</span>\
-</button>\
-</div>\
-</div>\
+			<div class="hatch row">\
+			<div class="col-xs-12 col-md-12 col-lg-12">\
+			<button id="mqs5op3" class="form-control btn btn-large btn-Default" onclick="question5(3)">\
+			<span>Stress/Worry</span>\
+			</button>\
+			</div>\
+			</div>\
 <br />\
-<div class="hatch row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="mqs5op4" class="form-control btn btn-large btn-Default" onclick="question5(4)">\
-<span>Room Temperature</span>\
-</button>\
-</div>\
-</div>\
+			<div class="hatch row">\
+			<div class="col-xs-12 col-md-12 col-lg-12">\
+			<button id="mqs5op4" class="form-control btn btn-large btn-Default" onclick="question5(4)">\
+			<span>Room Temperature</span>\
+			</button>\
+			</div>\
+			</div>\
 <br />\
-<div class="hatch row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="mqs5op5" class="form-control btn btn-large btn-danger" onclick="question5(5)">\
-<span>None of the above</span>\
-</button>\
-</div>\
-</div>\
+			<div class="hatch row">\
+			<div class="col-xs-12 col-md-12 col-lg-12">\
+			<button id="mqs5op5" class="form-control btn btn-large btn-danger" onclick="question5(5)">\
+			<span>None of the above</span>\
+			</button>\
+			</div>\
+			</div>\
 <br />\
 \
+</div>\
 \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\

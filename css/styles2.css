@@ -109,3 +109,9 @@ input:checked + .slider:before {
 }
 
 
+.well {
+  background-color: #667788;
+  border-radius: 10px;
+  color: black;
+}
+

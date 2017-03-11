@@ -23,7 +23,7 @@ include('./includes/header.php'); // Bring in the Menus, etc
 
 
 <!-- Present questions HERE -->
-<div class="container slideRight">
+<div class="container">
 	<div class="row" id="mainRow">
 		<div class="col-md-12">
 			<div class="col-xs-1 col-md-4 col-lg-4"></div>
