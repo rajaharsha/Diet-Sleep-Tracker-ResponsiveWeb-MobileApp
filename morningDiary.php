@@ -91,16 +91,11 @@ return (i%2) ? 15 : 45;
 
 
 	<script>
-
-
-
-
 		var questionBank = [qs1, qs2, qs3, qs4, qs5];
 		var questions = new morningQuestion("", "", false, "", false, "", "0", "0", "0", "0", "0", "0"); 
 		var ctr = 0; 
 		document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
 		
-
 		function nextQuestion()
 		{
 			if(ctr < 4) 
@@ -116,7 +111,8 @@ return (i%2) ? 15 : 45;
 
 // ****************************** Question 1 Scripts **********************
 function q1script() {
-	var a = document.getElementById('stepExample1').value;
+	// if we get any minutes, we should get a YES to the first question
+	var a = document.getElementById('stepExample1').value; // May not need
 	var b = document.getElementById('stepExample2').value;
 	questions.setBedTime(a);
 	questions.setWakeTime(b);
@@ -150,10 +146,15 @@ function showPart2Q2() {
 
 
 function q2script() {
-	var a = document.getElementById('inputProblemsFallingAsleepId').value; // may not need
+	// var a = document.getElementById('inputProblemsFallingAsleepId').value; // may not need
 	var b = document.getElementById('inputMinutesToFallAsleepId').value;
-	questions.setProblemsFallingAsleep(a);
-	questions.setMinutesToFallAsleep(b);
+	if (b > 0) {
+		questions.setProblemsFallingAsleep("Yes");
+		questions.setMinutesToFallAsleep(b);
+	} else {
+		questions.setProblemsFallingAsleep("No");
+		questions.setMinutesToFallAsleep(b); // Defaults to zero
+	}
 }
 
 // ****************************** End Question 2 Scripts ******************
@@ -199,11 +200,11 @@ function q3script() {
 
 
 
-// ****************************** Question 4 Scripts **********************
+// ****************************** Question 4 Scripts **************************************
 function q4script(choice) {
-	questions.setHowDidYouFeel(choice); // Choices 1-Sleepy, 2-Somewhat Sleepy, 3-Alert
+	questions.setHowDidYouFeel(choice); // Choices 1-Sleepy, 2-Somewhat Sleepy, 3-Alert ***
 }
-// ****************************** End Question 4 Scripts ******************
+// ****************************** End Question 4 Scripts **********************************
 
 
 
@@ -212,157 +213,83 @@ function q4script(choice) {
 
 
 // ****************************** Question 5 Scripts **********************
-function question5(choice) {
-  switch (choice) {
-    case 1: // case 1, comes from first button
-      id = "mqs5op1"; // get the id
-      var background = document.getElementById(id).style.backgroundColor;
-      checkColor(background, id);
-      break;
-    case 2:
-      id = "mqs5op2";
-      var background = document.getElementById(id).style.backgroundColor;
-      checkColor(background, id);
-      break;
-    case 3:
-      id = "mqs5op3";
-      var background = document.getElementById(id).style.backgroundColor;
-      checkColor(background, id);
-      break;
-    case 4:
-      id = "mqs5op4";
-      var background = document.getElementById(id).style.backgroundColor;
-      checkColor(background, id);
-      break;
-    case 5:
-      id = "mqs5op5";
-      var background = document.getElementById(id).style.backgroundColor;
-      document.getElementById(id).value = "true";
-      clearOtherChoices();
-      break;
-    default:
-      id = "None";
-  }
+					function question5(choice) {
+					  switch (choice) {
+					    case 1: // case 1, comes from first button
+					      id = "mqs5op1"; // get the id
+					      var background = document.getElementById(id).style.backgroundColor;
+					      checkColor(background, id);
+					      break;
+					    case 2:
+					      id = "mqs5op2";
+					      var background = document.getElementById(id).style.backgroundColor;
+					      checkColor(background, id);
+					      break;
+					    case 3:
+					      id = "mqs5op3";
+					      var background = document.getElementById(id).style.backgroundColor;
+					      checkColor(background, id);
+					      break;
+					    case 4:
+					      id = "mqs5op4";
+					      var background = document.getElementById(id).style.backgroundColor;
+					      checkColor(background, id);
+					      break;
+					    case 5:
+					      id = "mqs5op5";
+					      var background = document.getElementById(id).style.backgroundColor;
+					      document.getElementById(id).value = "true";
+					      clearOtherChoices();
+					      break;
+					    default:
+					      id = "None";
+					  }
+					}
 
-}
+					function checkColor(myColor, myId) {
+					  document.getElementById("mqs5op5").value = "false"; // Ensure NOTA is Reset
+					  var id = myId;
+					  var background = myColor;
+					  if (background != "black") {
+					    document.getElementById(id).style.backgroundColor = "black";
+					    document.getElementById(id).style.color = "white";
+					    document.getElementById(id).value = "true";
+					  } else {
+					    document.getElementById(id).style.backgroundColor = "white";
+					    document.getElementById(id).style.color = "black";
+					    document.getElementById(id).value = "false";
+					  }
+					}
 
-
-
-
-
-
-
-
-
-function clearOtherChoices() {
-
-  for (i = 1; i < 5; i++) {
-    document.getElementById('mqs5op' + i).style.backgroundColor = "white";
-    document.getElementById('mqs5op' + i).style.color = "black";
-    document.getElementById('mqs5op' + i).value = "false";
-  }
-}
-
-
-function checkColor(myColor, myId) {
-  document.getElementById("mqs5op5").value = "false"; // Ensure NOTA is Reset
-  var id = myId;
-  var background = myColor;
-  if (background != "black") {
-    document.getElementById(id).style.backgroundColor = "black";
-    document.getElementById(id).style.color = "white";
-    document.getElementById(id).value = "true";
-
-
-  } else {
-    document.getElementById(id).style.backgroundColor = "white";
-    document.getElementById(id).style.color = "black";
-    document.getElementById(id).value = "false";
-
-  }
-}
-
+					function clearOtherChoices() {
+					  for (i = 1; i < 5; i++) { // Sets all four choices to false and resets UI Colors
+					    document.getElementById('mqs5op' + i).style.backgroundColor = "white";
+					    document.getElementById('mqs5op' + i).style.color = "black";
+					    document.getElementById('mqs5op' + i).value = "false";
+					  }
+					}
 
 function submitQuestion5() {
-alert("In submitQuestion5");
-  var op1 = document.getElementById("eqs5op1").value;
-  var op2 = document.getElementById("eqs5op2").value;
-  var op3 = document.getElementById("eqs5op3").value;
-  var op4 = document.getElementById("eqs5op4").value;
-  var op5 = document.getElementById("eqs5op5").value;
+  var op1 = document.getElementById("mqs5op1").value;
+  var op2 = document.getElementById("mqs5op2").value;
+  var op3 = document.getElementById("mqs5op3").value;
+  var op4 = document.getElementById("mqs5op4").value;
+  var op5 = document.getElementById("mqs5op5").value;
   op1 = (op1 != "true") ? "false" : "true"; // verfies that there IS a value
   op2 = (op2 != "true") ? "false" : "true"; // verfies that there IS a value
   op3 = (op3 != "true") ? "false" : "true"; // verfies that there IS a value
   op4 = (op4 != "true") ? "false" : "true"; // verfies that there IS a value
   op5 = (op5 != "true") ? "false" : "true"; // verfies that there IS a value
 
-
-  	questions.noise =  op1;
-	questions.light = op2;
+  	questions.noise  = op1;
+	questions.light  = op2;
 	questions.stress = op3;
-	questions.temp = op4;
-	questions.nota = op5;
+	questions.temp   = op4;
+	questions.nota   = op5;
   
 submitMorningQuestions(); // last question, No. 5, submits all the results 
-
 // ****************************** End Question 5 Scripts ******************
-
-
 }
-
-
-
-
-// // Question 5 Scripts
-// function q5script(choice) {
-// var a = document.getElementById('noiseId').checked // true/false		
-// var b = document.getElementById('lightId').checked // true/false		
-// var c = document.getElementById('worryId').checked // true/false		
-// var d = document.getElementById('tempId').checked  // true/false		
-// var e = document.getElementById('noneId').checked  // true/false
-// if (choice == "0") { 
-// 	document.getElementById('noiseId').checked = false;		
-// 	document.getElementById('lightId').checked = false;		
-// 	document.getElementById('worryId').checked = false;		
-// 	document.getElementById('tempId').checked = false;
-// 	a = false;		
-// 	b = false;		
-// 	c = false;		
-// 	d = false;		
-// 	e = true;
-// } 		
-// if (choice == "1") { 
-// document.getElementById('noneId').checked = false; // deselect Nota	
-// e = false; // set Nota to false
-// }
-// // validate data first
-// var f = a ? 1 : 0; // Ternary (conditional ) operator		
-// var g = b ? 1 : 0; // variableName = (conditional) ? value1:value2		
-// var h = c ? 1 : 0; // 1 if true, 0 if false		
-// var i = d ? 1 : 0;		
-// var j = e ? 1 : 0;	
-// var finalResult = f + g + h + i + j; // if NOT zero, then can be submitted. 
-// // only happens if the user has made a selection and pressed submit. 
-// if (choice == "2"  && finalResult != 0) {
-// // set object parameters to true and false 
-// questions.setNoise(a);
-// questions.setLight(b);
-// questions.setStress(c);
-// questions.setTemp(d);
-// questions.setNota(e);
-// submitMorningQuestions();
-// } else if (choice == "2"  && finalResult == 0){
-// 	window.alert("Please make a selection");
-// }
-// }
-
-
-
-
-
-
-
-
 
 
 
@@ -399,7 +326,6 @@ function submitMorningQuestions() {
 	mqs_answers['mq5_nota'] 				    = questions.nota;	
 
 	console.log(mqs_answers);
-	echo ("Morning Questions set");
 
 
 // Send to Database???????? the morning questions??

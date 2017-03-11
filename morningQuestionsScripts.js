@@ -158,11 +158,6 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 </div>\
 </div>\
 \
-\
-\
-\
-\
-\
 <div class="row">\
 <div class="col-xs-4"></div>\
 \
@@ -172,9 +167,6 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 \
 <div class="col-xs-4"></div>\
 </div>\
-\
-\
-\
 \
 <div id="part2" class="collapse  ">\
 \
@@ -299,7 +291,6 @@ aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">\
 4/5 Complete (success)\
 </div>\
 </div>\
-<!-- ************************************** End of Progress Bar *********** --> \ 
 \
 <div class="row">\
 <div class="col-xs-12 text-center">\
