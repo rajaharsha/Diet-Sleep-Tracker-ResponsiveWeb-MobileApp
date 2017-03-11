@@ -209,7 +209,7 @@ function q4script(choice) {
 }
 
 
-// Question 6 ******************************************
+// Question 5 ******************************************
 function question5(choice) {
   switch (choice) {
     case 1: // case 1, comes from first button
@@ -274,7 +274,7 @@ function checkColor(myColor, myId) {
 
 
 function submitQuestion5() {
-
+alert("In submitQuestion5");
   var op1 = document.getElementById("eqs5op1").value;
   var op2 = document.getElementById("eqs5op2").value;
   var op3 = document.getElementById("eqs5op3").value;
@@ -297,7 +297,7 @@ function submitQuestion5() {
   
   
 
-nextQuestion(); // Move to #7 Question, then prepare to parse to PHP. 
+
 
 // Call database functionality........ 
 
@@ -306,48 +306,48 @@ nextQuestion(); // Move to #7 Question, then prepare to parse to PHP.
 
 
 
-// Question 5 Scripts
-function q5script(choice) {
-var a = document.getElementById('noiseId').checked // true/false		
-var b = document.getElementById('lightId').checked // true/false		
-var c = document.getElementById('worryId').checked // true/false		
-var d = document.getElementById('tempId').checked  // true/false		
-var e = document.getElementById('noneId').checked  // true/false
-if (choice == "0") { 
-	document.getElementById('noiseId').checked = false;		
-	document.getElementById('lightId').checked = false;		
-	document.getElementById('worryId').checked = false;		
-	document.getElementById('tempId').checked = false;
-	a = false;		
-	b = false;		
-	c = false;		
-	d = false;		
-	e = true;
-} 		
-if (choice == "1") { 
-document.getElementById('noneId').checked = false; // deselect Nota	
-e = false; // set Nota to false
-}
-// validate data first
-var f = a ? 1 : 0; // Ternary (conditional ) operator		
-var g = b ? 1 : 0; // variableName = (conditional) ? value1:value2		
-var h = c ? 1 : 0; // 1 if true, 0 if false		
-var i = d ? 1 : 0;		
-var j = e ? 1 : 0;	
-var finalResult = f + g + h + i + j; // if NOT zero, then can be submitted. 
-// only happens if the user has made a selection and pressed submit. 
-if (choice == "2"  && finalResult != 0) {
-// set object parameters to true and false 
-questions.setNoise(a);
-questions.setLight(b);
-questions.setStress(c);
-questions.setTemp(d);
-questions.setNota(e);
-submitMorningQuestions();
-} else if (choice == "2"  && finalResult == 0){
-	window.alert("Please make a selection");
-}
-}
+// // Question 5 Scripts
+// function q5script(choice) {
+// var a = document.getElementById('noiseId').checked // true/false		
+// var b = document.getElementById('lightId').checked // true/false		
+// var c = document.getElementById('worryId').checked // true/false		
+// var d = document.getElementById('tempId').checked  // true/false		
+// var e = document.getElementById('noneId').checked  // true/false
+// if (choice == "0") { 
+// 	document.getElementById('noiseId').checked = false;		
+// 	document.getElementById('lightId').checked = false;		
+// 	document.getElementById('worryId').checked = false;		
+// 	document.getElementById('tempId').checked = false;
+// 	a = false;		
+// 	b = false;		
+// 	c = false;		
+// 	d = false;		
+// 	e = true;
+// } 		
+// if (choice == "1") { 
+// document.getElementById('noneId').checked = false; // deselect Nota	
+// e = false; // set Nota to false
+// }
+// // validate data first
+// var f = a ? 1 : 0; // Ternary (conditional ) operator		
+// var g = b ? 1 : 0; // variableName = (conditional) ? value1:value2		
+// var h = c ? 1 : 0; // 1 if true, 0 if false		
+// var i = d ? 1 : 0;		
+// var j = e ? 1 : 0;	
+// var finalResult = f + g + h + i + j; // if NOT zero, then can be submitted. 
+// // only happens if the user has made a selection and pressed submit. 
+// if (choice == "2"  && finalResult != 0) {
+// // set object parameters to true and false 
+// questions.setNoise(a);
+// questions.setLight(b);
+// questions.setStress(c);
+// questions.setTemp(d);
+// questions.setNota(e);
+// submitMorningQuestions();
+// } else if (choice == "2"  && finalResult == 0){
+// 	window.alert("Please make a selection");
+// }
+// }
 
 
 
@@ -362,7 +362,7 @@ submitMorningQuestions();
 
 
 
-
+// Globals
 
 var mqs_answers = {};
 var mng_tip_message = '';
@@ -392,6 +392,7 @@ function submitMorningQuestions() {
 	mqs_answers['mq5_nota'] 				    = questions.nota;	
 
 	console.log(mqs_answers);
+	echo ("Morning Questions set");
 
 
 // Send to Database???????? the morning questions??

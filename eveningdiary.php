@@ -279,11 +279,11 @@ function checkColor(myColor, myId) {
 
 function submitQuestion6() {
 
-  op1 = document.getElementById("eqs6op1").value;
-  op2 = document.getElementById("eqs6op2").value;
-  op3 = document.getElementById("eqs6op3").value;
-  op4 = document.getElementById("eqs6op4").value;
-  op5 = document.getElementById("eqs6op5").value;
+  var op1 = document.getElementById("eqs6op1").value;
+  var op2 = document.getElementById("eqs6op2").value;
+  var op3 = document.getElementById("eqs6op3").value;
+  var op4 = document.getElementById("eqs6op4").value;
+  var op5 = document.getElementById("eqs6op5").value;
   op1 = (op1 != "true") ? "false" : "true"; // verfies that there IS a value
   op2 = (op2 != "true") ? "false" : "true"; // verfies that there IS a value
   op3 = (op3 != "true") ? "false" : "true"; // verfies that there IS a value
