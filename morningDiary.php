@@ -8,9 +8,9 @@ include('./includes/header.php'); // Bring in the Menus, etc
 
 
 
-  
-  <!-- Jhorton Bootstrap-Datepicker REQUIRES! jQuery --> 
-  <!-- jQuery is brought in from header.php --> 
+
+<!-- Jhorton Bootstrap-Datepicker REQUIRES! jQuery --> 
+<!-- jQuery is brought in from header.php --> 
 <script src="Jhorton/jquery.timepicker.js" type="text/javascript"></script>
 <link href="Jhorton/jquery.timepicker.css"  type="text/css" rel="stylesheet" />
 <script src="Jhorton/lib/bootstrap-datepicker.js" type="text/javascript"></script>
@@ -23,13 +23,13 @@ include('./includes/header.php'); // Bring in the Menus, etc
 
 
 <!-- Present questions HERE -->
-<div class="container">
+<div class="container slideRight">
 	<div class="row" id="mainRow">
 		<div class="col-md-12">
 			<div class="col-xs-1 col-md-4 col-lg-4"></div>
 			<div class="col-xs-10 col-md-4 col-lg-4" id="question1">
 				<div class="form-group">
-					<div id="questionDisplay">
+					<div id="questionDisplay" >
 					</div>
 				</div>
 			</div>
@@ -68,23 +68,23 @@ include('./includes/header.php'); // Bring in the Menus, etc
 
 
 
-<script>
-$(function() {
-$("#stepExample1").timepicker({ "step": 10 });
-$("#stepExample2").timepicker({
-"step": function(i) {
-return (i%2) ? 15 : 45;
-}
-});
-});
-</script>
+	<script>
+		$(function() {
+			$("#stepExample1").timepicker({ "step": 10 });
+			$("#stepExample2").timepicker({
+				"step": function(i) {
+					return (i%2) ? 15 : 45;
+				}
+			});
+		});
+	</script>
 
 
 
 	<!-- Tips generation JScript and Logic -->
 	<script type="text/javascript" src="assets/Morning_Tips.json"></script>
 	<script type="text/javascript" src="assets/Standard_Tips.json"></script>
-	
+
 
 
 
@@ -95,7 +95,7 @@ return (i%2) ? 15 : 45;
 		var questions = new morningQuestion("", "", false, "", false, "", "0", "0", "0", "0", "0", "0"); 
 		var ctr = 0; 
 		document.getElementById("questionDisplay").innerHTML = questionBank[ctr];
-		
+
 		function nextQuestion()
 		{
 			if(ctr < 4) 
@@ -111,11 +111,11 @@ return (i%2) ? 15 : 45;
 
 // ****************************** Question 1 Scripts **********************
 function q1script() {
-	// if we get any minutes, we should get a YES to the first question
-	var a = document.getElementById('stepExample1').value; // May not need
-	var b = document.getElementById('stepExample2').value;
-	questions.setBedTime(a);
-	questions.setWakeTime(b);
+// if we get any minutes, we should get a YES to the first question
+var a = document.getElementById('stepExample1').value; // May not need
+var b = document.getElementById('stepExample2').value;
+questions.setBedTime(a);
+questions.setWakeTime(b);
 }
 // ****************************** End Question 1 Scripts ******************
 
@@ -146,18 +146,24 @@ function showPart2Q2() {
 
 
 function q2script() {
-	// var a = document.getElementById('inputProblemsFallingAsleepId').value; // may not need
-	var b = document.getElementById('inputMinutesToFallAsleepId').value;
-	if (b > 0) {
-		questions.setProblemsFallingAsleep("Yes");
-		questions.setMinutesToFallAsleep(b);
-	} else {
-		questions.setProblemsFallingAsleep("No");
-		questions.setMinutesToFallAsleep(b); // Defaults to zero
-	}
+// var a = document.getElementById('inputProblemsFallingAsleepId').value; // may not need
+var b = document.getElementById('inputMinutesToFallAsleepId').value;
+if (b > 0) {
+	questions.setProblemsFallingAsleep("Yes");
+	questions.setMinutesToFallAsleep(b);
+} else {
+	questions.setProblemsFallingAsleep("No");
+questions.setMinutesToFallAsleep(b); // Defaults to zero
+}
 }
 
 // ****************************** End Question 2 Scripts ******************
+
+
+
+
+
+
 
 
 
@@ -188,8 +194,8 @@ function q3script() {
 		questions.setMinutesToFallBackToSleep(b);
 	} else {
 		questions.setDidWakeDuringTheNight("No");
-		questions.setMinutesToFallBackToSleep(b); // Defaults to zero
-	}
+questions.setMinutesToFallBackToSleep(b); // Defaults to zero
+}
 }
 
 // ****************************** End Question 3 Scripts ******************
@@ -201,7 +207,7 @@ function q3script() {
 
 // ****************************** Question 4 Scripts **************************************
 function q4script(choice) {
-	questions.setHowDidYouFeel(choice); // Choices 1-Sleepy, 2-Somewhat Sleepy, 3-Alert ***
+questions.setHowDidYouFeel(choice); // Choices 1-Sleepy, 2-Somewhat Sleepy, 3-Alert ***
 }
 // ****************************** End Question 4 Scripts **********************************
 
@@ -212,88 +218,108 @@ function q4script(choice) {
 
 
 // ****************************** Question 5 Scripts **********************
-					function question5(choice) {
-					  switch (choice) {
-					    case 1: // case 1, comes from first button
-					      id = "mqs5op1"; // get the id
-					      var background = document.getElementById(id).style.backgroundColor;
-					      checkColor(background, id);
-					      break;
-					    case 2:
-					      id = "mqs5op2";
-					      var background = document.getElementById(id).style.backgroundColor;
-					      checkColor(background, id);
-					      break;
-					    case 3:
-					      id = "mqs5op3";
-					      var background = document.getElementById(id).style.backgroundColor;
-					      checkColor(background, id);
-					      break;
-					    case 4:
-					      id = "mqs5op4";
-					      var background = document.getElementById(id).style.backgroundColor;
-					      checkColor(background, id);
-					      break;
-					    case 5:
-					      id = "mqs5op5";
-					      var background = document.getElementById(id).style.backgroundColor;
-					      document.getElementById(id).value = true;
-					      clearOtherChoices();
-					      break;
-					    default:
-					      id = "None";
-					  }
-					}
+function question5(choice) {
+	switch (choice) {
+case 1: // case 1, comes from first button
+id = "mqs5op1"; // get the id
+var background = document.getElementById(id).style.backgroundColor;
+checkColor(background, id);
+break;
+case 2:
+id = "mqs5op2";
+var background = document.getElementById(id).style.backgroundColor;
+checkColor(background, id);
+break;
+case 3:
+id = "mqs5op3";
+var background = document.getElementById(id).style.backgroundColor;
+checkColor(background, id);
+break;
+case 4:
+id = "mqs5op4";
+var background = document.getElementById(id).style.backgroundColor;
+checkColor(background, id);
+break;
+case 5:
+id = "mqs5op5";
+var background = document.getElementById(id).style.backgroundColor;
+document.getElementById(id).value = true;
+clearOtherChoices();
+break;
+default:
+id = "None";
+}
+}
 
-					function checkColor(myColor, myId) {
-					  document.getElementById("mqs5op5").value = false; // Ensure NOTA is Reset
-					  var id = myId;
-					  var background = myColor;
-					  if (background != "black") {
-					    document.getElementById(id).style.backgroundColor = "black";
-					    document.getElementById(id).style.color = "white";
-					    document.getElementById(id).value = true;
-					    //document.getElementById('mqs5op5').value = false;
-					  } else {
-					    document.getElementById(id).style.backgroundColor = "white";
-					    document.getElementById(id).style.color = "black";
-					    document.getElementById(id).value = false;
-					  }
-					}
 
-					function clearOtherChoices() {
-					  for (i = 1; i < 5; i++) { // Sets all four choices to false and resets UI Colors
-					    document.getElementById('mqs5op' + i).style.backgroundColor = "white";
-					    document.getElementById('mqs5op' + i).style.color = "black";
-					    document.getElementById('mqs5op' + i).value = false;
-					  }
-					}
+// *************************************** checkColor() *****
+function checkColor(myColor, myId) {
+document.getElementById("mqs5op5").value = false; // Ensure NOTA is Reset
+var id = myId;
+var background = myColor;
+if (background != "black") {
+	document.getElementById(id).style.backgroundColor = "black";
+	document.getElementById(id).style.color = "white";
+	document.getElementById(id).value = true;
+} else {
+	document.getElementById(id).style.backgroundColor = "white";
+	document.getElementById(id).style.color = "black";
+	document.getElementById(id).value = false;
+}
+}
 
+
+// *************************************** clearOtherChoices() *****
+function clearOtherChoices() {
+for (i = 1; i < 5; i++) { // Sets all four choices to false and resets UI Colors
+	document.getElementById('mqs5op' + i).style.backgroundColor = "white";
+	document.getElementById('mqs5op' + i).style.color = "black";
+	document.getElementById('mqs5op' + i).value = false;
+}
+}
+
+
+// *************************************** submitQuestion5() *****
 function submitQuestion5() {
-  var op1 = document.getElementById("mqs5op1").value; 
-  var op2 = document.getElementById("mqs5op2").value;
-  var op3 = document.getElementById("mqs5op3").value;
-  var op4 = document.getElementById("mqs5op4").value;
-  var op5 = document.getElementById("mqs5op5").value;
+	var op1 = document.getElementById("mqs5op1").value; 
+	var op2 = document.getElementById("mqs5op2").value;
+	var op3 = document.getElementById("mqs5op3").value;
+	var op4 = document.getElementById("mqs5op4").value;
+	var op5 = document.getElementById("mqs5op5").value;
 
+	op1 = (op1 == "" ) ? false : false; 
+	op2 = (op2 == "" ) ? false : false; 
+	op3 = (op3 == "" ) ? false : false; 
+	op4 = (op4 == "" ) ? false : false; 
+	op5 = (op5 == "" ) ? false : true;
 
-  op1 = (op1 == "" ) ? false : false; 
-  op2 = (op2 == "" ) ? false : false; 
-  op3 = (op3 == "" ) ? false : false; 
-  op4 = (op4 == "" ) ? false : false; 
-  op5 = (op5 == "" ) ? false : true;
-
-
-
-  	questions.noise  = op1;
+	questions.noise  = op1;
 	questions.light  = op2;
 	questions.stress = op3;
 	questions.temp   = op4;
 	questions.nota   = op5;
-  
+
 submitMorningQuestions(); // last question, No. 5, submits all the results 
 // ****************************** End Question 5 Scripts ******************
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -318,25 +344,20 @@ function submitMorningQuestions() {
 
 	mqs_answers['mq1_bedTime'] 				    = questions.bedTime;
 	mqs_answers['mq1_wakeTime'] 			    = questions.wakeTime;
-
 	mqs_answers['mq2_problemsFallingAsleep']    = questions.problemsFallingAsleep;
 	mqs_answers['mq2_minutesToFallAsleep'] 	    = parseInt(questions.minutesToFallAsleep);
-
 	mqs_answers['mq3_didWakeDuringTheNight']    = questions.didWakeDuringTheNight;
 	mqs_answers['mq3_minutesToFallBackToSleep'] = parseInt(questions.minutesToFallBackToSleep);
-
 	mqs_answers['mq4_howDidYouFeel'] 		    = questions.howDidYouFeel;
-
 	mqs_answers['mq5_noise'] 				    = questions.noise;  
 	mqs_answers['mq5_light'] 				    = questions.light;
 	mqs_answers['mq5_stress'] 				    = questions.stress;
 	mqs_answers['mq5_temp'] 				    = questions.temp;
 	mqs_answers['mq5_nota'] 				    = questions.nota;	
 
-	console.log(mqs_answers);
 
 
-// Send to Database???????? the morning questions??
+
 
 
 
@@ -344,7 +365,7 @@ function submitMorningQuestions() {
 
 
 	if (cur_mor_day < 15) {
-		//alert (cur_mor_day);
+		alert (cur_mor_day);
 
 // Day - 1 - Morning //
 
@@ -356,43 +377,43 @@ if (cur_mor_day == 2){
 
 
 	if(questions.problemsFallingAsleep == 'on'){
-		//alert ('1');
+		alert ('1');
 
-			if(questions.problemsFallingAsleep == 'on'){
+		if(questions.problemsFallingAsleep == 'on'){
 
 
 
-		local_array = [];
-		local_array.push(Morning_Tips.Q2[0].M8);
-		local_array.push(Morning_Tips.Q2[0].M9);
+			local_array = [];
+			local_array.push(Morning_Tips.Q2[0].M8);
+			local_array.push(Morning_Tips.Q2[0].M9);
 
+
+			var randomIndex = Math.floor(Math.random() * local_array.length); 
+			var mng_tip_message = local_array[randomIndex];
+		}
+		if(questions.problemsFallingAsleep == ''){
+			alert ('2');
+			local_array = [];
+			local_array.push(Morning_Tips.Q2[0].M10);
+			local_array.push(Morning_Tips.Q2[0].M11);
+
+			var randomIndex = Math.floor(Math.random() * local_array.length); 
+			var mng_tip_message = local_array[randomIndex];				
+		}
 
 		var randomIndex = Math.floor(Math.random() * local_array.length); 
 		var mng_tip_message = local_array[randomIndex];
 	}
 	if(questions.problemsFallingAsleep == ''){
-		alert ('2');
 		local_array = [];
 		local_array.push(Morning_Tips.Q2[0].M10);
 		local_array.push(Morning_Tips.Q2[0].M11);
 
-		var randomIndex = Math.floor(Math.random() * local_array.length); 
-		var mng_tip_message = local_array[randomIndex];				
-	}
 
-					var randomIndex = Math.floor(Math.random() * local_array.length); 
-					var mng_tip_message = local_array[randomIndex];
-				}
-			if(questions.problemsFallingAsleep == ''){
-					local_array = [];
-					local_array.push(Morning_Tips.Q2[0].M10);
-					local_array.push(Morning_Tips.Q2[0].M11);
-
-
-	if(questions.problemsFallingAsleep == 'off'){
-		var mng_tip_message = Morning_Tips.Q2[0].M14;				
-	}
-}		
+		if(questions.problemsFallingAsleep == 'off'){
+			var mng_tip_message = Morning_Tips.Q2[0].M14;				
+		}
+	}		
 
 /*  Day 3 Tip 1:
 If “no” on morning question 3 then: M15 
@@ -441,177 +462,177 @@ Day 4 Tip 1: S4
 if (cur_mor_day == 4){mng_tip_message = Standard_Tips.S[0].S4;}
 
 
-		/* Skipped Day 5 because the requirement points to Eventing Tips in Morning Tips section - Need to Validate from Megg
-			    Day 5 Tip 1:
-		If “morning” in evening question 1 then: E1 or E2
-		If “afternoon” in evening question 1 then: E3
-		If “evening” in evening question 1 then: E4 or E5
-		If “no caffeine” in evening question 1 then: E6
-		If no response in evening question 1 then: E7
-		*If more than box is checked (morning and afternoon, or all three)- provide a tip for each time of day where caffeine use was reported
-		*/
+/* Skipped Day 5 because the requirement points to Eventing Tips in Morning Tips section - Need to Validate from Megg
+Day 5 Tip 1:
+If “morning” in evening question 1 then: E1 or E2
+If “afternoon” in evening question 1 then: E3
+If “evening” in evening question 1 then: E4 or E5
+If “no caffeine” in evening question 1 then: E6
+If no response in evening question 1 then: E7
+*If more than box is checked (morning and afternoon, or all three)- provide a tip for each time of day where caffeine use was reported
+*/
 
-		if (cur_mor_day == 5) {mng_tip_message = 'Have a nice day.'}
+if (cur_mor_day == 5) {mng_tip_message = 'Have a nice day.'}
 
-		/*
-		Day 6 Tip 1:
-		If “noise” on morning question 5 then: M26
-		If “light” on morning question 5 then: M27 
-		If “stress/worry” on morning question 5 then: M29 
-		If “room temperature” on morning question 5 then: M32 
-		If “none of the above” or no response on morning question 5 then: M34 or M35
-		*morning question 5 is check all that apply question, so I was thinking for every box the user checks they get a tip.  So if they check noise and light they get a tip for each.
-		*/
+/*
+Day 6 Tip 1:
+If “noise” on morning question 5 then: M26
+If “light” on morning question 5 then: M27 
+If “stress/worry” on morning question 5 then: M29 
+If “room temperature” on morning question 5 then: M32 
+If “none of the above” or no response on morning question 5 then: M34 or M35
+*morning question 5 is check all that apply question, so I was thinking for every box the user checks they get a tip.  So if they check noise and light they get a tip for each.
+*/
 
-		if (cur_mor_day == 6) {
+if (cur_mor_day == 6) {
 
-			local_array = [];
-			mng_tip_message = ''
+	local_array = [];
+	mng_tip_message = ''
 
-			if (questions.noise == true){local_array.push(Morning_Tips.Q5[0].M26);} 
-			if (questions.light == true){local_array.push(Morning_Tips.Q5[0].M27);}
-			if (questions.stress == true){local_array.push(Morning_Tips.Q5[0].M29);}
-			if (questions.temp == true){local_array.push(Morning_Tips.Q5[0].M32);}
+	if (questions.noise == true){local_array.push(Morning_Tips.Q5[0].M26);} 
+	if (questions.light == true){local_array.push(Morning_Tips.Q5[0].M27);}
+	if (questions.stress == true){local_array.push(Morning_Tips.Q5[0].M29);}
+	if (questions.temp == true){local_array.push(Morning_Tips.Q5[0].M32);}
 
-			local_array_length = local_array.length;
-			for (i=0; i<local_array_length; i++){
-				mng_tip_message += local_array[i] + "<br><br>";
+	local_array_length = local_array.length;
+	for (i=0; i<local_array_length; i++){
+		mng_tip_message += local_array[i] + "<br><br>";
 
 
-			}	
+	}	
 
-			if (questions.nota == true){
-				
-				local_array = [];
-				local_array.push(Morning_Tips.Q5[0].M34);
-				local_array.push(Morning_Tips.Q5[0].M35);
+	if (questions.nota == true){
 
-				var randomIndex = Math.floor(Math.random() * local_array.length); 
-				var mng_tip_message = local_array[randomIndex];	
-			}
-		}
+		local_array = [];
+		local_array.push(Morning_Tips.Q5[0].M34);
+		local_array.push(Morning_Tips.Q5[0].M35);
 
-		/*
-		Day 7 Tip 1: S3
-		*/
-	    if (cur_mor_day == 7){mng_tip_message = Standard_Tips.S[0].S3;}
+		var randomIndex = Math.floor(Math.random() * local_array.length); 
+		var mng_tip_message = local_array[randomIndex];	
+	}
+}
 
-		/*
-		Day 8 Tip 1:
-		If “sleepy” on morning question 4 then: M20 or M21 or M22
-		If “somewhat sleepy” on morning question 4 then: M23
-		If “alert” on morning question 4 then: M24
-		If no response on morning question 4 then: M25
-		*/
-		if (cur_mor_day == 8) {
+/*
+Day 7 Tip 1: S3
+*/
+if (cur_mor_day == 7){mng_tip_message = Standard_Tips.S[0].S3;}
 
-			if (questions.howDidYouFeel == 'Sleepy') {
+/*
+Day 8 Tip 1:
+If “sleepy” on morning question 4 then: M20 or M21 or M22
+If “somewhat sleepy” on morning question 4 then: M23
+If “alert” on morning question 4 then: M24
+If no response on morning question 4 then: M25
+*/
+if (cur_mor_day == 8) {
 
-				local_array = [];
-				local_array.push(Morning_Tips.Q4[0].M20);
-				local_array.push(Morning_Tips.Q4[0].M21);
-				local_array.push(Morning_Tips.Q4[0].M22);
+	if (questions.howDidYouFeel == 'Sleepy') {
 
-				var randomIndex = Math.floor(Math.random() * local_array.length); 
-				var mng_tip_message = local_array[randomIndex];	
-			}
+		local_array = [];
+		local_array.push(Morning_Tips.Q4[0].M20);
+		local_array.push(Morning_Tips.Q4[0].M21);
+		local_array.push(Morning_Tips.Q4[0].M22);
 
-			if (questions.howDidYouFeel == 'Somewhat Sleepy') {mng_tip_message = Standard_Tips.Q4[0].M23;}
-			if (questions.howDidYouFeel == 'Alert') {mng_tip_message = Standard_Tips.Q4[0].M24;}
-			if (questions.howDidYouFeel == '') {mng_tip_message = Standard_Tips.Q4[0].M25;}
-		} 
+		var randomIndex = Math.floor(Math.random() * local_array.length); 
+		var mng_tip_message = local_array[randomIndex];	
+	}
 
-		/*
-		Day 9 Tip 1: S5
-		*/
-	    if (cur_mor_day == 9){mng_tip_message = Standard_Tips.S[0].S5;}		
-	    /*
-	    Day 10 Tip 1:
-		If “no” on morning question 2 then: M7
-		If “yes” on morning question 2 then: M12 or M13
-		If no response on morning question 2 then: M14
-	    */
-	    if (cur_mor_day == 10){
-	    	if (questions.problemsFallingAsleep == 'no') {mng_tip_message = Standard_Tips.Q2[0].M7;}
-	    	if (questions.problemsFallingAsleep == 'yes') {
+	if (questions.howDidYouFeel == 'Somewhat Sleepy') {mng_tip_message = Standard_Tips.Q4[0].M23;}
+	if (questions.howDidYouFeel == 'Alert') {mng_tip_message = Standard_Tips.Q4[0].M24;}
+	if (questions.howDidYouFeel == '') {mng_tip_message = Standard_Tips.Q4[0].M25;}
+} 
 
-				local_array = [];
-				local_array.push(Morning_Tips.Q2[0].M12);
-				local_array.push(Morning_Tips.Q2[0].M13);
+/*
+Day 9 Tip 1: S5
+*/
+if (cur_mor_day == 9){mng_tip_message = Standard_Tips.S[0].S5;}		
+/*
+Day 10 Tip 1:
+If “no” on morning question 2 then: M7
+If “yes” on morning question 2 then: M12 or M13
+If no response on morning question 2 then: M14
+*/
+if (cur_mor_day == 10){
+	if (questions.problemsFallingAsleep == 'no') {mng_tip_message = Standard_Tips.Q2[0].M7;}
+	if (questions.problemsFallingAsleep == 'yes') {
 
-				var randomIndex = Math.floor(Math.random() * local_array.length); 
-				var mng_tip_message = local_array[randomIndex];	
-	    	}
-	    	if (questions.problemsFallingAsleep == '') {mng_tip_message = Standard_Tips.Q2[0].M14;}
-	    }
+		local_array = [];
+		local_array.push(Morning_Tips.Q2[0].M12);
+		local_array.push(Morning_Tips.Q2[0].M13);
 
-		/*
-		Day 11 Tip 1:
-		If sleep time calculated from morning question 1 is less than 7 hours then: M1 or M2
-		If sleep time calculated from morning question 1 is between 7-9 hours then: M5
-		If sleep time calculated from morning question 1 is greater than 9 hours then: M3 or M4
-		If no response on morning question 1 then: M6
-		*/
+		var randomIndex = Math.floor(Math.random() * local_array.length); 
+		var mng_tip_message = local_array[randomIndex];	
+	}
+	if (questions.problemsFallingAsleep == '') {mng_tip_message = Standard_Tips.Q2[0].M14;}
+}
 
-		function diff_minutes(dt2, dt1) 
-		 {
+/*
+Day 11 Tip 1:
+If sleep time calculated from morning question 1 is less than 7 hours then: M1 or M2
+If sleep time calculated from morning question 1 is between 7-9 hours then: M5
+If sleep time calculated from morning question 1 is greater than 9 hours then: M3 or M4
+If no response on morning question 1 then: M6
+*/
 
-		  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
-		  diff /= 60;
-		  return Math.abs(Math.round(diff));
-		  
-		 }
+function diff_minutes(dt2, dt1) 
+{
 
-		if (cur_mor_day == 11) {
+	var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+	diff /= 60;
+	return Math.abs(Math.round(diff));
 
-			var bt = new Date("January 01, 1001 " + questions.bedTime);
-			var wt = new Date("January 01, 1001 " + questions.wakeTime);
-			sleep_hrs = diff_minutes(bt,wt) / 60;
-			if (sleep_hrs > 12) {sleep_hrs = (24 - sleep_hrs);}
-			
-			if (sleep_hrs < 7) {
-				local_array = [];
-				local_array.push(Morning_Tips.Q1[0].M1);
-				local_array.push(Morning_Tips.Q1[0].M2);
+}
 
-				var randomIndex = Math.floor(Math.random() * local_array.length); 
-				var mng_tip_message = local_array[randomIndex];	
-			}
+if (cur_mor_day == 11) {
 
-			if (sleep_hrs >= 7 && sleep_hrs <= 8){mng_tip_message = Standard_Tips.Q1[0].M5;}
-			if (sleep_hrs > 9){
-				local_array = [];
-				local_array.push(Morning_Tips.Q1[0].M3);
-				local_array.push(Morning_Tips.Q1[0].M4);
+	var bt = new Date("January 01, 1001 " + questions.bedTime);
+	var wt = new Date("January 01, 1001 " + questions.wakeTime);
+	sleep_hrs = diff_minutes(bt,wt) / 60;
+	if (sleep_hrs > 12) {sleep_hrs = (24 - sleep_hrs);}
 
-				var randomIndex = Math.floor(Math.random() * local_array.length); 
-				var mng_tip_message = local_array[randomIndex];	
-			}
-		}
+	if (sleep_hrs < 7) {
+		local_array = [];
+		local_array.push(Morning_Tips.Q1[0].M1);
+		local_array.push(Morning_Tips.Q1[0].M2);
 
-		/*
-		Day 12 Tip 2: S8
-		Tip 2 is choosed because Tip 1 is pointing to Evening Questions.
-		*/
+		var randomIndex = Math.floor(Math.random() * local_array.length); 
+		var mng_tip_message = local_array[randomIndex];	
+	}
 
-		if (cur_mor_day == 12){mng_tip_message = Standard_Tips.S[0].S8;}
+	if (sleep_hrs >= 7 && sleep_hrs <= 8){mng_tip_message = Standard_Tips.Q1[0].M5;}
+	if (sleep_hrs > 9){
+		local_array = [];
+		local_array.push(Morning_Tips.Q1[0].M3);
+		local_array.push(Morning_Tips.Q1[0].M4);
 
-		/*
-		Day 13 Tip 1: S9
-		*/	
+		var randomIndex = Math.floor(Math.random() * local_array.length); 
+		var mng_tip_message = local_array[randomIndex];	
+	}
+}
 
-		if (cur_mor_day == 13){mng_tip_message = Standard_Tips.S[0].S9;}
+/*
+Day 12 Tip 2: S8
+Tip 2 is choosed because Tip 1 is pointing to Evening Questions.
+*/
 
-		/*
-		Day 14 Tip 1:
-		If at least 15 out of 28 diary entries were completed then: S11
-		If less than 15 diary entries were completed then: S12
-		*/	
-		if (cur_mor_day == 14){
+if (cur_mor_day == 12){mng_tip_message = Standard_Tips.S[0].S8;}
 
-			if (btcmp_user_log_count < 15) {mng_tip_message = Standard_Tips.S[0].S12;}
-			if (btcmp_user_log_count > 15) {mng_tip_message = Standard_Tips.S[0].S11;}
-		}
+/*
+Day 13 Tip 1: S9
+*/	
+
+if (cur_mor_day == 13){mng_tip_message = Standard_Tips.S[0].S9;}
+
+/*
+Day 14 Tip 1:
+If at least 15 out of 28 diary entries were completed then: S11
+If less than 15 diary entries were completed then: S12
+*/	
+if (cur_mor_day == 14){
+
+	if (btcmp_user_log_count < 15) {mng_tip_message = Standard_Tips.S[0].S12;}
+	if (btcmp_user_log_count > 15) {mng_tip_message = Standard_Tips.S[0].S11;}
+}
 
 };
 
