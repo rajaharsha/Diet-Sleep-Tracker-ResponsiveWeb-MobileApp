@@ -128,7 +128,6 @@ function getCaffeineResults() { // collect selected data
 
 
 function updateCoffee(timeOfDay, plusMinus) {
-
    value = document.getElementById(timeOfDay).innerHTML; 
    counter = value;                 
           
@@ -141,12 +140,9 @@ function updateCoffee(timeOfDay, plusMinus) {
             document.getElementById(timeOfDay).innerHTML = counter.toString(); 
           }
 
-
   eqs_answers['eq1_Morning'] = document.getElementById('eq1a').value;
   eqs_answers['eq1_Afternoon'] = document.getElementById('eq1b').value;
   eqs_answers['eq1_Evening'] = document.getElementById('eq1c').value;
-
-
 }
 
 
@@ -324,11 +320,6 @@ eqs_answers['eq7_TimeOfDay'] = choice;
 // Question 7 ******************************************
 
 
-
-
-
-
-
 var evg_tip_message = '';
 var cur_evg_day = '';
 var btcmp_log_day_val = '';
@@ -354,7 +345,10 @@ function evg_ans_submit() {
 
 // Day 1 Tip 2: S2 //
 
-      if (cur_evg_day == 1){evg_tip_message = Standard_Tips.S[0].S2;}
+      if (cur_evg_day == 1){
+                              tip_code = 'S2';
+                              evg_tip_message = Standard_Tips.S[0].S2;
+      }
 
  /*
 Day 2 Tip 2:
@@ -368,30 +362,45 @@ If no response on evening question 6 then: E37 or E38
 evening question 6 is check all that apply question, so I was thinking for every box the user checks that get a tip.  So if they check phone and tv they get a tip for each.
 */
       if (cur_evg_day == 2){
+
         if (eqs_answers['eq6_Phone'] == true){
-          local_array = [];
-          local_array.push(Evening_Tips.Q6[0].E32);
-          local_array.push(Evening_Tips.Q6[0].E33);
-          var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];
+                                                local_array = ['E32','E33'];
+                                                var randomIndex = Math.floor(Math.random() * local_array.length);
+                                                tip_code = local_array[randomIndex];
+                                                if (tip_code == 'E32') {var evg_tip_message = Evening_Tips.Q6[0].E32;};
+                                                if (tip_code == 'E33') {var evg_tip_message = Evening_Tips.Q6[0].E33;};
           }
-        if (eqs_answers['eq6_ReadHomework'] == true){evg_tip_message = Evening_Tips.Q6[0].E34;}
-        if (eqs_answers['eq6_WatchTV'] == true){evg_tip_message = Evening_Tips.Q6[0].E35;}
-        if (eqs_answers['eq6_PlayVideoGames'] == true){evg_tip_message = Evening_Tips.Q6[0].E36;}
+
+        if (eqs_answers['eq6_ReadHomework'] == true){
+                                                      tip_code = 'E34';
+                                                      evg_tip_message = Evening_Tips.Q6[0].E34;
+        }
+        
+        if (eqs_answers['eq6_WatchTV'] == true){
+                                                  tip_code = 'E35';  
+                                                  evg_tip_message = Evening_Tips.Q6[0].E35;
+        }
+        
+        if (eqs_answers['eq6_PlayVideoGames'] == true){
+                                                        tip_code = 'E36';
+                                                        evg_tip_message = Evening_Tips.Q6[0].E36;
+        }
+
         if (eqs_answers['eq6_None'] == true){
-          local_array = [];
-          local_array.push(Evening_Tips.Q6[0].E37);
-          local_array.push(Evening_Tips.Q6[0].E38);
-          var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];          
-          }
+                                              local_array = ['E37','E38'];
+                                              var randomIndex = Math.floor(Math.random() * local_array.length);
+                                              tip_code = local_array[randomIndex];
+                                              if (tip_code == 'E37') {var evg_tip_message = Evening_Tips.Q6[0].E37;};
+                                              if (tip_code == 'E38') {var evg_tip_message = Evening_Tips.Q6[0].E38;};
+        }
+
         if (eqs_answers['eq6_None'] == ''){
-          local_array = [];
-          local_array.push(Evening_Tips.Q6[0].E37);
-          local_array.push(Evening_Tips.Q6[0].E38);
-          var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];          
-          }          
+                                            local_array = ['E37','E38'];
+                                            var randomIndex = Math.floor(Math.random() * local_array.length);
+                                            tip_code = local_array[randomIndex];
+                                            if (tip_code == 'E37') {var evg_tip_message = Evening_Tips.Q6[0].E37;};
+                                            if (tip_code == 'E38') {var evg_tip_message = Evening_Tips.Q6[0].E38;};       
+        }          
       }
 
 
@@ -412,8 +421,8 @@ Day 3 Tip 2: E28 or E30
           local_array = ['E28','E30'];
           var randomIndex = Math.floor(Math.random() * local_array.length);
           tip_code = local_array[randomIndex];
-          if (tip_code = 'E28'){var evg_tip_message = Evening_Tips.Q5[0].E28;};
-          if (tip_code = 'E30'){var evg_tip_message = Evening_Tips.Q5[0].E30;};
+          if (tip_code == 'E28'){var evg_tip_message = Evening_Tips.Q5[0].E28;};
+          if (tip_code == 'E30'){var evg_tip_message = Evening_Tips.Q5[0].E30;};
       }
 
 /*
@@ -434,8 +443,16 @@ If “yes” on evening question 4 then: E25
 */
 
       if (cur_evg_day == 5){
-        if (eqs_answers['eq4_Nap'] == 'No'){var evg_tip_message = Evening_Tips.Q4[0].E23}
-        if (eqs_answers['eq4_Nap'] == 'Yes'){var evg_tip_message = Evening_Tips.Q4[0].E25}
+
+        if (eqs_answers['eq4_Nap'] == 'No'){
+                                              tip_code = 'E23';
+                                              var evg_tip_message = Evening_Tips.Q4[0].E23;
+                                           }
+
+        if (eqs_answers['eq4_Nap'] == 'Yes'){
+                                              tip_code = 'E25';
+                                              var evg_tip_message = Evening_Tips.Q4[0].E25
+                                            };
       }
 
 /*
@@ -445,22 +462,24 @@ If “no” on evening question 3 then: E20 or E21
 */
 
       if (cur_evg_day == 6){
+        
         if (eqs_answers['eq3_Alcohol'] == 'Yes'){
-          local_array = [];
-          local_array.push(Evening_Tips.Q3[0].E15);
-          local_array.push(Evening_Tips.Q3[0].E16);
-          local_array.push(Evening_Tips.Q3[0].E17);
-          local_array.push(Evening_Tips.Q3[0].E18);
-          local_array.push(Evening_Tips.Q3[0].E19);
+          local_array = ['E15','E16','E17','E18','E19'];
           var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];           
+          tip_code = local_array[randomIndex];
+          if (tip_code == 'E15'){var evg_tip_message = Evening_Tips.Q3[0].E15;};           
+          if (tip_code == 'E16'){var evg_tip_message = Evening_Tips.Q3[0].E16;};
+          if (tip_code == 'E17'){var evg_tip_message = Evening_Tips.Q3[0].E17;};
+          if (tip_code == 'E18'){var evg_tip_message = Evening_Tips.Q3[0].E18;};
+          if (tip_code == 'E19'){var evg_tip_message = Evening_Tips.Q3[0].E19;};
         }
+
         if (eqs_answers['eq3_Alcohol'] == 'No'){
-          local_array = [];
-          local_array.push(Evening_Tips.Q3[0].E20);
-          local_array.push(Evening_Tips.Q3[0].E21);
+          local_array = ['E20','E21'];
           var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];           
+          tip_code = local_array[randomIndex];
+          if (tip_code == 'E20'){var evg_tip_message = Evening_Tips.Q3[0].E20;};
+          if (tip_code == 'E21'){var evg_tip_message =  Evening_Tips.Q3[0].E21;};          
         }
       }
 
@@ -472,21 +491,26 @@ If “afternoon” on evening question 7 then: E40
 If “evening” on evening question 7 then: E41 or E42
 */
       if (cur_evg_day == 7){
-        if (eqs_answers['eq7_TimeOfDay'] == 'Morning') {var evg_tip_message = Evening_Tips.Q7[0].E39}
-        if (eqs_answers['eq7_TimeOfDay'] == 'Afternoon') {var evg_tip_message = Evening_Tips.Q7[0].E40} 
+        if (eqs_answers['eq7_TimeOfDay'] == 'Morning') {
+                                                         tip_code = 'E39'; 
+                                                         var evg_tip_message = Evening_Tips.Q7[0].E39;}
+        if (eqs_answers['eq7_TimeOfDay'] == 'Afternoon') {
+                                                           tip_code = 'E40';
+                                                           var evg_tip_message = Evening_Tips.Q7[0].E40;} 
         if (eqs_answers['eq7_TimeOfDay'] == 'Evening') {
-          local_array = [];
-          local_array.push(Evening_Tips.Q7[0].E41);
-          local_array.push(Evening_Tips.Q7[0].E42);
+          local_array = ['E41','E42'];          
           var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];           
-        }
+          tip_code = local_array[randomIndex];
+          if (tip_code == 'E41'){var evg_tip_message = Evening_Tips.Q7[0].E41;};
+          if (tip_code == 'E42'){var evg_tip_message = Evening_Tips.Q7[0].E42;};}
         }
 
 /*
 Day 8 Tip 2: S10
 */
-      if (cur_evg_day == 8){evg_tip_message = Standard_Tips.S[0].S10;}
+      if (cur_evg_day == 8){  
+                              tip_code = 'S10';
+                              evg_tip_message = Standard_Tips.S[0].S10;}
 
 /*  PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING 
 
@@ -504,7 +528,8 @@ If “none of the above” or no response on morning question 5 then: M34 or M35
 
 
 /* Day 10 Tip 2: S7 */
-      if (cur_evg_day == 10){evg_tip_message = Standard_Tips.S[0].S7;}
+      if (cur_evg_day == 10){ tip_code = 'S7';
+                              evg_tip_message = Standard_Tips.S[0].S7;}
 
 /*
 
@@ -529,43 +554,51 @@ If “none” on evening question 6 then: E37 or E38
 
       if (cur_evg_day == 12){
         if (eqs_answers['eq6_Phone'] = true){
-          local_array = [];
-          local_array.push(Evening_Tips.Q6[0].E32);
-          local_array.push(Evening_Tips.Q6[0].E33);
+          local_array = ['E32','E33'];
           var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];               
+          var tip_code = local_array[randomIndex];               
+          if (tip_code == 'E32'){var evg_tip_message = Evening_Tips.Q6[0].E32;};
+          if (tip_code == 'E33'){var evg_tip_message = Evening_Tips.Q6[0].E33;};
         }
+
         if (eqs_answers['eq6_ReadHomework'] = true){
+          tip_code = 'E34';
           var evg_tip_message = Evening_Tips.Q6[0].E34;
         }
+
         if (eqs_answers['eq6_WatchTV'] = true){
+          tip_code = 'E35';
           var evg_tip_message = Evening_Tips.Q6[0].E35;            
         }
+
         if (eqs_answers['eq6_PlayVideoGames'] = true){
+          tip_code = 'E36';
           var evg_tip_message = Evening_Tips.Q6[0].E36;            
         }
+
         if (eqs_answers['eq6_None'] = true){
-          local_array = [];
-          local_array.push(Evening_Tips.Q6[0].E37);
-          local_array.push(Evening_Tips.Q6[0].E38);
+          local_array = ['E37','E38'];
           var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];                      
+          var tip_code = local_array[randomIndex];
+          if (tip_code == 'E37') {var evg_tip_message = Evening_Tips.Q6[0].E37;};                     
+          if (tip_code == 'E38') {var evg_tip_message = Evening_Tips.Q6[0].E38;};
         }
       }
 
 /* Day 13 Tip 2: E29 or E31 */
 
       if (cur_evg_day == 13){
-          local_array = [];
-          local_array.push(Evening_Tips.Q5[0].E29);
-          local_array.push(Evening_Tips.Q5[0].E31);
+          local_array = ['E29','E31'];
           var randomIndex = Math.floor(Math.random() * local_array.length);
-          var evg_tip_message = local_array[randomIndex];           
+          var tip_code = local_array[randomIndex];
+          if (tip_code == 'E29'){var evg_tip_message = Evening_Tips.Q5[0].E29;};
+          if (tip_code == 'E31'){var evg_tip_message = Evening_Tips.Q5[0].E31;};
       }
 
 /* Day 14 Tip 2: S13* */
 
-      if (cur_evg_day == 14){evg_tip_message = Standard_Tips.S[0].S13;}
+      if (cur_evg_day == 14){tip_code = 'S13';
+                             evg_tip_message = Standard_Tips.S[0].S13;}
 
 }
 
@@ -588,41 +621,6 @@ eqs_answers['tip_code'] = tip_code;
 
 };
 
-
-
-
-
 </script>
 
-
-
-
 <?php require_once("./includes/footer.php"); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-// $(document).ready(function(){
-
-//  $("#coach_z_reg").click(function(){
-//    var reg_form = document.getElementById("newuser");
-//    user_reg['username'] = form_value[0],value;
-//    alert(user_reg['username']);
-//  });
-
-
-
-
-
-
-

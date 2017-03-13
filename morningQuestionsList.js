@@ -27,12 +27,6 @@ function nextQuestion()
 
 
 
-
-
-
-
-
-
 function q1script() {
 	a = document.getElementById('inputBedTimeId').value;
 	b = document.getElementById('inputWakeTimeId').value;
