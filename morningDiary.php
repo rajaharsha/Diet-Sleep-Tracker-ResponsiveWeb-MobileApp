@@ -20,6 +20,8 @@ include('./includes/header.php'); // Bring in the Menus, etc
 <!-- *********************************** end date-picker dependencies *** -->
 
 
+
+
 <!-- Present questions HERE -->
 <div class="container">
 	<div class="row" id="mainRow">
@@ -40,6 +42,30 @@ include('./includes/header.php'); // Bring in the Menus, etc
 	<!-- Brings in the Obect and Questions --> 
 	<script src="morningQuestionsScripts.js" type="text/javascript"></script>
 	<!-- Object and Question Vars are now accessible -->
+
+
+
+
+	<!-- Tip generation DIV elements -->
+
+	<div class="modal fade" id="morning_tip" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title" >Here is your Morning Tip</h4>
+				</div>
+				<div class="modal-body" id="push_morning_tip">
+					<p></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
 
 	<script>
@@ -327,6 +353,29 @@ setValues();
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Globals
 
 var mqs_answers = {};
@@ -336,12 +385,9 @@ var btcmp_log_day_val = '';
 
 var btcmp_log_day_val = parseInt('<?php echo $btcmp_log_day_val;?>');
 var cur_mor_day = btcmp_log_day_val + 1;
-mqs_answers['cur_mor_day'] = cur_mor_day;
 
 var btcmp_user_log_count = '';
 var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');
-
-var tip_code = '';
 
 
 
@@ -380,7 +426,6 @@ function setValues() {
 	console.log(mqs_answers['mq5_temp']);
 	console.log(mqs_answers['mq5_nota']);
 
-<<<<<<< HEAD
 
 submitMorningQuestions(); 
 
@@ -391,38 +436,41 @@ function submitMorningQuestions() {
 
 
 
-=======
->>>>>>> 51cc21ba54b9223d55f844d48361fd649d653b51
 	if (cur_mor_day < 15) {
 		alert (cur_mor_day);
 
 // Day - 1 - Morning //
 
-if (cur_mor_day == 1){
-					  tip_code='S1';
-					  mng_tip_message = Standard_Tips.S[0].S1;}
+if (cur_mor_day == 1){mng_tip_message = Standard_Tips.S[0].S1;}
 
 // Day - 2 - Morning //
-///PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDINGPENDING/
-// Check the below logic once
 
 if (cur_mor_day == 2){ 
 
 
 	if(questions.problemsFallingAsleep == 'on'){
+		alert ('1');
+
 		if(questions.problemsFallingAsleep == 'on'){
-			local_array = ['M8','M9'];
+
+
+
+			local_array = [];
+			local_array.push(Morning_Tips.Q2[0].M8);
+			local_array.push(Morning_Tips.Q2[0].M9);
+
+
 			var randomIndex = Math.floor(Math.random() * local_array.length); 
-			var tip_code = local_array[randomIndex];
-			if (tip_code == 'M8') {mng_tip_message = Morning_Tips.Q2[0].M8};
-			if (tip_code == 'M9') {mng_tip_message = Morning_Tips.Q2[0].M9};
+			var mng_tip_message = local_array[randomIndex];
 		}
 		if(questions.problemsFallingAsleep == ''){
-			local_array = ['M10','M11'];
+			alert ('2');
+			local_array = [];
+			local_array.push(Morning_Tips.Q2[0].M10);
+			local_array.push(Morning_Tips.Q2[0].M11);
+
 			var randomIndex = Math.floor(Math.random() * local_array.length); 
-			var tip_code = local_array[randomIndex];
-			if (tip_code == 'M10') {mng_tip_message = Morning_Tips.Q2[0].M10};
-			if (tip_code == 'M11') {mng_tip_message = Morning_Tips.Q2[0].M11};		
+			var mng_tip_message = local_array[randomIndex];				
 		}
 
 		var randomIndex = Math.floor(Math.random() * local_array.length); 
@@ -439,8 +487,6 @@ if (cur_mor_day == 2){
 		}
 	}		
 
-
-// PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING 
 /*  Day 3 Tip 1:
 If “no” on morning question 3 then: M15 
 If “yes” and <15 mins awake on morning question 3 then: M16 
@@ -451,34 +497,32 @@ If no response on morning question 3 then: M19
 if (cur_mor_day == 3){
 
 	if (questions.didWakeDuringTheNight == ''){
-		tip_code = 'M15';
 		var mng_tip_message = Morning_Tips.Q3[0].M15;
 	}
 
 	if (questions.didWakeDuringTheNight == 'on'){
 
 		if (parseInt(questions.minutesToFallBackToSleep) <= 15){
-			tip_code = 'M15';
+
 			var mng_tip_message = Morning_Tips.Q3[0].M15;
 		}
 		if (parseInt(questions.minutesToFallBackToSleep) > 16){
 
 
-			local_array = ['M17','M18'];
-			var randomIndex = Math.floor(Math.random() * local_array.length); 
-			var tip_code = local_array[randomIndex];
-			if (tip_code == 'M17') {mng_tip_message = Morning_Tips.Q3[0].M17};
-			if (tip_code == 'M18') {mng_tip_message = Morning_Tips.Q3[0].M18};
+			local_array = [];
+			local_array.push(Morning_Tips.Q3[0].M17);
+			local_array.push(Morning_Tips.Q3[0].M18);
 
+			var randomIndex = Math.floor(Math.random() * local_array.length); 
+			var mng_tip_message = local_array[randomIndex];	
 		}
 		if  (questions.minutesToFallBackToSleep == ''){
-			tip_code = 'M19';
+
 			var mng_tip_message = Morning_Tips.Q3[0].M19;
 		}				
 	}
 
 	if (questions.didWakeDuringTheNight == 'off'){
-		tip_code = 'M15';
 		var mng_tip_message = Morning_Tips.Q3[0].M15;
 	}
 }
@@ -487,12 +531,8 @@ if (cur_mor_day == 3){
 Day 4 Tip 1: S4	
 */
 
-if (cur_mor_day == 4){
-					  tip_code = 'S4'; 
-					  mng_tip_message = Standard_Tips.S[0].S4;
-					 }
+if (cur_mor_day == 4){mng_tip_message = Standard_Tips.S[0].S4;}
 
-// PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING PENDING
 
 /* Skipped Day 5 because the requirement points to Eventing Tips in Morning Tips section - Need to Validate from Megg
 Day 5 Tip 1:
@@ -519,14 +559,12 @@ If “none of the above” or no response on morning question 5 then: M34 or M35
 if (cur_mor_day == 6) {
 
 	local_array = [];
-	mng_tip_message = '';
-	tip_code = '';
+	mng_tip_message = ''
 
-	if (questions.noise == true){tip_code = 'M26 '; local_array.push(Morning_Tips.Q5[0].M26);} 
-	if (questions.light == true){tip_code = 'M27 '; local_array.push(Morning_Tips.Q5[0].M27);}
-	if (questions.stress == true){tip_code = 'M29 '; local_array.push(Morning_Tips.Q5[0].M29);}
-	if (questions.temp == true){tip_code = 'M32'; local_array.push(Morning_Tips.Q5[0].M32);}
-
+	if (questions.noise == true){local_array.push(Morning_Tips.Q5[0].M26);} 
+	if (questions.light == true){local_array.push(Morning_Tips.Q5[0].M27);}
+	if (questions.stress == true){local_array.push(Morning_Tips.Q5[0].M29);}
+	if (questions.temp == true){local_array.push(Morning_Tips.Q5[0].M32);}
 
 	local_array_length = local_array.length;
 	for (i=0; i<local_array_length; i++){
@@ -537,18 +575,19 @@ if (cur_mor_day == 6) {
 
 	if (questions.nota == true){
 
-		local_array = ['M34','M35'];
+		local_array = [];
+		local_array.push(Morning_Tips.Q5[0].M34);
+		local_array.push(Morning_Tips.Q5[0].M35);
+
 		var randomIndex = Math.floor(Math.random() * local_array.length); 
-		tip_code = local_array[randomIndex];	
-		if (tip_code == 'M34') {mng_tip_message = Morning_Tips.Q5[0].M34};
-		if (tip_code == 'M35') {mng_tip_message = Morning_Tips.Q5[0].M35};
+		var mng_tip_message = local_array[randomIndex];	
 	}
 }
 
 /*
 Day 7 Tip 1: S3
 */
-if (cur_mor_day == 7){tip_code = 'S3'; mng_tip_message = Standard_Tips.S[0].S3;}
+if (cur_mor_day == 7){mng_tip_message = Standard_Tips.S[0].S3;}
 
 /*
 Day 8 Tip 1:
@@ -561,24 +600,24 @@ if (cur_mor_day == 8) {
 
 	if (questions.howDidYouFeel == 'Sleepy') {
 
-		local_array = ['M20','M21','M22'];
-		var randomIndex = Math.floor(Math.random() * local_array.length); 
-		tip_code = local_array[randomIndex];
-		if (tip_code == 'M20') {mng_tip_message = Morning_Tips.Q4[0].M20};
-		if (tip_code == 'M21') {mng_tip_message = Morning_Tips.Q4[0].M21};
-		if (tip_code == 'M22') {mng_tip_message = Morning_Tips.Q4[0].M22};
+		local_array = [];
+		local_array.push(Morning_Tips.Q4[0].M20);
+		local_array.push(Morning_Tips.Q4[0].M21);
+		local_array.push(Morning_Tips.Q4[0].M22);
 
+		var randomIndex = Math.floor(Math.random() * local_array.length); 
+		var mng_tip_message = local_array[randomIndex];	
 	}
 
-	if (questions.howDidYouFeel == 'Somewhat Sleepy') {tip_code = 'M23'; mng_tip_message = Standard_Tips.Q4[0].M23;}
-	if (questions.howDidYouFeel == 'Alert') {tip_code = 'M24'; mng_tip_message = Standard_Tips.Q4[0].M24;}
-	if (questions.howDidYouFeel == '') {tip_code = 'M25'; mng_tip_message = Standard_Tips.Q4[0].M25;}
+	if (questions.howDidYouFeel == 'Somewhat Sleepy') {mng_tip_message = Standard_Tips.Q4[0].M23;}
+	if (questions.howDidYouFeel == 'Alert') {mng_tip_message = Standard_Tips.Q4[0].M24;}
+	if (questions.howDidYouFeel == '') {mng_tip_message = Standard_Tips.Q4[0].M25;}
 } 
 
 /*
 Day 9 Tip 1: S5
 */
-if (cur_mor_day == 9){tip_code = 'S5'; mng_tip_message = Standard_Tips.S[0].S5;}		
+if (cur_mor_day == 9){mng_tip_message = Standard_Tips.S[0].S5;}		
 /*
 Day 10 Tip 1:
 If “no” on morning question 2 then: M7
@@ -589,13 +628,14 @@ if (cur_mor_day == 10){
 	if (questions.problemsFallingAsleep == 'no') {mng_tip_message = Standard_Tips.Q2[0].M7;}
 	if (questions.problemsFallingAsleep == 'yes') {
 
-		local_array = ['M12','M13'];
+		local_array = [];
+		local_array.push(Morning_Tips.Q2[0].M12);
+		local_array.push(Morning_Tips.Q2[0].M13);
+
 		var randomIndex = Math.floor(Math.random() * local_array.length); 
-		tip_code = local_array[randomIndex];
-		if (tip_code == 'M12') {mng_tip_message = Morning_Tips.Q2[0].M12};
-		if (tip_code == 'M13') {mng_tip_message = Morning_Tips.Q2[0].M13};
+		var mng_tip_message = local_array[randomIndex];	
 	}
-	if (questions.problemsFallingAsleep == '') {tip_code =  'M14'; mng_tip_message = Standard_Tips.Q2[0].M14;}
+	if (questions.problemsFallingAsleep == '') {mng_tip_message = Standard_Tips.Q2[0].M14;}
 }
 
 /*
@@ -623,21 +663,22 @@ if (cur_mor_day == 11) {
 	if (sleep_hrs > 12) {sleep_hrs = (24 - sleep_hrs);}
 
 	if (sleep_hrs < 7) {
-		local_array = ['M1','M2'];
+		local_array = [];
+		local_array.push(Morning_Tips.Q1[0].M1);
+		local_array.push(Morning_Tips.Q1[0].M2);
+
 		var randomIndex = Math.floor(Math.random() * local_array.length); 
-		var tip_code = local_array[randomIndex];
-		if (tip_code == 'M1') {mng_tip_message = Morning_Tips.Q[0].M1};
-		if (tip_code == 'M2') {mng_tip_message = Morning_Tips.Q[0].M2};
+		var mng_tip_message = local_array[randomIndex];	
 	}
 
-	if (sleep_hrs >= 7 && sleep_hrs <= 8){tip_code = 'M5'; mng_tip_message = Standard_Tips.Q1[0].M5;}
-
+	if (sleep_hrs >= 7 && sleep_hrs <= 8){mng_tip_message = Standard_Tips.Q1[0].M5;}
 	if (sleep_hrs > 9){
-		local_array = ['M3','M4'];
+		local_array = [];
+		local_array.push(Morning_Tips.Q1[0].M3);
+		local_array.push(Morning_Tips.Q1[0].M4);
+
 		var randomIndex = Math.floor(Math.random() * local_array.length); 
-		tip_code = local_array[randomIndex];	
-		if (tip_code == 'M3') {mng_tip_message = Morning_Tips.Q[0].M3};
-		if (tip_code == 'M4') {mng_tip_message = Morning_Tips.Q[0].M4};
+		var mng_tip_message = local_array[randomIndex];	
 	}
 }
 
@@ -646,13 +687,13 @@ Day 12 Tip 2: S8
 Tip 2 is choosed because Tip 1 is pointing to Evening Questions.
 */
 
-if (cur_mor_day == 12){tip_code = 'S8'; mng_tip_message = Standard_Tips.S[0].S8;}
+if (cur_mor_day == 12){mng_tip_message = Standard_Tips.S[0].S8;}
 
 /*
 Day 13 Tip 1: S9
 */	
 
-if (cur_mor_day == 13){tip_code = 'S9'; mng_tip_message = Standard_Tips.S[0].S9;}
+if (cur_mor_day == 13){mng_tip_message = Standard_Tips.S[0].S9;}
 
 /*
 Day 14 Tip 1:
@@ -661,14 +702,13 @@ If less than 15 diary entries were completed then: S12
 */	
 if (cur_mor_day == 14){
 
-	if (btcmp_user_log_count < 15) {tip_code = 'S12'; mng_tip_message = Standard_Tips.S[0].S12;}
-	if (btcmp_user_log_count > 15) {tip_code = 'S11'; mng_tip_message = Standard_Tips.S[0].S11;}
+	if (btcmp_user_log_count < 15) {mng_tip_message = Standard_Tips.S[0].S12;}
+	if (btcmp_user_log_count > 15) {mng_tip_message = Standard_Tips.S[0].S11;}
 }
 
 };
 
 
-mqs_answers['tip_code'] = tip_code;
 
 $.ajax({
 	url: 'post_mng_answers.php',
