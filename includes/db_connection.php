@@ -2,7 +2,7 @@
 
 	define("DB_SERVER", "localhost");
 	define("DB_USER", "root");
-	define("DB_PASS", "root");
+	define("DB_PASS", "");
 	define("DB_NAME", "coach_z");
 
   // 1. Create a database connection
@@ -15,3 +15,4 @@
   }
 
 ?>
+

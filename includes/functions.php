@@ -96,14 +96,16 @@ $uid,                         -- 14
 error_log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n".$query."\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",3,"C:/xampp/apache/logs/error.log");
 
 $result_id = mysqli_query($connection, $query);
+
 $query_2 = "INSERT cz_usr_bootcamp_log (UID, LOG_DAY, LOG_TYPE, LOG_TIME) VALUES ($uid, $cur_evg_day, 'E', NOW())";
 $result_id2 = mysqli_query($connection, $query_2);
-//confirm_query($result_id);
+
 
 if($result_id && $result_id2) {
 $_SESSION["message"] = "Response Posted";
 return true;
-} else {
+} 
+else {
 $_SESSION["message"] = "Database Error";
 return false;
 }
@@ -122,7 +124,10 @@ $mq5_noise,
 $mq5_light,
 $mq5_stress,
 $mq5_temp,
-$mq5_nota) 
+$mq5_nota,
+$uid,                          
+$cur_mor_day,                  
+$tip_code) 
 {
 global $connection;
 $query  = "INSERT INTO 
@@ -138,7 +143,9 @@ mq5_noise,
 mq5_light,
 mq5_stress,
 mq5_temp,
-mq5_nota	
+mq5_nota,
+uid,
+tip_code
 ) VALUES 
 (
 '$mq1_bedTime',
@@ -152,17 +159,22 @@ mq5_nota
 '$mq5_light',
 '$mq5_stress',
 '$mq5_temp',
-'$mq5_nota'	
+'$mq5_nota',
+$uid,
+'$tip_code'	
 )";
 $result_id = mysqli_query($connection, $query);
 //error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
 // confirm_query($result_id);
 
+$query_2 = "INSERT cz_usr_bootcamp_log (UID, LOG_DAY, LOG_TYPE, LOG_TIME) VALUES ($uid, $cur_mor_day, 'M', NOW())";
+$result_id2 = mysqli_query($connection, $query_2);
 
-if($result_id) {
+if($result_id && $result_id2) {
 $_SESSION["message"] = "Response Posted";
 return true;
-} else {
+} 
+else {
 $_SESSION["message"] = "Database Error";
 return false;
 }

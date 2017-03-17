@@ -394,13 +394,33 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 \
 </div>\
 \
+	<div class="modal fade" id="morning_tip" role="dialog">\
+		<div class="modal-dialog">\
+			<div class="modal-content">\
+				<div class="modal-header">\
+					<button type="button" class="close" data-dismiss="modal">&times;</button>\
+					<h4 class="modal-title" >Here is your Morning Tip</h4>\
+				</div>\
+				<div class="modal-body" id="push_morning_tip">\
+					<p></p>\
+				</div>\
+				<div class="modal-footer">\
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\
+				</div>\
+			</div>\
+		</div>\
+	</div>\
+	\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="hatch form-control btn btn-large btn-success" type="submit" onclick="submitQuestion5()">\
+<div class="questionButtonDiv">\
+<button class="hatch form-control btn btn-large btn-success" id="mqs_submit" type="submit" onclick="submitQuestion5()" data-toggle="modal" data-target="#morning_tip">\
 <span>Submit Diary!</span>\
 </button>\
 </div>\
 </div>\
+</div>\
+<br>\
 \
 ';
 

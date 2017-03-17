@@ -17,6 +17,9 @@ $obj = $_POST['post_mng_answers'];
           $mq5_stress = $obj['mq5_stress'];
           $mq5_temp = $obj['mq5_temp'];
           $mq5_nota = $obj['mq5_nota'];
+          $uid = $obj["uid"];                               
+          $cur_mor_day = $obj["cur_mor_day"];                    
+          $tip_code = $obj["tip_code"];                          
 
           insert_mng_answer(
           $mq1_bedTime,
@@ -30,6 +33,10 @@ $obj = $_POST['post_mng_answers'];
           $mq5_light,
           $mq5_stress,
           $mq5_temp,
-          $mq5_nota);  
+          $mq5_nota,
+          $uid,                          
+          $cur_mor_day,                  
+          $tip_code
+          );  
       
     ?>
