@@ -217,13 +217,19 @@ questions.setHowDidYouFeel(choice); // Choices 1-Sleepy, 2-Somewhat Sleepy, 3-Al
 
 
 
+
+
+
+
+
+
 // ****************************** Question 5 Scripts **********************
-function question5(choice) {
+function question5(choice) { // get the choice and directs to next function
 	switch (choice) {
 case 1: // case 1, comes from first button
 id = "mqs5op1"; // get the id
-var background = document.getElementById(id).style.backgroundColor;
-checkColor(background, id);
+var background = document.getElementById(id).style.backgroundColor; // Gets current Color!!!
+checkColor(background, id); // Goes to change current color
 break;
 case 2:
 id = "mqs5op2";
@@ -243,7 +249,7 @@ break;
 case 5:
 id = "mqs5op5";
 var background = document.getElementById(id).style.backgroundColor;
-document.getElementById(id).value = true;
+checkColor(background, id);
 clearOtherChoices();
 break;
 default:
@@ -254,19 +260,51 @@ id = "None";
 
 // *************************************** checkColor() *****
 function checkColor(myColor, myId) {
-document.getElementById("mqs5op5").value = false; // Ensure NOTA is Reset
 var id = myId;
 var background = myColor;
+
 if (background != "black") {
 	document.getElementById(id).style.backgroundColor = "black";
 	document.getElementById(id).style.color = "white";
 	document.getElementById(id).value = true;
+	console.log(document.getElementById(id).value);
 } else {
 	document.getElementById(id).style.backgroundColor = "white";
 	document.getElementById(id).style.color = "black";
 	document.getElementById(id).value = false;
+	console.log(document.getElementById(id).value);
 }
+
+
+
+if (myId != "mqs5op5") {
+
+document.getElementById("mqs5op5").style.backgroundColor = "white";
+document.getElementById("mqs5op5").style.color = "black";
+document.getElementById("mqs5op5").value = false;
+
+
 }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // *************************************** clearOtherChoices() *****
@@ -279,19 +317,30 @@ for (i = 1; i < 5; i++) { // Sets all four choices to false and resets UI Colors
 }
 
 
+
+
+
+
+
+
 // *************************************** submitQuestion5() *****
-function submitQuestion5() {
+function submitQuestion5() { // When the 'Submit' button is pressed
+	console.log("Value: " + document.getElementById('mqs5op1').value);
 	var op1 = document.getElementById("mqs5op1").value; 
 	var op2 = document.getElementById("mqs5op2").value;
 	var op3 = document.getElementById("mqs5op3").value;
 	var op4 = document.getElementById("mqs5op4").value;
 	var op5 = document.getElementById("mqs5op5").value;
 
-	op1 = (op1 == "" ) ? false : false; 
-	op2 = (op2 == "" ) ? false : false; 
-	op3 = (op3 == "" ) ? false : false; 
-	op4 = (op4 == "" ) ? false : false; 
-	op5 = (op5 == "" ) ? false : true;
+  op1 = (op1 != "true") ? "false" : "true"; // verfies that there IS a value
+  op2 = (op2 != "true") ? "false" : "true"; // verfies that there IS a value
+  op3 = (op3 != "true") ? "false" : "true"; // verfies that there IS a value
+  op4 = (op4 != "true") ? "false" : "true"; // verfies that there IS a value
+  op5 = (op5 != "true") ? "false" : "true"; // verfies that there IS a value
+
+  if ((op1 == "false") && (op2 == "false") && (op3 == "false") && (op4 == "false")){
+  	op5 = "true"; // if they hit submit, without making a choice it will automatically select "none of the above"
+  }
 
 	questions.noise  = op1;
 	questions.light  = op2;
@@ -299,9 +348,10 @@ function submitQuestion5() {
 	questions.temp   = op4;
 	questions.nota   = op5;
 
-submitMorningQuestions(); // last question, No. 5, submits all the results 
+setValues();
 // ****************************** End Question 5 Scripts ******************
 }
+
 
 
 
@@ -340,7 +390,14 @@ var btcmp_user_log_count = '';
 var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');
 
 
-function submitMorningQuestions() {
+
+
+
+
+
+function setValues() {
+
+	
 
 	mqs_answers['mq1_bedTime'] 				    = questions.bedTime;
 	mqs_answers['mq1_wakeTime'] 			    = questions.wakeTime;
@@ -356,10 +413,25 @@ function submitMorningQuestions() {
 	mqs_answers['mq5_nota'] 				    = questions.nota;	
 
 
+	console.log(mqs_answers['mq1_bedTime']);
+	console.log(mqs_answers['mq1_wakeTime']);
+	console.log(mqs_answers['mq2_problemsFallingAsleep']);
+	console.log(mqs_answers['mq2_minutesToFallAsleep']);	
+	console.log(mqs_answers['mq3_didWakeDuringTheNight']);
+	console.log(mqs_answers['mq3_minutesToFallBackToSleep']);
+	console.log(mqs_answers['mq4_howDidYouFeel']);
+	console.log(mqs_answers['mq5_noise']);
+	console.log(mqs_answers['mq5_light']);
+	console.log(mqs_answers['mq5_stress']);
+	console.log(mqs_answers['mq5_temp']);
+	console.log(mqs_answers['mq5_nota']);
 
 
+submitMorningQuestions(); 
 
+}
 
+function submitMorningQuestions() {
 
 
 

@@ -266,7 +266,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 <div class="row">\
 	<div class="col-xs-12 col-md-12 col-lg-12">\
 		<button class="form-control btn btn-large btn-primary" type="submit" onclick="q3script()" >\
-			<span id="q3NextButton">Continue</span>\
+			<span id="q3NextButton">No, please continue</span>\
 		</button>\
 	</div>\
 </div>\
@@ -385,7 +385,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 <br />\
 			<div class="hatch row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
-			<button id="mqs5op5" class="form-control btn btn-large btn-danger" onclick="question5(5)">\
+			<button id="mqs5op5" class="form-control btn btn-large btn-Default" onclick="question5(5)">\
 			<span>None of the above</span>\
 			</button>\
 			</div>\
