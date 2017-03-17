@@ -134,13 +134,16 @@ function showPart2Q2() {
 		document.getElementById('inputProblemsFallingAsleepId').innerHTML = "No";
 		var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
 		document.getElementById('q2NextButton').innerHTML = "Continue"
+
 	} 
 
 
 	if (a == "No") { 
+		document.getElementById('inputMinutesToFallAsleepId').value = 0;
 		document.getElementById('inputProblemsFallingAsleepId').innerHTML = "Yes?";
 		var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
 		document.getElementById('q2NextButton').innerHTML = "No. Please continue!"
+
 	}
 }
 
@@ -180,6 +183,7 @@ function showPart2Q3() {
 	} 
 
 	if (a == "No") { 
+		document.getElementById('inputMinutesToFallBackAsleepId').value = 0;
 		document.getElementById('inputDidWakeDuringTheNightId').innerHTML = "Yes?";
 		var a = document.getElementById('inputMinutesToFallBackAsleepId').innerHTML;
 		document.getElementById('q3NextButton').innerHTML = "No. Please continue!"
@@ -225,7 +229,7 @@ questions.setHowDidYouFeel(choice); // Choices 1-Sleepy, 2-Somewhat Sleepy, 3-Al
 
 // ****************************** Question 5 Scripts **********************
 function question5(choice) { // get the choice and directs to next function
-	switch (choice) {
+switch (choice) {
 case 1: // case 1, comes from first button
 id = "mqs5op1"; // get the id
 var background = document.getElementById(id).style.backgroundColor; // Gets current Color!!!
@@ -267,44 +271,20 @@ if (background != "black") {
 	document.getElementById(id).style.backgroundColor = "black";
 	document.getElementById(id).style.color = "white";
 	document.getElementById(id).value = true;
-	console.log(document.getElementById(id).value);
 } else {
 	document.getElementById(id).style.backgroundColor = "white";
 	document.getElementById(id).style.color = "black";
 	document.getElementById(id).value = false;
-	console.log(document.getElementById(id).value);
 }
 
 
 
-if (myId != "mqs5op5") {
-
+if (myId != "mqs5op5") { // ensure that Nota is reset 
 document.getElementById("mqs5op5").style.backgroundColor = "white";
 document.getElementById("mqs5op5").style.color = "black";
 document.getElementById("mqs5op5").value = false;
-
-
 }
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // *************************************** clearOtherChoices() *****
@@ -325,7 +305,7 @@ for (i = 1; i < 5; i++) { // Sets all four choices to false and resets UI Colors
 
 // *************************************** submitQuestion5() *****
 function submitQuestion5() { // When the 'Submit' button is pressed
-	console.log("Value: " + document.getElementById('mqs5op1').value);
+	
 	var op1 = document.getElementById("mqs5op1").value; 
 	var op2 = document.getElementById("mqs5op2").value;
 	var op3 = document.getElementById("mqs5op3").value;

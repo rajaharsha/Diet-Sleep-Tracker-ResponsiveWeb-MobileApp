@@ -34,9 +34,7 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
   <link rel="stylesheet" type="text/css" href="css/animation.css">
 
 
-  <!-- custom styles -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css"> 
-  <link rel="stylesheet" type="text/css" href="css/styles2.css">
+
 
 
 
@@ -51,7 +49,9 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
 
 
 
-
+  <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css"> 
+  <link rel="stylesheet" type="text/css" href="css/styles2.css">
 
 
 
@@ -62,7 +62,7 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
 
 
   <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-  <script src="dist/js/bootstrap.min.js"></script>
+
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 
