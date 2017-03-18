@@ -26,15 +26,15 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
                   </div>\
                   \
                   <div class="row">\
-                  <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
-                  <button \
-                  class="hatch \
-                  form-control btn btn-large btn-primary" \
-                  type="button" \
-                  data-toggle="collapse" \
-                  data-target="#part2" \
-                  name="q1" id="inputProblemsFallingAsleepId">Yes?</button>\
-                  </div>\
+                    <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+                    <button \
+                    class="hatch \
+                    form-control btn btn-large btn-primary" \
+                    type="button" \
+                    data-toggle="collapse" \
+                    data-target="#part2" \
+                    name="q1" id="#">Yes?</button>\
+                    </div>\
                   </div>\
 \
 \
@@ -43,7 +43,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 \
 \
                   \
-                  <div id="part2" class=" collapse">\
+                  <div id="part2" class="well collapse">\
                   \
                                 <div class="row text-center">\
                                   <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -110,7 +110,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
     \
 <div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="noCaffeine()">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="nextQuestion()">\
 <span>Not today!</span>\
 </button>\
 </div>\
@@ -173,48 +173,6 @@ var qs1b = '\
     </div>\
 \
 \
-    <div class="row">\
-      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
-        <button class="btn btn-primary" onclick=\'updateCoffee("eq1a", "minus")\'>&#10134;</button>\
-      </div>\
-      <div class="col-xs-4 col-md-4 col-lg-4 ">\
-        <label class="form-control text-center" id="eq1a" disabled onchange="getCaffeineResults()" type="text" name="Morning" min="0" max="10" >0</label>\
-      </div>\
-      \
-      <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
-        <button class="btn btn-success" onclick=\'updateCoffee("eq1a", "plus")\'>&#10133;</button>\
-      </div>\
-    </div>\
-    \
-    <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
-      <h3>Afternoon</h3>\
-    </div>\
-    <div class="row">\
-      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
-        <button class="btn btn-primary" onclick=\'updateCoffee("eq1b", "minus")\'>&#10134; </button>\
-      </div>\
-      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
-        <label class="form-control text-center" id="eq1b" disabled onchange="getCaffeineResults()" type="text" name="Afternoon" min="0" max="10">0</label>\
-      </div>\
-      <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
-        <button class="btn btn-success" onclick=\'updateCoffee("eq1b", "plus")\'>&#10133; </button>\
-      </div>\
-    </div>\
-    <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
-      <h3>Evening</h3>\
-    </div>\
-    <div class="row">\
-      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
-        <button class="btn btn-primary" onclick=\'updateCoffee("eq1c", "minus")\'>&#10134; </button>\
-      </div>\
-      <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
-        <label class="form-control text-center" id="eq1c" disabled onchange="getCaffeineResults()" type="text" name="Evening" min="0" max="10">0</label>\
-      </div>\
-      <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
-        <button class="btn btn-success" onclick=\'updateCoffee("eq1c", "plus")\'>&#10133;</button>\
-      </div>\
-    </div>\
-  </div>\
   <br />\
   <div class="row text-center">\
     <div class="col-xs-12 col-md-12 col-lg-4 text-center"></div>\
