@@ -3,8 +3,9 @@ include("./includes/db_connection.php");
 include("./includes/session.php");
 include("./includes/functions.php");
 confirm_logged_in();
-include('./includes/header.php');
+
 include("./includes/cz_functions.js");
+include('./includes/header.php');
 ?>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

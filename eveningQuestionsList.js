@@ -30,9 +30,10 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
                   <button \
                   class="hatch \
                   form-control btn btn-large btn-primary" \
-                  type="button" data-toggle="collapse" \
-                  data-target="#part2" onclick="showPart2Q2()" \
-                  name="q2" id="inputProblemsFallingAsleepId">Yes?</button>\
+                  type="button" \
+                  data-toggle="collapse" \
+                  data-target="#part2" \
+                  name="q1" id="inputProblemsFallingAsleepId">Yes?</button>\
                   </div>\
                   </div>\
 \
@@ -42,7 +43,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 \
 \
                   \
-                  <div id="part2" class="fadeIn collapse">\
+                  <div id="part2" class=" collapse">\
                   \
                                 <div class="row text-center">\
                                   <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -107,13 +108,13 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
                       \
     <br />\
     \
-    <div class="row">\
-    <div class="col-xs-12 col-md-12 col-lg-12">\
-    <button class="hatch form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
-    <span id="q2NextButton">No, please continue</span>\
-    </button>\
-    </div>\
-    </div>\
+<div class="hatch row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
+<button class="form-control btn btn-large btn-primary" type="submit" onclick="noCaffeine()">\
+<span>Not today!</span>\
+</button>\
+</div>\
+</div>\
                   \
                   \
                   \
@@ -242,11 +243,11 @@ var qs1b = '\
 
 
 var qs2 = ' \
-<div class="container-fluid">\
+<div class="fadeIn container-fluid">\
 \
 \
 \
-<div class="row text-center">\
+<div class="hatch row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <h3>Did you exercise today?</h3>\
 </div>\
@@ -289,7 +290,7 @@ var qs2 = ' \
 
 
 var qs3 = '\
-<div class="container-fluid">\
+<div class="fadeIn container-fluid">\
 \
 \
 \
@@ -301,7 +302,7 @@ var qs3 = '\
 \
 <br />\
 \
-<div class="row">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-success" type="submit" onclick="question3(1)">\
 <span>Yes</span>\
@@ -311,7 +312,7 @@ var qs3 = '\
 \
 <br />\
 \
-<div class="row">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="question3(0)">\
 <span>No</span>\
