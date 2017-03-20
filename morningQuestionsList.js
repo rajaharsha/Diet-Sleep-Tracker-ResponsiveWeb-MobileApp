@@ -155,20 +155,6 @@ mqs_answers['mq5_nota'] 					= questions.nota;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function submitMorningQuestions() {
 
 //	console.log(mqs_answers);

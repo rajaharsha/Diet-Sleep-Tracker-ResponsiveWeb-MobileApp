@@ -160,6 +160,7 @@ questions.setMinutesToFallAsleep(b); // Defaults to zero
 
 
 
+
 function showPart2Q2() {
 
   var a = document.getElementById('inputProblemsFallingAsleepId').innerHTML;
@@ -180,7 +181,6 @@ function showPart2Q2() {
 
   }
 }
-
 
 
 
