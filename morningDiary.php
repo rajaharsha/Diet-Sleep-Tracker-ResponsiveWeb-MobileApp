@@ -588,6 +588,8 @@ if (cur_mor_day == 14){
 
 
 mqs_answers['tip_code'] = tip_code;
+var userid = '<?php echo $userid; ?>';
+mqs_answers['uid'] = userid;
 
 $.ajax({
 	url: 'post_mng_answers.php',
@@ -595,7 +597,7 @@ $.ajax({
 	data: {post_mng_answers:mqs_answers},
 	success: function(data) {	
 		var div = document.getElementById('push_morning_tip');
-		div.innerHTML = div.innerHTML + mng_tip_message;
+		div.innerHTML = mng_tip_message;
 		alert ('Posted Successfully');
 	},
 	error: function(xhr, desc, err) {

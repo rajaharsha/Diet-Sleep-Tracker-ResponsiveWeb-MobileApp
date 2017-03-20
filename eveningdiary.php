@@ -147,16 +147,6 @@ function updateCoffee(timeOfDay, plusMinus) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // Question 1 ******************************************
 
 

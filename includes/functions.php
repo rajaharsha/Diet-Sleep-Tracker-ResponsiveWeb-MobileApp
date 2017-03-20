@@ -93,7 +93,7 @@ $uid,                         -- 14
 
 //error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
 
-error_log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n".$query."\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",3,"C:/xampp/apache/logs/error.log");
+//error_log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n".$query."\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",3,"C:/xampp/apache/logs/error.log");
 
 $result_id = mysqli_query($connection, $query);
 
@@ -300,6 +300,28 @@ function get_user_log_count($userid){
 	$fetch_rows = mysqli_fetch_assoc($query_result);
 	$usr_log_count = $fetch_rows["USR_LOG_COUNT"];
 	return $usr_log_count;
+}
+
+function get_user_tips($userid){
+	global $connection;
+	$query = "
+				SELECT DISTINCT log_day, log_type, tip_message 
+				FROM   coach_z.cz_usr_bootcamp_log INNER JOIN coach_z.cz_mng_answers
+				ON     cz_usr_bootcamp_log.uid = cz_mng_answers.uid INNER JOIN coach_z.cz_tips
+				ON 	   cz_mng_answers.tip_code = cz_tips.tip_code
+				WHERE  cz_usr_bootcamp_log.log_type = 'M' AND cz_mng_answers.uid = $userid
+				UNION
+				SELECT DISTINCT log_day, log_type, tip_message 
+				FROM   coach_z.cz_usr_bootcamp_log INNER JOIN coach_z.cz_evg_answers
+				ON     cz_usr_bootcamp_log.uid = cz_evg_answers.uid INNER JOIN coach_z.cz_tips
+				ON 	   cz_evg_answers.tip_code = cz_tips.tip_code 
+				WHERE cz_usr_bootcamp_log.log_type = 'E' AND cz_evg_answers.uid = $userid
+			 ";
+
+	//error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+	$user_tips = mysqli_query($connection, $query);
+
+	return $user_tips;
 }
 
 
