@@ -130,6 +130,55 @@ $cur_mor_day,
 $tip_code) 
 {
 global $connection;
+
+$t_b_time = '';
+$bed_time = $mq1_bedTime;
+
+$m_e = substr($bed_time, -2, 2);
+
+if ($m_e == 'pm'){
+	if (strlen($bed_time) == 6){$bed_time = '0'.$bed_time;}
+
+	$y_date = date('Y-m-d',strtotime("-1 days"));
+	$b_time = substr($bed_time, 0, 5);
+	$t_b_time = $y_date . ' ' . $b_time . ':00';
+	$t_b_time= date("Y-m-d H:i:s", strtotime($t_b_time . " +12 hours"));
+	//echo $t_b_time;
+}
+
+if ($m_e == 'am'){
+	if (strlen($bed_time) == 6){$bed_time = '0'.$bed_time;}
+	
+	if (substr($bed_time,0,2) == 12){$bed_time = '00'.substr($bed_time,3,7);}
+	
+	$b_date = date('Y-m-d',strtotime("0 days"));
+	$b_time = substr($bed_time, 0, 5);
+	$t_b_time = $b_date . ' ' . $b_time . ':00';
+	
+}
+
+
+$t_w_time = '';
+$wake_time = $mq1_wakeTime;
+
+if (substr($wake_time, -2, 2) == 'am'){
+	if (strlen($wake_time) == 6){$wake_time = '0'.$wake_time;}
+
+	$w_date = date('Y-m-d',strtotime("0 days"));
+	$w_time = substr($wake_time, 0, 5);
+	$t_w_time = $w_date . ' ' . $w_time . ':00';
+}
+
+if (substr($wake_time, -2, 2) == 'pm'){
+	if (strlen($wake_time) == 6){$wake_time = '0'.$wake_time;}
+	$w_date = date('Y-m-d',strtotime("0 days"));
+	$w_time = substr($wake_time, 0, 5);
+	$t_w_time = $w_date . ' ' . $w_time . ':00';
+	$t_w_time= date("Y-m-d H:i:s", strtotime($t_w_time . " +12 hours"));
+}
+
+
+
 $query  = "INSERT INTO 
 cz_mng_answers 
 (mq1_bedTime,
@@ -148,8 +197,8 @@ uid,
 tip_code
 ) VALUES 
 (
-'$mq1_bedTime',
-'$mq1_wakeTime',
+'$t_b_time',
+'$t_w_time',
 '$mq2_problemsFallingAsleep',
 '$mq2_minutesToFallAsleep',
 '$mq3_didWakeDuringTheNight',
@@ -325,5 +374,11 @@ function get_user_tips($userid){
 }
 
 
+
+
+/*select uid,
+substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),1,2) +
+substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),4,2) / 60
+from coach_z.cz_mng_answers;*/
 
 ?>
