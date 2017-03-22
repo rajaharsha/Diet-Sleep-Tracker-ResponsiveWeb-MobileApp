@@ -149,34 +149,40 @@ var qs2 = ' \
 		2/5 Complete (success)\
 		</div>\
 		</div>\
-\
-<div class="well row" id="displayWell">\
-		<div class="row">\
-		<div class="col-xs-12 text-center">\
-		<h3 id="part1">Have any problems falling asleep last night?</h3> \
-		</div>\
-		</div>\
-		\
-		<div class="row">\
-		<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
-		<button class="hatch form-control btn btn-large btn-primary" type="button" data-toggle="collapse" data-target="#part2" onclick="showPart2Q2()" name="q2" id="inputProblemsFallingAsleepId">Yes?</button>\
-		</div>\
-		</div>\
-		\
-							<div id="part2" class="collapse  ">\
+								\
+								<div class="well row" id="displayWell">\
+								\
 										<div class="row">\
 										<div class="col-xs-12 text-center">\
-										<h3>How many minutes did it take you to fall asleep?</h3> \
+										<h3 id="part1">Have any problems falling asleep last night?</h3> \
 										</div>\
 										</div>\
-										<div class="row hatch">\
-										<div class="col-xs-4"></div>\
-										<div class="col-xs-4">\
-										<input class="form-control text-center " id="inputMinutesToFallAsleepId" min="0" step="5" value="0" type="number" name="WakeTime">\
+										\
+										<div class="row">\
+										<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+										<button class="hatch form-control btn btn-large btn-primary" \
+										type="button" \
+										data-toggle="collapse" data-target="#part2" \
+										onclick="showPart2Q2()" \
+										name="q2" \
+										id="inputProblemsFallingAsleepId">Yes?</button>\
 										</div>\
-										<div class="col-xs-4"></div>\
 										</div>\
-							</div>\
+		\
+	<div id="part2" class="collapse  ">\
+				<div class="row">\
+				<div class="col-xs-12 text-center">\
+				<h3>How many minutes did it take you to fall asleep?</h3> \
+				</div>\
+				</div>\
+				<div class="row hatch">\
+				<div class="col-xs-4"></div>\
+				<div class="col-xs-4">\
+				<input class="form-control text-center " id="inputMinutesToFallAsleepId" min="0" step="5" value="0" type="number" name="WakeTime">\
+				</div>\
+				<div class="col-xs-4"></div>\
+				</div>\
+	</div>\
 		\
 		<br />\
 		\
@@ -187,13 +193,13 @@ var qs2 = ' \
 		</button>\
 		</div>\
 		</div>\
+		\
+		\
+		\
+		\
+		\
+		\
 </div> <!-- End of well row -->\
-\
-\
-\
-\
-\
-\
 </form> <!-- End of form --> \
 </div> <!-- End of Container-fluid --> \
 ';

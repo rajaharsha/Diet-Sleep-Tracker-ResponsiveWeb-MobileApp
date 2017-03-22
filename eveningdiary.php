@@ -146,6 +146,49 @@ function updateCoffee(timeOfDay, plusMinus) {
   eqs_answers['eq1_Evening'] = document.getElementById('eq1c').value;
 }
 
+function q2script() {
+
+var b = document.getElementById('inputMinutesToFallAsleepId').value;
+if (b > 0) {
+  questions.setProblemsFallingAsleep("Yes");
+  questions.setMinutesToFallAsleep(b);
+} else {
+  questions.setProblemsFallingAsleep("No");
+questions.setMinutesToFallAsleep(b); // Defaults to zero
+}
+}
+
+
+
+
+function showPart2Q2() {
+
+  var a = document.getElementById('inputProblemsFallingAsleepId').innerHTML;
+
+  if (a == "Yes?") {
+    document.getElementById('inputProblemsFallingAsleepId').innerHTML = "No";
+    var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
+    document.getElementById('q2NextButton').innerHTML = "Continue"
+
+  } 
+
+
+  if (a == "No") { 
+    document.getElementById('inputMinutesToFallAsleepId').value = 0;
+    document.getElementById('inputProblemsFallingAsleepId').innerHTML = "Yes?";
+    var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
+    document.getElementById('q2NextButton').innerHTML = "No. Please continue!"
+
+  }
+}
+
+
+
+
+
+
+
+
 
 
 // Question 1 ******************************************
@@ -165,6 +208,11 @@ eqs_answers['eq2_Exercise'] = "No";
 }
 nextQuestion();
 }
+
+
+
+
+
 // Question 2 ******************************************
 
 // Question 3 ******************************************
