@@ -308,7 +308,12 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 </div>\
 </div>\
 \
-<h3>During what time of day do you have the most energy and motivation?</h3> \
+<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+<h3>During what time of day, do you have the most energy and motivation?</h3>\
+</div>\
+\
+<br />\
+\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-warning" type="submit" onclick="question7(1)">\
@@ -317,6 +322,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 </div>\
 </div>\
 <br />\
+\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-success" type="submit" onclick="question7(2)">\
@@ -324,6 +330,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 </button>\
 </div>\
 </div>\
+\
 <br />\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -333,13 +340,16 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 </div>\
 </div>\
 <br>\
+\
+<div class="row">\
+<div class="col-xs-12 col-md-12 col-lg-12">\
 <div class="questionButtonDiv">\
-<button style="text-align:center;" \
-id="eqs_submit" \
-class="btn btn-default" \
-onclick="evg_ans_submit()" \
-data-toggle="modal" \
-data-target="#evening_tip">Submit your Evening Diary</button>\
+<button style="" id="eqs_submit" \
+class="hatch form-control btn button-default" onclick="evg_ans_submit()" data-toggle="modal" data-target="#evening_tip">\
+<span>Submit your diary!</span>\
+</button>\
+\
+\
 </div>\
 ';
 
