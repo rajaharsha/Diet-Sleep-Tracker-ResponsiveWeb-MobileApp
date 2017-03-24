@@ -1,5 +1,5 @@
 var qs1 = ' \
-<div class="fadeIn container-fluid">\
+<div class=" container-fluid fadeIn">\
 <form onSubmit="return !!(false & nextQuestion());">\
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
@@ -17,8 +17,7 @@ id="part1">Did you drink any caffeinated drinks today?</h3> \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
 <button \
-class="hatch \
-form-control btn btn-large btn-primary" \
+class="hatch form-control btn btn-large btn-primary" \
 type="button" \
 data-toggle="collapse" \
 data-target="#part2" \
@@ -86,15 +85,15 @@ id="inputDidDrinkCoffeeButton">Yes?</button>\
 ';
 
 var qs2 = ' \
-<div class="fadeIn container-fluid">\
-<div class="hatch row text-center">\
+<div class="container-fluid">\
+<div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <h3>Did you exercise today?</h3>\
 </div>\
 </div>\
 <br />\
-<div class="well row">\
-<div class="row">\
+<div class="well row "  id="displayWell">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-success" type="submit" onclick="question2(1)">\
 <span>Yes!</span>\
@@ -102,7 +101,7 @@ var qs2 = ' \
 </div>\
 </div>\
 <br />\
-<div class="row">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="question2(0)">\
 <span>Not today!</span>\
@@ -115,14 +114,14 @@ var qs2 = ' \
 ';
 
 var qs3 = '\
-<div class="fadeIn container-fluid">\
+<div class="container-fluid">\
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <h3>Did you drink Alcohol?</h3>\
 </div>\
 </div>\
 <br />\
-<div class="well row">\
+<div class="well row" id="displayWell">\
 <div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-success" type="submit" onclick="question3(1)">\
@@ -143,15 +142,15 @@ var qs3 = '\
 ';
 
 var qs4 = ' \
-<div class="fadeIn container-fluid">\
+<div class="container-fluid">\
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <h3>Did you take a nap today?</h3>\
 </div>\
 </div>\
 <br />\
-<div class="well row">\
-<div class="row">\
+<div class="well row" id="displayWell">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-success" type="submit" onclick="question4(1)">\
 <span>Yes</span>\
@@ -159,7 +158,7 @@ var qs4 = ' \
 </div>\
 </div>\
 <br />\
-<div class="row">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-primary" type="submit" onclick="question4(0)">\
 <span>No. Continue</span>\
@@ -171,14 +170,16 @@ var qs4 = ' \
 ';
 
 var qs5 = ' \
-<div class="fadeIn container-fluid">\
+<div class="container-fluid">\
+\
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <h3>How was your mood today?</h3>\
 </div>\
 </div>\
-<div class="well row">\
-<div class="row">\
+\
+<div class="well row" id="displayWell">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button id="eqs5op1" class="form-control btn btn-large btn-success" type="submit" onclick="question5(1)">\
 <span>Happy</span>\
@@ -186,7 +187,7 @@ var qs5 = ' \
 </div>\
 </div>\
 <br />\
-<div class="row">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button id="eqs5op2" class="form-control btn btn-large btn-Default" type="submit" onclick="question5(2)">\
 <span>Neutral</span>\
@@ -194,7 +195,7 @@ var qs5 = ' \
 </div>\
 </div>\
 <br />\
-<div class="row">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button id="eqs5op3" class="form-control btn btn-large btn-danger" type="submit" onclick="question5(3)">\
 <span>Angry</span>\
@@ -202,7 +203,7 @@ var qs5 = ' \
 </div>\
 </div>\
 <br />\
-<div class="row">\
+<div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button id="eqs5op4" class="form-control btn btn-large btn-primary" type="submit" onclick="question5(4)">\
 <span>Sad</span>\
@@ -213,65 +214,100 @@ var qs5 = ' \
 ';
 
 var qs6 = '\
-<div class="fadeIn container-fluid">\
-<div class="col-lg-12 text-center">\
-<h3>Do you do any of the following in your bed?</h3>\
-</div>\
-<div class="col-lg-12 text-center">\
-<h4>Select all that apply</h4>\
-</div>\
-<br />\
-<div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs6op1" class="form-control btn btn-large btn-Default" onclick="question6(1)">\
-<span>Use my phone</span>\
-</button>\
+<div class="hatch container-fluid">\
+\
+<div class="progress">\
+<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
+6/7 Complete (Submit!)\
 </div>\
 </div>\
-<br />\
-<div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs6op2" class="form-control btn btn-large btn-Default" onclick="question6(2)">\
-<span>Read or do homework</span>\
-</button>\
-</div>\
-</div>\
-<br />\
-<div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs6op3" class="form-control btn btn-large btn-Default" onclick="question6(3)">\
-<span>Watch TV</span>\
-</button>\
-</div>\
-</div>\
-<br />\
-<div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs6op4" class="form-control btn btn-large btn-Default" onclick="question6(4)">\
-<span>Play Video Games</span>\
-</button>\
-</div>\
-</div>\
-<br />\
-<div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button id="eqs6op5" class="form-control btn btn-large btn-danger" onclick="question6(5)">\
-<span>None of the above</span>\
-</button>\
-</div>\
-</div>\
-<br />\
-<div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="submitQuestion6()">\
-<span>Continue</span>\
-</button>\
-</div>\
+\
+\
+\
+	<div class="row well" id="displayWell">\
+							<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+							<h3>Do you do any of the following in your bed?</h3>\
+							</div>\
+							<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+							<h4>Select all that apply</h4>\
+							</div>\
+							\
+							<br />\
+							\
+							\
+							<div class="hatch row" >\
+							<div class="col-xs-12 col-md-12 col-lg-12">\
+							<button id="eqs6op1" class="form-control btn btn-large btn-Default" onclick="question6(1)">\
+							<span>Use my phone</span>\
+							</button>\
+							</div>\
+							</div>\
+							\
+							<br />\
+							\
+							<div class="hatch row" >\
+							<div class="col-xs-12 col-md-12 col-lg-12">\
+							<button id="eqs6op2" class="form-control btn btn-large btn-Default" onclick="question6(2)">\
+							<span>Read or do homework</span>\
+							</button>\
+							</div>\
+							</div>\
+							\
+							<br />\
+							\
+							<div class="row">\
+							<div class="col-xs-12 col-md-12 col-lg-12">\
+							<button id="eqs6op3" class="form-control btn btn-large btn-Default" onclick="question6(3)">\
+							<span>Watch TV</span>\
+							</button>\
+							</div>\
+							</div>\
+							\
+							<br />\
+							\
+							<div class="hatch row">\
+							<div class="col-xs-12 col-md-12 col-lg-12">\
+							<button id="eqs6op4" class="form-control btn btn-large btn-Default" onclick="question6(4)">\
+							<span>Play Video Games</span>\
+							</button>\
+							</div>\
+							</div>\
+							\
+							<br />\
+							\
+							<div class="hatch row">\
+							<div class="col-xs-12 col-md-12 col-lg-12">\
+							<button id="eqs6op5" class="form-control btn btn-large btn-danger" onclick="question6(5)">\
+							<span>None of the above</span>\
+							</button>\
+							</div>\
+							</div>\
+							\
+							<br />\
+							\
+							<div class="hatch row">\
+							<div class="col-xs-12 col-md-12 col-lg-12">\
+							<button class="form-control btn btn-large btn-primary" type="submit" onclick="submitQuestion6()">\
+							<span>Continue</span>\
+							</button>\
+							</div>\
+							</div>\
+							\
+							<br />\
 </div>\
 ';
 
 var qs7 = ' \
-<div class="fadeIn container-fluid" > \
+<div class="hatch container-fluid">\
+\
+<div class="progress">\
+<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
+6/7 Complete (Submit!)\
+</div>\
+</div>\
+\
 <h3>During what time of day do you have the most energy and motivation?</h3> \
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -298,7 +334,12 @@ var qs7 = ' \
 </div>\
 <br>\
 <div class="questionButtonDiv">\
-<button style="text-align:center;" id="eqs_submit" class="btn btn-default" onclick="evg_ans_submit()" data-toggle="modal" data-target="#evening_tip">Submit your Evening Diary</button>\
+<button style="text-align:center;" \
+id="eqs_submit" \
+class="btn btn-default" \
+onclick="evg_ans_submit()" \
+data-toggle="modal" \
+data-target="#evening_tip">Submit your Evening Diary</button>\
 </div>\
 ';
 
