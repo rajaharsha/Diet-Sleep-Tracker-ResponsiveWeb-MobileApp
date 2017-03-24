@@ -88,7 +88,7 @@ function nextQuestion()
   }
 
 }
-// Next Question *************************
+// end function Next Question *************************
 
 
 
@@ -99,24 +99,22 @@ function nextQuestion()
 
 
 // Question 1 ******************************************
-// No Caffeine was used. All set to zero (0)
-// Needs to be refactored to one Function. 
-function noCaffeine() { // Could be merged as one function later
-eqs_answers['eq1_Morning'] = "0"; // Integers or strings. 
+function noCaffeine() { 
+eqs_answers['eq1_Morning'] = "0"; 
 eqs_answers['eq1_Afternoon'] = "0";
 eqs_answers['eq1_Evening'] = "0";
 nextQuestion();
 }
 
-// If Caffeine was used, the new form will appear
-function showCaffeineMenu() { // Could be merged as one function later
+
+function showCaffeineMenu() {
   document.getElementById("questionDisplay").innerHTML = qs1partb;
 }
 
 
 
-// After each selection is changed, this data gets updated. 
-function getCaffeineResults() { // collect selected data
+
+function getCaffeineResults() {
   morningValue = document.getElementById('eq1a').value;
   afternoonValue = document.getElementById('eq1b').value;
   eveningValue = document.getElementById('eq1c').value;
@@ -146,41 +144,6 @@ function updateCoffee(timeOfDay, plusMinus) {
   eqs_answers['eq1_Evening'] = document.getElementById('eq1c').value;
 }
 
-function q2script() {
-
-var b = document.getElementById('inputMinutesToFallAsleepId').value;
-if (b > 0) {
-  questions.setProblemsFallingAsleep("Yes");
-  questions.setMinutesToFallAsleep(b);
-} else {
-  questions.setProblemsFallingAsleep("No");
-questions.setMinutesToFallAsleep(b); // Defaults to zero
-}
-}
-
-
-
-
-function showPart2Q2() {
-
-  var a = document.getElementById('inputProblemsFallingAsleepId').innerHTML;
-
-  if (a == "Yes?") {
-    document.getElementById('inputProblemsFallingAsleepId').innerHTML = "No";
-    var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
-    document.getElementById('q2NextButton').innerHTML = "Continue"
-
-  } 
-
-
-  if (a == "No") { 
-    document.getElementById('inputMinutesToFallAsleepId').value = 0;
-    document.getElementById('inputProblemsFallingAsleepId').innerHTML = "Yes?";
-    var a = document.getElementById('inputMinutesToFallAsleepId').innerHTML;
-    document.getElementById('q2NextButton').innerHTML = "No. Please continue!"
-
-  }
-}
 
 
 
@@ -191,7 +154,8 @@ function showPart2Q2() {
 
 
 
-// Question 1 ******************************************
+
+// end Question 1 ******************************************
 
 
 
