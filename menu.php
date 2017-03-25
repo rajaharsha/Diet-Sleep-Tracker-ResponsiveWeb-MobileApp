@@ -13,7 +13,7 @@
       <div class="row">
         <div class="col-md-4">
             <br>
-            <button type="button" class="btn btn-primary btn-lg btn-block btn-info" onclick="location.href='home.php';"> 
+            <button type="button" class="btn btn-primary btn-lg btn-block btn-info" onclick="location.href='diary.php';"> 
                   <img src="img/Sleep_Diary.png" class="center-block" alt="CoachZ" width="150" height="150">
             </button>
             <br>

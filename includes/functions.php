@@ -354,13 +354,13 @@ function get_user_log_count($userid){
 function get_user_tips($userid){
 	global $connection;
 	$query = "
-				SELECT DISTINCT log_day, log_type, tip_message 
+				SELECT DISTINCT cz_usr_bootcamp_log.log_day, log_type, tip_message 
 				FROM   coach_z.cz_usr_bootcamp_log INNER JOIN coach_z.cz_mng_answers
 				ON     cz_usr_bootcamp_log.uid = cz_mng_answers.uid INNER JOIN coach_z.cz_tips
 				ON 	   cz_mng_answers.tip_code = cz_tips.tip_code
 				WHERE  cz_usr_bootcamp_log.log_type = 'M' AND cz_mng_answers.uid = $userid
 				UNION
-				SELECT DISTINCT log_day, log_type, tip_message 
+				SELECT DISTINCT cz_usr_bootcamp_log.log_day, log_type, tip_message 
 				FROM   coach_z.cz_usr_bootcamp_log INNER JOIN coach_z.cz_evg_answers
 				ON     cz_usr_bootcamp_log.uid = cz_evg_answers.uid INNER JOIN coach_z.cz_tips
 				ON 	   cz_evg_answers.tip_code = cz_tips.tip_code 
@@ -372,6 +372,28 @@ function get_user_tips($userid){
 
 	return $user_tips;
 }
+
+function user_log_tracker($userid){
+	global $connection;
+    $query = "SELECT 
+					log_day,
+			        
+					round((substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),1,2) +
+					substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),4,2) / 60 - 
+					(mq2_minutesToFallAsleep + mq3_minutesToFallBackToSleep) / 60),2) AS Act_Sleep_Time,
+			        
+					round((substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),1,2) +
+					substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),4,2) / 60 - 
+					(mq2_minutesToFallAsleep + mq3_minutesToFallBackToSleep) / 60) / 
+			        (substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),1,2) +
+					substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),4,2) / 60),2) AS Sleep_Efficiency
+            FROM   coach_z.cz_mng_answers Where uid = $userid";
+
+    $result = mysqli_query($connection, $query);
+
+	return $result;
+}
+
 
 
 

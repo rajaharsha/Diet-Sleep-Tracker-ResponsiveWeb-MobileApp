@@ -22,7 +22,7 @@ if(isset($_POST)){
 											$_SESSION["btcmp_log_day_val"] = (int)$btcmp_log_day_val;
 											$_SESSION["btcmp_user_log_count"] = (int)$btcmp_user_log_count;
 
-											header("Location: " . 'landing.php');
+											header("Location: " . 'menu.php');
 										 }
 		else {
 				$_SESSION["message"] = "Invalid Credentials";
