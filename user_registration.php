@@ -2,21 +2,19 @@
 <?php
 include("./includes/header.php");
 ?>
+
+<div class="container">
     <div class="row">
               <div class="col-sm-4"></div>
               <div class="col-sm-4">
-                      <br>
-                      <br>
 
-                      <br/>
                                       
                       <form action="#" method="post" name="register_form" id="register_form" class="form_class" >
                       <center><p class='help-block'></p></center>
                       <br/>
-                      <!--
-                      <input typee="text" name="name" id="name" placeholder="Enter User Name" class="form-control" onkeyup="check_duplicate_user(this.id,this.value)"/>
-                      -->
+
                         <center><h3>Register to Coach Z</h3></center>
+                        <br>
                         <div class="form-group">
 
                           <p class='help-block'></p>
@@ -37,8 +35,8 @@ include("./includes/header.php");
 
               <div class="col-sm-4"></div>
 
-    </div> <!-- /container -->
-
+    </div> 
+</div>
 <script type="text/javascript">
 
 // Check for duplicate Username
@@ -103,24 +101,9 @@ function register_user() {
   
   if(validation())// Calling validation function
     { 
-      //document.getElementById("register_form").submit();//form submission
-
       var user_rec_insert = insert_new_user(name,email,password);
-
-/*      var trim_response = user_rec_insert.responseText;
-        if (trim_response.trim() == 'Created')
-          {
-            $( '#btn_id' ).siblings('.help-block').html("User Account Created")
-          } else ($( '#btn_id' ).siblings('.help-block').html("Error"));
-        }*/
-/*      alert(  " Name : " + name
-            + " \n Email : "+ email 
-            + " \n password : " + password
-            + " \n dup_password : " + dup_password
-            + " \n Form Submitted Successfully......");*/
     }
   }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //  Name and Email validation Function
 function validation(){
@@ -180,3 +163,10 @@ function insert_new_user(username,useremail,userpassword){
 }
 
     </script>
+
+<br>
+<br>
+
+<?php
+  require_once("./includes/footer.php");
+?>
