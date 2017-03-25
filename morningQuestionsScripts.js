@@ -338,7 +338,7 @@ aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">\
 
 
 var qs5 = '\
-<div class="fadeIn container-fluid">\
+<div class="hatch container-fluid">\
 \
 \
 <div class="progress">\
@@ -355,8 +355,9 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			<div class="col-lg-12 text-center">\
 			<h4>Select all that apply</h4>\
 			</div>\
-\
-<br />\
+			\
+			<br />\
+			\
 			<div class="hatch row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op1" class="form-control btn btn-large btn-Default" onclick="question5(1)">\
@@ -364,7 +365,9 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			</button>\
 			</div>\
 			</div>\
-<br />\
+			\
+			<br />\
+			\
 			<div class="hatch row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op2" class="form-control btn btn-large btn-Default" onclick="question5(2)">\
@@ -372,7 +375,9 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			</button>\
 			</div>\
 			</div>\
-<br />\
+			\
+			<br />\
+			\
 			<div class="hatch row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op3" class="form-control btn btn-large btn-Default" onclick="question5(3)">\
@@ -380,7 +385,9 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			</button>\
 			</div>\
 			</div>\
-<br />\
+			\
+			<br />\
+			\
 			<div class="hatch row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op4" class="form-control btn btn-large btn-Default" onclick="question5(4)">\
@@ -388,7 +395,9 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			</button>\
 			</div>\
 			</div>\
-<br />\
+			\
+			<br />\
+			\
 			<div class="hatch row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op5" class="form-control btn btn-large btn-Default" onclick="question5(5)">\
@@ -418,15 +427,15 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 	</div>\
 	\
 <div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<div class="questionButtonDiv">\
-<button class="hatch form-control btn btn-large btn-success" id="mqs_submit" type="submit" onclick="submitQuestion5()" data-toggle="modal" data-target="#morning_tip">\
-<span>Submit Diary!</span>\
-</button>\
+	<div class="col-xs-12 col-md-12 col-lg-12">\
+		<div class="questionButtonDiv">\
+			<button class="hatch form-control btn btn-large btn-success" id="mqs_submit" type="submit" onclick="submitQuestion5()" data-toggle="modal" data-target="#morning_tip">\
+			<span>Submit Diary!</span>\
+			</button>\
+		</div>\
+	</div>\
 </div>\
-</div>\
-</div>\
-<br>\
+\
 \
 ';
 
