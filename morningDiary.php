@@ -6,7 +6,9 @@ confirm_logged_in(); // Function
 include('./includes/header.php'); // Bring in the Menus, etc
 ?>
 
-
+<!-- Tips generation JScript and Logic -->
+<script type="text/javascript" src="assets/Morning_Tips.json"></script>
+<script type="text/javascript" src="assets/Standard_Tips.json"></script>
 
 
 <!-- Jhorton Bootstrap-Datepicker REQUIRES! jQuery --> 
@@ -81,9 +83,7 @@ include('./includes/header.php'); // Bring in the Menus, etc
 
 
 
-	<!-- Tips generation JScript and Logic -->
-	<script type="text/javascript" src="assets/Morning_Tips.json"></script>
-	<script type="text/javascript" src="assets/Standard_Tips.json"></script>
+
 
 
 
