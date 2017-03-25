@@ -92,6 +92,9 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
               <a href='home.php'>Home</a>
             </li>
             <li>
+              <a href='landing.php'>Menu</a>
+            </li>
+            <li>
               <a href='logout.php'>Logout</a>                           
             </li>
             ";
