@@ -89,10 +89,10 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
           if($userid){
             echo "
             <li>
-              <a href='home.php'>Home</a>
-            </li>
+              <a href='menu.php'>Menu</a>
+            </li>            
             <li>
-              <a href='landing.php'>Menu</a>
+              <a href='diary.php'>Diary</a>
             </li>
             <li>
               <a href='logout.php'>Logout</a>                           
