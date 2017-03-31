@@ -84,50 +84,6 @@
 
 </div> 
 
-
-
-        
-
 <br><br>
 <?php require_once("./includes/footer.php"); ?>
 </body> <!-- Close the Body -->
-
-
-<!--     <div id="container"></div>
-    <script>
-anychart.onDocumentReady(function() {
-// create data set on our data
-var data_2 =[
-    ['1' ,  10],
-    ['3' ,  8],
-    ['4' ,  7],
-    ['5' ,  6],
-    ['6' ,  9],
-    ['7' ,  8],
-    ['8' ,  7],
-    ['9' ,  7]
-
-];
-
-// create area chart
-chart = anychart.area();
-
-// turn on chart animation
-chart.animation(true);
-
-// set container id for the chart
-chart.container('container');
-
-var series = anychart.data.mapAsTable(data);
-for (var i in series) {
-    chart.area(series[i]);
-}
-// remove titles
-chart.xAxis({title: 'Log Day'});
-chart.yAxis({title: 'Sleep Time'});
-
-// initiate chart drawing
-chart.draw();
-    });
-    
-    </script> -->

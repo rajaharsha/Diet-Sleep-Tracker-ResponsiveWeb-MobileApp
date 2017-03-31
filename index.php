@@ -33,18 +33,19 @@
 
                echo '<div class="col-sm-4" style="text-align:center"> 
                          <h3><b>Login Here!<b></h3>
+
                          
-                         <input type="text" id="nav_username" placeholder="Username" name="username" class="form-control">
+                         <input type="text" id="nav_useremail" placeholder="User Email" name="useremail" class="form-control">
                          <br>
                          <input type="password" id="nav_password" placeholder="Password" name="password" class="form-control">
                          <br>
                          <button type="submit" class="btn btn-success center-block value="login_button" id="login_button">Sign in</button> 
                          <br>
-                         <div id="errormsg"  role="alert"><?php echo message(); ?></div> 
+                         <div id="errormsg"  role="alert">'.message().'</div> 
+
                      </div>';}
 
               ?>
-
           </form>
 
       </div>
@@ -56,27 +57,27 @@
 
 function user_login(){
 
-  var username = document.getElementById("nav_username").value;
+  var useremail = document.getElementById("nav_useremail").value;
   var userpassword = document.getElementById("nav_password").value;  
-  var user_login_check = check_user_login(username,userpassword);
+  var user_login_check = check_user_login(useremail,userpassword);
   var db_resp = user_login_check.responseText;
   console.log(db_resp);
   if (db_resp.trim() == 'ACCESS_GRANTED')
                                         {
                                     /*      alert('ACCESS_GRANTED');*/
-                                          create_session(username);
+                                          create_session(useremail);
                                         }
     else ($( '#login_button' ).siblings('.help-block').html("Incorrect Credentials"));
   }
 
 
 
-function create_session(username){
+function create_session(useremail){
   return $.ajax({
     url: 'post_create_session.php',
     type: 'post',
     async: false,
-    data: {myData:username},
+    data: {myData:useremail},
 
     error: function(xhr,desc,err){
       console.log(xhr);
@@ -85,10 +86,10 @@ function create_session(username){
   });
 }
 
-function check_user_login(username,userpassword){
+function check_user_login(useremail,userpassword){
 
     var user_login = {};
-    user_login['username'] = username;
+    user_login['useremail'] = useremail;
     user_login['userpassword'] = userpassword;
 
 

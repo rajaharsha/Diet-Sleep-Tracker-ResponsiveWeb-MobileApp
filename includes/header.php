@@ -4,10 +4,11 @@ $userid = '';
 $username = '';  
 $btcmp_log_day_val = '';
 $btcmp_user_log_count = '';
-if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; }
-if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; }
-if (isset($_SESSION["btcmp_log_day_val"])){ $btcmp_log_day_val = $_SESSION["btcmp_log_day_val"];}
-if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION["btcmp_user_log_count"];}
+if (isset($_SESSION["uid"])){ $userid = $_SESSION["uid"]; };
+if (isset($_SESSION["username"])){ $username = $_SESSION["username"]; };
+if (isset($_SESSION["btcmp_log_day_val"])){ $btcmp_log_day_val = $_SESSION["btcmp_log_day_val"];};
+if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION["btcmp_user_log_count"];};
+//if (isset($_SESSION["btcmp_user_mode"])){ $btcmp_user_mode = $_SESSION["btcmp_user_mode"];}
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +80,7 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">CoachZ</a>
+        <a class="navbar-brand" href="menu.php">CoachZ</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
 

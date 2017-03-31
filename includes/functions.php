@@ -194,7 +194,8 @@ mq5_stress,
 mq5_temp,
 mq5_nota,
 uid,
-tip_code
+tip_code,
+log_day
 ) VALUES 
 (
 '$t_b_time',
@@ -210,10 +211,11 @@ tip_code
 '$mq5_temp',
 '$mq5_nota',
 $uid,
-'$tip_code'	
+'$tip_code',
+$cur_mor_day	
 )";
 $result_id = mysqli_query($connection, $query);
-//error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
+error_log("Inside query\n" . $query , 3, "C:/xampp/apache/logs/error.log");
 // confirm_query($result_id);
 
 $query_2 = "INSERT cz_usr_bootcamp_log (UID, LOG_DAY, LOG_TYPE, LOG_TIME) VALUES ($uid, $cur_mor_day, 'M', NOW())";
@@ -286,9 +288,9 @@ return NULL;
 }	
 
 
-function find_usercred($username) {
+function find_usercred($useremail) {
 global $connection;
-$query  = "SELECT U_ID,USER_NAME,PASS_CODE FROM coach_z.app_users where USER_NAME = '$username' LIMIT 1";
+$query  = "SELECT U_ID,USER_NAME,EMAIL,PASS_CODE FROM coach_z.app_users where EMAIL = trim('$useremail') LIMIT 1";
 $result_set = mysqli_query($connection, $query);
 if(!$result_set){die("Database query failed.".$query);}
 return ($result_set);
@@ -387,6 +389,7 @@ function user_log_tracker($userid){
 					(mq2_minutesToFallAsleep + mq3_minutesToFallBackToSleep) / 60) / 
 			        (substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),1,2) +
 					substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),4,2) / 60),2) AS Sleep_Efficiency
+					
             FROM   coach_z.cz_mng_answers Where uid = $userid";
 
     $result = mysqli_query($connection, $query);
@@ -395,12 +398,21 @@ function user_log_tracker($userid){
 }
 
 
+function update_user_mode($uid, $user_mode) {
+global $connection;
+$query  = "UPDATE coach_z.app_users SET USER_MODE = '$user_mode' where u_id = '$uid'";
+$result_set = mysqli_query($connection, $query);
+}
 
 
-
-/*select uid,
-substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),1,2) +
-substr(TIMEDIFF(mq1_wakeTime, mq1_bedTime),4,2) / 60
-from coach_z.cz_mng_answers;*/
+function get_user_mode($userid){
+global $connection;
+$query  = "SELECT case when user_mode = 'true' then 'B' else 'R' end as user_mode FROM coach_z.app_users where u_id = $userid";
+$result = mysqli_query($connection, $query);
+$result_rec = mysqli_fetch_assoc($result);
+$db_user_mode = $result_rec["user_mode"];
+	error_log("Inside query\n" . $db_user_mode , 3, "C:/xampp/apache/logs/error.log");
+return $db_user_mode;
+}
 
 ?>

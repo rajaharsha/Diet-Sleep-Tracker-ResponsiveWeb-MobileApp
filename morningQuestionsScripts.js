@@ -420,7 +420,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 					<p></p>\
 				</div>\
 				<div class="modal-footer">\
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href=diary.php">Close</button>\
 				</div>\
 			</div>\
 		</div>\

@@ -47,7 +47,8 @@ function check_duplicate_user(id,value) {
   if (trim_response.trim() == 'notok')
     {
       $( '#name' ).siblings('.help-block').html("User already exists")
-    } else ($( '#name' ).siblings('.help-block').html(""));
+    } 
+  else ($( '#name' ).siblings('.help-block').html(""));
 
   }
 
@@ -149,7 +150,7 @@ function insert_new_user(username,useremail,userpassword){
         type: 'post',
         data: {post_user_registration:user_records},
         success: function(data) {
-                                  alert ('Posted Successfully');
+                                  //alert ('Posted Successfully');
                                   $( '#btn_id' ).siblings('.help-block').html("User Account Created");
                                 },
         error: function(xhr, desc, err) {

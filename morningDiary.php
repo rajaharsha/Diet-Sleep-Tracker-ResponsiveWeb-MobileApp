@@ -23,8 +23,14 @@ include('./includes/header.php'); // Bring in the Menus, etc
 
 
 <!-- Present questions HERE -->
+
+<br>
+<br>
+<br>
+
 <div class="container">
-	<div class="row" id="mainRow">
+<!-- 	<div class="row" id="mainRow"> -->
+	<div>
 		<div class="col-md-12">
 			<div class="col-xs-1 col-md-4 col-lg-4"></div>
 			<div class="col-xs-10 col-md-4 col-lg-4" id="question1">
@@ -59,7 +65,7 @@ include('./includes/header.php'); // Bring in the Menus, etc
 					<p></p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='diary.php';">Close</button>
 				</div>
 			</div>
 		</div>
@@ -414,10 +420,7 @@ submitMorningQuestions();
 function submitMorningQuestions() {
 
 
-
-
-	if (cur_mor_day < 15) {
-		alert (cur_mor_day);
+if (cur_mor_day < 15) {
 
 // Day - 1 - Morning //
 
@@ -702,7 +705,7 @@ $.ajax({
 	success: function(data) {	
 		var div = document.getElementById('push_morning_tip');
 		div.innerHTML = mng_tip_message;
-		alert ('Posted Successfully');
+		document.getElementById('mqs_submit').disabled = true;
 	},
 	error: function(xhr, desc, err) {
 		console.log(xhr);

@@ -17,7 +17,8 @@ include('./includes/header.php');
 
 <!-- Present questions HERE -->
 <div class="container">
-  <div class="row" id="mainRow">
+<!--   <div class="row" id="mainRow"> -->
+  <div>
     <div class="col-md-12">
       <div class="col-xs-1 col-md-4 col-lg-4"></div>
       <div class="col-xs-10 col-md-4 col-lg-4" id="question1">
@@ -343,9 +344,6 @@ function evg_ans_submit() {
 
     if (cur_evg_day < 15) {
 
-
-      alert(cur_evg_day);
-
 // Day 1 Tip 2: S2 //
 
       if (cur_evg_day == 1){
@@ -612,8 +610,8 @@ eqs_answers['tip_code'] = tip_code;
     type: 'post',
     success: function(data) {
       var div = document.getElementById('push_evening_tip');
-      div.innerHTML = div.innerHTML + evg_tip_message;
-      alert ('Posted Successfully')
+      div.innerHTML = evg_tip_message;
+      document.getElementById('eqs_submit').disabled = true;
     },
     data: {post_evg_answers:eqs_answers},
     error: function(xhr, desc, err) {
