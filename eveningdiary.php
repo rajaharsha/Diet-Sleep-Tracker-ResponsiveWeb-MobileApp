@@ -19,7 +19,7 @@ include('./includes/header.php');
 <div class="container">
 <!--   <div class="row" id="mainRow"> -->
   <div>
-    <div class="col-md-12">
+    <div class="row">
       <div class="col-xs-1 col-md-4 col-lg-4"></div>
       <div class="col-xs-10 col-md-4 col-lg-4" id="question1">
         <div class="form-group">
@@ -108,11 +108,17 @@ nextQuestion();
 }
 
 
-function showCaffeineMenu() {
-  document.getElementById("questionDisplay").innerHTML = qs1partb;
+function changeButton() {
+  var checkValue = document.getElementById("q2NextButton").innerHTML;
+
+
+if (checkValue == "No. Continue"){
+    document.getElementById("q2NextButton").innerHTML = "Continue";
+} else {
+    document.getElementById("q2NextButton").innerHTML = "No. Continue";
 }
 
-
+}
 
 
 function getCaffeineResults() {
@@ -145,18 +151,13 @@ function updateCoffee(timeOfDay, plusMinus) {
   eqs_answers['eq1_Evening'] = document.getElementById('eq1c').value;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 // end Question 1 ******************************************
+
+
+
+
+
+
 
 
 

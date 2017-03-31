@@ -22,9 +22,10 @@ type="button" \
 data-toggle="collapse" \
 data-target="#part2" \
 name="q1" \
-id="inputDidDrinkCoffeeButton">Yes?</button>\
+id="inputDidDrinkCoffeeButton" onclick="changeButton()">Yes?</button>\
 </div>\
 </div>\
+\
 <div id="part2" class="collapse">\
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
