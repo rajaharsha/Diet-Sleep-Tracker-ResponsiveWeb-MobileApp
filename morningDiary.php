@@ -30,19 +30,22 @@ include('./includes/header.php'); // Bring in the Menus, etc
 <br>
 <br>
 
+<!-- Present questions HERE -->
 <div class="container">
-<!-- 	<div class="row" id="mainRow"> -->
-	<div>
-		<div class="col-md-12">
-			<div class="col-xs-1 col-md-4 col-lg-4"></div>
-			<div class="col-xs-10 col-md-4 col-lg-4" id="question1">
-				<div class="form-group">
-					<div id="questionDisplay" >
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<!--   <div class="row" id="mainRow"> -->
+  <div>
+    <div class="row">
+      <div class="col-xs-1 col-md-4 col-lg-4"></div>
+      <div class="col-xs-12 col-md-4 col-lg-4" id="question1">
+        <div class="form-group">
+          <div id="questionDisplay"> <!-- Where the question is displayed --> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="eveningQuestionsList.js"></script>
+<!-- End Question Block --> 
 
 
 
