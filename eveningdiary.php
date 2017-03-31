@@ -8,11 +8,11 @@ include("./includes/cz_functions.js");
 include('./includes/header.php');
 ?>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <script type="text/javascript" src="assets/Evening_Tips.json"></script>
   <script type="text/javascript" src="assets/Standard_Tips.json"></script>
+
+
 
 
 <!-- Present questions HERE -->

@@ -10,7 +10,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 <div class="well row" id="displayWell">\
 <div class="row">\
 <div class="col-xs-12 text-center">\
-<h3 \
+<h3 class="fadeIn"\
 id="part1">Did you drink any caffeinated drinks today?</h3> \
 </div>\
 </div>\
@@ -86,13 +86,14 @@ id="inputDidDrinkCoffeeButton">Yes?</button>\
 
 var qs2 = ' \
 <div class="container-fluid">\
+<div class="well row "  id="displayWell">\
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<h3>Did you exercise today?</h3>\
+<h3 class="fadeIn">Did you exercise today?</h3>\
 </div>\
 </div>\
 <br />\
-<div class="well row "  id="displayWell">\
+\
 <div class="hatch row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <button class="form-control btn btn-large btn-success" type="submit" onclick="question2(1)">\
@@ -214,7 +215,7 @@ var qs5 = ' \
 ';
 
 var qs6 = '\
-<div class="hatch container-fluid">\
+<div class="container-fluid">\
 \
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
@@ -226,6 +227,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 \
 \
 	<div class="row well" id="displayWell">\
+	\
 							<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
 							<h3>Do you do any of the following in your bed?</h3>\
 							</div>\
@@ -256,7 +258,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 							\
 							<br />\
 							\
-							<div class="row">\
+							<div class="hatch row">\
 							<div class="col-xs-12 col-md-12 col-lg-12">\
 							<button id="eqs6op3" class="form-control btn btn-large btn-Default" onclick="question6(3)">\
 							<span>Watch TV</span>\
@@ -298,8 +300,21 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 </div>\
 ';
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 var qs7 = ' \
-<div class="hatch container-fluid">\
+<div class="container-fluid">\
 \
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
@@ -308,46 +323,54 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 </div>\
 </div>\
 \
-<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
-<h3>During what time of day, do you have the most energy and motivation?</h3>\
-</div>\
-\
-<br />\
-\
 <div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-warning" type="submit" onclick="question7(1)">\
-<span>Morning</span>\
-</button>\
-</div>\
-</div>\
-<br />\
+	<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
+		<h3>During what time of day, do you have the most energy and motivation?</h3>\
+		</div>\
+	</div \
+	\
+	<br />\
+	\
+			<div class="row well" id="displayWell">\
+			\
+				<div class="row hatch">\
+				<div class="col-xs-12 col-md-12 col-lg-12">\
+				<button class="form-control btn btn-large btn-warning" type="submit" onclick="question7(1)">\
+				<span>Morning</span>\
+				</button>\
+				</div>\
+				</div>\
+				\
+				<br />\
+				\
+				<div class="row hatch">\
+				<div class="col-xs-12 col-md-12 col-lg-12">\
+				<button class="form-control btn btn-large btn-success" type="submit" onclick="question7(2)">\
+				<span>Afternoon</span>\
+				</button>\
+				</div>\
+				</div>\
+				\
+				<br />\
+				\
+				<div class="row hatch">\
+				<div class="col-xs-12 col-md-12 col-lg-12">\
+				<button class="form-control btn btn-large btn-info" type="submit" onclick="question7(3)">\
+				<span>Evening</span>\
+				</button>\
+				</div>\
+				</div>\
+				\
+				<br>\
+			</div>\
+			\
 \
-<div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-success" type="submit" onclick="question7(2)">\
-<span>Afternoon</span>\
-</button>\
-</div>\
-</div>\
-\
-<br />\
-<div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-info" type="submit" onclick="question7(3)">\
-<span>Evening</span>\
-</button>\
-</div>\
-</div>\
-<br>\
-\
-<div class="row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<div class="questionButtonDiv">\
-<button style="" id="eqs_submit" \
-class="hatch form-control btn button-default" onclick="evg_ans_submit()" data-toggle="modal" data-target="#evening_tip">\
-<span>Submit your diary!</span>\
-</button>\
+			<div class="col-xs-12 col-md-12 col-lg-12" >\
+			<div class="questionButtonDiv">\
+			<button id="eqs_submit" \
+			class="hatch form-control btn button-default" onclick="evg_ans_submit()" data-toggle="modal" data-target="#evening_tip">\
+			<span>Submit your diary!</span>\
+			</button>\
 \
 \
 </div>\
