@@ -6,11 +6,10 @@
   include('./includes/header.php');
 ?>
 
-<br>
 
-<div class="container">
+
+<div class="slideDown btn group text-center">
       <!-- Example row of columns -->
-      <div class="row">
         <div class="col-md-4">
             <br>
             <button type="button" class="btn btn-primary btn-lg btn-block btn-info" onclick="location.href='diary.php';"> 
@@ -33,7 +32,6 @@
             </button>
             <br>
         </div>
-      </div>
 </div>            
 
 <br><br>
