@@ -1,5 +1,5 @@
 var qs1 = ' \
-<div class=" container-fluid fadeIn">\
+<div class="container-fluid fadeIn">\
 <form onSubmit="return !!(false & nextQuestion());">\
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
@@ -17,7 +17,7 @@ id="part1">Did you drink any caffeinated drinks today?</h3> \
 \
 \
 \
-<div class="row ">\
+<div class="row" >\
 <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
 <button \
 class="hatch form-control btn btn-large btn-primary" \
@@ -28,9 +28,9 @@ name="q1" \
 id="inputDidDrinkCoffeeButton" onclick="changeButton()">Yes?</button>\
 </div>\
 </div>\
-\
+<br />\
 <div id="part2" class="collapse">\
-<div class="row text-center">\
+		<div class="well row" id="displayWell">\
 <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
 <h3>Morning</h3>\
 </div>\
@@ -90,7 +90,7 @@ id="inputDidDrinkCoffeeButton" onclick="changeButton()">Yes?</button>\
 
 var qs2 = ' \
 <div class="container-fluid">\
-		<div class="row"  >\
+		<div class="row">\
 			<div class="row text-center">\
 				<div class="col-xs-12 col-md-12 col-lg-12">\
 				<h3 class="fadeIn">Did you exercise today?</h3>\
