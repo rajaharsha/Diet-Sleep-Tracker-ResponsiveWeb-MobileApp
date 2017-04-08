@@ -7,14 +7,17 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 1/5 Complete (success)\
 </div>\
 </div>\
-<div class="well row" id="displayWell">\
-<div class="row">\
+\
+\
+\
 <div class="col-xs-12 text-center">\
 <h3 class="fadeIn"\
 id="part1">Did you drink any caffeinated drinks today?</h3> \
 </div>\
-</div>\
-<div class="row">\
+\
+\
+\
+<div class="row ">\
 <div class="col-xs-12 col-md-12 col-lg-12 text-center">\
 <button \
 class="hatch form-control btn btn-large btn-primary" \
@@ -87,59 +90,70 @@ id="inputDidDrinkCoffeeButton" onclick="changeButton()">Yes?</button>\
 
 var qs2 = ' \
 <div class="container-fluid">\
-<div class="well row "  id="displayWell">\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<h3 class="fadeIn">Did you exercise today?</h3>\
-</div>\
-</div>\
-<br />\
-\
-<div class="hatch row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-success" type="submit" onclick="question2(1)">\
-<span>Yes!</span>\
-</button>\
-</div>\
-</div>\
-<br />\
-<div class="hatch row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="question2(0)">\
-<span>Not today!</span>\
-</button>\
-</div>\
-</div>\
-</div>\
-</form>\
+		<div class="row"  >\
+			<div class="row text-center">\
+				<div class="col-xs-12 col-md-12 col-lg-12">\
+				<h3 class="fadeIn">Did you exercise today?</h3>\
+				</div>\
+			</div>\
+		</div>\
+		<br />\
+		\
+		<div class="well row" id="displayWell">\
+			<div class="hatch row">\
+				<div class="col-xs-12 col-md-12 col-lg-12">\
+					<button class="form-control btn btn-large btn-success" type="submit" onclick="question2(1)">\
+					<span>Yes!</span>\
+					</button>\
+				</div>\
+			</div>\
+			\
+			<br />\
+			\
+			<div class="hatch row">\
+				<div class="col-xs-12 col-md-12 col-lg-12">\
+					<button class="form-control btn btn-large btn-primary" type="submit" onclick="question2(0)">\
+					<span>Not today!</span>\
+					</button>\
+				</div>\
+			</div>\
+			</div>\
+		</div>\
+		\
 </div>\
 ';
 
 var qs3 = '\
 <div class="container-fluid">\
-<div class="row text-center">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<h3>Did you drink Alcohol?</h3>\
-</div>\
-</div>\
-<br />\
-<div class="well row" id="displayWell">\
-<div class="hatch row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-success" type="submit" onclick="question3(1)">\
-<span>Yes</span>\
-</button>\
-</div>\
-</div>\
-<br />\
-<div class="hatch row">\
-<div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="form-control btn btn-large btn-primary" type="submit" onclick="question3(0)">\
-<span>No. Continue</span>\
-</button>\
-</div>\
-</div>\
-</div>\
+	<div class="row text-center">\
+		<div class="col-xs-12 col-md-12 col-lg-12">\
+			<h3>Did you drink Alcohol?</h3>\
+		</div>\
+	</div>\
+	\
+	<br />\
+	\
+	<div class="well row" id="displayWell">\
+	\
+				<div class="hatch row">\
+					<div class="col-xs-12 col-md-12 col-lg-12">\
+						<button class="form-control btn btn-large btn-success" type="submit" onclick="question3(1)">\
+						<span>Yes</span>\
+						</button>\
+					</div>\
+				</div>\
+					\
+					<br />\
+					\
+				<div class="hatch row">\
+					<div class="col-xs-12 col-md-12 col-lg-12">\
+						<button class="form-control btn btn-large btn-primary" type="submit" onclick="question3(0)">\
+						<span>No. Continue</span>\
+						</button>\
+					</div>\
+				</div>\
+	</div>\
+	\
 </div>\
 ';
 

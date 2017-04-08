@@ -9,7 +9,7 @@
 
 <div class="container-fluid">
 
-
+<div class="fadeIn">
                   <div class="col-xs-1 col-lg-3"></div>
                   <div class="col-xs-10 col-md-4 col-lg-2">
                   <button type="button" class="btn btn-primary btn-lg btn-block btn-info" onclick="location.href='diary.php';">
@@ -35,7 +35,7 @@
                   </button>
                   </div>
       </div>
-
+</div>
 
            
 
