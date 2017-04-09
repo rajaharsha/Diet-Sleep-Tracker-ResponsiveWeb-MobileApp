@@ -110,13 +110,13 @@ input:checked + .slider:before {
 
 
 .well {
-  background-color: #667788;
+  background-color: #556677;
   border-radius: 10px;
   color: black;
 }
 
 #displayWell {
   border: none; 
-  box-shadow: 2px 2px 30px black;
+  box-shadow: 2px 2px 30px #112233;
 }
 
