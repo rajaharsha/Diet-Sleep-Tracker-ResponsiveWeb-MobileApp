@@ -8,16 +8,17 @@
 
 
 
-<div class="slideDown btn group text-center">
+<div class="center">
       <!-- Example row of columns -->
-        <div class="col-md-4">
+      <div class="col-md-3"></div>
+        <div class="col-md-2">
             <br>
             <button type="button" class="btn btn-primary btn-lg btn-block btn-info" onclick="location.href='diary.php';"> 
                   <img src="img/Sleep_Diary.png" class="center-block" alt="CoachZ" width="150" height="150">
             </button>
             <br>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
 
             <br>
             <button type="button" class="btn btn-primary btn-lg btn-block btn-info" onclick="location.href='coachz_tips.php';">  
@@ -25,13 +26,14 @@
             </button>
             <br>
         </div>  
-        <div class="col-md-4">
+        <div class="col-md-2">
             <br>
             <button type="button" class="btn btn-primary btn-lg btn-block btn-info" onclick="location.href='sleep_tracker.php';"> 
                   <img src="img/Sleep_Tracker.png" class="center-block" alt="CoachZ" width="150" height="150">
             </button>
             <br>
         </div>
+        <div class="col-md-3"></div>
 </div>            
 
 <br><br>
