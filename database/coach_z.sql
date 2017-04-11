@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2017 at 01:27 AM
+-- Generation Time: Apr 11, 2017 at 10:01 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -25,19 +25,6 @@ USE `coach_z`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `app_questions`
---
-
-CREATE TABLE `app_questions` (
-  `Q_ID` int(11) NOT NULL,
-  `Q_TYPE` varchar(10) NOT NULL,
-  `Q_SEQ` varchar(10) NOT NULL,
-  `Q_TEXT` varchar(1000) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `app_users`
 --
 
@@ -55,30 +42,17 @@ CREATE TABLE `app_users` (
   `LAST_UPDATED_BY` varchar(50) DEFAULT NULL,
   `LAST_UPDATION_DATE` date DEFAULT NULL,
   `LAST_LOGIN_DATE` date DEFAULT NULL,
-  `USER_NAME` varchar(100) DEFAULT NULL
+  `USER_NAME` varchar(100) DEFAULT NULL,
+  `USER_MODE` varchar(50) DEFAULT 'R'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `app_users`
 --
 
-INSERT INTO `app_users` (`U_ID`, `FIRST_NAME`, `LAST_NAME`, `EMAIL`, `PASS_CODE`, `ACTIVE`, `USER_ROLE`, `USER_IMAGE`, `CREATED_BY`, `CREATION_DATE`, `LAST_UPDATED_BY`, `LAST_UPDATION_DATE`, `LAST_LOGIN_DATE`, `USER_NAME`) VALUES
-(1, '', '', 'rajaharsha.ch@gmail.com', '', 'Y', '', NULL, '-1', '2017-01-09 21:18:00', NULL, NULL, NULL, 'RAJA'),
-(2, '', '', 'rajaharsha.ch@gmail.com', 'hehey', 'Y', '', NULL, '-1', '2017-01-05 23:43:33', NULL, NULL, NULL, 'RAJA HARSHA CHINTA'),
-(3, '', '', 'rajaharsha.c@gmail.com', 'harshaharsha', 'Y', '', NULL, '-1', '2017-01-05 23:44:16', NULL, NULL, NULL, 'RAJA HARSHA CHINTA'),
-(4, '', '', 'rajaharshach@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-01-10 16:25:03', NULL, NULL, NULL, 'rharshaaa'),
-(5, '', '', 'eraredfa@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-01-10 16:32:53', NULL, NULL, NULL, 'raharsa'),
-(6, '', '', 'rajaharshachinta@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-01-10 16:47:03', NULL, NULL, NULL, 'rajaharshachinta'),
-(7, '', '', 'rajahars@gmail.com', 'born', 'Y', '', NULL, '-1', '2017-01-10 16:51:13', NULL, NULL, NULL, 'rajahars'),
-(8, '', '', 'rahfdafsd@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-01-10 17:07:16', NULL, NULL, NULL, 'rajahafdafd'),
-(9, '', '', 'rajaharsha@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-01-10 17:10:56', NULL, NULL, NULL, 'rajaharsha'),
-(10, '', '', 'rajaharsha@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-01-10 18:23:59', NULL, NULL, NULL, 'rajaharsha'),
-(11, '', '', 'rajaharsha@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-01-10 18:24:02', NULL, NULL, NULL, 'rajaharsha'),
-(12, '', '', 'rajaharshfdasfdfa.c@gmail.com', 'Raja', 'Y', '', NULL, '-1', '2017-01-11 17:34:55', NULL, NULL, NULL, 'rearea'),
-(13, '', '', 'rajaharsha.c@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-02-05 01:03:05', NULL, NULL, NULL, 'rajaharsha'),
-(14, '', '', 'brian@mymail.com', '12345', 'Y', '', NULL, '-1', '2017-02-07 22:03:59', NULL, NULL, NULL, 'brian'),
-(15, '', '', 'rajaharsha.c@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-02-13 16:04:31', NULL, NULL, NULL, 'rajaharsha'),
-(17, '', '', 'rajaharsha.c@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-02-13 16:08:18', NULL, NULL, NULL, 'rafdafas');
+INSERT INTO `app_users` (`U_ID`, `FIRST_NAME`, `LAST_NAME`, `EMAIL`, `PASS_CODE`, `ACTIVE`, `USER_ROLE`, `USER_IMAGE`, `CREATED_BY`, `CREATION_DATE`, `LAST_UPDATED_BY`, `LAST_UPDATION_DATE`, `LAST_LOGIN_DATE`, `USER_NAME`, `USER_MODE`) VALUES
+(20, '', '', 'raja@gmail.com', 'raja', 'Y', '', NULL, '-1', '2017-03-30 14:52:50', NULL, NULL, NULL, 'raja', 'true'),
+(21, '', '', 'Admin@gmail.com', 'Admin', 'Y', '', NULL, '-1', '2017-04-11 07:33:08', NULL, NULL, NULL, 'Admin', 'false');
 
 -- --------------------------------------------------------
 
@@ -104,15 +78,18 @@ CREATE TABLE `cz_evg_answers` (
   `eq7_TimeOfDay` varchar(50) DEFAULT NULL,
   `tip_code` varchar(50) DEFAULT NULL,
   `creation_time` datetime DEFAULT CURRENT_TIMESTAMP,
-  `modification_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+  `modification_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `eq1_caffeine` varchar(50) DEFAULT NULL,
+  `log_day` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `cz_evg_answers`
 --
 
-INSERT INTO `cz_evg_answers` (`id`, `uid`, `eq1_Morning`, `eq1_Afternoon`, `eq1_Evening`, `eq2_Exercise`, `eq3_Alcohol`, `eq4_Nap`, `eq5_Mood`, `eq6_Phone`, `eq6_ReadHomeWork`, `eq6_WatchTV`, `eq6_PlayVideoGames`, `eq6_None`, `eq7_TimeOfDay`, `tip_code`, `creation_time`, `modification_time`) VALUES
-(4, 9, '0', '0', '0', 'Yes', 'Yes', 'Yes', '2', 'false', '', 'false', 'true', 'false', '2', 'S2', '2017-03-13 12:25:03', NULL);
+INSERT INTO `cz_evg_answers` (`id`, `uid`, `eq1_Morning`, `eq1_Afternoon`, `eq1_Evening`, `eq2_Exercise`, `eq3_Alcohol`, `eq4_Nap`, `eq5_Mood`, `eq6_Phone`, `eq6_ReadHomeWork`, `eq6_WatchTV`, `eq6_PlayVideoGames`, `eq6_None`, `eq7_TimeOfDay`, `tip_code`, `creation_time`, `modification_time`, `eq1_caffeine`, `log_day`) VALUES
+(6, 21, '1', '1', '1', 'Yes', 'Yes', 'Yes', '1', 'false', '', 'true', 'false', 'false', '1', 'S2', '2017-04-11 00:07:58', NULL, 'Yes', '1'),
+(7, 21, '0', '0', '0', 'No', 'No', 'No', '2', 'false', '', 'true', 'true', 'false', '2', '', '2017-04-11 02:50:15', NULL, 'Yes', '2');
 
 -- --------------------------------------------------------
 
@@ -146,21 +123,8 @@ CREATE TABLE `cz_mng_answers` (
 --
 
 INSERT INTO `cz_mng_answers` (`id`, `uid`, `mq1_bedTime`, `mq1_wakeTime`, `mq2_problemsFallingAsleep`, `mq2_minutesToFallAsleep`, `mq3_didWakeDuringTheNight`, `mq3_minutesToFallBackToSleep`, `mq4_howDidYouFeel`, `mq5_noise`, `mq5_light`, `mq5_stress`, `mq5_temp`, `mq5_nota`, `tip_code`, `creation_time`, `modification_time`, `LOG_DAY`) VALUES
-(6, 9, '2017-03-17 21:00:00', '2017-03-18 10:00:00', 'Yes', '20', 'Yes', '10', 'Alert', 'false', 'false', 'true', 'true', 'false', '', '2017-03-22 15:08:49', '2017-03-24 15:21:21', '1'),
-(7, 9, '2017-03-19 00:00:00', '2017-03-19 06:15:00', 'Yes', '10', 'Yes', '10', 'Alert', 'false', 'false', 'true', 'true', 'false', '', '2017-03-22 15:13:48', '2017-03-24 15:21:21', '2'),
-(8, 9, '2017-03-19 23:50:00', '2017-03-20 10:05:00', 'Yes', '15', 'Yes', '5', 'Alert', 'false', 'false', 'true', 'true', 'false', '', '2017-03-22 15:16:21', '2017-03-24 15:21:21', '3'),
-(9, 9, '2017-03-20 22:30:00', '2017-03-21 09:03:00', 'Yes', '10', 'Yes', '5', 'Somewhat Sleepy', 'false', 'true', 'true', 'false', 'false', '', '2017-03-22 15:18:47', '2017-03-24 15:21:21', '4'),
-(10, 9, '2017-03-21 21:30:00', '2017-03-22 09:03:00', 'Yes', '10', 'Yes', '5', 'Somewhat Sleepy', 'false', 'true', 'true', 'false', 'false', '', '2017-03-22 15:39:52', '2017-03-24 15:21:21', '5'),
-(11, 9, '2017-03-22 12:00:00', '2017-03-22 12:00:00', 'Yes', '5', 'Yes', '5', 'Alert', 'false', 'true', 'true', 'false', 'false', '', '2017-03-22 15:46:45', '2017-03-24 15:21:21', '6'),
-(12, 9, '2017-03-22 12:00:00', '2017-03-22 12:00:00', 'No', '0', 'Yes', '10', 'Somewhat Sleepy', 'true', 'false', 'false', 'false', 'false', '', '2017-03-22 15:48:00', '2017-03-24 15:21:21', '7'),
-(15, 9, '2017-03-22 12:00:00', '2017-03-22 13:15:00', 'Yes', '10', 'No', '0', 'Somewhat Sleepy', 'false', 'false', 'true', 'true', 'false', '', '2017-03-22 16:08:58', '2017-03-24 15:21:21', '8'),
-(16, 9, '2017-03-22 12:00:00', '2017-03-22 21:00:00', 'Yes', '15', 'Yes', '5', 'Somewhat Sleepy', 'false', 'false', 'true', 'false', 'false', '', '2017-03-22 16:10:50', '2017-03-24 15:21:21', '9'),
-(17, 9, '2017-03-22 12:00:00', '2017-03-22 21:00:00', 'Yes', '15', 'Yes', '5', 'Somewhat Sleepy', 'false', 'false', 'true', 'false', 'false', '', '2017-03-22 16:13:39', '2017-03-24 15:21:21', '10'),
-(18, 9, '2017-03-22 12:00:00', '2017-03-22 21:00:00', 'Yes', '15', 'Yes', '5', 'Somewhat Sleepy', 'false', 'false', 'true', 'false', 'false', '', '2017-03-22 16:15:34', '2017-03-24 15:21:21', '11'),
-(19, 9, '2017-03-22 12:00:00', '2017-03-22 21:00:00', 'Yes', '15', 'Yes', '5', 'Somewhat Sleepy', 'false', 'false', 'true', 'false', 'false', '', '2017-03-22 16:16:30', '2017-03-24 15:21:21', '12'),
-(21, 9, '2017-03-22 00:00:00', '2017-03-22 09:15:00', 'Yes', '20', 'Yes', '15', 'Sleepy', 'false', 'false', 'true', 'true', 'false', '', '2017-03-22 17:07:20', '2017-03-24 15:21:21', '13'),
-(22, 9, '2017-03-22 20:00:00', '2017-03-23 05:15:00', 'No', '0', 'No', '0', 'Sleepy', 'false', 'true', 'false', 'false', 'false', '', '2017-03-22 17:20:47', '2017-03-24 16:32:32', '14'),
-(23, 9, '2017-03-25 01:00:00', '2017-03-25 01:15:00', 'Yes', '15', 'Yes', '10', 'Somewhat Sleepy', 'false', 'false', 'true', 'true', 'false', '', '2017-03-24 20:11:07', NULL, NULL);
+(4, 21, '2017-04-11 00:00:00', '2017-04-11 03:15:00', 'No', '0', 'No', '0', 'Alert', 'false', 'true', 'false', 'false', 'false', 'S1', '2017-04-11 00:04:10', '2017-04-11 01:39:06', '1'),
+(8, 21, '2017-04-11 00:00:00', '2017-04-11 08:00:00', 'Yes', '5', 'No', '0', 'Sleepy', 'true', 'true', 'false', 'false', 'false', '', '2017-04-11 02:39:04', NULL, '2');
 
 -- --------------------------------------------------------
 
@@ -261,7 +225,7 @@ INSERT INTO `cz_tips` (`id`, `tip_code`, `tip_type`, `tip_question`, `tip_number
 (76, 'E41', 'Evening', 'Q7', 41, 'Today you reported that you feel you have more energy in the evening.  Is this how you always feel?  If so, you might be an evening or night owl person.  This means your preference is to go to sleep later in the evening.  Once you know this about yourself, pick your courses based on this when you can, try to pick jobs etc.  Knowing when you are most focused or motivated can also relate to when you study, or when you go the gym.  Knowing your best time of day is important to adjusting your schedule.', '2017-03-06 16:40:10'),
 (77, 'E42', 'Evening', 'Q7', 42, 'If you are an evening person, it is okay to go to bed later and sleep in later if that is how your body is working, but be attentive to the amount of sleep you are getting.  Don’t keep a late schedule at the expense of your sleep, your schedule is something you can adjust to, being sleep deprived is something your body won’t adjust to.  Think about ways you can manage this.', '2017-03-06 16:40:10'),
 (78, 'S1', 'Standard', 'S1', 1, 'Welcome to Coach Z Sleep Boot Camp.  For the next two weeks I would like you to keep a sleep diary, completing it twice a day in the morning and evening.  As you fill your diary out each day I will send you personalized tips to help you improve your sleep.  Sleep may not be something you really think about, but we spend about 33% of our lives sleeping…we might as well try to be good at it!', '2017-03-06 16:40:10'),
-(79, 'S2', 'Standard', 'S2', 2, 'Before I start sending you tips tomorrow, I wanted to mention why sleep matters.  Sleep is a health behavior, just like diet and exercise. Sleep is not just something that happens every night, you are in control of how well you sleep and how much sleep you get.  Getting a healthy amount of sleep each night is an important and it is in your control.  Sleep relates to your health, mood, and can even help you manage your weight- do not believe me- google it.', '2017-03-06 16:40:10'),
+(79, 'S2', 'Standard', 'S2', 2, 'Before I start sending you tips tomorrow, I wanted to mention why sleep matters.  Sleep is a health behavior, just like diet and exercise. Sleep is not just something that happens every night, you are in control of how well you sleep and how much sleep you get.  Getting a healthy amount of sleep each night is an important and it is in your control.  Sleep relates to your health, mood, and can even help you manage your weight do not believe me google it.', '2017-03-06 16:40:10'),
 (80, 'S3', 'Standard', 'S3', 3, 'You have completed your first week of boot-camp, great job!  Something you may not have used yet is the tracker part of the app.  Every day I use your diary entries to calculate your total sleep time and your sleep efficiency scores.  Sleep efficiency is a percentage that represents how long you are actually asleep during the time you are in bed.  If you have a low sleep efficiency score this means that you spend a lot of time in your bed, trying to sleep, but not being able to sleep. Anything lower than 85% says that you definitely have room for improvement.', '2017-03-06 16:40:10'),
 (81, 'S4', 'Standard', 'S4', 4, 'Do you go to bed and wake up around the same time every day?  Use the sleep tracker part of the app to check this.  That is a really important part of healthy sleep.  It is common for students to get less sleep during the week, and more sleep on the weekends.  While a schedule like this may seem like you are catching up on the weekends, this is not how it works, and oversleeping  on the weekends can throw your sleep cycle off even further.  Try to get close to the same amount of sleep each night, and keep similar bed times and wake times (as best you can)!', '2017-03-06 16:40:10'),
 (82, 'S5', 'Standard', 'S5', 5, 'Did you know the amount of sleep you need and the quality of your sleep can change with age.  When you were younger you needed more sleep.  Kids often need about 10-13 hours of sleep at night.  Teens need a little less sleep than kids, but still more than the average adult.  Adults typically need about 8 hours of sleep a night- although everyone is a little different.  People also report having worse sleep as they age- that is why developing good sleep habits now can really help you out in the future.', '2017-03-06 16:40:10'),
@@ -285,7 +249,7 @@ CREATE TABLE `cz_usr_bootcamp_log` (
   `UID` int(10) DEFAULT NULL,
   `LOG_DAY` int(10) DEFAULT NULL,
   `LOG_TYPE` varchar(50) DEFAULT NULL,
-  `LOG_TIME` date DEFAULT NULL
+  `LOG_TIME` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -293,11 +257,10 @@ CREATE TABLE `cz_usr_bootcamp_log` (
 --
 
 INSERT INTO `cz_usr_bootcamp_log` (`LOG_ID`, `UID`, `LOG_DAY`, `LOG_TYPE`, `LOG_TIME`) VALUES
-(28, 9, 6, 'M', '2017-03-18'),
-(29, 9, 6, 'E', '2017-03-18'),
-(30, 9, 1, 'E', '2017-03-20'),
-(31, 9, 1, 'E', '2017-03-20'),
-(32, 9, 5, 'E', '2017-03-24');
+(61, 21, 1, 'M', '2017-04-10 00:00:00'),
+(62, 21, 1, 'E', '2017-04-10 00:00:00'),
+(63, 21, 2, 'M', '2017-04-11 00:00:00'),
+(64, 21, 2, 'E', '2017-04-11 02:50:15');
 
 --
 -- Indexes for dumped tables
@@ -341,17 +304,17 @@ ALTER TABLE `cz_usr_bootcamp_log`
 -- AUTO_INCREMENT for table `app_users`
 --
 ALTER TABLE `app_users`
-  MODIFY `U_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `U_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `cz_evg_answers`
 --
 ALTER TABLE `cz_evg_answers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `cz_mng_answers`
 --
 ALTER TABLE `cz_mng_answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `cz_tips`
 --
@@ -361,7 +324,7 @@ ALTER TABLE `cz_tips`
 -- AUTO_INCREMENT for table `cz_usr_bootcamp_log`
 --
 ALTER TABLE `cz_usr_bootcamp_log`
-  MODIFY `LOG_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `LOG_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
