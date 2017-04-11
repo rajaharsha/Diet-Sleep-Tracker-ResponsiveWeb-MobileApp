@@ -21,6 +21,9 @@ $obj = $_POST['post_evg_answers'];
             $uid = $obj["uid"];                                    // 14
             $cur_evg_day = $obj["cur_evg_day"];                    // 15
             $tip_code = $obj["tip_code"];                          // 16
+            $eq1_caffeine = $obj["eq1_caffeine"];
+            $btcmp_user_mode = $obj["btcmp_user_mode"];
+
 
 
            insert_evg_answer(
@@ -39,6 +42,8 @@ $obj = $_POST['post_evg_answers'];
             $eq7_TimeOfDay,                // 13
             $uid,                          // 14
             $cur_evg_day,                  // 15
-            $tip_code                      // 16
+            $tip_code,                     // 16
+            $eq1_caffeine,
+            $btcmp_user_mode
             );          
     ?>

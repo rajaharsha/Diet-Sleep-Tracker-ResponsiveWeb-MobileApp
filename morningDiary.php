@@ -13,18 +13,18 @@ include('./includes/header.php'); // Bring in the Menus, etc
 
 <!-- Jhorton Bootstrap-Datepicker REQUIRES! jQuery --> 
 <!-- jQuery is brought in from header.php --> 
-<script src="Jhorton/jquery.timepicker.js" type="text/javascript"></script>
+<script src="Jhorton/jQuery.timepicker.js" type="text/javascript"></script>
 <link href="Jhorton/jquery.timepicker.css"  type="text/css" rel="stylesheet" />
 <script src="Jhorton/lib/bootstrap-datepicker.js" type="text/javascript"></script>
 <link href="Jhorton/lib/bootstrap-datepicker.css" type="text/css" rel="stylesheet" />
 <script src="Jhorton/lib/site.js" type="text/javascript"></script>
 <link href="Jhorton/lib/site.css" type="text/css" rel="stylesheet" />
-<!-- *********************************** end date-picker dependencies *** -->
-
-
-
+<!-- *** end date-picker dependencies *** -->
 
 <!-- Present questions HERE -->
+
+<?php $btcmp_user_mode = get_user_mode($userid); ?>
+
 
 <br>
 <br>
@@ -44,7 +44,7 @@ include('./includes/header.php'); // Bring in the Menus, etc
       </div>
     </div>
   </div>
-  <script src="eveningQuestionsList.js"></script>
+
 <!-- End Question Block --> 
 
 
@@ -371,6 +371,7 @@ var mqs_answers = {};
 var mng_tip_message = '';
 var cur_mor_day = '';
 var btcmp_log_day_val = '';
+var btcmp_user_mode = '';
 
 var btcmp_log_day_val = parseInt('<?php echo $btcmp_log_day_val;?>');
 var cur_mor_day = btcmp_log_day_val + 1;
@@ -378,15 +379,16 @@ var cur_mor_day = btcmp_log_day_val + 1;
 var btcmp_user_log_count = '';
 var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');
 
+var btcmp_user_mode = '<?php echo $btcmp_user_mode; ?>';
 
+if (btcmp_user_mode != 'B'){cur_mor_day = '';};
 
-
-
+alert(cur_mor_day);
 
 
 function setValues() {
 
-	
+	alert(cur_mor_day);
 	
 	mqs_answers['mq1_bedTime'] 				    = questions.bedTime;
 	mqs_answers['mq1_wakeTime'] 			    = questions.wakeTime;
@@ -399,10 +401,11 @@ function setValues() {
 	mqs_answers['mq5_light'] 				    = questions.light;
 	mqs_answers['mq5_stress'] 				    = questions.stress;
 	mqs_answers['mq5_temp'] 				    = questions.temp;
-	mqs_answers['mq5_nota'] 				    = questions.nota;	
+	mqs_answers['mq5_nota'] 				    = questions.nota;
+	mqs_answers['user_mode']					= btcmp_user_mode;	
 
 
-	console.log(mqs_answers['mq1_bedTime']);
+/*	console.log(mqs_answers['mq1_bedTime']);
 	console.log(mqs_answers['mq1_wakeTime']);
 	console.log(mqs_answers['mq2_problemsFallingAsleep']);
 	console.log(mqs_answers['mq2_minutesToFallAsleep']);	
@@ -414,6 +417,7 @@ function setValues() {
 	console.log(mqs_answers['mq5_stress']);
 	console.log(mqs_answers['mq5_temp']);
 	console.log(mqs_answers['mq5_nota']);
+	console.log(mqs_answers['user_mode']);*/
 
 
 submitMorningQuestions(); 
@@ -694,12 +698,13 @@ if (cur_mor_day == 14){
 	if (btcmp_user_log_count > 15) {tip_code = 'S11'; mng_tip_message = Standard_Tips.S[0].S11;}
 }
 
-};
+} else { mng_tip_message = 'Please choose Bootcamp mode to receive daily tips and sleep tracking features.'};
 
 
 mqs_answers['tip_code'] = tip_code;
 var userid = '<?php echo $userid; ?>';
 mqs_answers['uid'] = userid;
+mqs_answers['cur_mor_day'] = cur_mor_day;;
 
 $.ajax({
 	url: 'post_mng_answers.php',
@@ -707,7 +712,7 @@ $.ajax({
 	data: {post_mng_answers:mqs_answers},
 	success: function(data) {	
 		var div = document.getElementById('push_morning_tip');
-		div.innerHTML = mng_tip_message;
+		div.innerHTML =  mng_tip_message;
 		document.getElementById('mqs_submit').disabled = true;
 	},
 	error: function(xhr, desc, err) {

@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <?php
-  include("./includes/cz_functions.js");
   include("./includes/db_connection.php");
   include("./includes/session.php");
   include("./includes/functions.php");
@@ -61,10 +60,9 @@ function user_login(){
   var userpassword = document.getElementById("nav_password").value;  
   var user_login_check = check_user_login(useremail,userpassword);
   var db_resp = user_login_check.responseText;
-  console.log(db_resp);
+  
   if (db_resp.trim() == 'ACCESS_GRANTED')
                                         {
-                                    /*      alert('ACCESS_GRANTED');*/
                                           create_session(useremail);
                                         }
     else ($( '#login_button' ).siblings('.help-block').html("Incorrect Credentials"));

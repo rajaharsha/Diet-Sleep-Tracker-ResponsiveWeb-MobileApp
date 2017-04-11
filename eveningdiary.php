@@ -4,7 +4,6 @@ include("./includes/session.php");
 include("./includes/functions.php");
 confirm_logged_in();
 
-include("./includes/cz_functions.js");
 include('./includes/header.php');
 ?>
 
@@ -12,7 +11,7 @@ include('./includes/header.php');
   <script type="text/javascript" src="assets/Evening_Tips.json"></script>
   <script type="text/javascript" src="assets/Standard_Tips.json"></script>
 
-
+<?php $btcmp_user_mode = get_user_mode($userid); ?>
 
 
 <!-- Present questions HERE -->
@@ -33,8 +32,6 @@ include('./includes/header.php');
 <!-- End Question Block --> 
 
 <!-- Tip generation DIV elements -->
-
-
 
   <!-- Modal -->
   <div class="modal fade" id="evening_tip" role="dialog">
@@ -101,10 +98,10 @@ function nextQuestion()
 
 // Question 1 ******************************************
 function noCaffeine() { 
-eqs_answers['eq1_Morning'] = "0"; 
-eqs_answers['eq1_Afternoon'] = "0";
-eqs_answers['eq1_Evening'] = "0";
-nextQuestion();
+eqs_answers['eq1_caffeine'] = 'No';
+eqs_answers['eq1_Morning'] = '0'; 
+eqs_answers['eq1_Afternoon'] = '0';
+eqs_answers['eq1_Evening'] = '0';
 }
 
 
@@ -122,14 +119,17 @@ if (checkValue == "No. Continue"){
 
 
 function getCaffeineResults() {
-  morningValue = document.getElementById('eq1a').value;
-  afternoonValue = document.getElementById('eq1b').value;
-  eveningValue = document.getElementById('eq1c').value;
+  morningValue = document.getElementById('eq1a').textContent;
+  afternoonValue = document.getElementById('eq1b').textContent;
+  eveningValue = document.getElementById('eq1c').textContent;
+  eqs_answers['eq1_caffeine'] = 'Yes';
   eqs_answers['eq1_Morning'] = morningValue;
   eqs_answers['eq1_Afternoon'] = afternoonValue;
   eqs_answers['eq1_Evening'] = eveningValue;
-}
 
+
+}
+  console.log(eqs_answers);
 
 
 
@@ -145,10 +145,6 @@ function updateCoffee(timeOfDay, plusMinus) {
             counter--;
             document.getElementById(timeOfDay).innerHTML = counter.toString(); 
           }
-
-  eqs_answers['eq1_Morning'] = document.getElementById('eq1a').value;
-  eqs_answers['eq1_Afternoon'] = document.getElementById('eq1b').value;
-  eqs_answers['eq1_Evening'] = document.getElementById('eq1c').value;
 }
 
 // end Question 1 ******************************************
@@ -328,11 +324,17 @@ eqs_answers['eq7_TimeOfDay'] = choice;
 var evg_tip_message = '';
 var cur_evg_day = '';
 var btcmp_log_day_val = '';
+var btcmp_user_mode = '';
+
+var btcmp_user_mode = '<?php echo $btcmp_user_mode; ?>';
 
 var btcmp_log_day_val = parseInt('<?php echo $btcmp_log_day_val;?>');
 var cur_evg_day = btcmp_log_day_val + 1;
 
+if (btcmp_user_mode != 'B'){cur_evg_day = '';};
+
 eqs_answers['cur_evg_day'] = cur_evg_day;
+eqs_answers['btcmp_user_mode'] = btcmp_user_mode;
 
 var btcmp_user_log_count = '';
 var btcmp_user_log_count = parseInt('<?php echo $btcmp_user_log_count;?>');
@@ -602,19 +604,22 @@ If “none” on evening question 6 then: E37 or E38
       if (cur_evg_day == 14){tip_code = 'S13';
                              evg_tip_message = Standard_Tips.S[0].S13;}
 
-}
+} else { evg_tip_message = 'Please choose Bootcamp mode to receive daily tips and sleep tracking features.'};
 
 eqs_answers['tip_code'] = tip_code;
+
+console.log(eqs_answers);
 
   $.ajax({
     url: 'post_evg_answers.php',
     type: 'post',
+    data: {post_evg_answers:eqs_answers},    
     success: function(data) {
       var div = document.getElementById('push_evening_tip');
       div.innerHTML = evg_tip_message;
       document.getElementById('eqs_submit').disabled = true;
     },
-    data: {post_evg_answers:eqs_answers},
+
     error: function(xhr, desc, err) {
       console.log(xhr);
       console.log("Details: " + desc + "\nError:" + err);

@@ -189,7 +189,7 @@ var qs2 = ' \
 		<div class="row">\
 		<div class="col-xs-12 col-md-12 col-lg-12">\
 		<button class="hatch form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
-		<span id="q2NextButton">No, please continue</span>\
+		<span id="q2NextButton">No, Continue</span>\
 		</button>\
 		</div>\
 		</div>\
@@ -267,7 +267,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 <div class="row">\
 	<div class="col-xs-12 col-md-12 col-lg-12">\
 		<button class="form-control btn btn-large btn-primary" type="submit" onclick="q3script()" >\
-			<span id="q3NextButton">No, please continue</span>\
+			<span id="q3NextButton">No, Continue</span>\
 		</button>\
 	</div>\
 </div>\

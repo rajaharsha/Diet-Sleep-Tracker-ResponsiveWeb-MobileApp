@@ -3,8 +3,8 @@ var qs1 = ' \
 <form onSubmit="return !!(false & nextQuestion());">\
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
-aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
-1/5 Complete (success)\
+aria-valuenow="13" aria-valuemin="0" aria-valuemax="100" style="width:13%">\
+1/7 Complete\
 </div>\
 </div>\
 \
@@ -39,7 +39,7 @@ id="inputDidDrinkCoffeeButton" onclick="changeButton()">Yes?</button>\
 <div class="btn btn-primary" onclick=\'updateCoffee("eq1a", "minus")\'>&#10134;</div>\
 </div>\
 <div class="col-xs-4 col-md-4 col-lg-4 ">\
-<label class="hatch form-control text-center" id="eq1a" disabled onchange="getCaffeineResults()" type="text" name="Morning" min="0" max="10" >0</label>\
+<label class="hatch form-control text-center" id="eq1a"  onchange="getCaffeineResults()" type="text" name="Morning" min="0" max="10" >0</label>\
 </div>\
 <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
 <div class="hatch btn btn-success" onclick=\'updateCoffee("eq1a", "plus")\'>&#10133;</div>\
@@ -53,7 +53,7 @@ id="inputDidDrinkCoffeeButton" onclick="changeButton()">Yes?</button>\
 <div class="hatch btn btn-primary" onclick=\'updateCoffee("eq1b", "minus")\'>&#10134; </div>\
 </div>\
 <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
-<label class="hatch form-control text-center" id="eq1b" disabled onchange="getCaffeineResults()" type="text" name="Afternoon" min="0" max="10">0</label>\
+<label class="hatch form-control text-center" id="eq1b" type="text" name="Afternoon" min="0" max="10">0</label>\
 </div>\
 <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
 <div class="hatch btn btn-success" onclick=\'updateCoffee("eq1b", "plus")\'>&#10133; </div>\
@@ -67,7 +67,7 @@ id="inputDidDrinkCoffeeButton" onclick="changeButton()">Yes?</button>\
 <div class="hatch btn btn-primary" onclick=\'updateCoffee("eq1c", "minus")\'>&#10134; </div>\
 </div>\
 <div class="col-xs-4 col-md-4 col-lg-4 text-right">\
-<label class="hatch form-control text-center" id="eq1c" disabled onchange="getCaffeineResults()" type="text" name="Evening" min="0" max="10">0</label>\
+<label class="hatch form-control text-center" id="eq1c"  onchange="getCaffeineResults()" type="text" name="Evening" min="0" max="10">0</label>\
 </div>\
 <div class="col-xs-4 col-md-4 col-lg-4 text-left">\
 <div class="hatch btn btn-success" onclick=\'updateCoffee("eq1c", "plus")\'>&#10133;</div>\
@@ -78,7 +78,7 @@ id="inputDidDrinkCoffeeButton" onclick="changeButton()">Yes?</button>\
 <br />\
 <div class="row">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
-<button class="hatch form-control btn btn-large btn-primary" type="submit" onclick="" >\
+<button class="hatch form-control btn btn-large btn-primary" type="submit" onclick="getCaffeineResults()" >\
 <span id="q2NextButton">No. Continue</span>\
 </button>\
 </div>\
@@ -90,6 +90,12 @@ id="inputDidDrinkCoffeeButton" onclick="changeButton()">Yes?</button>\
 
 var qs2 = ' \
 <div class="container-fluid">\
+<div class="progress">\
+<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+aria-valuenow="26" aria-valuemin="0" aria-valuemax="100" style="width:26%">\
+2/7 Complete\
+</div>\
+</div>\
 		<div class="row">\
 			<div class="row text-center">\
 				<div class="col-xs-12 col-md-12 col-lg-12">\
@@ -125,6 +131,12 @@ var qs2 = ' \
 
 var qs3 = '\
 <div class="container-fluid">\
+<div class="progress">\
+<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+aria-valuenow="39" aria-valuemin="0" aria-valuemax="100" style="width:39%">\
+3/7 Complete\
+</div>\
+</div>\
 	<div class="row text-center">\
 		<div class="col-xs-12 col-md-12 col-lg-12">\
 			<h3>Did you drink Alcohol?</h3>\
@@ -159,6 +171,12 @@ var qs3 = '\
 
 var qs4 = ' \
 <div class="container-fluid">\
+<div class="progress">\
+<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+aria-valuenow="52" aria-valuemin="0" aria-valuemax="100" style="width:52%">\
+4/7 Complete\
+</div>\
+</div>\
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
 <h3>Did you take a nap today?</h3>\
@@ -187,6 +205,13 @@ var qs4 = ' \
 
 var qs5 = ' \
 <div class="container-fluid">\
+\
+<div class="progress">\
+<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:65%">\
+5/7 Complete\
+</div>\
+</div>\
 \
 <div class="row text-center">\
 <div class="col-xs-12 col-md-12 col-lg-12">\
@@ -234,8 +259,8 @@ var qs6 = '\
 \
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
-aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
-6/7 Complete (Submit!)\
+aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width:78%">\
+6/7 Complete\
 </div>\
 </div>\
 \
@@ -326,15 +351,13 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 
 
 
-
-
 var qs7 = ' \
 <div class="container-fluid">\
 \
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
-aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
-6/7 Complete (Submit!)\
+aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">\
+7/7 Complete (Submit!)\
 </div>\
 </div>\
 \

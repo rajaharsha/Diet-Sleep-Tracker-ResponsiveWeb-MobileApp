@@ -19,7 +19,8 @@ $obj = $_POST['post_mng_answers'];
           $mq5_nota = $obj['mq5_nota'];
           $uid = $obj["uid"];                               
           $cur_mor_day = $obj["cur_mor_day"];                    
-          $tip_code = $obj["tip_code"];                          
+          $tip_code = $obj["tip_code"];   
+          $btcmp_user_mode = $obj["btcmp_user_mode"];
 
           insert_mng_answer(
           $mq1_bedTime,
@@ -36,7 +37,8 @@ $obj = $_POST['post_mng_answers'];
           $mq5_nota,
           $uid,                          
           $cur_mor_day,                  
-          $tip_code
+          $tip_code,
+          $btcmp_user_mode
           );  
       
     ?>

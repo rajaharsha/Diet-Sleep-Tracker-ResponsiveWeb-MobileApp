@@ -47,7 +47,6 @@
   function push_tips(data) {  
     var div = document.getElementById('push_morning_tip');
     div.innerHTML = data;
-    alert ('Posted Successfully');
   }
   </script>
 

@@ -31,6 +31,8 @@ var db_user_mode = '<?php echo $btcmp_user_mode ?>';
 if (db_user_mode == 'B'){$('#toggle-event').bootstrapToggle('on')};
 if (db_user_mode == 'R'){$('#toggle-event').bootstrapToggle('off');};
 
+user_mode = db_user_mode;
+
             function update_user_mode(result){
 
                 user_mode = {}; 
@@ -53,8 +55,10 @@ if (db_user_mode == 'R'){$('#toggle-event').bootstrapToggle('off');};
               $('#toggle-event').change(function() {
                 var result = $(this).prop('checked');
                 update_user_mode(result);
+                user_mode = result;
               })
             })
+
 
 </script>
 
