@@ -175,13 +175,17 @@ var qs2 = ' \
 				<h3>How many minutes did it take you to fall asleep?</h3> \
 				</div>\
 				</div>\
-				<div class="row ">\
-				<div class="col-xs-4"></div>\
-				<div class="col-xs-4">\
-				<input class="form-control text-center " id="inputMinutesToFallAsleepId" min="0" step="5" value="0" type="number" name="WakeTime">\
+				<div class="">\
+				\
+				<div class="col-xs-4 btn btn-primary glyphicon glyphicon-minus-sign" id="question_2_down" onclick="changeMinutes(0)"></div>\
+				\
+				<div class="col-xs-4 well-sm text-center" style="color: #e1e6ef; font-size: 22px;  font-family: &#39;Patua One&#39;, cursive;" id="inputMinutesToFallAsleepId" name="WakeTime" contenteditable="false">0</div>\
+				\
+				<div class="col-xs-4 btn btn-primary glyphicon glyphicon-plus-sign" id="question_2_up" onclick="changeMinutes(1)"></div>\
+				\
 				</div>\
-				<div class="col-xs-4"></div>\
-				</div>\
+				<br />\
+				<br />\
 	</div>\
 		\
 		<br />\

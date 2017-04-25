@@ -54,7 +54,8 @@ if (isset($_SESSION["btcmp_user_log_count"])){ $btcmp_user_log_count = $_SESSION
   <link rel="stylesheet" type="text/css" href="css/styles.css"> 
   <link rel="stylesheet" type="text/css" href="css/styles2.css">
 
-
+  <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+  
 
 
 </head>

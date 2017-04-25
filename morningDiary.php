@@ -344,7 +344,25 @@ setValues();
 
 
 
+function changeMinutes(buttonPushed){
 
+current = parseInt(document.getElementById("inputMinutesToFallAsleepId").innerHTML);
+
+
+if (buttonPushed == 0){
+if (parseInt(document.getElementById("inputMinutesToFallAsleepId").innerHTML) != 0){
+document.getElementById("inputMinutesToFallAsleepId").innerHTML = current - 5;
+}
+}
+
+if (buttonPushed == 1){
+document.getElementById("inputMinutesToFallAsleepId").innerHTML = current + 5;	
+}
+
+
+
+
+}
 
 
 
