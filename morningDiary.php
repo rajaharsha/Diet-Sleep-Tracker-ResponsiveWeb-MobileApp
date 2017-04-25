@@ -383,7 +383,9 @@ var btcmp_user_mode = '<?php echo $btcmp_user_mode; ?>';
 
 if (btcmp_user_mode != 'B'){cur_mor_day = '';};
 
-alert(cur_mor_day);
+// alert(cur_mor_day); // Raja, I commented this out. Wasn't sure what is was for. 
+// maybe for debugging? ~Brian
+
 
 
 function setValues() {

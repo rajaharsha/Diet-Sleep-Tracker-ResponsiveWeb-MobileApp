@@ -96,7 +96,7 @@ return this.nota;
 
 var qs1 = '\
 \
-<div class="fadeIn container-fluid" id="question1">\
+<div class=" container-fluid" id="question1">\
 \
 <form class="" onSubmit="return !!(false & nextQuestion());">\
 \
@@ -110,13 +110,13 @@ aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">\
 \
 <div class=" well row" id="displayWell">\
 	<div class="row">\
-	<div class="hatch text-right col-xs-6 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
-	<div class="hatch            col-xs-6 col-md-6 col-lg-6"><input id="stepExample1" type="text" class="time" required></div>\
+	<div class=" text-right col-xs-6 col-md-6 col-lg-6"><label for="inputBedTimeId"><h4>Bed Time</h4></label></div>\
+	<div class="            col-xs-6 col-md-6 col-lg-6"><input id="stepExample1" type="text" class="time" required></div>\
 	</div>\
 \
 	<div class="row">\
-	<div class="hatch text-right col-xs-6 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
-	<div class="hatch            col-xs-6 col-md-6 col-lg-6"><input id="stepExample2" type="text" class="time" required>\
+	<div class=" text-right col-xs-6 col-md-6 col-lg-6"><label for="inputWakeTimeId"><h4>Wake Time</h4></label></div>\
+	<div class="            col-xs-6 col-md-6 col-lg-6"><input id="stepExample2" type="text" class="time" required>\
 	</div>\
 \
 </div>\
@@ -140,7 +140,7 @@ aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">\
 
 var qs2 = ' \
 \
-<div class="fadeIn container-fluid">\
+<div class=" container-fluid">\
 <form onSubmit="return !!(false & nextQuestion());">\
 \
 		<div class="progress">\
@@ -160,7 +160,7 @@ var qs2 = ' \
 										\
 										<div class="row">\
 										<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
-										<button class="hatch form-control btn btn-large btn-primary" \
+										<button class=" form-control btn btn-large btn-primary" \
 										type="button" \
 										data-toggle="collapse" data-target="#part2" \
 										onclick="showPart2Q2()" \
@@ -175,7 +175,7 @@ var qs2 = ' \
 				<h3>How many minutes did it take you to fall asleep?</h3> \
 				</div>\
 				</div>\
-				<div class="row hatch">\
+				<div class="row ">\
 				<div class="col-xs-4"></div>\
 				<div class="col-xs-4">\
 				<input class="form-control text-center " id="inputMinutesToFallAsleepId" min="0" step="5" value="0" type="number" name="WakeTime">\
@@ -188,7 +188,7 @@ var qs2 = ' \
 		\
 		<div class="row">\
 		<div class="col-xs-12 col-md-12 col-lg-12">\
-		<button class="hatch form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
+		<button class=" form-control btn btn-large btn-primary" type="submit" onclick="q2script()" >\
 		<span id="q2NextButton">No, Continue</span>\
 		</button>\
 		</div>\
@@ -216,7 +216,7 @@ var qs2 = ' \
 
 var qs3 = ' \
 \
-<div class="fadeIn container-fluid">\
+<div class=" container-fluid">\
 <form onSubmit="return !!(false & nextQuestion());">\
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
@@ -256,7 +256,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 <div class="row">\
 <div class="col-xs-4"></div>\
 <div class="col-xs-4">\
-<input class="hatch form-control text-center " id="inputMinutesToFallBackAsleepId" min="0" step="5" value="0" type="number" name="WakeTime">\
+<input class=" form-control text-center " id="inputMinutesToFallBackAsleepId" min="0" step="5" value="0" type="number" name="WakeTime">\
 </div>\
 <div class="col-xs-4"></div>\
 </div>\
@@ -283,7 +283,7 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 
 
 var qs4 = ' \
-<div class="fadeIn container-fluid">\
+<div class=" container-fluid">\
 \
 <form onSubmit="return !!(false & nextQuestion());">\
 \
@@ -338,7 +338,7 @@ aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">\
 
 
 var qs5 = '\
-<div class="fadeIn container-fluid">\
+<div class=" container-fluid">\
 \
 \
 <div class="progress">\
@@ -358,7 +358,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			\
 			<br />\
 			\
-			<div class="hatch row">\
+			<div class=" row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op1" class="form-control btn btn-large btn-Default" onclick="question5(1)">\
 			<span>Noise</span>\
@@ -368,7 +368,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			\
 			<br />\
 			\
-			<div class="hatch row">\
+			<div class=" row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op2" class="form-control btn btn-large btn-Default" onclick="question5(2)">\
 			<span>Light</span>\
@@ -378,7 +378,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			\
 			<br />\
 			\
-			<div class="hatch row">\
+			<div class=" row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op3" class="form-control btn btn-large btn-Default" onclick="question5(3)">\
 			<span>Stress/Worry</span>\
@@ -388,7 +388,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			\
 			<br />\
 			\
-			<div class="hatch row">\
+			<div class=" row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op4" class="form-control btn btn-large btn-Default" onclick="question5(4)">\
 			<span>Room Temperature</span>\
@@ -398,7 +398,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 			\
 			<br />\
 			\
-			<div class="hatch row">\
+			<div class=" row">\
 			<div class="col-xs-12 col-md-12 col-lg-12">\
 			<button id="mqs5op5" class="form-control btn btn-large btn-Default" onclick="question5(5)">\
 			<span>None of the above</span>\
@@ -429,7 +429,7 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 <div class="row">\
 	<div class="col-xs-12 col-md-12 col-lg-12">\
 		<div class="questionButtonDiv">\
-			<button class="hatch form-control btn btn-large btn-success" id="mqs_submit" type="submit" onclick="submitQuestion5()" data-toggle="modal" data-target="#morning_tip">\
+			<button class=" form-control btn btn-large btn-success" id="mqs_submit" type="submit" onclick="submitQuestion5()" data-toggle="modal" data-target="#morning_tip">\
 			<span>Submit Diary!</span>\
 			</button>\
 		</div>\
