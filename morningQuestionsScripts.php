@@ -294,19 +294,27 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 
 
 var qs4 = ' \
+<?php \
+$title = "After waking, how did you feel?";\
+$choice1 = "Sleepy";\
+$choice2 = "Somewhat Sleepy";\
+$choice3 = "Alert";\
+$submitTitle = "Continue"; ?> \
+\
 \
 \
 <div class="container-fluid">\
 \
 <div class="progress">\
-<div class="progress-bar progress-bar-success progress-bar-striped" id="progressTitle" role="progressbar"\
-aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 Complete (Success)\
+<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"\
+aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">\
+4/5 Complete (Success)\
 </div>\
 </div>\
 \
 <div class="row">\
 	<div class="col-xs-12 col-md-12 col-lg-12 text-center">\
-		<h3 id="title">After waking, how did you feel?</h3>\
+		<h3><?php echo $title ?></h3>\
 		</div>\
 	</div \
 	\
@@ -317,7 +325,7 @@ aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 C
 				<div class="row ">\
 				<div class="col-xs-12 col-md-12 col-lg-12">\
 				<button class="form-control btn btn-large btn-warning" type="submit" onclick="q4script(1)">\
-				<span id="choice1">Sleepy</span>\
+				<span><?php echo $choice1; ?></span>\
 				</button>\
 				</div>\
 				</div>\
@@ -327,7 +335,7 @@ aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 C
 				<div class="row ">\
 				<div class="col-xs-12 col-md-12 col-lg-12">\
 				<button class="form-control btn btn-large btn-success" type="submit" onclick="q4script(2)">\
-				<span id="choice2">Somewhat Awake</span>\
+				<span><?php echo $choice2; ?></span>\
 				</button>\
 				</div>\
 				</div>\
@@ -337,7 +345,7 @@ aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 C
 				<div class="row ">\
 				<div class="col-xs-12 col-md-12 col-lg-12">\
 				<button class="form-control btn btn-large btn-info" type="submit" onclick="q4script(3)">\
-				<span id="choice3">Alert</span>\
+				<span><?php echo $choice3; ?></span>\
 				</button>\
 				</div>\
 				</div>\
@@ -348,9 +356,9 @@ aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 C
 \
 			<div class="col-xs-12 col-md-12 col-lg-12" >\
 			<div class="questionButtonDiv">\
-			<button type="submit" \
-			class=" form-control btn button-default" onclick="q4script()" data-toggle="modal">\
-			<span id="submitTitle">Continue</span>\
+			<button id="eqs_submit" \
+			class=" form-control btn button-default" onclick="evg_ans_submit()" data-toggle="modal" data-target="#morning_tip">\
+			<span><?php echo $submitTitle; ?></span>\
 			</button>\
 \
 \
@@ -456,7 +464,6 @@ aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:95%">\
 		</div>\
 	</div>\
 </div>\
-\
 \
 \
 ';

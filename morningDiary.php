@@ -38,7 +38,8 @@ include('./includes/header.php'); // Bring in the Menus, etc
       <div class="col-xs-1 col-md-4 col-lg-4"></div>
       <div class="col-xs-12 col-md-4 col-lg-4" id="question1">
         <div class="form-group">
-          <div id="questionDisplay"> <!-- Where the question is displayed --> 
+          <div id="questionDisplay"> 
+          <!-- Where the question is displayed --> 
           </div>
         </div>
       </div>
