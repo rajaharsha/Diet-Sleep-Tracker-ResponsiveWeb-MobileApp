@@ -344,19 +344,19 @@ setValues();
 
 
 
-function changeMinutes(buttonPushed){
+function changeMinutes(buttonPushed, IdName){
 
-current = parseInt(document.getElementById("inputMinutesToFallAsleepId").innerHTML);
+current = parseInt(document.getElementById(IdName).innerHTML);
 
 
 if (buttonPushed == 0){
-if (parseInt(document.getElementById("inputMinutesToFallAsleepId").innerHTML) != 0){
-document.getElementById("inputMinutesToFallAsleepId").innerHTML = current - 5;
+if (parseInt(document.getElementById(IdName).innerHTML) != 0){
+document.getElementById(IdName).innerHTML = current - 5;
 }
 }
 
 if (buttonPushed == 1){
-document.getElementById("inputMinutesToFallAsleepId").innerHTML = current + 5;	
+document.getElementById(IdName).innerHTML = current + 5;	
 }
 
 

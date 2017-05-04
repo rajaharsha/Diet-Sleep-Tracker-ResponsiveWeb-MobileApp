@@ -177,11 +177,11 @@ var qs2 = ' \
 				</div>\
 				<div class="">\
 				\
-				<div class="col-xs-4 btn btn-primary glyphicon glyphicon-minus-sign" id="question_2_down" onclick="changeMinutes(0)"></div>\
+				<div class="col-xs-4 btn btn-primary glyphicon glyphicon-minus-sign" id="question_2_down" onclick=\'changeMinutes(0, "inputMinutesToFallAsleepId")\'></div>\
 				\
 				<div class="col-xs-4 well-sm text-center" style="color: #e1e6ef; font-size: 22px;  font-family: &#39;Patua One&#39;, cursive;" id="inputMinutesToFallAsleepId" name="WakeTime" contenteditable="false">0</div>\
 				\
-				<div class="col-xs-4 btn btn-primary glyphicon glyphicon-plus-sign" id="question_2_up" onclick="changeMinutes(1)"></div>\
+				<div class="col-xs-4 btn btn-primary glyphicon glyphicon-plus-sign" id="question_2_up" onclick=\'changeMinutes(1, "inputMinutesToFallAsleepId")\'></div>\
 				\
 				</div>\
 				<br />\
@@ -252,17 +252,24 @@ aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">\
 <div id="part2" class="collapse">\
 \
 <div class="row">\
-<div class="col-xs-12 text-center">\
-<h3>Minutes to fall back asleep?</h3> \
-</div>\
-</div>\
+				<div class="col-xs-12 text-center">\
+				<h3>Minutes to fall back asleep?</h3> \
+				</div>\
+				</div>\
+				<div class="">\
+				\
+				<div class="col-xs-4 btn btn-primary glyphicon glyphicon-minus-sign" id="question_2_down" onclick=\'changeMinutes(0, "inputMinutesToFallBackAsleepId")\'></div>\
+				\
+				<div class="col-xs-4 well-sm text-center" style="color: #e1e6ef; font-size: 22px;  font-family: &#39;Patua One&#39;, cursive;" id="inputMinutesToFallBackAsleepId" name="WakeTime" contenteditable="false">0</div>\
+				\
+				<div class="col-xs-4 btn btn-primary glyphicon glyphicon-plus-sign" id="question_2_up" onclick=\'changeMinutes(1, "inputMinutesToFallBackAsleepId")\'></div>\
+				\
+				</div>\
+				<br />\
+				<br />\
+\
 \
 <div class="row">\
-<div class="col-xs-4"></div>\
-<div class="col-xs-4">\
-<input class=" form-control text-center " id="inputMinutesToFallBackAsleepId" min="0" step="5" value="0" type="number" name="WakeTime">\
-</div>\
-<div class="col-xs-4"></div>\
 </div>\
 </div>\
 \
