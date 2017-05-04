@@ -297,7 +297,7 @@ var qs4 = ' \
 \
 \
 <div class="container-fluid">\
-\
+<form onSubmit="return !!(false & nextQuestion());">\
 <div class="progress">\
 <div class="progress-bar progress-bar-success progress-bar-striped" id="progressTitle" role="progressbar"\
 aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 Complete (Success)\
@@ -316,7 +316,7 @@ aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 C
 			\
 				<div class="row ">\
 				<div class="col-xs-12 col-md-12 col-lg-12">\
-				<button class="form-control btn btn-large btn-warning" type="submit" onclick="q4script(1)">\
+				<button class="form-control btn btn-large btn-warning" onclick="q4script(1)">\
 				<span id="choice1">Sleepy</span>\
 				</button>\
 				</div>\
@@ -326,7 +326,7 @@ aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 C
 				\
 				<div class="row ">\
 				<div class="col-xs-12 col-md-12 col-lg-12">\
-				<button class="form-control btn btn-large btn-success" type="submit" onclick="q4script(2)">\
+				<button class="form-control btn btn-large btn-success" onclick="q4script(2)">\
 				<span id="choice2">Somewhat Awake</span>\
 				</button>\
 				</div>\
@@ -336,7 +336,7 @@ aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 C
 				\
 				<div class="row ">\
 				<div class="col-xs-12 col-md-12 col-lg-12">\
-				<button class="form-control btn btn-large btn-info" type="submit" onclick="q4script(3)">\
+				<button class="form-control btn btn-large btn-info" onclick="q4script(3)">\
 				<span id="choice3">Alert</span>\
 				</button>\
 				</div>\
@@ -349,7 +349,7 @@ aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">4/5 C
 			<div class="col-xs-12 col-md-12 col-lg-12" >\
 			<div class="questionButtonDiv">\
 			<button type="submit" \
-			class=" form-control btn button-default" onclick="q4script()" data-toggle="modal">\
+			class=" form-control btn button-default" type="submit" onclick="q4script()" data-toggle="modal">\
 			<span id="submitTitle">Continue</span>\
 			</button>\
 \
