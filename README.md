@@ -9,7 +9,7 @@
 
 ![Screenshot_20170928-164752](Screenshot_20170928-164752.png)
 
-<img src="Screenshot_20170928-164752.png" width="100" height="100"/>
+<img src="Screenshot_20170928-164752.png" width="40"/>
 
 ![Screenshot_20170928-164831](Screenshot_20170928-164831.png)
 
