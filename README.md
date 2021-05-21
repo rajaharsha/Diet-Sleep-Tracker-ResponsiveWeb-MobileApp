@@ -1,9 +1,9 @@
 # Diet-Sleep-Tracker-ResponsiveWeb-MobileApp
 
 
-![Screenshot_20170928-164537](Screenshot_20170928-164537.png)
+![Screenshot_20170928-164537](Screenshot_20170928-164537.png =250x250)
 
-![Screenshot_20170928-164623](Screenshot_20170928-164623.png)
+![Screenshot_20170928-164623](Screenshot_20170928-164623.png | width=100)
 
 ![Screenshot_20170928-164656](Screenshot_20170928-164656.png)
 
